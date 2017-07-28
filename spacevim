@@ -16,6 +16,8 @@ function! Layers()
   
   Layer 'tmux'
   Layer 'file-manager'
+  Layer 'ctrlp'
+  Layer 'better-motion'
   Layer 'programming'
   Layer 'editing'
 
