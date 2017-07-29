@@ -87,7 +87,7 @@ PATH=/home/cat/.Pokemon-Terminal:/home/cat/bin:/home/cat/.local/bin:/usr/local/s
 export PATH="/home/cat/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
-alias ssl="sudo sslocal -s  s1.91tnt.win -p 8337 -k wc58886254 -l 1080 -t 600 -m aes-256-cfb -d start"
+eval "$(thefuck --alias fk)"
 alias jz="j 桌面"
 alias so="sudo openvpn --config 42.ovpn"
 alias pmms="python manage.py makemigrations"
