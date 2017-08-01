@@ -40,7 +40,7 @@ function! UserInit()
   " if you want to change it, uncomment and set it here.
   " let g:spacevim_leader = "<\Space>"
   " let g:spacevim_localleader = ','
-  let g:ycm_server_python_interpreter= '/usr/bin/python'
+  let g:ycm_server_python_interpreter= '/usr/bin/python3'
   " Install private plugins
   " Plug 'extr0py/oni'
     Plug 'Raimondi/delimitMate'

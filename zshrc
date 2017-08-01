@@ -24,6 +24,7 @@ ZSH_THEME="robbyrussell"
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
 
+
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
@@ -83,18 +84,22 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
-PATH=/home/cat/.Pokemon-Terminal:/home/cat/bin:/home/cat/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
-export PATH="/home/cat/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# export PATH="/home/cat/.pyenv/bin:$PATH"
+# export PYENV_ROOT=~/.pyenv
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
+export PYTHONPATH=$PYTHONPATH:/usr/lib/python3/dist-packages
+export PYTHONPATH=$PYTHONPATH:/usr/lib/python/dist-packages
 eval "$(thefuck --alias fk)"
-alias jz="j 桌面"
-alias so="sudo openvpn --config 42.ovpn"
+alias jz="j /home/cat/Desktop"
+alias so="sudo openvpn --config /bin/42.ovpn"
 alias pmms="python manage.py makemigrations"
 alias pmm="python manage.py migrate"
 alias pmr="python manage.py runserver"
 alias pmf="python manage.py flush"
 alias pmc="python manage.py createsuperuser"
-
-
+alias tldr="tldr"
+alias home="cd ~"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/cat/.fzf/bin:/home/cat/.vimpkg/bin
