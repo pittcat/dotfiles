@@ -6,14 +6,15 @@
 function! Layers()
 
   " Default layers, recommended!
-  Layer 'emoji'
-  Layer 'goyo'
-  Layer 'airline'
+  " Layer 'emoji'
+  " Layer 'goyo'
+   Layer 'airline'
 
   Layer 'fzf'
   Layer 'unite'
   Layer 'better-defaults'
-  
+  Layer 'checkers/syntax-checking'
+
   Layer 'tmux'
   Layer 'file-manager'
   Layer 'ctrlp'
@@ -24,8 +25,10 @@ function! Layers()
   Layer 'auto-completion'
   Layer 'ycmd'
   Layer 'syntax-checking'
+  Layer 'code-snippets'
 
   Layer 'html'
+  Layer 'javascript'
   Layer 'python'
 
 endfunction
@@ -37,7 +40,7 @@ function! UserInit()
   " if you want to change it, uncomment and set it here.
   " let g:spacevim_leader = "<\Space>"
   " let g:spacevim_localleader = ','
-  let g:ycm_server_python_interpreter= '/usr/bin/python3' 
+  let g:ycm_server_python_interpreter= '/usr/bin/python'
   " Install private plugins
   " Plug 'extr0py/oni'
     Plug 'Raimondi/delimitMate'
@@ -61,14 +64,46 @@ function! UserInit()
     Plug 'vim-scripts/vim-auto-save'
     let g:auto_save = 1
     let g:auto_save_no_updatetime = 1
-    let g:auto_save_in_insert_mode = 0
+    let g:auto_save_in_insert_mode = 1
+    "标签补全等等
+    Plug  'othree/xml.vim'
+    Plug  'ternjs/tern_for_vim'
+    let g:tern_show_argument_hints='on_hold'
+    " and
+    let g:tern_map_keys=1
+    Plug  'jakwings/vim-pony'
+    "vim-format 设置
+    noremap <F3> :Autoformat<CR>
+    let g:autoformat_autoindent = 0
+    let g:autoformat_retab = 0
+    let g:autoformat_remove_trailing_spaces = 0
+    autocmd FileType html,css,js autocmd BufWritePre <buffer> :%s/\s\+$//e
+    let g:formatter_yapf_style = 'pep8'
 endfunction
-
 " Put your costom configurations here, e.g., change the colorscheme.
 function! UserConfig()
 
   " If you enable airline layer and have installed the powerline fonts, set it here.
   " let g:airline_powerline_fonts=1
   " color desert
+  let g:user_emmet_leader_key='<C-X>'
+  fun! DelBlank()
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    :g/^\n\{2,}/d
+    let @/=_s
+    call cursor(l, c)
+    endfun
+    map <special> <leader>dw :keepjumps call DelBlank()<cr>
+    "修复Multiple_cursors和autocomplete的冲突
+    function! Multiple_cursors_before()
+      exe 'NeoCompleteLock'
+      echo 'Disabled autocomplete'
+    endfunction
 
+    function! Multiple_cursors_after()
+      exe 'NeoCompleteUnlock'
+      " echo 'Enabled autocomplete'
+    endfunction
 endfunction
