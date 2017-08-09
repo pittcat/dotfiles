@@ -51,7 +51,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup
-plugins=(git autojump extract sudo web-search zsh-syntax-highlighting) 
+plugins=(git autojump extract sudo web-search zsh-syntax-highlighting pip)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -90,6 +90,9 @@ source $ZSH/oh-my-zsh.sh
 # eval "$(pyenv virtualenv-init -)"
 export PYTHONPATH=$PYTHONPATH:/usr/lib/python3/dist-packages
 export PYTHONPATH=$PYTHONPATH:/usr/lib/python/dist-packages
+export PATH=~/.npm-global/bin:$PATH
+export NPM_CONFIG_PREFIX=~/.npm-global
+
 eval "$(thefuck --alias fk)"
 alias jz="j /home/cat/Desktop"
 alias so="sudo openvpn --config /bin/42.ovpn"

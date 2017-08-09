@@ -63,8 +63,8 @@ function! UserInit()
     let autosave=3
     Plug 'vim-scripts/vim-auto-save'
     let g:auto_save = 1
-    let g:auto_save_no_updatetime = 1
-    let g:auto_save_in_insert_mode = 1
+    let g:auto_save_no_updatetime = 5
+    " let g:auto_save_in_insert_mode = 1
     "标签补全等等
     Plug  'othree/xml.vim'
     Plug  'ternjs/tern_for_vim'
@@ -79,6 +79,12 @@ function! UserInit()
     let g:autoformat_remove_trailing_spaces = 0
     autocmd FileType html,css,js autocmd BufWritePre <buffer> :%s/\s\+$//e
     let g:formatter_yapf_style = 'pep8'
+    "pymode 设置
+    let g:pymode_python = 'python3'
+    let g:pymode_doc = 1     "启用python-mode内置的python文档，使用K进行查找
+    let g:pymode_doc_bind = 'K'
+
+
 endfunction
 " Put your costom configurations here, e.g., change the colorscheme.
 function! UserConfig()
@@ -87,6 +93,7 @@ function! UserConfig()
   " let g:airline_powerline_fonts=1
   " color desert
   let g:user_emmet_leader_key='<C-X>'
+  "消除空白
   fun! DelBlank()
     let _s=@/
     let l = line(".")
