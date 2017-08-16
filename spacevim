@@ -7,8 +7,8 @@ function! Layers()
 
   " Default layers, recommended!
   " Layer 'emoji'
-  " Layer 'goyo'
-   Layer 'airline'
+  Layer 'goyo'
+  Layer 'airline'
 
   Layer 'fzf'
   Layer 'unite'
@@ -30,6 +30,7 @@ function! Layers()
   Layer 'html'
   Layer 'javascript'
   Layer 'python'
+  Layer 'c-c++'
 
 endfunction
 
@@ -43,7 +44,6 @@ function! UserInit()
   let g:ycm_server_python_interpreter= '/usr/bin/python3'
   " Install private plugins
   " Plug 'extr0py/oni'
-    Plug 'Raimondi/delimitMate'
     Plug 'jistr/vim-nerdtree-tabs'
     " 关闭NERDTree快捷键
     " map <leader>t :NERDTreeToggle<CR>
@@ -84,7 +84,7 @@ function! UserInit()
     let g:pymode_doc = 1     "启用python-mode内置的python文档，使用K进行查找
     let g:pymode_doc_bind = 'K'
 
-
+    let g:c_no_curly_error=0
 endfunction
 " Put your costom configurations here, e.g., change the colorscheme.
 function! UserConfig()
