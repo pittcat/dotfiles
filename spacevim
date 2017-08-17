@@ -9,6 +9,7 @@ function! Layers()
   " Layer 'emoji'
   Layer 'goyo'
   Layer 'airline'
+  " Layer 'lightline'
 
   Layer 'fzf'
   Layer 'unite'
