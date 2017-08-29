@@ -65,7 +65,37 @@ values."
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(magit-gh-pulls
+                                    magit-gitflow
+                                    evil-mc
+                                    skewer-mode
+                                    vi-tilde-fringe
+                                    coffee-mode
+                                    ace-jump-helm-line
+                                    evil-tutor
+                                    eyebrowse
+                                    stickyfunc-enhance
+                                    smooth-scrolling
+                                    org-repo-todo
+                                    chinese-wbim
+                                    chinese-pyim
+                                    srefactor
+                                    org-download
+                                    org-timer
+                                    org-plus-contrib
+                                    org-tree-slide
+                                    git-gutter
+                                    git-gutter-fringe
+                                    spaceline
+                                    multiple-cursors
+                                    evil-escape
+                                    leuven-theme
+                                    gh-md
+                                    evil-lisp-state
+                                    spray
+                                    doc-view
+                                    lorem-ipsum)
+   
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and uninstall any
