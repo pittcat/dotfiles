@@ -29,8 +29,8 @@ function! Layers()
   Layer 'code-snippets'
 
   " Layer 'markdown'
-  Layer 'html'
-  Layer 'javascript'
+  " Layer 'html'
+  " Layer 'javascript'
   Layer 'python'
   Layer 'c-c++'
 
@@ -106,13 +106,13 @@ function! UserConfig()
     endfun
     map <special> <leader>dw :keepjumps call DelBlank()<cr>
     "修复Multiple_cursors和autocomplete的冲突
-    function! Multiple_cursors_before()
-      exe 'NeoCompleteLock'
-      echo 'Disabled autocomplete'
-    endfunction
+    " function! Multiple_cursors_before()
+      " exe 'NeoCompleteLock'
+      " echo 'Disabled autocomplete'
+    " endfunction
 
-    function! Multiple_cursors_after()
-      exe 'NeoCompleteUnlock'
-      " echo 'Enabled autocomplete'
-    endfunction
+    " function! Multiple_cursors_after()
+      " exe 'NeoCompleteUnlock'
+      " " echo 'Enabled autocomplete'
+    " endfunction
 endfunction
