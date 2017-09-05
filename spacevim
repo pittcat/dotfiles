@@ -22,6 +22,8 @@ function! Layers()
   Layer 'better-motion'
   Layer 'programming'
   Layer 'editing'
+  Layer 'git'
+  Layer 'github'
 
   Layer 'auto-completion'
   Layer 'ycmd'
@@ -43,10 +45,12 @@ function! UserInit()
   " if you want to change it, uncomment and set it here.
   " let g:spacevim_leader = "<\Space>"
   " let g:spacevim_localleader = ','
+  let g:completor_python_binary = '/usr/local/lib/python3.5/dist-packages'
   let g:ycm_server_python_interpreter= '/usr/bin/python3'
   " Install private plugins
   " Plug 'extr0py/oni'
     Plug 'jistr/vim-nerdtree-tabs'
+    Plug 'mhinz/vim-signify'
     " 关闭NERDTree快捷键
     " map <leader>t :NERDTreeToggle<CR>
     " " 显示行号
@@ -68,8 +72,8 @@ function! UserInit()
     " let g:auto_save_no_updatetime = 5
     " let g:auto_save_in_insert_mode = 1
     "标签补全等等
-    " Plug  'othree/xml.vim'
-    " Plug  'ternjs/tern_for_vim'
+    Plug  'othree/xml.vim'
+    Plug  'ternjs/tern_for_vim'
     let g:tern_show_argument_hints='on_hold'
     " and
     let g:tern_map_keys=1

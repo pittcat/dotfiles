@@ -39,11 +39,11 @@ values."
      ;; ----------------------------------------------------------------
      helm
      ;; spell-checking
-     (spell-checking :variables ispell-program-name "aspell"
-                     ispell-dictionary "american"
-                     spell-checking-enable-by-default nil)
+     ;; (spell-checking :variables ispell-program-name "aspell"
+     ;;                 ispell-dictionary "american"
+     ;;                 spell-checking-enable-by-default nil)
      ;; common-lisp
-     auto-completion
+     ;; auto-completion
      better-defaults
      emacs-lisp
      ;; (chinese :variables
@@ -51,11 +51,10 @@ values."
     ;; (python :variables python-test-runner '(pytest nose))
      ;; git
      ;; org
-     ;; pandoc
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-     syntax-checking
+     ;; syntax-checking
      ;; version-control
      )
    ;; List of additional packages that will be installed without being
@@ -170,7 +169,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
+   dotspacemacs-default-font '("Menlo"
                                :size 16
                                :weight normal
                                :width normal
