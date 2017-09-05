@@ -50,6 +50,7 @@ function! UserInit()
   " Install private plugins
   " Plug 'extr0py/oni'
     Plug 'jistr/vim-nerdtree-tabs'
+    " gitfugitve的插件
     Plug 'mhinz/vim-signify'
     " 关闭NERDTree快捷键
     " map <leader>t :NERDTreeToggle<CR>
