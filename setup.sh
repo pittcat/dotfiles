@@ -24,3 +24,4 @@ sudo python3 ./install.py --clang-completer
 sudo pip3 install yapf flake8
 sudo pip install yapf flake8
 sudo apt install ctags 
+cd ~/.dotfiles
