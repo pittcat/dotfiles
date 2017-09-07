@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-sudo apt install vim vim-gtk vim-gnome zsh tmux git curl python3-pip python-pip
+sudo apt install vim vim-gtk vim-gnome zsh tmux git curl python3-pip python-pip silversearcher-ag
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 source ~/.zshrc
