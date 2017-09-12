@@ -51,7 +51,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup
-plugins=(git autojump extract sudo web-search zsh-syntax-highlighting pip tmux)
+plugins=(git autojump extract sudo web-search zsh-syntax-highlighting pip tmux docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,6 +104,7 @@ alias pmc="python3 manage.py createsuperuser"
 alias tldr="tldr"
 alias home="cd ~"
 alias 7zmax="7za -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on a"
+alias cuip=" curl -s http://ip.cn"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/cat/.fzf/bin:/home/cat/.vimpkg/bin
