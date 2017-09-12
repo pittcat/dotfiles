@@ -21,7 +21,9 @@ sudo apt install xsel
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/liuchengxu/space-vim/master/install.sh)"
 sh config.sh
 sudo apt-get install build-essential cmake
-sudo apt-get install python-dev python3-devsudo git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/plugged/YouCompleteMe
+sudo apt-get install python-dev python3-dev
+sudo git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/plugged/YouCompleteMe
+cd ~/.vim/plugged/YouCompleteMe
 git submodule update --init --recursive
 sudo python3 ./install.py --clang-completer
 sudo pip3 install yapf flake8
