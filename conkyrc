@@ -1,3 +1,4 @@
+# 不输出到X
 out_to_x no
 out_to_console yes
 background no
@@ -19,11 +20,10 @@ cpu_avg_samples 2
 # wlan0
 
 TEXT
-  \
- ${upspeed eth0}/s  ${downspeed eth0}/s \
- ${cpu cpu0}% \
- ${mem} \
- ${fs_used /} \
- ${battery_percent}% \
+U1:${upspeed enp8s0}/s  D1:${downspeed enp8s0}/s | \
+CPU:${cpu cpu0}% | \
+MEM:${mem} |\
+FU:${fs_used /} |\
+POWER:${battery_percent}% |\
 ${execi 1 amixer | grep -A10 'Master' | sed -rn 's/.*\[([0-9]+%)\].*\[(on|off)\]/\2 \1/p' | sed -n '1p' | sed 's/off.*/ /' | sed -r 's/on( [01234]?[0-9]%)/\1/' | sed -r 's/(on|) 0%/ 0%/' | sed -r 's/on//'} \
- ${time %H:%M}
+TIME:${time %H:%M}
