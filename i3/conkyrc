@@ -20,6 +20,7 @@ cpu_avg_samples 2
 # wlan0
 
 TEXT
+IP:${exec curl -s www.icanhazip.com} | \
 U1:${upspeed enp8s0}/s  D1:${downspeed enp8s0}/s | \
 CPU:${cpu cpu0}% | \
 MEM:${mem} |\
