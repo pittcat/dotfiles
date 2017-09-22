@@ -105,6 +105,7 @@ alias tldr="tldr"
 alias home="cd ~"
 alias 7zmax="7za -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on a"
 alias cuip=" curl -s http://ip.cn"
+alias drcs="docker rm `docker ps --no-trunc -aq`"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/cat/.fzf/bin:/home/cat/.vimpkg/bin
