@@ -14,7 +14,6 @@ function! Layers()
   Layer 'fzf'
   Layer 'unite'
   Layer 'better-defaults'
-  Layer 'checkers/syntax-checking'
   Layer 'text-align'
 
   Layer 'tmux'
