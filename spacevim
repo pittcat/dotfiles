@@ -25,17 +25,17 @@ function! Layers()
   Layer 'git'
   Layer 'github'
 
-  Layer 'auto-completion'
+  " Layer 'auto-completion'
   Layer 'ycmd'
   Layer 'syntax-checking'
   Layer 'code-snippets'
 
   " Layer 'markdown'
-  " Layer 'html'
-  " Layer 'javascript'
+  Layer 'html'
+  Layer 'javascript'
   Layer 'python'
-  Layer 'c-c++'
-  Layer 'docker'
+  " Layer 'c-c++'
+  " Layer 'docker'
 endfunction
 
 " Put your private plugins here.
@@ -113,13 +113,24 @@ function! UserConfig()
     endfun
     map <special> <leader>dw :keepjumps call DelBlank()<cr>
     "修复Multiple_cursors和autocomplete的冲突
-    function! Multiple_cursors_before()
-      exe 'NeoCompleteLock'
-      echo 'Disabled autocomplete'
-    endfunction
+    " function! Multiple_cursors_before()
+      " exe 'NeoCompleteLock'
+      " echo 'Disabled autocomplete'
+    " endfunction
 
-    function! Multiple_cursors_after()
-      exe 'NeoCompleteUnlock'
-      " echo 'Enabled autocomplete'
-    endfunction
+    " function! Multiple_cursors_after()
+      " exe 'NeoCompleteUnlock'
+      " " echo 'Enabled autocomplete'
+    " endfunction
+  
+  inoremap ss <C-x><C-o>
+  inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+  " inoremap <expr> <CR> pumvisible() ? "<C-y>" : "\<C-g>u\<CR>"
+  let g:ycm_key_list_select_completion=['<Down>']
+  let g:ycm_key_list_previous_completion=['<Up>']
+  " inoremap  <alt> <C-y>
+  Plug 'ervandew/supertab'
+  let g:SuperTabDefaultCompletionType="context"
+  Plug 'isRuslan/vim-es6'
+
 endfunction
