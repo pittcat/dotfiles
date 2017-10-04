@@ -2,16 +2,15 @@
 let g:spacevim_automatic_update=1
 let g:spacevim_enable_debug = 1
 let g:spacevim_realtime_leader_guide = 1
+let g:spacevim_colorscheme='one'
+let g:spacevim_colorscheme_bg='dark'
+let g:spacevim_plugin_manager='dein'
 let g:spacevim_plugin_bundle_dir = '~/.vim/plugins/'
-" let g:spacevim_enable_ycm=1
-" let g:spacevim_snippet_engine = 'ultisnips'
-" let g:spacevim_autocomplete_method='youcompleteme'
-" let g:ycm_server_python_interpreter= '/usr/bin/python3'
 let s:JSON = SpaceVim#api#import('data#json')
 let g:spacevim_custom_plugins = [
             \ ['tweekmonster/startuptime.vim', {'merged' : 0}],
-            \ ['rakr/vim-one', {'merged' : 0}],
             \ ['AndrewRadev/undoquit.vim', {'merged' : 0}],
+            \ ['vim-scripts/vim-auto-save',{'merged' : 0}]
             \ ]
 
 call SpaceVim#layers#load('autocompete')
@@ -20,8 +19,12 @@ call SpaceVim#layers#load('lang#javascript',{'autofix':1,})
 call SpaceVim#layers#load('lang#xml')
 let g:python3_host_prog = '/usr/bin/python'
 call SpaceVim#layers#load('lang#python')
-call SpaceVim#layers#load('lang#tmux')
 call SpaceVim#layers#load('lang#vim')
+call SpaceVim#layers#load('lang#tmux')
+call SpaceVim#layers#load('tools#screensaver')
+call SpaceVim#layers#load('indentmove')
+call SpaceVim#layers#load('tmux')
+call SpaceVim#layers#load('tags')
 call SpaceVim#layers#load('shell',
         \ {
         \ 'default_position' : 'top',
@@ -29,7 +32,6 @@ call SpaceVim#layers#load('shell',
         \ }
         \ )
 call SpaceVim#layers#load('debug')
-" let g:spacevim_enable_neomake=0
 let g:spacevim_lint_on_the_fly = 1
 
 
@@ -50,8 +52,12 @@ endfunction
 
 "}
 
-
-
+"{
+let g:auto_save = 1
+let g:auto_save_no_updatetime = 5
+let g:auto_save_in_insert_mode = 0
+ 
+"}
 
 let g:spacevim_enable_vimfiler_welcome = 1
 let g:spacevim_enable_debug = 1
