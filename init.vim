@@ -7,11 +7,7 @@ let g:spacevim_colorscheme_bg='dark'
 let g:spacevim_plugin_manager='dein'
 let g:spacevim_plugin_bundle_dir = '~/.vim/plugins/'
 let s:JSON = SpaceVim#api#import('data#json')
-let g:spacevim_custom_plugins = [
-            \ ['tweekmonster/startuptime.vim', {'merged' : 0}],
-            \ ['AndrewRadev/undoquit.vim', {'merged' : 0}],
-            \ ['vim-scripts/vim-auto-save',{'merged' : 0}]
-            \ ]
+let s:JOB = SpaceVim#api#import('job')
 
 call SpaceVim#layers#load('autocompete')
 call SpaceVim#layers#load('incsearch')
@@ -22,7 +18,7 @@ call SpaceVim#layers#load('lang#python')
 call SpaceVim#layers#load('lang#vim')
 call SpaceVim#layers#load('lang#tmux')
 call SpaceVim#layers#load('tools#screensaver')
-call SpaceVim#layers#load('indentmove')
+" call SpaceVim#layers#load('indentmove')
 call SpaceVim#layers#load('tmux')
 call SpaceVim#layers#load('tags')
 call SpaceVim#layers#load('shell',
@@ -35,8 +31,12 @@ call SpaceVim#layers#load('debug')
 let g:spacevim_lint_on_the_fly = 1
 
 
-"vim-multiple-cursor{
-
+let g:spacevim_custom_plugins = [
+            \ ['tweekmonster/startuptime.vim', {'merged' : 0}],
+            \ ['AndrewRadev/undoquit.vim', {'merged' : 0}],
+            \ ['vim-scripts/vim-auto-save',{'merged' : 0}]
+            \ ]
+" vim-multiple-cursor{
 let g:multi_cursor_next_key='<C-j>'
 let g:multi_cursor_prev_key='<C-k>'
 let g:multi_cursor_skip_key='<C-x>'
@@ -44,20 +44,26 @@ let g:multi_cursor_quit_key='<Esc>'
 function! Multiple_cursors_before()
     exe 'NeoCompleteLock'
     " echo 'Disabled autocomplete'
- endfunction 
+ endfunction
 function! Multiple_cursors_after()
     exe 'NeoCompleteUnlock'
     " echo 'Enabled autocomplete'
 endfunction
 
 "}
-
+"
 "{
 let g:auto_save = 1
 let g:auto_save_no_updatetime = 5
 let g:auto_save_in_insert_mode = 0
  
 "}
+"{key-mapping
+
+inoremap ,, <C-x><C-o>
+
+"}
+
 
 let g:spacevim_enable_vimfiler_welcome = 1
 let g:spacevim_enable_debug = 1
