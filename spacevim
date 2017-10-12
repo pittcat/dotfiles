@@ -135,22 +135,24 @@ function! UserConfig()
     endfun
     map <special> <leader>dw :keepjumps call DelBlank()<cr>
   " }
-    "修复Multiple_cursors和autocomplete的冲突
+    "修复Multiple_cursors和neocomplete的冲突
     "{
-    function! Multiple_cursors_before()
-      exe 'NeoCompleteLock'
-      " echo 'Disabled autocomplete'
-    endfunction
+    " function! Multiple_cursors_before()
+      " exe 'NeoCompleteLock'
+      " " echo 'Disabled autocomplete'
+    " endfunction
 
-    function! Multiple_cursors_after()
-      exe 'NeoCompleteUnlock'
-      " echo 'Enabled autocomplete'
-    endfunction
+    " function! Multiple_cursors_after()
+      " exe 'NeoCompleteUnlock'
+      " " echo 'Enabled autocomplete'
+    " endfunction
   " }
   " {
-    " Plug 'vim-scripts/vim-auto-save'
-    " let g:auto_save = 1
-    " let g:auto_save_no_updatetime = 5
-    " let g:auto_save_in_insert_mode = 1
+    Plug '907th/vim-auto-save'
+    let g:auto_save = 1
+    let g:auto_save_events=["InsertLeave","TextChanged","CursorHold","CursorHoldI"]
+    let g:auto_save_write_all_buffers=1
+    let g:autosave_timer=2000
+    noremap <leader>fS :wa<CR> "auto_save_write_all_buffers
   "}
 endfunction
