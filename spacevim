@@ -29,8 +29,8 @@ function! Layers()
   Layer 'syntax-checking'
   Layer 'code-snippets'
 
-  " Layer 'html'
-  " Layer 'javascript'
+  Layer 'html'
+  Layer 'javascript'
   Layer 'python'
   " Layer 'c-c++'
   " Layer 'docker'
@@ -55,14 +55,34 @@ function! UserInit()
     let g:ycm_server_python_interpreter= '/usr/bin/python3'
   " }
   " web{
-  "标签补全等等
-  Plug  'othree/xml.vim'
-  "js 补全
-  Plug  'ternjs/tern_for_vim'
-  let g:tern_show_argument_hints='on_hold'
-  let g:tern_map_keys=1
+  " html
   "emmet.vim
   let g:user_emmet_leader_key='<C-X>'
+  "标签补全等等
+  Plug  'alvan/vim-closetag'
+  "标签高亮
+  Plug  'gregsexton/matchtag'
+  "javascript 
+  "js 补全
+  let g:completor_node_binary='/usr/bin/node'
+  let g:completor_javascript_omni_trigger = "\\w+$|[\\w\\)\\]\\}\'\"]+\\.\\w*$"
+  " Plug  'ternjs/tern_for_vim'
+  " let g:tern_show_argument_hints='on_hold'
+  " let g:tern_map_keys=1
+  Plug  'othree/yajs.vim'
+  Plug  'othree/javascript-libraries-syntax.vim'
+  let g:used_javascript_libs = 'underscore,backbone'
+  autocmd BufReadPre *.js let b:javascript_lib_use_jquery = 1
+  autocmd BufReadPre *.js let b:javascript_lib_use_underscore = 1
+  autocmd BufReadPre *.js let b:javascript_lib_use_backbone = 1
+  autocmd BufReadPre *.js let b:javascript_lib_use_prelude = 0
+  autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 0
+  "snippets
+  "html
+  Plug  'jvanja/vim-bootstrap4-snippets'
+  " javascript
+  Plug  'jamescarr/snipmate-nodejs'
+  Plug  'isRuslan/vim-es6'
   " }
 endfunction
 " Put your costom configurations here, e.g., change the colorscheme.
@@ -128,8 +148,8 @@ function! UserConfig()
     endfunction
   " }
   " {
-    Plug 'vim-scripts/vim-auto-save'
-    let g:auto_save = 1
+    " Plug 'vim-scripts/vim-auto-save'
+    " let g:auto_save = 1
     " let g:auto_save_no_updatetime = 5
     " let g:auto_save_in_insert_mode = 1
   "}
