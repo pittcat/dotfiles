@@ -84,21 +84,22 @@ function! UserInit()
   Plug  'jamescarr/snipmate-nodejs'
   Plug  'isRuslan/vim-es6'
   " }
-endfunction
-" Put your costom configurations here, e.g., change the colorscheme.
-function! UserConfig()
-
-  " If you enable airline layer and have installed the powerline fonts, set it here.
-  " let g:airline_powerline_fonts=1
-  " color desert
-  "vim-format 设置
+  
+  
+  " tools-improve
+  "sjl/gundo.vim
   "{
-  noremap <F3> :Autoformat<CR>
-  let g:autoformat_autoindent = 0
-  let g:autoformat_retab = 0
-  let g:autoformat_remove_trailing_spaces = 0
-  autocmd FileType html,css,js autocmd BufWritePre <buffer> :%s/\s\+$//e
-  let g:formatter_yapf_style = 'pep8'
+  Plug 'sjl/gundo.vim',{'on':['GundoToggle']}
+  noremap <F2> :GundoToggle<cr>
+  "}
+  " {autosave
+    Plug '907th/vim-auto-save'
+    let g:auto_save = 1
+    let g:auto_save_events=["InsertLeave","TextChanged","CursorHold","CursorHoldI"]
+    let g:auto_save_write_all_buffers=1
+    let g:autosave_timer=3000
+  " auto_save_write_all_buffers
+    noremap <leader>fS :wa<CR> 
   "}
   "nerdtree-tabs
   "{
@@ -122,6 +123,22 @@ function! UserConfig()
   " gitfugitve的插件
   " {
   Plug 'mhinz/vim-signify'
+  "}
+endfunction
+" Put your costom configurations here, e.g., change the colorscheme.
+function! UserConfig()
+
+  " If you enable airline layer and have installed the powerline fonts, set it here.
+  " let g:airline_powerline_fonts=1
+  " color desert
+  "vim-format 设置
+  "{
+  noremap <F3> :Autoformat<CR>
+  let g:autoformat_autoindent = 0
+  let g:autoformat_retab = 0
+  let g:autoformat_remove_trailing_spaces = 0
+  autocmd FileType html,css,js autocmd BufWritePre <buffer> :%s/\s\+$//e
+  let g:formatter_yapf_style = 'pep8'
   "}
   "消除空白
   "{
@@ -147,12 +164,14 @@ function! UserConfig()
       " " echo 'Enabled autocomplete'
     " endfunction
   " }
-  " {
-    Plug '907th/vim-auto-save'
-    let g:auto_save = 1
-    let g:auto_save_events=["InsertLeave","TextChanged","CursorHold","CursorHoldI"]
-    let g:auto_save_write_all_buffers=1
-    let g:autosave_timer=2000
-    noremap <leader>fS :wa<CR> "auto_save_write_all_buffers
+  "danro/rename.vim
+  "{
+    noremap <leader>rn :Rename 
   "}
+  "quickfix
+  "{
+    noremap <silent> <localleader>q :cclose<cr>
+    noremap <silent> <localleader>o :copen<cr>
+  "}
+"
 endfunction
