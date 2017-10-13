@@ -9,6 +9,7 @@ function! Layers()
   " Layer 'emoji'
   Layer 'goyo'
   Layer 'airline'
+  " Layer 'lightline'
 
   Layer 'fzf'
   Layer 'unite'
@@ -125,6 +126,16 @@ function! UserInit()
   " {
   Plug 'mhinz/vim-signify'
   "}
+  "{signature 标记
+  Plug 'kshenoy/vim-signature'
+  "}
+  
+
+  "theme
+  "{
+  Plug 'rakr/vim-one'
+  Plug 'NLKNguyen/papercolor-theme'
+  "}
 endfunction
 " Put your costom configurations here, e.g., change the colorscheme.
 function! UserConfig()
@@ -132,6 +143,19 @@ function! UserConfig()
   " If you enable airline layer and have installed the powerline fonts, set it here.
   " let g:airline_powerline_fonts=1
   " color desert
+  syntax on
+  "{one
+  " colorscheme one
+  " set background=light
+  " let g:one_allow_italics = 1
+  " let g:airline_theme='one'
+  "}
+  "{PaperColor
+  " set t_Co=256   " This is may or may not needed.
+  " set background=light
+  " set background=dark
+  " colorscheme PaperColor
+  "}
   "vim-format 设置
   "{
   noremap <F3> :Autoformat<CR>
@@ -173,6 +197,13 @@ function! UserConfig()
   "{
     noremap <silent> <localleader>q :cclose<cr>
     noremap <silent> <localleader>o :copen<cr>
+  "}
+  "fold
+  "{
+  set foldmethod=manual
+  "}
+  "{gv.vim
+  noremap <silent> <leader>cg :GV<cr>
   "}
 "
 endfunction
