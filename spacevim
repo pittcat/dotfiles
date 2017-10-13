@@ -90,6 +90,7 @@ function! UserInit()
   "sjl/gundo.vim
   "{
   Plug 'sjl/gundo.vim',{'on':['GundoToggle']}
+  let g:gundo_width=40
   noremap <F2> :GundoToggle<cr>
   "}
   " {autosave
