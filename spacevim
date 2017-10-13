@@ -6,7 +6,7 @@
 function! Layers()
 
   " Default layers, recommended!
-  " Layer 'emoji'
+  Layer 'chinese'
   Layer 'goyo'
   Layer 'airline'
   " Layer 'lightline'
@@ -33,7 +33,7 @@ function! Layers()
   Layer 'html'
   Layer 'javascript'
   Layer 'python'
-  " Layer 'c-c++'
+  Layer 'c-c++'
   " Layer 'docker'
 endfunction
 
@@ -44,6 +44,9 @@ function! UserInit()
   " if you want to change it, uncomment and set it here.
   " let g:spacevim_leader = "<\Space>"
   " let g:spacevim_localleader = ','
+  " {c++
+  " let g:completor_clang_binary='/usr/bin/clang-5.0'
+  " }
   " python
   " {
   " pymode 设置
@@ -129,7 +132,6 @@ function! UserInit()
   "{signature 标记
   Plug 'kshenoy/vim-signature'
   "}
-  
 
   "theme
   "{
@@ -197,6 +199,14 @@ function! UserConfig()
   "{
     noremap <silent> <localleader>q :cclose<cr>
     noremap <silent> <localleader>o :copen<cr>
+  "}
+  "{Limelight and goyo
+  autocmd User GoyoEnter Limelight
+  autocmd User GoyoLeave Limelight!
+  let g:limelight_conceal_ctermfg='gray'
+  let g:limelight_conceal_ctermfg=240
+  let g:limelight_default_coefficient=0.7
+  "
   "}
   "fold
   "{
