@@ -104,7 +104,7 @@ function! UserInit()
     let g:auto_save_write_all_buffers=1
     let g:autosave_timer=3000
   " auto_save_write_all_buffers
-    noremap <leader>fS :wa<CR> 
+    " noremap <leader>fa :wa!<CR> 
   "}
   "nerdtree-tabs
   "{
@@ -135,12 +135,16 @@ function! UserInit()
   "{christoomey/vim-system-copy copy-paste-system cv cP
   Plug  'christoomey/vim-system-copy'
   "}
+  "{tpope/vim-eunuch'
+  Plug 'tpope/vim-eunuch'
+  "}
   
   "theme
   "{
   Plug 'rakr/vim-one'
   Plug 'NLKNguyen/papercolor-theme'
   "}
+ 
 endfunction
 " Put your costom configurations here, e.g., change the colorscheme.
 function! UserConfig()
@@ -156,10 +160,10 @@ function! UserConfig()
   " let g:airline_theme='one'
   "}
   "{PaperColor
-  " set t_Co=256   " This is may or may not needed.
+  set t_Co=256   " This is may or may not needed.
   " set background=light
-  " set background=dark
-  " colorscheme PaperColor
+  set background=dark
+  colorscheme PaperColor
   "}
   "vim-format 设置
   "{
@@ -194,9 +198,10 @@ function! UserConfig()
       " " echo 'Enabled autocomplete'
     " endfunction
   " }
-  "danro/rename.vim
-  "{
-    noremap <leader>rn :Rename 
+  "tpope/vim-eunuch
+  "{rename and mkdir 
+    noremap <leader>rn :Move 
+    noremap <leader>cd :Mkdir 
   "}
   "quickfix
   "{
@@ -223,9 +228,9 @@ function! UserConfig()
   function! DeleteFileAndCloseBuffer()
     call delete(expand('%')) | bdelete!
   endfun
+  noremap <silent> <leader>df :call DeleteFileAndCloseBuffer()<cr>
   noremap <silent> <leader>bK :bdelete!<cr>
   noremap <silent> <leader>da ggdG
-  noremap <silent> <leader>df :call DeleteFileAndCloseBuffer()<cr>
   "}
 "
 endfunction
