@@ -33,7 +33,7 @@ function! Layers()
   Layer 'html'
   Layer 'javascript'
   Layer 'python'
-  Layer 'c-c++'
+  " Layer 'c-c++'
   " Layer 'docker'
 endfunction
 
@@ -132,7 +132,10 @@ function! UserInit()
   "{signature 标记
   Plug 'kshenoy/vim-signature'
   "}
-
+  "{christoomey/vim-system-copy copy-paste-system cv cP
+  Plug  'christoomey/vim-system-copy'
+  "}
+  
   "theme
   "{
   Plug 'rakr/vim-one'
@@ -214,6 +217,15 @@ function! UserConfig()
   "}
   "{gv.vim
   noremap <silent> <leader>cg :GV<cr>
+  "}
+  "buffer and file 
+  "{
+  function! DeleteFileAndCloseBuffer()
+    call delete(expand('%')) | bdelete!
+  endfun
+  noremap <silent> <leader>bK :bdelete!<cr>
+  noremap <silent> <leader>da ggdG
+  noremap <silent> <leader>df :call DeleteFileAndCloseBuffer()<cr>
   "}
 "
 endfunction
