@@ -55,7 +55,7 @@ function! UserInit()
     let g:pymode_doc_bind = 'K'
     let g:c_no_curly_error=0
     "auto-complete
-    let g:completor_python_binary = '/usr/bin/python'
+    let g:completor_python_binary = '/usr/bin/python3'
     let g:ycm_server_python_interpreter= '/usr/bin/python3'
   " }
   " web{
