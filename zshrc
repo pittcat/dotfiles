@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/cat/.oh-my-zsh
+export ZSH=/home/pittcat/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -84,7 +84,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
-# export PATH="/home/cat/.pyenv/bin:$PATH"
+# export PATH="/home/pittcat/.pyenv/bin:$PATH"
 # export PYENV_ROOT=~/.pyenv
 # eval "$(pyenv init -)"
 # eval "$(pyenv virtualenv-init -)"
@@ -94,7 +94,7 @@ export PATH=~/.npm-global/bin:$PATH
 export NPM_CONFIG_PREFIX=~/.npm-global
 
 eval "$(thefuck --alias fk)"
-alias jz="j /home/cat/Desktop"
+alias jz="j /home/pittcat/Desktop"
 alias so="sudo openvpn --config /bin/42.ovpn"
 alias pmms="python3 manage.py makemigrations"
 alias pmm="python3 manage.py migrate"
@@ -106,4 +106,4 @@ alias home="cd ~"
 alias 7zmax="7za -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on a"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/cat/.fzf/bin:/home/cat/.vimpkg/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/pittcat/.fzf/bin:/home/pittcat/.vimpkg/bin

@@ -33,7 +33,7 @@ function! Layers()
   Layer 'html'
   Layer 'javascript'
   Layer 'python'
-  " Layer 'c-c++'
+  Layer 'c-c++'
   " Layer 'docker'
 endfunction
 
@@ -45,7 +45,7 @@ function! UserInit()
   " let g:spacevim_leader = "<\Space>"
   " let g:spacevim_localleader = ','
   " {c++
-  " let g:completor_clang_binary='/usr/bin/clang-5.0'
+  let g:completor_clang_binary='/usr/bin/clang-5.0'
   " }
   " python
   " {
@@ -144,6 +144,8 @@ function! UserInit()
   Plug 'rakr/vim-one'
   Plug 'NLKNguyen/papercolor-theme'
   "}
+ " icons 
+ Plug 'ryanoasis/vim-devicons'
  
 endfunction
 " Put your costom configurations here, e.g., change the colorscheme.
@@ -152,7 +154,7 @@ function! UserConfig()
   " If you enable airline layer and have installed the powerline fonts, set it here.
   " let g:airline_powerline_fonts=1
   " color desert
-  syntax on
+  " syntax on
   "{one
   " colorscheme one
   " set background=light
@@ -160,10 +162,10 @@ function! UserConfig()
   " let g:airline_theme='one'
   "}
   "{PaperColor
-  set t_Co=256   " This is may or may not needed.
+  " set t_Co=256   " This is may or may not needed.
   " set background=light
-  set background=dark
-  colorscheme PaperColor
+  " set background=dark
+  " colorscheme PaperColor
   "}
   "vim-format 设置
   "{
