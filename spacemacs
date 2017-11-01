@@ -79,7 +79,7 @@ This function should only modify configuration layer settings."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(atom-one-dark-theme yasnippet-snippets all-the-icons)
+   dotspacemacs-additional-packages '(yasnippet-snippets all-the-icons)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -370,7 +370,6 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
           ("org-cn"   . "http://elpa.emacs-china.org/org/")
           ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")
           ("melpa-stable" . "https://stable.melpa.org/packages/")
-          ("melpa" . "http://melpa.milkbox.net/packages/")
           ))
 
   )
