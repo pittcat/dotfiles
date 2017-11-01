@@ -17,7 +17,7 @@ function! Layers()
   Layer 'text-align'
 
   Layer 'tmux'
-  Layer 'file-manager'
+  Layer 'file-manager',{'exclude':'danro/rename.vim'}
   Layer 'ctrlp'
   Layer 'better-motion'
   Layer 'programming'
@@ -88,8 +88,7 @@ function! UserInit()
   Plug  'jamescarr/snipmate-nodejs'
   Plug  'isRuslan/vim-es6'
   " }
-  
-  
+
   " tools-improve
   "sjl/gundo.vim
   "{
@@ -144,8 +143,10 @@ function! UserInit()
   Plug 'rakr/vim-one'
   Plug 'NLKNguyen/papercolor-theme'
   "}
- " icons 
- Plug 'ryanoasis/vim-devicons'
+
+  "icons 
+  Plug 'ryanoasis/vim-devicons'
+
  
 endfunction
 " Put your costom configurations here, e.g., change the colorscheme.
@@ -153,8 +154,8 @@ function! UserConfig()
 
   " If you enable airline layer and have installed the powerline fonts, set it here.
   " let g:airline_powerline_fonts=1
-  " color desert
-  " syntax on
+  color desert
+  syntax on
   "{one
   " colorscheme one
   " set background=light
@@ -162,10 +163,10 @@ function! UserConfig()
   " let g:airline_theme='one'
   "}
   "{PaperColor
-  " set t_Co=256   " This is may or may not needed.
+  set t_Co=256   " This is may or may not needed.
   " set background=light
-  " set background=dark
-  " colorscheme PaperColor
+  set background=dark
+  colorscheme PaperColor
   "}
   "vim-format 设置
   "{

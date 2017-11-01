@@ -32,7 +32,8 @@ def Setup():
 def Sysnc():
     local_path=os.getenv('HOME')+'/.emacs.d/private/snippets/'
     dotfiles_path=os.getcwd()+'/snippets/'
-    subprocess.call(['rsync','-a',local_path,dotfiles_path])
+    cmd='rsync -avrz '+local_path+' '+dotfiles_path
+    subprocess.call(cmd,shell=True)
     file_list=[['/.spacevim','./spacevim'],
               ['/.zshrc','./zshrc'],
               ['/.tmux.conf','./tmux.conf'],
