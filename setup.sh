@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 sudo package manager vim vim-gtk vim-gnome zsh tmux git curl python3-pip python-pip silversearcher-ag emacs rsync
+# set up top font
+curl -L https://github.com/hbin/top-programming-fonts/raw/master/install.sh | bash
 
 #配置vim vim8 并且须支持python3
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/liuchengxu/space-vim/master/install.sh)"
@@ -33,9 +35,6 @@ cd autojump
 cd ..
 sudo rm autojump -r
 cp ./zshrc ~/.zshrc
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
-
 
 # config tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -48,4 +47,8 @@ cd ..
 sudo rm tmux-mem-cpu-load -r
 sudo package manager xsel
 cp tmux.conf ~/.tmux.conf
+
+# manual operation
 # prefix + I install
+# git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
