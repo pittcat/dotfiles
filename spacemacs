@@ -395,6 +395,7 @@ before packages are loaded."
   (define-key evil-visual-state-map (kbd "mk") 'mc/mark-previous-like-this)
   (define-key evil-visual-state-map (kbd "mcj") 'mc/unmark-next-like-this)
   (define-key evil-visual-state-map (kbd "mckk") 'mc/unmark-previous-like-this)
+  (define-key evil-visual-state-map (kbd "ma") 'mc/mark-all-like-this)
   (define-key evil-insert-state-map (kbd "C-f") 'company-files)
   ;; auto-save
   (defun leave-insert-save ()
