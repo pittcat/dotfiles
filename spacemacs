@@ -44,6 +44,7 @@ This function should only modify configuration layer settings."
      cscope
      ranger
      prodigy
+     themes-megapack
      (auto-completion :variables auto-completion-enable-sort-by-usage t
                       auto-completion-enable-snippets-in-popup t
                       )
@@ -66,7 +67,7 @@ This function should only modify configuration layer settings."
      org
      shell-scripts
      emacs-lisp
-     (c-c++ :variables c-c++-enable-clang-support t)
+     ;; (c-c++ :variables c-c++-enable-clang-support t)
      (python :variables
              python-test-runner '(nose pytest))
      django
@@ -79,7 +80,7 @@ This function should only modify configuration layer settings."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(yasnippet-snippets all-the-icons)
+   dotspacemacs-additional-packages '(yasnippet-snippets)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -151,7 +152,9 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(
+                         gruvbox-dark-soft
+                         spacemacs-dark
                          spacemacs-light)
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -256,7 +259,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-loading-progress-bar t
    ;; If non-nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup nil
+   dotspacemacs-fullscreen-at-startup t
    ;; If non-nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
    dotspacemacs-fullscreen-use-non-native nil
@@ -371,7 +374,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
           ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")
           ("melpa-stable" . "https://stable.melpa.org/packages/")
           ))
-
+  
   )
 
 (defun dotspacemacs/user-config ()
@@ -382,21 +385,35 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
   ;; python
   (setq python-shell-interpreter "/usr/bin/python3")
-  ;; theme
-  ;; (load-theme 'atom-one-dark t)
-  
-  ;; neotree-icon
-  (setq neo-theme 'icons)
+
+  ;; Map <leader>d to evil-scroll-down
+  (spacemacs/set-leader-keys "d" 'evil-scroll-down)
+  ;; Map <leader>u to evil-scroll-down
+  (spacemacs/set-leader-keys "u" 'evil-scroll-up)
 
   ;; shortcut 
   (setq-default evil-escape-delay 0.2)
-  (setq-default evil-escape-key-sequence "jj")
+  (define-key evil-normal-state-map (kbd "H") 'evil-first-non-blank)
+  ;; Mapping keybinding to another keybinding
+  ;; Map L to go to the end of line in normal mode
+  (define-key evil-normal-state-map (kbd "L") 'evil-end-of-line)
+  ;; undo-tree
+  (define-key evil-normal-state-map (kbd "U") 'undo-tree-redo)
+
+  (define-key evil-insert-state-map (kbd "C-a") 'evil-first-non-blank)
+  (define-key evil-insert-state-map (kbd "C-e") 'evil-end-of-line)
+
+  ;; map <return> to :
+  (define-key evil-normal-state-map (kbd "<return>") 'evil-ex)
+  
   (define-key evil-visual-state-map (kbd "mj") 'mc/mark-next-like-this)
   (define-key evil-visual-state-map (kbd "mk") 'mc/mark-previous-like-this)
   (define-key evil-visual-state-map (kbd "mcj") 'mc/unmark-next-like-this)
   (define-key evil-visual-state-map (kbd "mckk") 'mc/unmark-previous-like-this)
   (define-key evil-visual-state-map (kbd "ma") 'mc/mark-all-like-this)
   (define-key evil-insert-state-map (kbd "C-f") 'company-files)
+  (define-key evil-insert-state-map (kbd "C-y") 'yank)
+
   ;; auto-save
   (defun leave-insert-save ()
     (if (buffer-file-name)
@@ -408,9 +425,16 @@ before packages are loaded."
     )
   (add-hook 'evil-insert-state-exit-hook 'leave-insert-save)
 
-  ;; snippet
-  (lambda ()
-    (add-to-list 'yas-snippet-dirs "~/.snippets"))
+  ;; org-mode
+  ;; delele comfirm
+  (setq org-confirm-babel-evaluate nil)
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((python . t)
+     (shell . t)
+     (emacs-lisp . t)
+     (calc . t)
+     ))
 
 
   )
@@ -429,7 +453,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (org-brain evil-org yasnippet-snippets yapfify xterm-color ws-butler winum which-key wgrep web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package unfill toc-org tagedit spaceline smex smeargle slim-mode shell-pop scss-mode sass-mode restart-emacs request ranger rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode prodigy popwin pony-mode pip-requirements persp-mode pcre2el paradox orgit org-projectile org-present org-pomodoro org-download org-bullets open-junk-file neotree mwim multi-term move-text magit-gitflow macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint less-css-mode json-mode js2-refactor js-doc ivy-hydra insert-shebang info+ indent-guide ibuffer-projectile hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-make google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flyspell-correct-ivy flx-ido fish-mode fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav dumb-jump define-word cython-mode counsel-projectile company-web company-tern company-statistics company-shell company-anaconda column-enforce-mode coffee-mode clean-aindent-mode auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile atom-one-dark-theme aggressive-indent adaptive-wrap ace-window ace-link ac-ispell))))
+    (key-chord zenburn-theme zen-and-art-theme underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme seti-theme reverse-theme railscasts-theme purple-haze-theme professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme madhat2r-theme lush-theme light-soap-theme jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme gandalf-theme flatui-theme flatland-theme farmhouse-theme espresso-theme dracula-theme django-theme darktooth-theme autothemer darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized clues-theme cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme badwolf-theme apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme gruvbox-dark-soft-theme yasnippet-snippets yapfify xterm-color ws-butler winum which-key wgrep web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package unfill toc-org tagedit spaceline smex smeargle slim-mode shell-pop scss-mode sass-mode restart-emacs request ranger rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode prodigy popwin pony-mode pip-requirements persp-mode pcre2el paradox orgit org-projectile org-present org-pomodoro org-download org-bullets open-junk-file neotree mwim multi-term move-text magit-gitflow macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint less-css-mode json-mode js2-refactor js-doc ivy-hydra insert-shebang info+ indent-guide ibuffer-projectile hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-make google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flyspell-correct-ivy flx-ido fish-mode fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav dumb-jump define-word cython-mode counsel-projectile company-web company-tern company-statistics company-shell company-anaconda column-enforce-mode coffee-mode clean-aindent-mode auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile atom-one-dark-theme aggressive-indent adaptive-wrap ace-window ace-link ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -444,7 +468,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (yasnippet-snippets yapfify xterm-color ws-butler winum which-key wgrep web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package unfill toc-org tagedit spaceline smex smeargle slim-mode shell-pop scss-mode sass-mode restart-emacs request ranger rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode prodigy popwin pony-mode pip-requirements persp-mode pcre2el paradox orgit org-projectile org-present org-pomodoro org-download org-bullets open-junk-file neotree mwim multi-term move-text magit-gitflow macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint less-css-mode json-mode js2-refactor js-doc ivy-hydra insert-shebang info+ indent-guide ibuffer-projectile hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-make google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flyspell-correct-ivy flx-ido fish-mode fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav dumb-jump define-word cython-mode counsel-projectile company-web company-tern company-statistics company-shell company-anaconda column-enforce-mode coffee-mode clean-aindent-mode auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile atom-one-dark-theme aggressive-indent adaptive-wrap ace-window ace-link ac-ispell))))
+    (zenburn-theme zen-and-art-theme underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme seti-theme reverse-theme railscasts-theme purple-haze-theme professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme madhat2r-theme lush-theme light-soap-theme jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme gandalf-theme flatui-theme flatland-theme farmhouse-theme espresso-theme dracula-theme django-theme darktooth-theme autothemer darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized clues-theme cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme badwolf-theme apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme gruvbox-dark-soft-theme yasnippet-snippets yapfify xterm-color ws-butler winum which-key wgrep web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package unfill toc-org tagedit spaceline smex smeargle slim-mode shell-pop scss-mode sass-mode restart-emacs request ranger rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode prodigy popwin pony-mode pip-requirements persp-mode pcre2el paradox orgit org-projectile org-present org-pomodoro org-download org-bullets open-junk-file neotree mwim multi-term move-text magit-gitflow macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint less-css-mode json-mode js2-refactor js-doc ivy-hydra insert-shebang info+ indent-guide ibuffer-projectile hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-make google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flyspell-correct-ivy flx-ido fish-mode fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav dumb-jump define-word cython-mode counsel-projectile company-web company-tern company-statistics company-shell company-anaconda column-enforce-mode coffee-mode clean-aindent-mode auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile atom-one-dark-theme aggressive-indent adaptive-wrap ace-window ace-link ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

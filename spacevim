@@ -30,10 +30,10 @@ function! Layers()
   Layer 'syntax-checking'
   Layer 'code-snippets'
 
-  Layer 'html'
-  Layer 'javascript'
+  " Layer 'html'
+  " Layer 'javascript'
   Layer 'python'
-  Layer 'c-c++'
+  " Layer 'c-c++'
   " Layer 'docker'
 endfunction
 
@@ -58,35 +58,35 @@ function! UserInit()
     let g:completor_python_binary = '/usr/bin/python3'
     let g:ycm_server_python_interpreter= '/usr/bin/python3'
   " }
+  "
+
   " web{
   " html
   "emmet.vim
-  let g:user_emmet_leader_key='<C-X>'
+  " let g:user_emmet_leader_key='<C-X>'
   "标签补全等等
-  Plug  'alvan/vim-closetag'
+  " Plug  'alvan/vim-closetag'
   "标签高亮
-  Plug  'gregsexton/matchtag'
+  " Plug  'gregsexton/matchtag'
   "javascript 
   "js 补全
-  let g:completor_node_binary='/usr/bin/node'
-  let g:completor_javascript_omni_trigger = "\\w+$|[\\w\\)\\]\\}\'\"]+\\.\\w*$"
-  " Plug  'ternjs/tern_for_vim'
-  " let g:tern_show_argument_hints='on_hold'
-  " let g:tern_map_keys=1
-  Plug  'othree/yajs.vim'
-  Plug  'othree/javascript-libraries-syntax.vim'
-  let g:used_javascript_libs = 'underscore,backbone'
-  autocmd BufReadPre *.js let b:javascript_lib_use_jquery = 1
-  autocmd BufReadPre *.js let b:javascript_lib_use_underscore = 1
-  autocmd BufReadPre *.js let b:javascript_lib_use_backbone = 1
-  autocmd BufReadPre *.js let b:javascript_lib_use_prelude = 0
-  autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 0
+  " let g:completor_node_binary='/usr/bin/node'
+  " let g:completor_javascript_omni_trigger = "\\w+$|[\\w\\)\\]\\}\'\"]+\\.\\w*$"
+  " autocmd FileType javascript setlocal omnifunc=tern#Complete
+  " Plug  'othree/yajs.vim'
+  " Plug  'othree/javascript-libraries-syntax.vim'
+  " let g:used_javascript_libs = 'underscore,backbone'
+  " autocmd BufReadPre *.js let b:javascript_lib_use_jquery = 1
+  " autocmd BufReadPre *.js let b:javascript_lib_use_underscore = 1
+  " autocmd BufReadPre *.js let b:javascript_lib_use_backbone = 1
+  " autocmd BufReadPre *.js let b:javascript_lib_use_prelude = 0
+  " autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 0
   "snippets
   "html
-  Plug  'jvanja/vim-bootstrap4-snippets'
+  " Plug  'jvanja/vim-bootstrap4-snippets'
   " javascript
-  Plug  'jamescarr/snipmate-nodejs'
-  Plug  'isRuslan/vim-es6'
+  " Plug  'jamescarr/snipmate-nodejs'
+  " Plug  'isRuslan/vim-es6'
   " }
 
   " tools-improve
@@ -99,9 +99,9 @@ function! UserInit()
   " {autosave
     Plug '907th/vim-auto-save'
     let g:auto_save = 1
-    let g:auto_save_events=["InsertLeave","TextChanged","CursorHold","CursorHoldI"]
+    let g:auto_save_events=["InsertLeave","TextChanged"]
     let g:auto_save_write_all_buffers=1
-    let g:autosave_timer=3000
+    let g:autosave_timer=5000
   " auto_save_write_all_buffers
     " noremap <leader>fa :wa!<CR> 
   "}
@@ -137,16 +137,18 @@ function! UserInit()
   "{tpope/vim-eunuch'
   Plug 'tpope/vim-eunuch'
   "}
-  
+
   "theme
   "{
   Plug 'rakr/vim-one'
   Plug 'NLKNguyen/papercolor-theme'
   "}
-
-  "icons 
-  Plug 'ryanoasis/vim-devicons'
-
+ 
+  "auto-mkdir
+  " {
+  Plug  'scy/vim-mkdir-on-write'
+  " }
+   
  
 endfunction
 " Put your costom configurations here, e.g., change the colorscheme.
@@ -231,6 +233,7 @@ function! UserConfig()
   function! DeleteFileAndCloseBuffer()
     call delete(expand('%')) | bdelete!
   endfun
+  " noremap <silent> <leader>df :Delete<cr>
   noremap <silent> <leader>df :call DeleteFileAndCloseBuffer()<cr>
   noremap <silent> <leader>bK :bdelete!<cr>
   noremap <silent> <leader>da ggdG
