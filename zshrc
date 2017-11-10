@@ -105,6 +105,7 @@ alias tldr="tldr"
 alias home="cd ~"
 alias 7zmax="7za -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on a"
 alias emacsT="emacs -nw"
+alias xmap="xmodmap ~/.Xmodmap"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/pittcat/.fzf/bin:/home/pittcat/.vimpkg/bin
