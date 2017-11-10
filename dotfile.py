@@ -30,10 +30,12 @@ def Setup():
         os.remove('./temp_setup.sh')
 
 def Sysnc():
-    local_path=os.getenv('HOME')+'/.emacs.d/private/snippets/'
-    dotfiles_path=os.getcwd()+'/snippets/'
-    cmd='rsync -avrz '+local_path+' '+dotfiles_path
-    subprocess.call(cmd,shell=True)
+    snippets_list=['/.emacs.d/private/snippets/','/.vim/UltiSnips/']
+    for i in snippets_list:
+        local_path=os.getenv('HOME')+i
+        dotfiles_path=os.getcwd()+'/'+i.split('/')[-2]+'/'
+        cmd='rsync -avrz '+local_path+' '+dotfiles_path
+        subprocess.call(cmd,shell=True)
     file_list=[['/.spacevim','./spacevim'],
               ['/.zshrc','./zshrc'],
               ['/.tmux.conf','./tmux.conf'],

@@ -12,6 +12,7 @@ sudo sh -c 'echo "xmodmap ~/.Xmodmap" >> /etc/rc.local'
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/liuchengxu/space-vim/master/install.sh)"
 sudo package manager build-essential cmake
 sudo package manager python-dev python3-dev
+cp ./UltiSnips/ ~/.vim/
 # install YouCompleteMe
 # sudo git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/plugged/YouCompleteMe
 # cd ~/.vim/plugged/YouCompleteMe
