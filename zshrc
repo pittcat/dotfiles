@@ -6,7 +6,7 @@ export ZSH=/home/pittcat/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="zhann"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -102,7 +102,6 @@ alias pmr="python3 manage.py runserver"
 alias pmf="python3 manage.py flush"
 alias pmc="python3 manage.py createsuperuser"
 alias tldr="tldr"
-alias home="cd ~"
 alias 7zmax="7za -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on a"
 alias emacsT="emacs -nw"
 alias xmap="xmodmap ~/.Xmodmap"

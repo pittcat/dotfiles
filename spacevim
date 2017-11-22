@@ -18,7 +18,7 @@ function! Layers()
 
   Layer 'tmux'
   Layer 'file-manager',{'exclude':'danro/rename.vim'}
-  Layer 'ctrlp'
+  " Layer 'ctrlp'
   Layer 'better-motion'
   Layer 'programming'
   Layer 'editing'
@@ -30,8 +30,9 @@ function! Layers()
   Layer 'syntax-checking'
   Layer 'code-snippets'
 
-  Layer 'html'
-  Layer 'javascript'
+  " Layer 'html'
+  " Layer 'javascript'
+  " Layer 'vue'
   Layer 'python'
   " Layer 'c-c++'
 
@@ -59,34 +60,39 @@ function! UserInit()
     let g:ycm_server_python_interpreter= '/usr/bin/python3'
   " }
   "
+  "go
+  " {
+  let g:completor_gocode_binary='/home/pittcat/go/bin/gocode'
+  " }
+  "
+  " rust
+  " {
+  let g:completor_racer_binary='/home/pittcat/.cargo/bin/racer'
+  " }
 
   " web{
   " html
-  "emmet.vim
-  let g:user_emmet_leader_key='<C-X>'
-  "标签补全等等
-  Plug  'alvan/vim-closetag'
-  "标签高亮
-  Plug  'gregsexton/matchtag'
+  " let g:user_emmet_leader_key='<C-X>'   "emmet.vim
+  " Plug  'alvan/vim-closetag'    "标签补全等等
+  " Plug  'gregsexton/matchtag'   "标签高亮
   "javascript 
-  "js 补全
-  Plug  'ternjs/tern_for_vim',{'do':'npm i -g'}
- 
+  " Plug  'ternjs/tern_for_vim',{'do':'npm i -g'}   "js 补全
+  let completor_node_binary='/usr/bin/node'
   " {
-  Plug 'posva/vim-vue'
+  " Plug 'posva/vim-vue'
   
-  autocmd FileType vue syntax sync fromstart
-  autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+  " autocmd FileType vue syntax sync fromstart
+  " autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
   " }
-  Plug  'othree/javascript-libraries-syntax.vim'
-  Plug  'othree/yajs.vim'
-  Plug  'othree/es.next.syntax.vim'
-  let g:used_javascript_libs = 'underscore,backbone,jquery,vue,requirejs'
-  autocmd BufReadPre *.js let b:javascript_lib_use_jquery = 1
-  autocmd BufReadPre *.js let b:javascript_lib_use_underscore = 1
-  autocmd BufReadPre *.js let b:javascript_lib_use_backbone = 1
-  autocmd BufReadPre *.js let b:javascript_lib_use_vue = 1
-  autocmd BufReadPre *.js let b:javascript_lib_use_requirejs = 1
+  " Plug  'othree/javascript-libraries-syntax.vim'
+  " Plug  'othree/yajs.vim'
+  " Plug  'othree/es.next.syntax.vim'
+  " let g:used_javascript_libs = 'underscore,backbone,jquery,vue,requirejs'
+  " autocmd BufReadPre *.js let b:javascript_lib_use_jquery = 1
+  " autocmd BufReadPre *.js let b:javascript_lib_use_underscore = 1
+  " autocmd BufReadPre *.js let b:javascript_lib_use_backbone = 1
+  " autocmd BufReadPre *.js let b:javascript_lib_use_vue = 1
+  " autocmd BufReadPre *.js let b:javascript_lib_use_requirejs = 1
   "snippets
   "html
   " Plug  'jvanja/vim-bootstrap4-snippets'
@@ -102,6 +108,8 @@ function! UserInit()
   let g:gundo_width=40
   noremap <F2> :GundoToggle<cr>
   "}
+  " {
+  " }
   " {autosave
     Plug '907th/vim-auto-save'
     let g:auto_save = 1
@@ -131,7 +139,15 @@ function! UserInit()
   let NERDTreeShowBookmarks=1
   "}
   
-
+  "auto-mkdir
+  " {
+  Plug  'scy/vim-mkdir-on-write'
+  " }
+  
+  "{
+  Plug  'vim-scripts/YankRing.vim'
+  "}
+  "
   " gitfugitve的插件
   " {
   Plug 'mhinz/vim-signify'
@@ -145,17 +161,18 @@ function! UserInit()
   "{tpope/vim-eunuch'
   Plug 'tpope/vim-eunuch'
   "}
+  "{tpope/vim-repeat
+  Plug  'tpope/vim-repeat'
+  "}
 
   "theme
   "{
   Plug 'rakr/vim-one'
-  " Plug 'NLKNguyen/papercolor-theme'
+  Plug  'sickill/vim-monokai'
+  Plug  'altercation/vim-colors-solarized'
+  Plug 'NLKNguyen/papercolor-theme'
   "}
  
-  "auto-mkdir
-  " {
-  Plug  'scy/vim-mkdir-on-write'
-  " }
    
  
 endfunction
@@ -163,15 +180,26 @@ endfunction
 function! UserConfig()
 
   " If you enable airline layer and have installed the powerline fonts, set it here.
-  " let g:airline_powerline_fonts=1
-  " color desert
-  " syntax on
+  let g:airline_powerline_fonts=1
+  color desert
+  syntax on
   "{one
   " colorscheme one
   " set background=light
   " let g:one_allow_italics = 1
   " let g:airline_theme='one'
   "}
+  "{monokai
+  colorscheme monokai
+  "}
+  "
+  "
+  "{
+  " set background=light
+  " set background=dark
+  " colorscheme solarized
+  "}
+  "
   "{PaperColor
   " set t_Co=256   " This is may or may not needed.
   " set background=light
@@ -246,5 +274,20 @@ function! UserConfig()
   noremap <silent> <leader>bK :bdelete!<cr>
   noremap <silent> <leader>da ggdG
   "}
+  "{
+  inoremap <expr> \  pumvisible() ? "\<C-y>" : "\<CR>"
+  inoremap  <C-v> <esc>gUiwea
+  "}
+  "{fzf
+  nnoremap <Leader>f? :Files ~<CR>
+  nnoremap <Leader>ff :Files<CR>
+  "}
+  "
+  "{YankRing.vim
+  let g:yankring_history_dir='~/.vim/'
+  " noremap <silent> <Leader>sy :YRShow<CR>
+  "}
+  "
 "
 endfunction
+
