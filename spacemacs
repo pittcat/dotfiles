@@ -48,8 +48,8 @@ This function should only modify configuration layer settings."
      (auto-completion :variables auto-completion-enable-sort-by-usage t
                       auto-completion-enable-snippets-in-popup t
                       )
-     ;; (syntax-checking :variables syntax-checking-enable-by-default nil
-     ;;                  syntax-checking-enable-tooltips nil)
+     (syntax-checking :variables syntax-checking-enable-by-default nil
+                      syntax-checking-enable-tooltips nil)
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)

@@ -51,7 +51,7 @@ ZSH_THEME="zhann"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup
-plugins=(git autojump extract sudo zsh-syntax-highlighting zsh-autosuggestions pip tmux)
+plugins=(git autojump extract sudo zsh-syntax-highlighting zsh-autosuggestions pip tmux gem)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -103,8 +103,14 @@ alias pmf="python3 manage.py flush"
 alias pmc="python3 manage.py createsuperuser"
 alias tldr="tldr"
 alias 7zmax="7za -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on a"
+alias duch="du -h --max-depth=1"
 alias emacsT="emacs -nw"
 alias xmap="xmodmap ~/.Xmodmap"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/pittcat/.fzf/bin:/home/pittcat/.vimpkg/bin
+
+# add ruby path
+if which ruby >/dev/null && which gem >/dev/null; then
+  export  PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
