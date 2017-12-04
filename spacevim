@@ -155,9 +155,6 @@ function! UserInit()
   " {
   Plug 'mhinz/vim-signify'
   "}
-  "{signature 标记
-  Plug 'kshenoy/vim-signature'
-  "}
   "{christoomey/vim-system-copy copy-paste-system cv cP
   Plug  'christoomey/vim-system-copy'
   "}
@@ -167,11 +164,19 @@ function! UserInit()
   "{tpope/vim-repeat
   Plug  'tpope/vim-repeat'
   "}
-
+  "{expand region
+  Plug  'terryma/vim-expand-region'
+  vmap V <Plug>(expand_region_expand)
+  vmap v <Plug>(expand_region_shrink)
+  "}
+  "{
+  Plug  'kien/tabman.vim'
+  nnoremap <silent> <F7> :TMToggle<cr>
+  "}
   "theme
   "{
   Plug 'rakr/vim-one'
-  Plug  'sickill/vim-monokai'
+  Plug  'kristijanhusak/vim-hybrid-material'
   Plug  'altercation/vim-colors-solarized'
   Plug 'NLKNguyen/papercolor-theme'
   "}
@@ -214,17 +219,17 @@ function! UserConfig()
   "}
   "
   "
-  "{
-  " set background=light
-  " set background=dark
-  " colorscheme solarized
+  " {kristijanhusak/vim-hybrid-material
+  let g:enable_italic_font = 1
+  set background=dark
+  colorscheme hybrid_material
   "}
   "
   "{PaperColor
-  set t_Co=256   " This is may or may not needed.
+  " set t_Co=256   " This is may or may not needed.
   " set background=light
-  set background=dark
-  colorscheme PaperColor
+  " set background=dark
+  " colorscheme PaperColor
   "}
   "vim-format 设置
   "{
@@ -315,6 +320,7 @@ function! UserConfig()
   noremap <silent> <Leader>sy :YRShow<CR>
   "}
   "{use Yggdroot/indentLine
+  let g:indentLine_enable=1
   noremap <silent> <Leader>ti :IndentLinesToggle<cr>
   let g:indentLine_setColors = 1
   let g:indentLine_char = '┆'
@@ -326,6 +332,8 @@ function! UserConfig()
   nnoremap <leader><Left> <C-w>h
   nnoremap <leader><Up> <C-w>k
   nnoremap <leader><Down> <C-w>j
+  "}
+  "{
   "}
 "
 endfunction
