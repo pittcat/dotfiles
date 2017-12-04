@@ -81,12 +81,8 @@ function! UserInit()
   "javascript 
   " Plug  'ternjs/tern_for_vim',{'do':'npm i -g'}   "js 补全
   " let completor_node_binary='/usr/bin/node'
-  " {
-  " Plug 'posva/vim-vue'
-  
-  " autocmd FileType vue syntax sync fromstart
-  " autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
-  " }
+
+
   " Plug  'othree/javascript-libraries-syntax.vim'
   " Plug  'othree/yajs.vim'
   " Plug  'othree/es.next.syntax.vim'
@@ -105,11 +101,16 @@ function! UserInit()
   " }
 
   " tools-improve
-  "sjl/gundo.vim
+  "sjmbbill/undotree
   "{
-  Plug 'sjl/gundo.vim',{'on':['GundoToggle']}
-  let g:gundo_width=40
-  noremap <F2> :GundoToggle<cr>
+  Plug 'mbbill/undotree'
+  let g:undotree_SplitWidth=40
+  let g:undotree_SetFocusWhenToggle=1
+  noremap <F2> :UndotreeToggle<cr>
+  if has("persistent_undo")
+      set undodir=~/.undodir/
+      set undofile
+  endif
   "}
   " {
   " }
@@ -173,6 +174,17 @@ function! UserInit()
   Plug  'kien/tabman.vim'
   nnoremap <silent> <F7> :TMToggle<cr>
   "}
+  "{bufferonly
+   Plug 'vim-scripts/BufOnly.vim'
+  "}
+  "
+  "{unimpaired
+  Plug 'tpope/vim-unimpaired'
+  "}
+  "{vim-scripts/loremipsum
+  Plug 'vim-scripts/loremipsum'
+  "}
+
   "theme
   "{
   Plug 'rakr/vim-one'
@@ -333,7 +345,15 @@ function! UserConfig()
   nnoremap <leader><Up> <C-w>k
   nnoremap <leader><Down> <C-w>j
   "}
-  "{
+  "{BufOnly 
+  nnoremap <leader>bD :BufOnly<cr>
+  "}
+  "{quick indent visual with tab
+  vnoremap  <tab> >gv
+  vnoremap  <S-tab> <gv
+  "}
+  "{vim-scripts/loremipsum
+  nnoremap <silent> <leader>gn :Loremipsum<cr>
   "}
 "
 endfunction
