@@ -61,6 +61,10 @@ function! UserInit()
     "auto-complete
     let g:completor_python_binary = '/usr/bin/python3'
     let g:ycm_server_python_interpreter= '/usr/bin/python3'
+    "
+    Plug 'fisadev/vim-isort'
+    let g:vim_isort_map = '<C-i>'
+    let g:vim_isort_python_version = 'python3'
   " }
   "
   "go
@@ -80,11 +84,8 @@ function! UserInit()
   Plug  'gregsexton/matchtag'   "标签高亮
   "javascript 
   " Plug  'ternjs/tern_for_vim',{'do':'npm i -g'}   "js 补全
-
   " completor.vim
   let completor_node_binary='/usr/bin/node'
-
-
   Plug  'othree/javascript-libraries-syntax.vim'
   Plug  'othree/yajs.vim'
   Plug  'othree/es.next.syntax.vim'
@@ -94,6 +95,7 @@ function! UserInit()
   autocmd BufReadPre *.js let b:javascript_lib_use_backbone = 1
   autocmd BufReadPre *.js let b:javascript_lib_use_vue = 1
   autocmd BufReadPre *.js let b:javascript_lib_use_requirejs = 1
+
   "snippets
   "html
   " Plug  'jvanja/vim-bootstrap4-snippets'
@@ -193,6 +195,9 @@ function! UserInit()
   let g:codi#log='/tmp/codi.log'
   "}
   "
+  "{epeli/slimux
+  Plug 'epeli/slimux'
+  "}
 
   "theme
   "{
@@ -326,7 +331,7 @@ function! UserConfig()
   noremap <silent> <leader>da ggdG
   "}
   "{
-  inoremap <expr> \  pumvisible() ? "\<C-y>" : "\<CR>"
+  " inoremap <expr> \  pumvisible() ? "\<C-y>" : "\<CR>"
   inoremap  <C-v> <esc>gUiwea
   inoremap  <C-c> <esc>gUla
   "}
@@ -365,6 +370,18 @@ function! UserConfig()
   "}
   "{codi.vim
   noremap <silent> <localleader>cd :Codi!!<cr>
+  "}
+  "{epeli/slimux
+  let g:slimux_select_from_current_window = 0
+  set <F23>=s
+  set <F24>=a
+  set <F25>=c
+  imap <silent> jk <esc>:SlimuxREPLSendBuffer<CR>
+  imap <silent> <F23> <esc>:SlimuxREPLSendBuffer<CR>s
+  nmap <silent> <F24> <esc>:SlimuxREPLSendBuffer<CR>
+  nmap <silent> <F25> <esc>:SlimuxREPLConfigure
+  nmap <silent> <C-c><C-c> :SlimuxREPLSendLine<CR>
+  vmap <silent> <C-c><C-c> :SlimuxREPLSendSelection<CR>
   "}
 "
 endfunction

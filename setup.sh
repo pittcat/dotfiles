@@ -43,7 +43,7 @@ cp ./snippets/ ~/.emacs.d/private/ -r
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-sudo pip3 install thefuck
+sudo pip3 install thefuck isort
 sudo package manager autojump
 git clone git://github.com/joelthelion/autojump.git
 cd autojump
