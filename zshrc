@@ -114,3 +114,16 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/pittc
 if which ruby >/dev/null && which gem >/dev/null; then
   export  PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 fi
+# Codi
+# Usage: codi [filetype] [filename]
+codi() {
+  local syntax="${1:-python}"
+  shift
+  vim -c \
+    "let g:startify_disable_at_vimenter = 1 |\
+    set bt=nofile ls=0 noru nonu nornu |\
+    hi ColorColumn ctermbg=NONE |\
+    hi VertSplit ctermbg=NONE |\
+    hi NonText ctermfg=0 |\
+    Codi $syntax" "$@"
+}
