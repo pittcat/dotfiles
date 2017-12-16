@@ -31,7 +31,6 @@ function! Layers()
   Layer 'syntax-checking'
   Layer 'code-snippets'
 
-  " Layer 'html'
   Layer 'html',{'exclude':'othree/html5.vim'}
   Layer 'javascript'
   " Layer 'vue'
@@ -83,9 +82,9 @@ function! UserInit()
   Plug  'alvan/vim-closetag'    "标签补全等等
   Plug  'gregsexton/matchtag'   "标签高亮
   "javascript 
-  " Plug  'ternjs/tern_for_vim',{'do':'npm i -g'}   "js 补全
   " completor.vim
   let completor_node_binary='/usr/bin/node'
+
   Plug  'othree/javascript-libraries-syntax.vim'
   Plug  'othree/yajs.vim'
   Plug  'othree/es.next.syntax.vim'
@@ -208,23 +207,29 @@ function! UserInit()
   "}
   "
   "
-  "
-  "nvim
+  
+  
   if g:spacevim_nvim
-    " web{
-    " javascript autocomplete 
+    " let g:cm_completeopt = 'menu,menuone,noinsert,noselect,preview'
+
+    " augroup ncm_preview
+        " autocmd! InsertLeave <buffer> if pumvisible() == 0|pclose|endif
+    " augroup END
+    Plug 'Shougo/neoinclude.vim'
+    " python 
+    let g:python3_host_prog ='/usr/bin/python'
+    " javascript
     Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
-    " }
-    " python
-    " {
-    " Plug 'zchee/deoplete-jedi'
-    let g:python3_host_prog = '/usr/bin/python3'
-    " }
-    "{css
-    Plug 'othree/csscomplete.vim'
-    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
-    "}
-  endif
+    
+
+  endif 
+ 
+  " deoplete
+  " {
+
+  " }
+
+
  
 endfunction
 " Put your costom configurations here, e.g., change the colorscheme.
@@ -383,6 +388,11 @@ function! UserConfig()
   nmap <silent> <C-c><C-c> :SlimuxREPLSendLine<CR>
   vmap <silent> <C-c><C-c> :SlimuxREPLSendSelection<CR>
   "}
+  "othree/csscomplete.vim
+  "{
+  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
+  "}
+  "
 "
 endfunction
 

@@ -44,7 +44,7 @@ This function should only modify configuration layer settings."
      ;; cscope
      ;; ranger
      ;; prodigy
-     themes-megapack
+     ;; themes-megapack
      (auto-completion :variables auto-completion-enable-sort-by-usage t
                       auto-completion-enable-snippets-in-popup t
                       )
@@ -62,15 +62,15 @@ This function should only modify configuration layer settings."
      ;;      magit-revert-buffers 'silent
      ;;      magit-refs-show-commit-count 'all
      ;;      magit-revision-show-gravatars nil)
-     neotree
+     ;; neotree
      (markdown :variables markdown-live-preview-engine 'vmd)
      ;; (org :variables org-enable-bootstrap-support t)
      (org :variables org-enable-github-support t)
      shell-scripts
      emacs-lisp
      ;; (c-c++ :variables c-c++-enable-clang-support t)
-     (python :variables
-             python-test-runner '(nose pytest))
+     ;; (python :variables
+             ;; python-test-runner '(nose pytest))
      ;; html
      )
    ;; List of additional packages that will be installed without being
@@ -150,7 +150,7 @@ It should only modify the values of Spacemacs settings."
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
-                         gruvbox-dark-soft
+                         ;; gruvbox-dark-soft
                          spacemacs-dark
                          spacemacs-light)
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
