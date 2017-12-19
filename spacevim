@@ -53,17 +53,10 @@ function! UserInit()
   " python
   " {
   " pymode 设置
-    let g:pymode_python = 'python3'       
-    let g:pymode_doc = 1     "启用python-mode内置的python文档，使用K进行查找
-    let g:pymode_doc_bind = 'K'
-    let g:c_no_curly_error=0
     "auto-complete
     let g:completor_python_binary = '/usr/bin/python3'
     let g:ycm_server_python_interpreter= '/usr/bin/python3'
     "
-    Plug 'fisadev/vim-isort'
-    let g:vim_isort_map = '<C-i>'
-    let g:vim_isort_python_version = 'python3'
   " }
   "
   "go
@@ -75,138 +68,21 @@ function! UserInit()
   " {
   " let g:completor_racer_binary='/home/pittcat/.cargo/bin/racer'
   " }
-
-  " web{
-  " html
-  " let g:user_emmet_leader_key='<C-X>'   "emmet.vim
-  Plug  'alvan/vim-closetag'    "标签补全等等
-  Plug  'gregsexton/matchtag'   "标签高亮
-  "javascript 
-  " completor.vim
-  let completor_node_binary='/usr/bin/node'
-
-  Plug  'othree/javascript-libraries-syntax.vim'
-  Plug  'othree/yajs.vim'
-  Plug  'othree/es.next.syntax.vim'
-  let g:used_javascript_libs = 'underscore,backbone,jquery,vue,requirejs'
-  autocmd BufReadPre *.js let b:javascript_lib_use_jquery = 1
-  autocmd BufReadPre *.js let b:javascript_lib_use_underscore = 1
-  autocmd BufReadPre *.js let b:javascript_lib_use_backbone = 1
-  autocmd BufReadPre *.js let b:javascript_lib_use_vue = 1
-  autocmd BufReadPre *.js let b:javascript_lib_use_requirejs = 1
-
-  "snippets
+  "
+  "
+  " web
+  " {
   "html
   " Plug  'jvanja/vim-bootstrap4-snippets'
-  " javascript
+  "
+  
+  "javascript
+  " completor.vim--autocomplete javascript
+  let completor_node_binary='/usr/bin/node'
   "
   "
   " }
 
-  " tools-improve
-  "sjmbbill/undotree
-  "{
-  Plug 'mbbill/undotree'
-  let g:undotree_SplitWidth=40
-  let g:undotree_SetFocusWhenToggle=1
-  noremap <F2> :UndotreeToggle<cr>
-  if has("persistent_undo")
-      set undodir=~/.undodir/
-      set undofile
-  endif
-  "}
-  " {
-  " }
-  " {autosave
-    Plug '907th/vim-auto-save'
-    let g:auto_save = 1
-    let g:auto_save_events=["InsertLeave","TextChanged"]
-    let g:auto_save_write_all_buffers=1
-    let g:autosave_timer=5000
-  "}
-  "nerdtree-tabs
-  "{
-  Plug 'jistr/vim-nerdtree-tabs'
-  " 关闭NERDTree快捷键
-  " map <leader>t :NERDTreeToggle<CR>
-  " " 显示行号
-  let NERDTreeShowLineNumbers=1
-  let NERDTreeAutoCenter=1
-  " " 是否显示隐藏文件
-  let NERDTreeShowHidden=1
-  " " 设置宽度
-  let NERDTreeWinSize=31
-  " " 在终端启动vim时，共享NERDTree
-  let g:nerdtree_tabs_open_on_console_startup=1
-  " " 忽略一下文件的显示
-  let NERDTreeIgnore=['\.pyc','\~$','\.swp']
-  " " 显示书签列表
-  let NERDTreeShowBookmarks=1
-  "}
-  
-  "auto-mkdir
-  " {
-  Plug  'scy/vim-mkdir-on-write'
-  " }
-  
-  "{
-  Plug  'vim-scripts/YankRing.vim'
-  "}
-  "
-  " gitfugitve的插件
-  " {
-  Plug 'mhinz/vim-signify'
-  "}
-  "{christoomey/vim-system-copy copy-paste-system cv cP
-  Plug  'christoomey/vim-system-copy'
-  "}
-  "{tpope/vim-eunuch'
-  Plug 'tpope/vim-eunuch'
-  "}
-  "{tpope/vim-repeat
-  Plug  'tpope/vim-repeat'
-  "}
-  "{expand region
-  Plug  'terryma/vim-expand-region'
-  vmap V <Plug>(expand_region_expand)
-  vmap v <Plug>(expand_region_shrink)
-  "}
-  "{
-  Plug  'kien/tabman.vim'
-  nnoremap <silent> <F7> :TMToggle<cr>
-  "}
-  "{bufferonly
-   Plug 'vim-scripts/BufOnly.vim'
-  "}
-  "
-  "{unimpaired
-  Plug 'tpope/vim-unimpaired'
-  "}
-  "{vim-scripts/loremipsum
-  Plug 'vim-scripts/loremipsum'
-  "}
-  "{
-  Plug 'rstacruz/vim-xtract'
-  vnoremap <silent> <Space>et :Xtract 
-  "}
-  "{
-  Plug 'metakirby5/codi.vim'
-  let g:codi#log='/tmp/codi.log'
-  "}
-  "
-  "{epeli/slimux
-  Plug 'epeli/slimux'
-  "}
-
-  "theme
-  "{
-  Plug 'rakr/vim-one'
-  Plug  'kristijanhusak/vim-hybrid-material'
-  Plug  'altercation/vim-colors-solarized'
-  Plug 'NLKNguyen/papercolor-theme'
-  "}
-  "
-  "
   
   
   if g:spacevim_nvim
@@ -220,13 +96,11 @@ function! UserInit()
     let g:python3_host_prog ='/usr/bin/python'
     " javascript
     Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
-    
-
+   
   endif 
  
   " deoplete
   " {
-
   " }
 
 
@@ -245,9 +119,6 @@ function! UserConfig()
   " let g:one_allow_italics = 1
   " let g:airline_theme='one'
   "}
-  "{monokai
-  " colorscheme monokai
-  "}
   "
   "
   " {kristijanhusak/vim-hybrid-material
@@ -256,143 +127,10 @@ function! UserConfig()
   colorscheme hybrid_material
   "}
   "
-  "{PaperColor
-  " set t_Co=256   " This is may or may not needed.
-  " set background=light
-  " set background=dark
-  " colorscheme PaperColor
   "}
-  "vim-format 设置
-  "{
-  noremap <F3> :Autoformat<CR>
-  let g:autoformat_autoindent = 0
-  let g:autoformat_retab = 0
-  let g:autoformat_remove_trailing_spaces = 0
-  autocmd FileType html,css,js autocmd BufWritePre <buffer> :%s/\s\+$//e
-  let g:formatter_yapf_style = 'pep8'
-  "}
-  "消除空白
-  "{
-  fun! DelBlank()
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    :g/^\n\{2,}/d
-    let @/=_s
-    call cursor(l, c)
-    endfun
-    map <special> <leader>dw :keepjumps call DelBlank()<cr>
-  " }
-    "修复Multiple_cursors和neocomplete的冲突
-    "{
-    " function! Multiple_cursors_before()
-      " exe 'NeoCompleteLock'
-      " " echo 'Disabled autocomplete'
-    " endfunction
+    "}
+  "
 
-    " function! Multiple_cursors_after()
-      " exe 'NeoCompleteUnlock'
-      " " echo 'Enabled autocomplete'
-    " endfunction
-  " }
-  " {
-    let g:multi_cursor_next_key='<C-d>'
-    let g:multi_cursor_prev_key='<C-u>'
-    let g:multi_cursor_skip_key='<C-x>'
-    let g:multi_cursor_quit_key='<Esc>'
-  " }
-  "tpope/vim-eunuch
-  "{rename and mkdir 
-    noremap <leader>rn :Move 
-    noremap <leader>cd :Mkdir 
-  "}
-  "quickfix
-  "{
-    noremap <silent> <localleader>q :cclose<cr>
-    noremap <silent> <localleader>o :copen<cr>
-  "}
-  "{Limelight and goyo
-  autocmd User GoyoEnter Limelight
-  autocmd User GoyoLeave Limelight!
-  let g:limelight_conceal_ctermfg='gray'
-  let g:limelight_conceal_ctermfg=240
-  let g:limelight_default_coefficient=0.7
-  "
-  "}
-  "fold
-  "{
-  set foldmethod=manual
-  "}
-  "{gv.vim
-  noremap <silent> <leader>cg :GV<cr>
-  "}
-  "buffer and file 
-  "{
-  function! DeleteFileAndCloseBuffer()
-    call delete(expand('%')) | bdelete!
-  endfun
-  " noremap <silent> <leader>df :Delete<cr>
-  noremap <silent> <leader>df :call DeleteFileAndCloseBuffer()<cr>
-  noremap <silent> <leader>da ggdG
-  "}
-  "{
-  " inoremap <expr> \  pumvisible() ? "\<C-y>" : "\<CR>"
-  inoremap  <C-v> <esc>gUiwea
-  inoremap  <C-c> <esc>gUla
-  "}
-  "{FZF
-  nnoremap <Leader>f? :Files ~<CR>
-  nnoremap <Leader>ff :Files<CR>
-  "}
-  "
-  "{YankRing.vim
-  let g:yankring_history_dir='~/.vim/'
-  noremap <silent> <Leader>sy :YRShow<CR>
-  "}
-  "{use Yggdroot/indentLine
-  let g:indentLine_enable=1
-  noremap <silent> <Leader>ti :IndentLinesToggle<cr>
-  let g:indentLine_setColors = 1
-  let g:indentLine_char = '┆'
-  "}
-  "
-  "{change window quickly
-  nnoremap <localleader>ww <C-W>w
-  nnoremap <leader><Right> <C-w>l
-  nnoremap <leader><Left> <C-w>h
-  nnoremap <leader><Up> <C-w>k
-  nnoremap <leader><Down> <C-w>j
-  "}
-  "{BufOnly 
-  nnoremap <leader>bD :BufOnly<cr>
-  "}
-  "{quick indent visual with tab
-  vnoremap  <tab> >gv
-  vnoremap  <S-tab> <gv
-  "}
-  "{vim-scripts/loremipsum
-  nnoremap <silent> <leader>gn :Loremipsum<cr>
-  "}
-  "{codi.vim
-  noremap <silent> <localleader>cd :Codi!!<cr>
-  "}
-  "{epeli/slimux
-  let g:slimux_select_from_current_window = 0
-  set <F23>=s
-  set <F24>=a
-  set <F25>=c
-  imap <silent> jk <esc>:SlimuxREPLSendBuffer<CR>
-  imap <silent> <F23> <esc>:SlimuxREPLSendBuffer<CR>s
-  nmap <silent> <F24> <esc>:SlimuxREPLSendBuffer<CR>
-  nmap <silent> <F25> <esc>:SlimuxREPLConfigure
-  nmap <silent> <C-c><C-c> :SlimuxREPLSendLine<CR>
-  vmap <silent> <C-c><C-c> :SlimuxREPLSendSelection<CR>
-  "}
-  "othree/csscomplete.vim
-  "{
-  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
-  "}
-  "
 "
 endfunction
 
