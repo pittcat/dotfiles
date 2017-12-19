@@ -15,6 +15,81 @@
   Plug  'othree/yajs.vim'
   Plug  'othree/es.next.syntax.vim'
   " }
+  "
+  "
+  "
+  "{roxma/nvim-completion-manager---vim 配置
+  Plug 'roxma/vim-hug-neovim-rpc'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/nvim-completion-manager'
+  let g:python3_host_prog='/usr/bin/python3'
+  let $NVIM_PYTHON_LOG_FILE="/tmp/nvim_log"
+  let $NVIM_PYTHON_LOG_LEVEL="DEBUG"
+
+
+  " javascript 
+  Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
+
+ " snippet配置
+ " {
+  " vim-snippets--搭配ultisnip
+  " Plug 'honza/vim-snippets'
+
+ " 通用配置<c-y>
+  inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>" 
+
+  " neosnippet- vim8 或者 neovim  
+  let g:neosnippet#enable_completed_snippet=1
+  Plug 'Shougo/neosnippet'
+  Plug 'Shougo/neosnippet-snippets'
+" Enable snipMate compatibility feature.
+  " let g:neosnippet#enable_snipmate_compatibility = 1
+" Tell Neosnippet about the other snippets--neosnippet 配合不好
+  " let g:neosnippet#snippets_directory='~/.vim/plugged/vim-snippets/snippets'
+
+
+  inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+  imap <expr> <Tab> (pumvisible() ? "\<C-n>" : (neosnippet#mappings#expand_or_jump_impl()!=''?neosnippet#mappings#expand_or_jump_impl():"\<Tab>"))
+  smap <Tab>     <Plug>(neosnippet_expand_or_jump)  
+  xmap <Tab>     <Plug>(neosnippet_expand_target)   
+  " neosnippet doesn't have jump back key
+  imap <expr> <S-Tab> (pumvisible() ? "\<C-p>" : "\<S-Tab>")
+
+
+  " ultisnips--vim8
+  " Plug 'SirVer/ultisnips'
+
+  " let g:UltiSnipsExpandTrigger        = "<Plug>(ultisnips_expand)"
+  " let g:UltiSnipsJumpForwardTrigger   = "<Plug>(ultisnips_expand)"
+  " let g:UltiSnipsJumpBackwardTrigger  = "<Plug>(ultisnips_backward)"
+  " let g:UltiSnipsListSnippets         = "<Plug>(ultisnips_list)"
+  " let g:UltiSnipsRemoveSelectModeMappings = 0 
+
+  " vnoremap <expr> <Plug>(ultisnip_expand_or_jump_result) g:ulti_expand_or_jump_res?'':"\<Tab>"
+  " inoremap <expr> <Plug>(ultisnip_expand_or_jump_result) g:ulti_expand_or_jump_res?'':"\<Tab>"
+  " imap <silent> <expr> <Tab> (pumvisible() ? "\<C-n>" : "\<C-r>=UltiSnips#ExpandSnippetOrJump()\<cr>\<Plug>(ultisnip_expand_or_jump_result)")
+  " xmap <Tab> <Plug>(ultisnips_expand)
+  " smap <Tab> <Plug>(ultisnips_expand)
+
+  " vnoremap <expr> <Plug>(ultisnips_backwards_result) g:ulti_jump_backwards_res?'':"\<S-Tab>"
+  " inoremap <expr> <Plug>(ultisnips_backwards_result) g:ulti_jump_backwards_res?'':"\<S-Tab>"
+  " imap <silent> <expr> <S-Tab> (pumvisible() ? "\<C-p>" : "\<C-r>=UltiSnips#JumpBackwards()\<cr>\<Plug>(ultisnips_backwards_result)")
+  " xmap <S-Tab> <Plug>(ultisnips_backward)
+  " smap <S-Tab> <Plug>(ultisnips_backward)
+
+  " " optional
+  " inoremap <silent> <c-e> <c-r>=cm#sources#ultisnips#trigger_or_popup("\<Plug>(ultisnips_expand)")<cr>
+
+
+  " 
+ "
+ "
+  "}
+  "
+  "
+  "
+  "
 
 
   " tools-improve

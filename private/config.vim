@@ -8,6 +8,8 @@
     " fisadev/vim-isort
     let g:vim_isort_map = '<C-i>'
     let g:vim_isort_python_version = 'python3'
+    " skywind3000/asyncrun.vim <F5> 快捷键运行
+    let g:spacevim_python_run = 'python3'
   " }
 
  " web

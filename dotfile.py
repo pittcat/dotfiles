@@ -30,7 +30,7 @@ def Setup():
         os.remove('./temp_setup.sh')
 
 def Sysnc():
-    snippets_list=['/.emacs.d/private/snippets/','/.vim/UltiSnips/']
+    snippets_list=['/.emacs.d/private/snippets/','/.vim/UltiSnips/','/.space-vim/private/']
     for i in snippets_list:
         local_path=os.getenv('HOME')+i
         dotfiles_path=os.getcwd()+'/'+i.split('/')[-2]+'/'
