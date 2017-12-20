@@ -18,18 +18,16 @@ function! Layers()
 
   Layer 'tmux'
   Layer 'file-manager',{'exclude':'danro/rename.vim'}
-  " Layer 'ctrlp'
   Layer 'better-motion'
   Layer 'programming',{'exclude':'nathanaelkane/vim-indent-guides'}
   Layer 'editing'
   Layer 'git'
   Layer 'github'
 
-  " Layer 'auto-completion'
+  Layer 'auto-completion'
   " Layer 'deoplete'
   " Layer 'ycmd'
   Layer 'syntax-checking'
-  " Layer 'code-snippets',{'exclude':'SirVer/ultisnips'}
 
   Layer 'html',{'exclude':'othree/html5.vim'}
   Layer 'javascript'
@@ -47,63 +45,17 @@ function! UserInit()
   " if you want to change it, uncomment and set it here.
   " let g:spacevim_leader = "<\Space>"
   let g:spacevim_localleader = ','
-  " {c++
-  let g:completor_clang_binary='/usr/bin/clang'
-  " }
-  " python
-  " {
-  " pymode 设置
-    "auto-complete
-    let g:completor_python_binary = '/usr/bin/python3'
-    let g:ycm_server_python_interpreter= '/usr/bin/python3'
-    "
-  " }
-  "
-  "go
-  " {
-  " let g:completor_gocode_binary='/home/pittcat/go/bin/gocode'
-  " }
-  "
-  " rust
-  " {
-  " let g:completor_racer_binary='/home/pittcat/.cargo/bin/racer'
-  " }
-  "
   "
   " web
   " {
   "html
   " Plug  'jvanja/vim-bootstrap4-snippets'
-  "
-  
-  "javascript
-  " completor.vim--autocomplete javascript
-  let completor_node_binary='/usr/bin/node'
-  "
-  "
   " }
-  
-  if g:spacevim_nvim
-    " let g:cm_completeopt = 'menu,menuone,noinsert,noselect,preview'
-
-    " augroup ncm_preview
-        " autocmd! InsertLeave <buffer> if pumvisible() == 0|pclose|endif
-    " augroup END
-    Plug 'Shougo/neoinclude.vim'
-    " python 
-    let g:python3_host_prog ='/usr/bin/python'
-    " javascript
-    Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
-   
-  endif 
- 
-  " deoplete
-  " {
-  " }
-
-
  
 endfunction
+
+
+
 " Put your costom configurations here, e.g., change the colorscheme.
 function! UserConfig()
 
@@ -126,9 +78,8 @@ function! UserConfig()
   "}
   "
   "}
-    "}
-  "
 
+  
 "
 endfunction
 
