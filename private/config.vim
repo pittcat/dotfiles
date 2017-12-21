@@ -1,7 +1,35 @@
 if g:spacevim_nvim
+  " ncm
+   
+
+
+
+
+  " deoplete
+
+  " let g:deoplete#sources#jedi#show_docstring=0  "python
+  " let g:deoplete#sources#jedi#python_path='/usr/bin/python'  "python
+  " let g:deoplete#sources#jedi#debug_server=1  "python
+
+  " let g:deoplete#sources#ternjs#tern_bin = '/usr/bin/tern'  "javascript
+  " let g:deoplete#sources#ternjs#timeout = 1
+
+
+
+  " common
+  " let g:python3_host_prog ='/usr/bin/python'   "python
+
 
 endif 
+
+
+
+
+
+
+
 " {completor.vim--vim8
+  set completeopt-=preview  "close show_docstring
   let g:completor_clang_binary='/usr/bin/clang' "c++
   let completor_node_binary='/usr/bin/node'   "javascript
   let g:completor_python_binary = '/usr/bin/python3' "python 
@@ -13,7 +41,7 @@ endif
   " {
   " pymode 设置
     let g:pymode_python = 'python3'       
-    let g:pymode_doc = 1     "启用python-mode内置的python文档，使用K进行查找
+    let g:pymode_doc = 0     "启用python-mode内置的python文档，使用K进行查找
     let g:pymode_doc_bind = 'K'
     let g:c_no_curly_error=0
     " fisadev/vim-isort
@@ -181,14 +209,22 @@ endif
 
   " if g:spacevim_nvim
 
-  " 通用配置<c-y>
-  inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>" 
+  "通用配置<c-y>
+  inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"       
 
-  " " neosnippet--vim8 或者 neovim
+
+  " neosnippet--vim8 或者 neovim
 
   inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
   inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-  imap <expr> <Tab> (pumvisible() ? "\<C-n>" : (neosnippet#mappings#expand_or_jump_impl()!=''?neosnippet#mappings#expand_or_jump_impl():"\<Tab>"))
+  " ncm
+  " imap <expr> <Tab> (pumvisible() ? "\<C-n>" : (neosnippet#mappings#expand_or_jump_impl()!=''?neosnippet#mappings#expand_or_jump_impl():"\<Tab>"))
+  " deoplete completor
+  imap <expr><TAB>
+  \ pumvisible() ? "\<C-n>" :
+  \ neosnippet#expandable_or_jumpable() ?
+  \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
   smap <Tab>     <Plug>(neosnippet_expand_or_jump)  
   xmap <Tab>     <Plug>(neosnippet_expand_target)   
   " neosnippet doesn't have jump back key

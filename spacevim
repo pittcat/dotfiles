@@ -20,6 +20,7 @@ function! Layers()
   Layer 'file-manager',{'exclude':'danro/rename.vim'}
   Layer 'better-motion'
   Layer 'programming',{'exclude':'nathanaelkane/vim-indent-guides'}
+  " Layer 'code-snippets'
   Layer 'editing'
   Layer 'git'
   Layer 'github'
@@ -77,8 +78,6 @@ function! UserConfig()
   colorscheme hybrid_material
   "}
   "
-  "}
-
   
 "
 endfunction

@@ -1,20 +1,26 @@
- if g:spacevim_nvim
+  if g:spacevim_nvim
     " " ncm
-    set shortmess+=c
-    let g:cm_sources_override = {
-        \ 'cm-tags': {'enable':0}
-        \ }
+    " set shortmess+=c
+    " let g:cm_sources_override = {
+        " \ 'cm-tags': {'enable':0}
+        " \ }
     " let g:cm_completeopt = 'menu,menuone,noinsert,noselect,preview'
 
-    " " augroup ncm_preview
-        " " autocmd! InsertLeave <buffer> if pumvisible() == 0|pclose|endif
-    " " augroup END
-    Plug 'Shougo/neoinclude.vim'
-    " " python 
-    let g:python3_host_prog ='/usr/bin/python3'
-    " " javascript
-    Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
-   
+    " augroup ncm_preview
+        " autocmd! InsertLeave <buffer> if pumvisible() == 0|pclose|endif
+    " augroup END
+
+    " Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}     " javascript
+  
+    " deoplete
+    " Plug 'zchee/deoplete-jedi'    "python
+    " Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }  "javascript
+    " Plug 'Shougo/deoplete-rct'
+
+
+    " common
+    " Plug 'Shougo/neoinclude.vim'
+ 
   endif 
 
   " python
@@ -34,10 +40,6 @@
   Plug  'othree/yajs.vim'
   Plug  'othree/es.next.syntax.vim'
   " }
-  "
-  "
-  "
- "
   "
   "
   "
