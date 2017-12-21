@@ -68,6 +68,7 @@ This function should only modify configuration layer settings."
      (org :variables org-enable-github-support t)
      shell-scripts
      emacs-lisp
+     ;; (ruby :variables ruby-enable-enh-ruby-mode t)
      ;; (c-c++ :variables c-c++-enable-clang-support t)
      ;; (python :variables
              ;; python-test-runner '(nose pytest))

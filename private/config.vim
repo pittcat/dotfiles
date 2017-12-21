@@ -1,6 +1,16 @@
 if g:spacevim_nvim
+
   " ncm
    
+  set shortmess+=c
+  let g:cm_sources_override = {
+      \ 'cm-tags': {'enable':0}
+      \ }
+  " let g:cm_completeopt = 'menu,menuone,noinsert,noselect,preview'
+
+  " augroup ncm_preview
+      " autocmd! InsertLeave <buffer> if pumvisible() == 0|pclose|endif
+  " augroup END
 
 
 
@@ -17,11 +27,46 @@ if g:spacevim_nvim
 
 
   " common
-  " let g:python3_host_prog ='/usr/bin/python'   "python
+  let g:python3_host_prog ='/usr/bin/python'   "python
 
 
 endif 
 
+
+" snippet
+if g:spacevim_nvim || g:spacevim_vim8
+  let g:UltiSnipsSnippetDirectories=['UltiSnips']
+  exe 'set rtp+=' . expand(g:spacevim_dir . '/private/UltiSnips')
+  let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
+  let g:UltiSnipsExpandTrigger = '<C-e>'
+  let g:UltiSnipsJumpForwardTrigger = '<C-j>'
+  let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
+
+  let g:ulti_expand_or_jump_res = 0
+  function! ExpandSnippetOrCarriageReturn()
+    let l:snippet = UltiSnips#ExpandSnippetOrJump()
+    if g:ulti_expand_or_jump_res > 0
+      return l:snippet
+    else
+      return "\<CR>"
+    endif
+  endfunction
+  inoremap <expr> <CR> pumvisible() ? "\<C-R>=ExpandSnippetOrCarriageReturn()\<CR>" : "\<CR>"
+
+
+
+  if g:spacevim_nvim
+    let g:UltiSnipsRemoveSelectModeMappings = 0
+    " inoremap <silent> <c-u> <c-r>=cm#sources#ultisnips#trigger_or_popup("\<Plug>(ultisnips_expand)")<cr>
+    inoremap <silent> <c-l> <c-r>=cm#sources#ultisnips#trigger_or_popup("\<Plug>(ultisnips_expand)")<cr>
+    xmap <c-l> <Plug>(ultisnips_expand)
+    smap <c-l> <Plug>(ultisnips_expand)
+
+    let g:cm_complete_delay = 0
+
+  endif
+
+endif
 
 
 
@@ -162,6 +207,10 @@ endif
   let g:indentLine_char = '┆'
   "}
   "
+  "{rstacruz/vim-xtract
+  vnoremap <localleader>et :Xtract 
+  "}
+  "
   "{change window quickly
   nnoremap <localleader>ww <C-W>w
   nnoremap <leader><Right> <C-w>l
@@ -202,61 +251,44 @@ endif
   noremap <silent> <localleader>ci :ChangeInsideSurrounding<cr>
   noremap <silent> <localleader>cas :ChangeAroundSurrounding<cr>
   "}
+  "
+  "{AndrewRadev/linediff.vim
+  vmap <localleader>df :Linediff<cr>
+  vmap <localleader>dr :LinediffReset<cr>
+  nmap <localleader>ls :LinediffShow<cr>
+  "}
 
  " snippet配置
  " {
 
 
-  " if g:spacevim_nvim
+" if g:spacevim_nvim
 
   "通用配置<c-y>
-  inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"       
+  " inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"       
 
 
   " neosnippet--vim8 或者 neovim
 
-  inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+  " inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+  " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
   " ncm
   " imap <expr> <Tab> (pumvisible() ? "\<C-n>" : (neosnippet#mappings#expand_or_jump_impl()!=''?neosnippet#mappings#expand_or_jump_impl():"\<Tab>"))
   " deoplete completor
-  imap <expr><TAB>
-  \ pumvisible() ? "\<C-n>" :
-  \ neosnippet#expandable_or_jumpable() ?
-  \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+  " imap <expr><TAB>
+  " \ pumvisible() ? "\<C-n>" :
+  " \ neosnippet#expandable_or_jumpable() ?
+  " \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
-  smap <Tab>     <Plug>(neosnippet_expand_or_jump)  
-  xmap <Tab>     <Plug>(neosnippet_expand_target)   
+  " smap <Tab>     <Plug>(neosnippet_expand_or_jump)  
+  " xmap <Tab>     <Plug>(neosnippet_expand_target)   
   " neosnippet doesn't have jump back key
-  imap <expr> <S-Tab> (pumvisible() ? "\<C-p>" : "\<S-Tab>")
+  " imap <expr> <S-Tab> (pumvisible() ? "\<C-p>" : "\<S-Tab>")
 
-
-  
-  " ultisnips--vim8
-
-  " let g:UltiSnipsExpandTrigger        = "<Plug>(ultisnips_expand)"
-  " let g:UltiSnipsJumpForwardTrigger   = "<Plug>(ultisnips_expand)"
-  " let g:UltiSnipsJumpBackwardTrigger  = "<Plug>(ultisnips_backward)"
-  " let g:UltiSnipsListSnippets         = "<Plug>(ultisnips_list)"
-  " let g:UltiSnipsRemoveSelectModeMappings = 0 
-
-  " vnoremap <expr> <Plug>(ultisnip_expand_or_jump_result) g:ulti_expand_or_jump_res?'':"\<Tab>"
-  " inoremap <expr> <Plug>(ultisnip_expand_or_jump_result) g:ulti_expand_or_jump_res?'':"\<Tab>"
-  " imap <silent> <expr> <Tab> (pumvisible() ? "\<C-n>" : "\<C-r>=UltiSnips#ExpandSnippetOrJump()\<cr>\<Plug>(ultisnip_expand_or_jump_result)")
-  " xmap <Tab> <Plug>(ultisnips_expand)
-  " smap <Tab> <Plug>(ultisnips_expand)
-
-  " vnoremap <expr> <Plug>(ultisnips_backwards_result) g:ulti_jump_backwards_res?'':"\<S-Tab>"
-  " inoremap <expr> <Plug>(ultisnips_backwards_result) g:ulti_jump_backwards_res?'':"\<S-Tab>"
-  " imap <silent> <expr> <S-Tab> (pumvisible() ? "\<C-p>" : "\<C-r>=UltiSnips#JumpBackwards()\<cr>\<Plug>(ultisnips_backwards_result)")
-  " xmap <S-Tab> <Plug>(ultisnips_backward)
-  " smap <S-Tab> <Plug>(ultisnips_backward)
-
-  " " " optional
-  " inoremap <silent> <c-e> <c-r>=cm#sources#ultisnips#trigger_or_popup("\<Plug>(ultisnips_expand)")<cr>
-  
-  " endif
-
+ 
+    
+" endif
 
   " }
 
+  

@@ -20,7 +20,6 @@ function! Layers()
   Layer 'file-manager',{'exclude':'danro/rename.vim'}
   Layer 'better-motion'
   Layer 'programming',{'exclude':'nathanaelkane/vim-indent-guides'}
-  " Layer 'code-snippets'
   Layer 'editing'
   Layer 'git'
   Layer 'github'
@@ -47,12 +46,7 @@ function! UserInit()
   " let g:spacevim_leader = "<\Space>"
   let g:spacevim_localleader = ','
   "
-  " web
-  " {
-  "html
-  " Plug  'jvanja/vim-bootstrap4-snippets'
-  " }
- 
+
 endfunction
 
 
@@ -78,6 +72,19 @@ function! UserConfig()
   colorscheme hybrid_material
   "}
   "
+  " if g:spacevim_nvim
+
+    " let g:UltiSnipsRemoveSelectModeMappings = 0
+    " inoremap <silent> <c-u> <c-r>=cm#sources#ultisnips#trigger_or_popup("\<Plug>(ultisnips_expand)")<cr>
+
+    " xmap <c-u> <Plug>(ultisnips_expand)
+    " smap <c-u> <Plug>(ultisnips_expand)
+
+    " let g:cm_complete_delay = 0
+
+  " endif
+
+
   
 "
 endfunction
