@@ -136,6 +136,17 @@ Plug 'metakirby5/codi.vim'
 let g:codi#log='/tmp/codi.log'
 "}
 "
+"{AndrewRadev/splitjoin.vim
+Plug 'AndrewRadev/splitjoin.vim'
+" gS  分离
+" gJ  合并
+" }
+"
+"{terryma/vim-smooth-scroll
+Plug 'terryma/vim-smooth-scroll'
+
+"}
+"
 "{epeli/slimux
 Plug 'epeli/slimux'
 "}
@@ -151,7 +162,7 @@ Plug 'AndrewRadev/linediff.vim'
 "}
 
 "theme
-
+Plug 'junegunn/seoul256.vim'
 Plug 'rakr/vim-one'
 Plug 'kristijanhusak/vim-hybrid-material'
 

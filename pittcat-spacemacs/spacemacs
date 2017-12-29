@@ -71,7 +71,7 @@ This function should only modify configuration layer settings."
          ;; private
          pittcat
          quickrun
-
+         pittcat-programing
 
 
          )
@@ -80,7 +80,7 @@ This function should only modify configuration layer settings."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages
-   '(yasnippet-snippets evil-multiedit)
+   '(yasnippet-snippets evil-multiedit quickrun)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages
    '()
@@ -489,6 +489,10 @@ before packages are loaded."
   ;; pre-match
   (define-key evil-normal-state-map (kbd "C-u") 'evil-multiedit-match-and-prev)
   (define-key evil-visual-state-map (kbd "C-u") 'evil-multiedit-match-and-prev)
+  ;; quickrun
+  (define-key evil-normal-state-map (kbd "<f5>") 'quickrun)
+  (define-key evil-insert-state-map (kbd "<f5>") 'quickrun)
+  (define-key evil-normal-state-map (kbd ", q") 'delete-window)
   ;; 个性化evil-mode------------------------------------------------------------------------------------------------------------end
   )
 ;; Do not write anything past this comment. This is where Emacs will
