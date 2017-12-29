@@ -108,6 +108,7 @@ alias emacsT="emacs -nw"
 alias xmap="xmodmap ~/.Xmodmap"
 # alias vim='nvim'
 alias sz='source ~/.zshrc' 
+alias ipb='ipython notebook'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/pittcat/.fzf/bin:/home/pittcat/.vimpkg/bin

@@ -18,8 +18,8 @@ cp ./UltiSnips/ ~/.vim/
 # cd ~/.vim/plugged/YouCompleteMe
 # git submodule update --init --recursive
 # sudo python3 ./install.py --clang-completer
-sudo pip3 install yapf flake8 jedi # 格式化 查错 补全
-sudo pip install yapf flake8 jedi
+sudo pip3 install yapf flake8 jedi ipython neovim # 格式化 查错 补全
+sudo pip install yapf flake8 jedi ipython
 sudo package manager ctags 
 cp spacevim ~/.spacevim
 
