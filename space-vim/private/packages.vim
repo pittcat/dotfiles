@@ -1,8 +1,8 @@
-if g:spacevim_nvim
+if g:spacevim_nvim  " nvim
   " ncm
 
   Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}     " javascript
-
+  Plug 'roxma/ncm-rct-complete'     " gem install rcodetools
 
 
   " deoplete
@@ -12,8 +12,12 @@ if g:spacevim_nvim
 
 
   " common
-  " Plug 'Shougo/neoinclude.vim'
- 
+  Plug 'Shougo/neoinclude.vim'
+
+else  "vim8
+  " completor.vim
+  Plug 'osyo-manga/vim-monster'     " ruby------->gem install rcodetools
+
 endif 
 
 
@@ -25,10 +29,12 @@ Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 
 " web 
-" Plug 'jvanja/vim-bootstrap4-snippets'
+"
+" Plug 'jvanja/vim-bootstrap4-snippets'       "html
+" Plug 'epilande/vim-react-snippets'          "react
+Plug 'isRuslan/vim-es6'                     "es6
 
 " }
-
 
 
 
@@ -48,9 +54,6 @@ Plug 'fisadev/vim-isort'  " import 排序
 Plug  'alvan/vim-closetag'    "标签补全等等
 Plug  'gregsexton/matchtag'   "标签高亮
  "javascript 
-Plug  'othree/javascript-libraries-syntax.vim'
-Plug  'othree/yajs.vim'
-Plug  'othree/es.next.syntax.vim'
 " }
 "
 "
@@ -159,6 +162,11 @@ Plug 'briandoll/change-inside-surroundings.vim'
 "}
 "{AndrewRadev/linediff.vim
 Plug 'AndrewRadev/linediff.vim'
+"}
+"{
+Plug 'justinmk/vim-gtfo'
+" got--------->terminal or tmux
+" gof--------->file manager
 "}
 
 "theme

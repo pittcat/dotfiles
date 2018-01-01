@@ -29,6 +29,9 @@ if g:spacevim_nvim
   " common
   let g:python3_host_prog ='/usr/bin/python'   "python
 
+else    "vim8
+  " completor.vim
+  let g:completor_ruby_omni_trigger = '([\w-]+|@[\w-]*|[\w-]+:\s*[\w-]*)$'
 
 endif 
 
@@ -101,14 +104,7 @@ endif
   " html
 
    "javascript 
-  "javascript-libraries-syntax.vim
-  let g:used_javascript_libs = 'underscore,backbone,jquery,vue,requirejs'
-  autocmd BufReadPre *.js let b:javascript_lib_use_jquery = 1
-  autocmd BufReadPre *.js let b:javascript_lib_use_underscore = 1
-  autocmd BufReadPre *.js let b:javascript_lib_use_backbone = 1
-  autocmd BufReadPre *.js let b:javascript_lib_use_vue = 1
-  autocmd BufReadPre *.js let b:javascript_lib_use_requirejs = 1
-  " }
+   " }
 
   
 

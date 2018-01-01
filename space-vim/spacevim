@@ -32,7 +32,7 @@ function! Layers()
   Layer 'html',{'exclude':'othree/html5.vim'}
   Layer 'javascript'
   " Layer 'vue'
-  " Layer 'ruby'
+  Layer 'ruby'
   Layer 'python'
   Layer 'c-c++'
 
