@@ -15,6 +15,7 @@ function! Layers()
   Layer 'unite'
   Layer 'better-defaults'
   Layer 'text-align'
+  Layer 'which-key'
 
   Layer 'tmux'
   Layer 'file-manager',{'exclude':'danro/rename.vim'}
@@ -25,13 +26,10 @@ function! Layers()
   Layer 'github'
 
   Layer 'auto-completion'
-  " Layer 'deoplete'
-  " Layer 'ycmd'
   Layer 'syntax-checking'
 
   Layer 'html',{'exclude':'othree/html5.vim'}
   Layer 'javascript'
-  " Layer 'vue'
   Layer 'ruby'
   Layer 'python'
   Layer 'c-c++'

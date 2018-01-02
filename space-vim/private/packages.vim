@@ -2,17 +2,15 @@ if g:spacevim_nvim  " nvim
   " ncm
 
   Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}     " javascript
-  Plug 'roxma/ncm-rct-complete'     " gem install rcodetools
+  Plug 'roxma/ncm-rct-complete'     " ruby-----gem install rcodetools
 
+  Plug 'Shougo/neoinclude.vim'      "include completion
+  Plug 'Shougo/neco-syntax'         "syntax completion
+  Plug 'fgrsnau/ncm-otherbuf'       "other buffers
 
-  " deoplete
-  " Plug 'zchee/deoplete-jedi'    "python
-  " Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }  "javascript
-  " Plug 'Shougo/deoplete-rct'
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }         " deoplete------extend for ncm
+  " deoplete-------extend for lang
 
-
-  " common
-  Plug 'Shougo/neoinclude.vim'
 
 else  "vim8
   " completor.vim
@@ -35,10 +33,6 @@ Plug 'SirVer/ultisnips'
 Plug 'isRuslan/vim-es6'                     "es6
 
 " }
-
-
-
-
 
 
 

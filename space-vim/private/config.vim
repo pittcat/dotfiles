@@ -1,6 +1,20 @@
 if g:spacevim_nvim
 
-  " ncm
+  " ncm----------lang extend 
+
+  
+
+
+  " deoplete-------lang extend
+
+
+  " deoplete-common
+  let g:python3_host_prog ='/usr/bin/python'   "nvim path 
+  let g:deoplete#enable_at_startup = 1         "start deoplete
+  let g:deoplete#enable_smart_case = 1
+
+
+  " ncm-----common
    
   set shortmess+=c
   let g:cm_sources_override = {
@@ -13,25 +27,34 @@ if g:spacevim_nvim
   " augroup END
 
 
+  " deoplete-----extend for ncm sources setting
 
+  " call deoplete#enable()          " force init deoplete then hack deoplete's mapping
 
-  " deoplete
+  " au User CmSetup call cm#register_source({'name' : 'deoplete',
+          " \ 'priority': 7,  
+          " \ 'abbreviation': '', 
+          " \ })                      " register as ncm source
 
-  " let g:deoplete#sources#jedi#show_docstring=0  "python
-  " let g:deoplete#sources#jedi#python_path='/usr/bin/python'  "python
-  " let g:deoplete#sources#jedi#debug_server=1  "python
+  " " hack deoplete's mapping
+  " inoremap <silent> <Plug>_ <C-r>=g:Deoplete_ncm()<CR>
 
-  " let g:deoplete#sources#ternjs#tern_bin = '/usr/bin/tern'  "javascript
-  " let g:deoplete#sources#ternjs#timeout = 1
+  " func! g:Deoplete_ncm()            " forward to ncm
+    " call cm#complete('deoplete', cm#context(), g:deoplete#_context.complete_position + 1, g:deoplete#_context.candidates)
+    " return ''
+  " endfunc
 
-
-
-  " common
-  let g:python3_host_prog ='/usr/bin/python'   "python
 
 else    "vim8
   " completor.vim
-  let g:completor_ruby_omni_trigger = '([\w-]+|@[\w-]*|[\w-]+:\s*[\w-]*)$'
+  set completeopt-=preview  "close show_docstring
+
+  let g:completor_clang_binary='/usr/bin/clang' "c++
+  let completor_node_binary='/usr/bin/node'   "javascript
+  let g:completor_python_binary = '/usr/bin/python3' "python 
+  let g:completor_ruby_omni_trigger = '([\w-]+|@[\w-]*|[\w-]+:\s*[\w-]*)$'      "install vim-monster-------ruby
+  " let g:completor_gocode_binary='/home/pittcat/go/bin/gocode' "go
+  " let g:completor_racer_binary='/home/pittcat/.cargo/bin/racer' "rust
 
 endif 
 
@@ -72,18 +95,6 @@ if g:spacevim_nvim || g:spacevim_vim8
 endif
 
 
-
-
-
-
-" {completor.vim--vim8
-  set completeopt-=preview  "close show_docstring
-  let g:completor_clang_binary='/usr/bin/clang' "c++
-  let completor_node_binary='/usr/bin/node'   "javascript
-  let g:completor_python_binary = '/usr/bin/python3' "python 
-  " let g:completor_gocode_binary='/home/pittcat/go/bin/gocode' "go
-  " let g:completor_racer_binary='/home/pittcat/.cargo/bin/racer' "rust
-" }
 
  " python
   " {
