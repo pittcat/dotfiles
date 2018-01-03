@@ -11,7 +11,7 @@ if g:spacevim_nvim
   " deoplete-common
   let g:python3_host_prog ='/usr/bin/python'   "nvim path 
   let g:deoplete#enable_at_startup = 1         "start deoplete
-  let g:deoplete#enable_smart_case = 1
+  let g:deoplete#enable_smart_case = 0
 
 
   " ncm-----common
@@ -48,6 +48,9 @@ if g:spacevim_nvim
 else    "vim8
   " completor.vim
   set completeopt-=preview  "close show_docstring
+  set <F26>=d
+  noremap <silent> <F26> :call completor#do('definition')<cr>
+  noremap <silent> <s-k> :call completor#do('doc')<cr>
 
   let g:completor_clang_binary='/usr/bin/clang' "c++
   let completor_node_binary='/usr/bin/node'   "javascript
@@ -268,6 +271,12 @@ endif
   noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
   noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
   " }
+  " {iamcco/dict.vim
+  let g:api_key = "1932136763"
+  let g:keyfrom = "aioiyuuko"
+  nmap <silent> <localleader>yd <Plug>DictWSearch
+  vmap <silent> <localleader>yd <Plug>DictWVSearch
+    "}
 
  " snippet配置
  " {

@@ -14,6 +14,7 @@ if g:spacevim_nvim  " nvim
 
 else  "vim8
   " completor.vim
+  Plug 'xaizek/vim-inccomplete'         "complete cpp header------improve completor
   Plug 'osyo-manga/vim-monster'     " ruby------->gem install rcodetools
 
 endif 
@@ -33,7 +34,6 @@ Plug 'SirVer/ultisnips'
 Plug 'isRuslan/vim-es6'                     "es6
 
 " }
-
 
 
 " python
@@ -162,7 +162,10 @@ Plug 'justinmk/vim-gtfo'
 " got--------->terminal or tmux
 " gof--------->file manager
 "}
-
+"
+"{iamcco/dict.vim
+Plug 'iamcco/dict.vim'
+"}
 "theme
 Plug 'junegunn/seoul256.vim'
 Plug 'rakr/vim-one'
