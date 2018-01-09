@@ -9,7 +9,7 @@ if g:spacevim_nvim
 
 
   " deoplete-common
-  let g:python3_host_prog ='/usr/bin/python'   "nvim path 
+  let g:python3_host_prog ='/usr/bin/python3'   "nvim path 
   let g:deoplete#enable_at_startup = 1         "start deoplete
   let g:deoplete#enable_smart_case = 0
 
@@ -277,6 +277,14 @@ endif
   nmap <silent> <localleader>yd <Plug>DictWSearch
   vmap <silent> <localleader>yd <Plug>DictWVSearch
     "}
+    "{dyng/ctrlsf.vim
+  vmap <silent> <localleader>cf <Plug>CtrlSFVwordExec
+  nmap <silent> <localleader>cf <Plug>CtrlSFCwordPath<cr>
+    "}
+    "
+    "{fzf neoyank
+  nnoremap <silent> <leader>fy :FZFNeoyank<cr>
+    "} 
 
  " snippet配置
  " {

@@ -14,6 +14,7 @@ if g:spacevim_nvim  " nvim
 
 else  "vim8
   " completor.vim
+  Plug 'ferreum/completor-tmux'     "complete tmux
   Plug 'xaizek/vim-inccomplete'         "complete cpp header------improve completor
   Plug 'osyo-manga/vim-monster'     " ruby------->gem install rcodetools
 
@@ -166,6 +167,18 @@ Plug 'justinmk/vim-gtfo'
 "{iamcco/dict.vim
 Plug 'iamcco/dict.vim'
 "}
+"{dyng/ctrlsf.vim
+Plug 'dyng/ctrlsf.vim'
+"}
+"{fzf neoyank
+Plug 'justinhoward/fzf-neoyank'
+Plug 'Shougo/neoyank.vim'
+"}
+"
+"{
+Plug 'Shougo/neopairs.vim'
+"}
+"
 "theme
 Plug 'junegunn/seoul256.vim'
 Plug 'rakr/vim-one'
