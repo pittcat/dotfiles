@@ -30,7 +30,9 @@
 ;;; Code:
 
 (defconst pittcat-packages
-  '()
+  '(
+
+    )
   "The list of Lisp packages required by the pittcat layer.
 
 Each entry is either:
@@ -60,3 +62,4 @@ Each entry is either:
 
 
 ;;; packages.el ends here
+
