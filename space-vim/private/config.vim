@@ -116,8 +116,18 @@ endif
  " web
   " {
   " html
+  let g:user_emmet_leader_key='<Tab>'
+  let g:user_emmet_settings = {
+    \  'javascript.jsx' : {
+      \      'extends' : 'jsx',
+      \  },
+    \}            "emmet 
 
+
+  let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx"       "auto-closetag添加对jsx等的支持
    "javascript 
+  let g:javascript_plugin_jsdoc = 1       "pangloss/vim-javascript
+  let g:jsx_ext_required = 0              "mxw/vim-jsx
    " }
 
   
