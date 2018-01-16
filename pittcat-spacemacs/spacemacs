@@ -38,15 +38,15 @@ This function should only modify configuration layer settings."
          ivy
          better-defaults
          ;; tools
-         semantic
-         imenu-list
+         ;; semantic
+         ;; imenu-list
          ;; (treemacs :variables treemacs-use-filewatch-mode
                    ;; t)
-         (ibuffer :variables ibuffer-group-buffers-by'projects)
-         (git :variables git-magit-status-fullscreen
-              t magit-push-always-verify nil magit-save-repository-buffers
-              'dontask magit-revert-buffers 'silent magit-refs-show-commit-count
-              'all magit-revision-show-gravatars nil)
+         ;; (ibuffer :variables ibuffer-group-buffers-by'projects)
+         ;; (git :variables git-magit-status-fullscreen
+         ;;      t magit-push-always-verify nil magit-save-repository-buffers
+         ;;      'dontask magit-revert-buffers 'silent magit-refs-show-commit-count
+         ;;      'all magit-revision-show-gravatars nil)
          (org :variables org-enable-bootstrap-support
               t)
 
@@ -63,11 +63,11 @@ This function should only modify configuration layer settings."
          emacs-lisp
          ;; (ruby :variables ruby-enable-enh-ruby-mode t)
          ;; (c-c++ :variables c-c++-enable-clang-support t)
-         (python :variables python-test-runner'(nose pytest))
-         ipython-notebook
+         ;; (python :variables python-test-runner'(nose pytest))
+         ;; ipython-notebook
 
-         react
-         javascript
+         ;; react
+         ;; javascript
          html
 
 
