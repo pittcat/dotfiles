@@ -295,7 +295,13 @@ endif
     "{fzf neoyank
   nnoremap <silent> <leader>fy :FZFNeoyank<cr>
     "} 
-
+    "
+    "
+  "  {osyo-manga/vim-brightest             "当前单词下划线 
+  let g:brightest#highlight = {
+  \   "group" : "BrightestUnderline"
+  \}
+  "  } 
  " snippet配置
  " {
 

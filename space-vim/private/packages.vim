@@ -179,7 +179,7 @@ Plug 'Shougo/neoyank.vim'
 Plug 'Shougo/neopairs.vim'
 "}
 "{
-Plug 'itchyny/vim-cursorword'         "当前单词下划线
+Plug 'osyo-manga/vim-brightest'             "当前单词下划线 
 "}
 "{
 Plug 'chr4/nginx.vim'                 "nginx高亮
