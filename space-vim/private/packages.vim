@@ -15,7 +15,6 @@ if g:spacevim_nvim  " nvim
 else  "vim8
   " completor.vim
   Plug 'ferreum/completor-tmux'     "complete tmux
-  Plug 'xaizek/vim-inccomplete'         "complete cpp header------improve completor
   Plug 'osyo-manga/vim-monster'     " ruby------->gem install rcodetools
 
 endif 
@@ -51,7 +50,12 @@ Plug  'gregsexton/matchtag'   "标签高亮
  "javascript 
 " }
 "
-"
+"php
+" {
+" Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }           "autocomplete
+" Plug 'StanAngeloff/php.vim'               "高亮
+" Plug '2072/PHP-Indenting-for-VIm'         "缩进
+" }
 "
 
 

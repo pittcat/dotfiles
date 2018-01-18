@@ -29,20 +29,19 @@ if g:spacevim_nvim
 
   " deoplete-----extend for ncm sources setting
 
-  " call deoplete#enable()          " force init deoplete then hack deoplete's mapping
+  call deoplete#enable()          " force init deoplete then hack deoplete's mapping
+  au User CmSetup call cm#register_source({'name' : 'deoplete',
+          \ 'priority': 7,  
+          \ 'abbreviation': '', 
+          \ })                      " register as ncm source
 
-  " au User CmSetup call cm#register_source({'name' : 'deoplete',
-          " \ 'priority': 7,  
-          " \ 'abbreviation': '', 
-          " \ })                      " register as ncm source
+  " hack deoplete's mapping
+  inoremap <silent> <Plug>_ <C-r>=g:Deoplete_ncm()<CR>
 
-  " " hack deoplete's mapping
-  " inoremap <silent> <Plug>_ <C-r>=g:Deoplete_ncm()<CR>
-
-  " func! g:Deoplete_ncm()            " forward to ncm
-    " call cm#complete('deoplete', cm#context(), g:deoplete#_context.complete_position + 1, g:deoplete#_context.candidates)
-    " return ''
-  " endfunc
+  func! g:Deoplete_ncm()            " forward to ncm
+    call cm#complete('deoplete', cm#context(), g:deoplete#_context.complete_position + 1, g:deoplete#_context.candidates)
+    return ''
+  endfunc
 
 
 else    "vim8
@@ -56,6 +55,7 @@ else    "vim8
   let completor_node_binary='/usr/bin/node'   "javascript
   let g:completor_python_binary = '/usr/bin/python3' "python 
   let g:completor_ruby_omni_trigger = '([\w-]+|@[\w-]*|[\w-]+:\s*[\w-]*)$'      "install vim-monster-------ruby
+  let g:completor_php_omni_trigger = '([$\w]+|use\s*|->[$\w]*|::[$\w]*|implements\s*|extends\s*|class\s+[$\w]+|new\s*)$'
   " let g:completor_gocode_binary='/home/pittcat/go/bin/gocode' "go
   " let g:completor_racer_binary='/home/pittcat/.cargo/bin/racer' "rust
 
