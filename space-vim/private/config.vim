@@ -47,7 +47,7 @@ if g:spacevim_nvim
 else    "vim8
   " completor.vim
   set completeopt-=preview  "close show_docstring
-  set <F26>=d
+  set <F26>=n
   noremap <silent> <F26> :call completor#do('definition')<cr>
   noremap <silent> <s-k> :call completor#do('doc')<cr>
 

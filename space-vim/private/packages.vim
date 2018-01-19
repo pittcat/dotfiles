@@ -39,6 +39,7 @@ Plug 'isRuslan/vim-es6'                     "es6
 " python
 " {
 Plug 'fisadev/vim-isort'  " import 排序
+Plug 'jmcomets/vim-pony'  " django jump and command
 " }
 
 
@@ -194,6 +195,6 @@ Plug 'junegunn/seoul256.vim'
 Plug 'rakr/vim-one'
 Plug 'kristijanhusak/vim-hybrid-material'
 
-Plug 'enricobacis/vim-airline-clock'
-let g:airline#extensions#clock#format = '%H:%M:%S'
-let g:airline#extensions#clock#updatetime = 1000
+" Plug 'enricobacis/vim-airline-clock'
+" let g:airline#extensions#clock#format = '%H:%M:%S'
+" let g:airline#extensions#clock#updatetime = 1000
