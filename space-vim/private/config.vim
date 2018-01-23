@@ -67,20 +67,23 @@ if g:spacevim_nvim || g:spacevim_vim8
   let g:UltiSnipsSnippetDirectories=['UltiSnips']
   exe 'set rtp+=' . expand(g:spacevim_dir . '/private/UltiSnips')
   let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
-  let g:UltiSnipsExpandTrigger = '<C-e>'
+  let g:UltiSnipsRemoveSelectModeMappings = 0
+  set <F27>=\
+  let g:UltiSnipsExpandTrigger = "<F27>"
   let g:UltiSnipsJumpForwardTrigger = '<C-j>'
   let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
 
-  let g:ulti_expand_or_jump_res = 0
-  function! ExpandSnippetOrCarriageReturn()
-    let l:snippet = UltiSnips#ExpandSnippetOrJump()
-    if g:ulti_expand_or_jump_res > 0
-      return l:snippet
-    else
-      return "\<CR>"
-    endif
-  endfunction
-  inoremap <expr> <CR> pumvisible() ? "\<C-R>=ExpandSnippetOrCarriageReturn()\<CR>" : "\<CR>"
+  " let g:ulti_expand_or_jump_res = 0
+  " function! ExpandSnippetOrCarriageReturn()
+    " let l:snippet = UltiSnips#ExpandSnippetOrJump()
+    " if g:ulti_expand_or_jump_res > 0
+      " return l:snippet
+    " else
+      " return "\<CR>"
+    " endif
+  " endfunction
+  " inoremap <expr> <CR> pumvisible() ? "\<C-R>=ExpandSnippetOrCarriageReturn()\<CR>" : "\<CR>"
+  inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 
 
