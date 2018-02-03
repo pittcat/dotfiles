@@ -114,9 +114,14 @@ alias ipb='ipython notebook'
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/pittcat/.fzf/bin:/home/pittcat/.vimpkg/bin
 
 # add ruby path
-if which ruby >/dev/null && which gem >/dev/null; then
-  export  PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
-fi
+GEM_HOME=$(ls -t -U | ruby -e 'puts Gem.user_dir')
+GEM_PATH=$GEM_HOME
+export PATH=$PATH:$GEM_HOME/bin
+# if which ruby >/dev/null && which gem >/dev/null; then
+  # export  PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+# fi
+
+
 # Codi
 # Usage: codi [filetype] [filename]
 codi() {

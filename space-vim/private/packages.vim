@@ -58,7 +58,16 @@ Plug  'gregsexton/matchtag'   "标签高亮
 " Plug '2072/PHP-Indenting-for-VIm'         "缩进
 " }
 "
-
+" ruby
+" {
+  " Plug 'tpope/vim-rails'
+  " Plug 'tpope/vim-endwise'
+" }
+"
+"md
+" {
+  Plug 'suan/vim-instant-markdown',{'do':'npm intsall -g install instant-markdown-d'}
+" }
 
 " tools-improve
 "sjmbbill/undotree
@@ -180,9 +189,6 @@ Plug 'justinhoward/fzf-neoyank'
 Plug 'Shougo/neoyank.vim'
 "}
 "
-"{
-Plug 'Shougo/neopairs.vim'
-"}
 "{
 Plug 'chr4/nginx.vim'                 "nginx高亮
 "}

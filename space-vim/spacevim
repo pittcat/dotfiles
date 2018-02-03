@@ -25,6 +25,8 @@ function! Layers()
   Layer 'git'
   Layer 'github'
 
+  " MP 'roxma/nvim-completion-manager'
+  " MP 'roxma/nvim-cm-racer'
   Layer 'auto-completion',{'exclude':'maralla/completor-neosnippet'}
   Layer 'syntax-checking'
 
@@ -33,6 +35,7 @@ function! Layers()
   Layer 'ruby'
   Layer 'python'
   Layer 'c-c++'
+  Layer 'markdown',{'exclude':'iamcco/markdown-preview.vim'}
 
 endfunction
 
@@ -78,7 +81,6 @@ function! UserConfig()
 
   set background=dark
   "}
-
   
 "
 endfunction

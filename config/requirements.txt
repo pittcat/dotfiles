@@ -1,0 +1,7 @@
+yapf 
+flake8 
+jedi 
+ipython 
+neovim 
+## vim 
+iSearch

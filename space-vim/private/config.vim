@@ -9,7 +9,7 @@ if g:spacevim_nvim
 
 
   " deoplete-common
-  let g:python3_host_prog ='/usr/bin/python3'   "nvim path 
+  let g:python3_host_prog ='/usr/bin/python'   "nvim path 
   let g:deoplete#enable_at_startup = 1         "start deoplete
   let g:deoplete#enable_smart_case = 0
 
@@ -17,9 +17,10 @@ if g:spacevim_nvim
   " ncm-----common
    
   set shortmess+=c
-  let g:cm_sources_override = {
-      \ 'cm-tags': {'enable':0}
-      \ }
+  let g:cm_smart_enable=1
+  " let g:cm_sources_override = {
+      " \ 'cm-tags': {'enable':0}
+      " \ }
   " let g:cm_completeopt = 'menu,menuone,noinsert,noselect,preview'
 
   " augroup ncm_preview
@@ -47,14 +48,14 @@ if g:spacevim_nvim
 else    "vim8
   " completor.vim
   set completeopt-=preview  "close show_docstring
-  set <F26>=n
-  noremap <silent> <F26> :call completor#do('definition')<cr>
+  " set <F26>=n
+  " noremap <silent> <F26> :call completor#do('definition')<cr>
   noremap <silent> <s-k> :call completor#do('doc')<cr>
 
   let g:completor_clang_binary='/usr/bin/clang' "c++
   let completor_node_binary='/usr/bin/node'   "javascript
   let g:completor_python_binary = '/usr/bin/python3' "python 
-  let g:completor_ruby_omni_trigger = '([\w-]+|@[\w-]*|[\w-]+:\s*[\w-]*)$'      "install vim-monster-------ruby
+  let g:completor_ruby_omni_trigger = "\\w+$|[\\w\\)\\]\\}\'\"]+\\.\\w*$"
   let g:completor_php_omni_trigger = '([$\w]+|use\s*|->[$\w]*|::[$\w]*|implements\s*|extends\s*|class\s+[$\w]+|new\s*)$'
   " let g:completor_gocode_binary='/home/pittcat/go/bin/gocode' "go
   " let g:completor_racer_binary='/home/pittcat/.cargo/bin/racer' "rust
@@ -81,6 +82,7 @@ if g:spacevim_nvim || g:spacevim_vim8
   endfunction
   inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
+  
   inoremap <expr> <down> pumvisible() ? "\<C-n>" : "\<down>"
   inoremap <expr> <up> pumvisible() ? "\<C-p>" : "\<up>"
   " inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -93,12 +95,10 @@ if g:spacevim_nvim || g:spacevim_vim8
     xmap <c-l> <Plug>(ultisnips_expand)
     smap <c-l> <Plug>(ultisnips_expand)
 
-    let g:cm_complete_delay = 0
 
   endif
 
 endif
-
 
 
  " python
@@ -131,6 +131,10 @@ endif
   let g:javascript_plugin_jsdoc = 1       "pangloss/vim-javascript
   let g:jsx_ext_required = 0              "mxw/vim-jsx
    " }
+
+  " md
+  " {
+  " }
 
   
 
