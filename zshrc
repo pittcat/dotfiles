@@ -93,9 +93,19 @@ export PYTHONPATH=$PYTHONPATH:/usr/lib/python/dist-packages
 export PATH=~/.npm-global/bin:$PATH
 export NPM_CONFIG_PREFIX=~/.npm-global
 
+# rust
 if [ -d "$HOME/.cargo/bin" ] ; then
 	PATH="$HOME/.cargo/bin:$PATH"
 fi
+
+# ruby
+if hash ruby 2> /dev/null; then
+    GEM_HOME=$(ls -t -U | ruby -e 'puts Gem.user_dir')
+    if [[ -d "$GEM_HOME/bin" ]]; then
+        PATH="$GEM_HOME/bin:$PATH"
+    fi
+fi
+
 
 eval "$(thefuck --alias fk)"
 alias jz="j /home/pittcat/Desktop"
@@ -119,15 +129,6 @@ alias ipb='ipython notebook'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/pittcat/.fzf/bin:/home/pittcat/.vimpkg/bin
-
-# add ruby path
-GEM_HOME=$(ls -t -U | ruby -e 'puts Gem.user_dir')
-GEM_PATH=$GEM_HOME
-export PATH=$PATH:$GEM_HOME/bin
-# if which ruby >/dev/null && which gem >/dev/null; then
-  # export  PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
-# fi
-
 
 # Codi
 # Usage: codi [filetype] [filename]

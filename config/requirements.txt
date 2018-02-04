@@ -6,3 +6,5 @@ ptpython
 neovim 
 ## vim 
 iSearch
+thefuck
+isort
