@@ -2,7 +2,7 @@ if g:spacevim_nvim  " nvim
   " ncm
 
   Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}     " javascript
-  Plug 'roxma/ncm-rct-complete'     " ruby-----gem install rcodetools
+  " Plug 'roxma/ncm-rct-complete'     " ruby-----gem install rcodetools
 
   Plug 'Shougo/neoinclude.vim'      "include completion
   Plug 'Shougo/neco-syntax'         "syntax completion
@@ -15,11 +15,9 @@ if g:spacevim_nvim  " nvim
 else  "vim8
   " completor.vim
   Plug 'ferreum/completor-tmux'     "complete tmux
-  Plug 'osyo-manga/vim-monster'     " ruby------->gem install rcodetools
+  " Plug 'osyo-manga/vim-monster'     " ruby------->gem install rcodetools
 
 endif 
-
-
 
 
 " snippets
@@ -61,12 +59,13 @@ Plug  'gregsexton/matchtag'   "标签高亮
 " ruby
 " {
   " Plug 'tpope/vim-rails'
-  " Plug 'tpope/vim-endwise'
+  " Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 " }
 "
 "md
 " {
-  Plug 'suan/vim-instant-markdown',{'do':'npm intsall -g install instant-markdown-d'}
+  Plug 'shime/vim-livedown',{'do':'npm install -g livedown'}
+  " Plug 'suan/vim-instant-markdown',{'do':'npm intsall -g install instant-markdown-d'}
 " }
 
 " tools-improve
@@ -144,8 +143,8 @@ Plug 'rstacruz/vim-xtract'
 vnoremap <silent> <localleader>et :Xtract 
 "}
 "{
-Plug 'metakirby5/codi.vim'
-let g:codi#log='/tmp/codi.log'
+" Plug 'metakirby5/codi.vim'
+" let g:codi#log='/tmp/codi.log'
 "}
 "
 "{AndrewRadev/splitjoin.vim

@@ -32,9 +32,10 @@ function! Layers()
 
   Layer 'html',{'exclude':'othree/html5.vim'}
   Layer 'javascript'
-  Layer 'ruby'
+  " Layer 'ruby'
   Layer 'python'
   Layer 'c-c++'
+  " Layer 'rust'
   Layer 'markdown',{'exclude':'iamcco/markdown-preview.vim'}
 
 endfunction

@@ -2,6 +2,7 @@ yapf
 flake8 
 jedi 
 ipython 
+ptpython
 neovim 
 ## vim 
 iSearch

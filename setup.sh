@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-sudo package manager vim vim-gtk vim-gnome zsh tmux git curl python3-pip python-pip silversearcher-ag emacs rsync npm
+sudo package manager vim vim-gtk vim-gnome zsh tmux git curl python3-pip python-pip silversearcher-ag emacs rsync npm tig
 # set up top font
 curl -L https://github.com/hbin/top-programming-fonts/raw/master/install.sh | bash
 # remap caps esc

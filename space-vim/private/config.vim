@@ -130,10 +130,14 @@ endif
    "javascript 
   let g:javascript_plugin_jsdoc = 1       "pangloss/vim-javascript
   let g:jsx_ext_required = 0              "mxw/vim-jsx
+  au FileType javascript map <silent> <F5> :AsyncRun! time node %<CR>
    " }
 
   " md
   " {
+  let g:livedown_autorun = 1
+  nmap <silent> <leader>mdp :LivedownPreview<cr>
+  nmap <silent> <leader>mdt :LivedownToggle<cr>
   " }
 
   
@@ -255,7 +259,7 @@ endif
   nnoremap <silent> <leader>gn :Loremipsum<cr>
   "}
   "{codi.vim
-  noremap <silent> <localleader>cd :Codi!!<cr>
+  " noremap <silent> <localleader>cd :Codi!!<cr>
   "}
   "{epeli/slimux
   let g:slimux_select_from_current_window = 0

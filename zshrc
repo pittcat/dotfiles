@@ -93,6 +93,10 @@ export PYTHONPATH=$PYTHONPATH:/usr/lib/python/dist-packages
 export PATH=~/.npm-global/bin:$PATH
 export NPM_CONFIG_PREFIX=~/.npm-global
 
+if [ -d "$HOME/.cargo/bin" ] ; then
+	PATH="$HOME/.cargo/bin:$PATH"
+fi
+
 eval "$(thefuck --alias fk)"
 alias jz="j /home/pittcat/Desktop"
 alias so="sudo openvpn --config /bin/42.ovpn"
@@ -109,6 +113,9 @@ alias xmap="xmodmap ~/.Xmodmap"
 # alias vim='nvim'
 alias sz='source ~/.zshrc' 
 alias ipb='ipython notebook'
+# alias v='vim'
+# alias t='tmux'
+# alias e='emacs'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/pittcat/.fzf/bin:/home/pittcat/.vimpkg/bin
