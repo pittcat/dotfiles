@@ -97,3 +97,11 @@ cp tmux.conf ~/.tmux.conf
 
  # must install 
 # silversearcher-ag 
+
+# desktop
+sudo package manager plank chromium
+
+# plank 
+cp ./config/autostart/plank.desktop ~/.config/autostart/
+
+
