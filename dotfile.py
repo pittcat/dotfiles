@@ -21,13 +21,13 @@ def Choose_package_manager():
 
     shutil.copy('./setup.sh', 'temp_setup.sh')
     for line in fileinput.input(r'./temp_setup.sh', inplace=1):
-        print(line.replace('package manager', package_manager), end='')
+        print(line.replace('package_manager', package_manager), end='')
 
 
 def Setup():
     if os.path.exists('/bin/zsh') != True:
         Choose_package_manager()
-        os.system('sh ./temp_setup.sh')
+        os.system('bash ./temp_setup.sh')
         os.remove('./temp_setup.sh')
 
 
@@ -41,12 +41,10 @@ def Sysnc():
                 dotfiles_path = os.getcwd() + '/space-vim/UltiSnips'
             else:
                 dotfiles_path = os.getcwd() + '/space-vim/private'
-            cmd = 'rsync -avrz ' + local_path + ' ' + dotfiles_path
-            subprocess.call(cmd, shell=True)
         else:
             dotfiles_path = os.getcwd() + '/pittcat-spacemacs/private'
-            cmd = 'rsync -avrz ' + local_path + ' ' + dotfiles_path
-            subprocess.call(cmd, shell=True)
+        cmd = 'rsync -avrz ' + local_path + ' ' + dotfiles_path
+        subprocess.call(cmd, shell=True)
     file_list = [['/.spacevim', './space-vim/spacevim'],
                  ['/.zshrc', './zshrc'],
                  ['/.tmux.conf', './tmux.conf'],
@@ -57,8 +55,15 @@ def Sysnc():
 
 
 def main():
+
     Setup()
-    Sysnc()
+    verify_file_list=[os.path.exists(os.getenv('HOME')+i) for i in
+                      ['/.spacevim','/.zshrc','/.tmux.conf','/.spacemacs', ]]
+    print(verify_file_list)
+    if all(verify_file_list):
+        Sysnc()
+    else:
+        print("local files are partial.")
 
 
 if __name__ == '__main__':
