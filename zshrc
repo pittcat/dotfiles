@@ -102,10 +102,10 @@ fi
 if hash ruby 2> /dev/null; then
     GEM_HOME=$(ls -t -U | ruby -e 'puts Gem.user_dir')
     if [[ -d "$GEM_HOME/bin" ]]; then
-        PATH="$GEM_HOME/bin:$PATH"
+    PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
+    PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
     fi
 fi
-
 
 eval "$(thefuck --alias fk)"
 alias jz="j /home/pittcat/Desktop"
@@ -123,23 +123,14 @@ alias xmap="xmodmap ~/.Xmodmap"
 # alias vim='nvim'
 alias sz='source ~/.zshrc' 
 alias ipb='ipython notebook'
-# alias v='vim'
-# alias t='tmux'
-# alias e='emacs'
+alias pc='proxychains4'
+alias v='vim'
+alias t='tmux'
+alias e='emacs'
+alias n='nvim'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/pittcat/.fzf/bin:/home/pittcat/.vimpkg/bin
+# export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/pittcat/.fzf/bin:/home/pittcat/.vimpkg/bin
 
-# Codi
-# Usage: codi [filetype] [filename]
-codi() {
-  local syntax="${1:-python}"
-  shift
-  vim -c \
-    "let g:startify_disable_at_vimenter = 1 |\
-    set bt=nofile ls=0 noru nonu nornu |\
-    hi ColorColumn ctermbg=NONE |\
-    hi VertSplit ctermbg=NONE |\
-    hi NonText ctermfg=0 |\
-    Codi $syntax" "$@"
-}
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+# export PATH="$PATH:$HOME/.rvm/bin"

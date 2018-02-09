@@ -48,9 +48,6 @@ This function should only modify configuration layer settings."
          ;;      'dontask magit-revert-buffers 'silent magit-refs-show-commit-count
          ;;      'all magit-revision-show-gravatars nil)
          org
-
-
-
          (auto-completion :variables auto-completion-enable-sort-by-usage
                           t auto-completion-enable-snippets-in-popup
                           t)

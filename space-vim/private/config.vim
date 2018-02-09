@@ -4,7 +4,6 @@ if g:spacevim_nvim
 
   
 
-
   " deoplete-------lang extend
 
 
@@ -18,10 +17,9 @@ if g:spacevim_nvim
    
   set shortmess+=c
   let g:cm_smart_enable=1
-  " let g:cm_sources_override = {
-      " \ 'cm-tags': {'enable':0}
-      " \ }
-  " let g:cm_completeopt = 'menu,menuone,noinsert,noselect,preview'
+  let g:cm_matcher = {'module': 'cm_matchers.substr_matcher', 'case': 'smartcase'}
+  let g:cm_refresh_default_min_word_len=2
+  " let g:cm_completeopt = 'menu,menuone,noinsert,noselect'
 
   " augroup ncm_preview
       " autocmd! InsertLeave <buffer> if pumvisible() == 0|pclose|endif
@@ -48,18 +46,17 @@ if g:spacevim_nvim
 else    "vim8
   " completor.vim
   set completeopt-=preview  "close show_docstring
-  " set <F26>=n
-  " noremap <silent> <F26> :call completor#do('definition')<cr>
+  set <F26>=n
+  noremap <silent> <F26> :call completor#do('definition')<cr>
   noremap <silent> <s-k> :call completor#do('doc')<cr>
 
   let g:completor_clang_binary='/usr/bin/clang' "c++
   let completor_node_binary='/usr/bin/node'   "javascript
   let g:completor_python_binary = '/usr/bin/python3' "python 
   let g:completor_ruby_omni_trigger = "\\w+$|[\\w\\)\\]\\}\'\"]+\\.\\w*$"
-  let g:completor_php_omni_trigger = '([$\w]+|use\s*|->[$\w]*|::[$\w]*|implements\s*|extends\s*|class\s+[$\w]+|new\s*)$'
+  " let g:completor_php_omni_trigger = '([$\w]+|use\s*|->[$\w]*|::[$\w]*|implements\s*|extends\s*|class\s+[$\w]+|new\s*)$'
   " let g:completor_gocode_binary='/home/pittcat/go/bin/gocode' "go
   " let g:completor_racer_binary='/home/pittcat/.cargo/bin/racer' "rust
-
 endif 
 
 
@@ -76,25 +73,31 @@ if g:spacevim_nvim || g:spacevim_vim8
       let snippet = UltiSnips#ExpandSnippetOrJump()
       if g:ulti_expand_or_jump_res > 0
           return snippet
-      else
+        else
           return "\<C-y>"
       endif
   endfunction
   inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
   
-  inoremap <expr> <down> pumvisible() ? "\<C-n>" : "\<down>"
-  inoremap <expr> <up> pumvisible() ? "\<C-p>" : "\<up>"
   " inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+  if g:spacevim_vim8
+    inoremap <expr> <down> pumvisible() ? "\<C-n>" : "\<down>"
+    inoremap <expr> <up> pumvisible() ? "\<C-p>" : "\<up>"
+  endif
 
 
   if g:spacevim_nvim
     let g:UltiSnipsRemoveSelectModeMappings = 0
-    " inoremap <silent> <c-u> <c-r>=cm#sources#ultisnips#trigger_or_popup("\<Plug>(ultisnips_expand)")<cr>
     inoremap <silent> <c-l> <c-r>=cm#sources#ultisnips#trigger_or_popup("\<Plug>(ultisnips_expand)")<cr>
     xmap <c-l> <Plug>(ultisnips_expand)
     smap <c-l> <Plug>(ultisnips_expand)
-
+    
+    inoremap <expr> <down> pumvisible() ? "\<C-e>" : "\<down>"
+    inoremap <expr> <up>  pumvisible() ?  "\<C-e>" : "\<up>"
+    inoremap <expr> <left> pumvisible() ? "\<C-e>" : "\<left>"
+    inoremap <expr> <right> pumvisible() ? "\<C-e>" : "\<right>"
 
   endif
 
@@ -130,12 +133,14 @@ endif
    "javascript 
   let g:javascript_plugin_jsdoc = 1       "pangloss/vim-javascript
   let g:jsx_ext_required = 0              "mxw/vim-jsx
-  au FileType javascript map <silent> <F5> :AsyncRun! time node %<CR>
+
+  "skywind3000/asyncrun.vim
+  au FileType javascript map <silent> <F5> :AsyncRun! time node %<CR>    
    " }
 
   " md
   " {
-  let g:livedown_autorun = 1
+  let g:livedown_autorun = 0
   nmap <silent> <leader>mdp :LivedownPreview<cr>
   nmap <silent> <leader>mdt :LivedownToggle<cr>
   " }
@@ -162,18 +167,6 @@ endif
     call cursor(l, c)
     endfun
     map <special> <leader>dw :keepjumps call DelBlank()<cr>
-  " }
-    "修复Multiple_cursors和neocomplete的冲突
-    "{
-    " function! Multiple_cursors_before()
-      " exe 'NeoCompleteLock'
-      " " echo 'Disabled autocomplete'
-    " endfunction
-
-    " function! Multiple_cursors_after()
-      " exe 'NeoCompleteUnlock'
-      " " echo 'Enabled autocomplete'
-    " endfunction
   " }
   " {
     let g:multi_cursor_next_key='<C-d>'
@@ -216,9 +209,7 @@ endif
   noremap <silent> <leader>da ggdG
   "}
   "{
-  " inoremap <expr> \  pumvisible() ? "\<C-y>" : "\<CR>"
   inoremap  <C-v> <esc>gUiwea
-  inoremap  <C-c> <esc>gUla
   "}
   "{FZF
   nnoremap <Leader>f? :Files ~<CR>
@@ -226,10 +217,6 @@ endif
   nnoremap <Leader>fp :Files ~/.space-vim/private<CR>
   "}
   "
-  "{YankRing.vim
-  " let g:yankring_history_dir='~/.vim/'
-  " noremap <silent> <Leader>sy :YRShow<CR>
-  "}
   "{use Yggdroot/indentLine
   let g:indentLine_enable=1
   noremap <silent> <Leader>ti :IndentLinesToggle<cr>
@@ -237,9 +224,6 @@ endif
   let g:indentLine_char = '┆'
   "}
   "
-  "{rstacruz/vim-xtract
-  vnoremap <localleader>et :Xtract 
-  "}
   "
   "{change window quickly
   nnoremap <localleader>ww <C-W>w
@@ -263,12 +247,8 @@ endif
   "}
   "{epeli/slimux
   let g:slimux_select_from_current_window = 0
-  set <F23>=s
-  set <F24>=a
   set <F25>=c
   imap <silent> jk <esc>:SlimuxREPLSendBuffer<CR>
-  imap <silent> <F23> <esc>:SlimuxREPLSendBuffer<CR>s
-  nmap <silent> <F24> <esc>:SlimuxREPLSendBuffer<CR>
   nmap <silent> <F25> <esc>:SlimuxREPLConfigure
   nmap <silent> <C-c><C-c> :SlimuxREPLSendLine<CR>
   vmap <silent> <C-c><C-c> :SlimuxREPLSendSelection<CR>
@@ -305,8 +285,14 @@ endif
     "{fzf neoyank
   nnoremap <silent> <leader>fy :FZFNeoyank<cr>
     "} 
-
-
+    "{create new tab 
+  nmap <leader>nb :tabnew 
+    "}
+    "
+  " {map filename complete
+  set <F23>=.
+  inoremap <F23> <C-X><C-F>
+  " }
  " neosnippet配置
  " {
 

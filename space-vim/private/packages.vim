@@ -2,7 +2,7 @@ if g:spacevim_nvim  " nvim
   " ncm
 
   Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}     " javascript
-  " Plug 'roxma/ncm-rct-complete'     " ruby-----gem install rcodetools
+  Plug 'roxma/ncm-rct-complete'     " ruby-----gem install rcodetools
 
   Plug 'Shougo/neoinclude.vim'      "include completion
   Plug 'Shougo/neco-syntax'         "syntax completion
@@ -62,10 +62,10 @@ Plug  'gregsexton/matchtag'   "标签高亮
   " Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 " }
 "
-"md
+"markdownd
 " {
   Plug 'shime/vim-livedown',{'do':'npm install -g livedown'}
-  " Plug 'suan/vim-instant-markdown',{'do':'npm intsall -g install instant-markdown-d'}
+  " Plug 'suan/vim-instant-markdown',{'do':'npm install -g instant-markdown-d'}
 " }
 
 " tools-improve
@@ -100,10 +100,6 @@ let NERDTreeIgnore=['\.pyc','\~$','\.swp']  " 忽略一下文件的显示
 let NERDTreeShowBookmarks=1 " 显示书签列表
 "}
 
-"auto-mkdir
-" {
-Plug  'scy/vim-mkdir-on-write'
-" }
 
 "
 " gitfugitve的插件
@@ -137,14 +133,6 @@ Plug 'tpope/vim-unimpaired'
 "}
 "{vim-scripts/loremipsum
 Plug 'vim-scripts/loremipsum'
-"}
-"{
-Plug 'rstacruz/vim-xtract'
-vnoremap <silent> <localleader>et :Xtract 
-"}
-"{
-" Plug 'metakirby5/codi.vim'
-" let g:codi#log='/tmp/codi.log'
 "}
 "
 "{AndrewRadev/splitjoin.vim

@@ -8,3 +8,6 @@ neovim
 iSearch
 thefuck
 isort
+mistune
+psutil 
+setproctitle

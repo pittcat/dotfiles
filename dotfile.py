@@ -1,10 +1,10 @@
 import os
+import readline
 import subprocess
 import filecmp
 import shutil
 import fileinput
 from os import walk
-
 
 def Choose_package_manager():
     f = []
@@ -55,16 +55,13 @@ def Sysnc():
 
 
 def main():
-
-    Setup()
     verify_file_list=[os.path.exists(os.getenv('HOME')+i) for i in
                       ['/.spacevim','/.zshrc','/.tmux.conf','/.spacemacs', ]]
-    print(verify_file_list)
     if all(verify_file_list):
         Sysnc()
     else:
         print("local files are partial.")
-
+    Setup()
 
 if __name__ == '__main__':
     main()
