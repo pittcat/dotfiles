@@ -48,7 +48,8 @@ endif
  " web
   " {
   " html
-  let g:user_emmet_leader_key='<Tab>'
+  " let g:bracey_server_port=12304
+  let g:user_emmet_leader_key='<C-e>'
   let g:user_emmet_settings = {
     \  'javascript.jsx' : {
       \      'extends' : 'jsx',
@@ -216,7 +217,7 @@ endif
   noremap <silent> <leader>ff :FilesMru<cr>
    "}
     "{create new tab 
-  nmap <leader>nb :tabnew 
+  nmap <leader>nb :edit 
     "}
     "
   " {map filename complete

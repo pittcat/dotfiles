@@ -6,6 +6,8 @@ if g:spacevim_nvim || g:spacevim_vim8
   let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
   let g:UltiSnipsRemoveSelectModeMappings = 0
 
+  let g:UltiSnipsJumpForwardTrigger = '<C-j>'
+  let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
   let g:UltiSnipsExpandTrigger = "<nop>"
   let g:ulti_expand_or_jump_res = 0
   function ExpandSnippetOrCarriageReturn()

@@ -49,6 +49,7 @@ Plug 'jmcomets/vim-pony'  " django jump and command
 " web
 " {
 " html
+Plug 'turbio/bracey.vim',{'do':'npm install --prefix server'}
 Plug  'alvan/vim-closetag',{'for':'html'}  "标签补全等等
 Plug  'gregsexton/matchtag'   "标签高亮
  "javascript 
