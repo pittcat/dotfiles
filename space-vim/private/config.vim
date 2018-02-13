@@ -1,107 +1,34 @@
 if g:spacevim_nvim
 
-  " ncm----------lang extend 
-
+  " ncm----------lang 
   
 
   " deoplete-------lang extend
-
+  let g:tmuxcomplete#trigger = ''     "  'wellle/tmux-complete.vim'
+  let g:deoplete#sources#jedi#python_path='/usr/bin/python3'  "zchee/deoplete-jedi
+  let g:deoplete#sources#ternjs#tern_bin = '/usr/bin/tern'    "carlitux/deoplete-ternjs
+  let g:deoplete#sources#clang#libclang_path='/usr/lib/libclang.so'   "zchee/deoplete-clang
+  let  g:deoplete#sources#clang#clang_header='/usr/lib/clang'
 
   " deoplete-common
-  let g:python3_host_prog ='/usr/bin/python'   "nvim path 
-  let g:deoplete#enable_at_startup = 1         "start deoplete
-  let g:deoplete#enable_smart_case = 0
+  let g:deoplete#auto_complete_delay=70
+  let g:python3_host_prog ='/usr/bin/python3'   "nvim path 
+  let g:python_host_prog ='/usr/bin/python'   "nvim path 
 
-
-  " ncm-----common
-   
-  set shortmess+=c
-  let g:cm_smart_enable=1
-  let g:cm_matcher = {'module': 'cm_matchers.substr_matcher', 'case': 'smartcase'}
-  let g:cm_refresh_default_min_word_len=2
-  " let g:cm_completeopt = 'menu,menuone,noinsert,noselect'
-
-  " augroup ncm_preview
-      " autocmd! InsertLeave <buffer> if pumvisible() == 0|pclose|endif
-  " augroup END
-
-
-  " deoplete-----extend for ncm sources setting
-
-  call deoplete#enable()          " force init deoplete then hack deoplete's mapping
-  au User CmSetup call cm#register_source({'name' : 'deoplete',
-          \ 'priority': 7,  
-          \ 'abbreviation': '', 
-          \ })                      " register as ncm source
-
-  " hack deoplete's mapping
-  inoremap <silent> <Plug>_ <C-r>=g:Deoplete_ncm()<CR>
-
-  func! g:Deoplete_ncm()            " forward to ncm
-    call cm#complete('deoplete', cm#context(), g:deoplete#_context.complete_position + 1, g:deoplete#_context.candidates)
-    return ''
-  endfunc
+  
 
 
 else    "vim8
-  " completor.vim
-  set completeopt-=preview  "close show_docstring
-  set <F26>=n
-  noremap <silent> <F26> :call completor#do('definition')<cr>
-  noremap <silent> <s-k> :call completor#do('doc')<cr>
-
-  let g:completor_clang_binary='/usr/bin/clang' "c++
-  let completor_node_binary='/usr/bin/node'   "javascript
-  let g:completor_python_binary = '/usr/bin/python3' "python 
-  let g:completor_ruby_omni_trigger = "\\w+$|[\\w\\)\\]\\}\'\"]+\\.\\w*$"
-  " let g:completor_php_omni_trigger = '([$\w]+|use\s*|->[$\w]*|::[$\w]*|implements\s*|extends\s*|class\s+[$\w]+|new\s*)$'
+    let g:completor_clang_binary='/usr/bin/clang' "c++
+    let completor_node_binary='/usr/bin/node'   "javascript
+    let g:completor_python_binary = '/usr/bin/python3' "python 
   " let g:completor_gocode_binary='/home/pittcat/go/bin/gocode' "go
   " let g:completor_racer_binary='/home/pittcat/.cargo/bin/racer' "rust
 endif 
 
 
 " snippet
-if g:spacevim_nvim || g:spacevim_vim8
-  let g:UltiSnipsSnippetDirectories=['UltiSnips']
-  exe 'set rtp+=' . expand(g:spacevim_dir . '/private/UltiSnips')
-  let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
-  let g:UltiSnipsRemoveSelectModeMappings = 0
-
-  let g:UltiSnipsExpandTrigger = "<nop>"
-  let g:ulti_expand_or_jump_res = 0
-  function ExpandSnippetOrCarriageReturn()
-      let snippet = UltiSnips#ExpandSnippetOrJump()
-      if g:ulti_expand_or_jump_res > 0
-          return snippet
-        else
-          return "\<C-y>"
-      endif
-  endfunction
-  inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-  
-  " inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-  if g:spacevim_vim8
-    inoremap <expr> <down> pumvisible() ? "\<C-n>" : "\<down>"
-    inoremap <expr> <up> pumvisible() ? "\<C-p>" : "\<up>"
-  endif
-
-
-  if g:spacevim_nvim
-    let g:UltiSnipsRemoveSelectModeMappings = 0
-    inoremap <silent> <c-l> <c-r>=cm#sources#ultisnips#trigger_or_popup("\<Plug>(ultisnips_expand)")<cr>
-    xmap <c-l> <Plug>(ultisnips_expand)
-    smap <c-l> <Plug>(ultisnips_expand)
-    
-    inoremap <expr> <down> pumvisible() ? "\<C-e>" : "\<down>"
-    inoremap <expr> <up>  pumvisible() ?  "\<C-e>" : "\<up>"
-    inoremap <expr> <left> pumvisible() ? "\<C-e>" : "\<left>"
-    inoremap <expr> <right> pumvisible() ? "\<C-e>" : "\<right>"
-
-  endif
-
-endif
+" if g:spacevim_nvim || g:spacevim_vim8
 
 
  " python
@@ -165,7 +92,7 @@ endif
     :g/^\n\{2,}/d
     let @/=_s
     call cursor(l, c)
-    endfun
+  endfun
     map <special> <leader>dw :keepjumps call DelBlank()<cr>
   " }
   " {
@@ -213,7 +140,7 @@ endif
   "}
   "{FZF
   nnoremap <Leader>f? :Files ~<CR>
-  nnoremap <Leader>ff :Files<CR>
+  " nnoremap <Leader>ff :Files<CR>
   nnoremap <Leader>fp :Files ~/.space-vim/private<CR>
   "}
   "
@@ -285,6 +212,9 @@ endif
     "{fzf neoyank
   nnoremap <silent> <leader>fy :FZFNeoyank<cr>
     "} 
+   "{tweekmonster/fzf-filemru
+  noremap <silent> <leader>ff :FilesMru<cr>
+   "}
     "{create new tab 
   nmap <leader>nb :tabnew 
     "}
@@ -293,37 +223,16 @@ endif
   set <F23>=.
   inoremap <F23> <C-X><C-F>
   " }
- " neosnippet配置
- " {
-
-
-" if g:spacevim_nvim
-
-  "通用配置<c-y>
-  " inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"       
-
-
-  " neosnippet--vim8 或者 neovim
-
-  " inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-  " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-  " ncm
-  " imap <expr> <Tab> (pumvisible() ? "\<C-n>" : (neosnippet#mappings#expand_or_jump_impl()!=''?neosnippet#mappings#expand_or_jump_impl():"\<Tab>"))
-  " deoplete completor
-  " imap <expr><TAB>
-  " \ pumvisible() ? "\<C-n>" :
-  " \ neosnippet#expandable_or_jumpable() ?
-  " \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-  " smap <Tab>     <Plug>(neosnippet_expand_or_jump)  
-  " xmap <Tab>     <Plug>(neosnippet_expand_target)   
-  " neosnippet doesn't have jump back key
-  " imap <expr> <S-Tab> (pumvisible() ? "\<C-p>" : "\<S-Tab>")
-
- 
-    
-" endif
-
+  " {open .spacevim
+  noremap <silent> <leader>fed :edit ~/.spacevim<cr>
   " }
-
-  
+ "  {'wsdjeg/FlyGrep.vim'
+  nnoremap <leader>ss :FlyGrep<cr>
+ "  }
+ "  {dhruvasagar/vim-table-mode
+   "" Use this option to define the table corner character
+  let g:table_mode_corner = '|'
+  " Use this option to define the delimiter which used by
+  let g:table_mode_delimiter = ' '
+  noremap <leader>itb :Tableize<cr>
+  " }

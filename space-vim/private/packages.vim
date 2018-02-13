@@ -1,29 +1,34 @@
 if g:spacevim_nvim  " nvim
+  " deoplete lang
+  Plug 'wellle/tmux-complete.vim'
+  Plug 'zchee/deoplete-jedi',{'for': 'python'}
+  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern','for':'javascript'}
+  Plug 'zchee/deoplete-clang'
+
   " ncm
+  " Plug 'roxma/nvim-completion-manager'
+  " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }         " deoplete------extend for ncm
+  " Plug 'fgrsnau/ncm-otherbuf'       "other buffers
 
-  Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}     " javascript
-  Plug 'roxma/ncm-rct-complete'     " ruby-----gem install rcodetools
+  " ncm lang 
+  " Plug 'roxma/nvim-cm-tern',  {'do': 'npm install','for':'javascript'}     " javascript
+  " Plug 'roxma/ncm-rct-complete'     " ruby-----gem install rcodetools
 
+
+  " common 
   Plug 'Shougo/neoinclude.vim'      "include completion
   Plug 'Shougo/neco-syntax'         "syntax completion
-  Plug 'fgrsnau/ncm-otherbuf'       "other buffers
-
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }         " deoplete------extend for ncm
-  " deoplete-------extend for lang
-
 
 else  "vim8
   " completor.vim
   Plug 'ferreum/completor-tmux'     "complete tmux
-  " Plug 'osyo-manga/vim-monster'     " ruby------->gem install rcodetools
+  Plug 'osyo-manga/vim-monster'     " ruby------->gem install rcodetools
 
 endif 
 
 
 " snippets
 " {
-Plug 'honza/vim-snippets'
-Plug 'SirVer/ultisnips'
 
 " web 
 "
@@ -44,7 +49,7 @@ Plug 'jmcomets/vim-pony'  " django jump and command
 " web
 " {
 " html
-Plug  'alvan/vim-closetag'    "标签补全等等
+Plug  'alvan/vim-closetag',{'for':'html'}  "标签补全等等
 Plug  'gregsexton/matchtag'   "标签高亮
  "javascript 
 " }
@@ -175,16 +180,22 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'justinhoward/fzf-neoyank'
 Plug 'Shougo/neoyank.vim'
 "}
+"{
+Plug 'tweekmonster/fzf-filemru'
+"}
 "
 "{
 Plug 'chr4/nginx.vim'                 "nginx高亮
 "}
+"{project index grep
+Plug 'wsdjeg/FlyGrep.vim'
+"}
+"{dhruvasagar/vim-table-mode
+Plug 'dhruvasagar/vim-table-mode',{'for':'markdown'}
+"}
 "
-"theme
+"themefor
 Plug 'junegunn/seoul256.vim'
 Plug 'rakr/vim-one'
 Plug 'kristijanhusak/vim-hybrid-material'
 
-" Plug 'enricobacis/vim-airline-clock'
-" let g:airline#extensions#clock#format = '%H:%M:%S'
-" let g:airline#extensions#clock#updatetime = 1000

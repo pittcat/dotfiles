@@ -31,10 +31,10 @@
 
 (defconst pittcat-programing-packages
   '(
-    rjsx-mode
-    react-snippets
-    react-es6-snippets
-    (react-es6-snippets :location (recipe :fetcher github :repo "gen1321/react-es6-snippets-emacs"))
+    ;; rjsx-mode
+    ;; react-snippets
+    ;; react-es6-snippets
+    ;; (react-es6-snippets :location (recipe :fetcher github :repo "gen1321/react-es6-snippets-emacs"))
     )
   "The list of Lisp packages required by the pittcat-programing layer.
 
@@ -67,6 +67,6 @@ Each entry is either:
 ;;; packages.el ends here
 
 ;; react
-(defun pittcat-programing/init-rjsx-mode())
-(defun pittcat-programing/init-react-snippets())
-(defun pittcat-programing/init-react-es6-snippets())
+;; (defun pittcat-programing/init-rjsx-mode())
+;; (defun pittcat-programing/init-react-snippets())
+;; (defun pittcat-programing/init-react-es6-snippets())

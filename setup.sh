@@ -54,9 +54,11 @@ sudo sh -c 'echo "xmodmap ~/.Xmodmap" >> /etc/rc.local'
 
 #配置vim vim8 并且须支持python3 javascript
 git clone https://github.com/liuchengxu/space-vim.git ~/.space-vim
-cp ./space-vim/spacevim ~/.spacevim
-cp ./space-vim/private ~/.space-vim/ -r
-cp ./space-vim/UltiSnips/ ~/.vim/ -r
+cp ./space-vim/spacevim $HOME/.spacevim
+cp ./space-vim/private $HOME/.space-vim/ -r
+cp ./space-vim/UltiSnips/ $HOME/.vim/ -r
+cp $PWD/space-vim/codesnippets $HOME/.space-vim/layers/+programming -r
+cp $PWD/space-vim/autocomplete $HOME/.space-vim/layers/+completion -r
 
 # config ycmd
 # sudo git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/plugged/YouCompleteMe

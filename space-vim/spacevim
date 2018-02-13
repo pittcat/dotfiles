@@ -21,11 +21,13 @@ function! Layers()
   Layer 'file-manager',{'exclude':'danro/rename.vim'}
   Layer 'better-motion'
   Layer 'programming',{'exclude':'nathanaelkane/vim-indent-guides'}
-  Layer 'editing'
+  Layer 'editing',{'exclude':'pelodelfuego/vim-swoop'}
   Layer 'git'
   Layer 'github'
 
-  Layer 'auto-completion',{'exclude':'maralla/completor-neosnippet'}
+  Layer 'autocomplete'
+  Layer 'codesnippets'
+  " Layer 'deoplete'
   Layer 'syntax-checking'
 
   Layer 'html',{'exclude':'othree/html5.vim'}
@@ -67,20 +69,21 @@ function! UserConfig()
   "
   "
   " {kristijanhusak/vim-hybrid-material
-  " let g:enable_italic_font = 1
-  " set background=dark
-  " colorscheme hybrid_material
+  let g:enable_italic_font = 1
+  set background=dark
+  colorscheme hybrid_material
   "}
   "
   "{junegunn/seoul256.vim
   
-  colo seoul256
+  " colo seoul256
 
   colo seoul256-light
 
-  set background=dark
+  " set background=dark
   "}
   
+
 "
 endfunction
 
