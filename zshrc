@@ -107,6 +107,8 @@ if hash ruby 2> /dev/null; then
     fi
 fi
 
+zmodload zsh/zpty
+
 eval "$(thefuck --alias fk)"
 alias jz="j /home/pittcat/Desktop"
 alias so="sudo openvpn --config /bin/42.ovpn"

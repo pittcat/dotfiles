@@ -194,7 +194,9 @@ Plug 'wsdjeg/FlyGrep.vim'
 "{dhruvasagar/vim-table-mode
 Plug 'dhruvasagar/vim-table-mode',{'for':'markdown'}
 "}
-"
+"{dietsche/vim-lastplace
+Plug 'dietsche/vim-lastplace'
+"}
 "themefor
 Plug 'junegunn/seoul256.vim'
 Plug 'rakr/vim-one'
