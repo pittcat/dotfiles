@@ -69,21 +69,19 @@ function! UserConfig()
   "
   "
   " {kristijanhusak/vim-hybrid-material
-  let g:enable_italic_font = 1
-  set background=dark
-  colorscheme hybrid_material
+  " let g:enable_italic_font = 1
+  " set background=dark
+  " colorscheme hybrid_material
   "}
   "
   "{junegunn/seoul256.vim
   
-  " colo seoul256
+  colo seoul256
 
   colo seoul256-light
 
   " set background=dark
   "}
-  
-
 "
 endfunction
 

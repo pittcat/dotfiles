@@ -90,8 +90,8 @@ source $ZSH/oh-my-zsh.sh
 # eval "$(pyenv virtualenv-init -)"
 export PYTHONPATH=$PYTHONPATH:/usr/lib/python3/dist-packages
 export PYTHONPATH=$PYTHONPATH:/usr/lib/python/dist-packages
-export PATH=~/.npm-global/bin:$PATH
-export NPM_CONFIG_PREFIX=~/.npm-global
+# export PATH=~/.npm-global/bin:$PATH
+# export NPM_CONFIG_PREFIX=~/.npm-global
 
 # rust
 if [ -d "$HOME/.cargo/bin" ] ; then

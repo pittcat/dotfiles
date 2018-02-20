@@ -11,3 +11,4 @@ isort
 mistune
 psutil 
 setproctitle
+python-language-server

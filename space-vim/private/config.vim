@@ -15,12 +15,12 @@ if g:spacevim_nvim
   let g:python3_host_prog ='/usr/bin/python3'   "nvim path 
   let g:python_host_prog ='/usr/bin/python'   "nvim path 
 
-  
 
 
 else    "vim8
     let g:completor_clang_binary='/usr/bin/clang' "c++
     let completor_node_binary='/usr/bin/node'   "javascript
+    let g:completor_tsserver_binary = '/usr/bin/tsserver'
     let g:completor_python_binary = '/usr/bin/python3' "python 
   " let g:completor_gocode_binary='/home/pittcat/go/bin/gocode' "go
   " let g:completor_racer_binary='/home/pittcat/.cargo/bin/racer' "rust
@@ -237,3 +237,42 @@ endif
   let g:table_mode_delimiter = ' '
   noremap <leader>itb :Tableize<cr>
   " }
+  " { mhinz/vim-startify
+  let g:startify_session_persistence = 1
+  noremap <silent> <leader>sv :SSave<cr>
+  noremap <silent> <leader>sr :SLoad<cr>
+  " }
+  " {vim lsp
+  noremap <silent> gd :LspDefinition<cr> 
+  noremap <silent> <leader>sh :LspHover<cr> 
+  noremap <silent> <leader>cn :LspRename<cr>
+  autocmd FileType *.lsp-hover  nnoremap <buffer><silent> q :quit<cr>
+
+  " python
+  if executable('pyls')
+      " pip install python-language-server
+      au User lsp_setup call lsp#register_server({
+          \ 'name': 'pyls',
+          \ 'cmd': {server_info->['pyls']},
+          \ 'whitelist': ['python'],
+          \ })
+  endif
+
+  " javascript
+  if executable('typescript-language-server')
+      au User lsp_setup call lsp#register_server({
+          \ 'name': 'typescript-language-server',
+          \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+          \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
+          \ 'whitelist': ['typescript','javascript','javascript.jsx'],
+          \ })
+  endif
+
+" }
+" {vim qf
+  autocmd BufWinEnter quickfix nnoremap <silent> <buffer>
+              \   q :cclose<cr>:lclose<cr>
+  autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) |
+              \   bd|
+              \   q | endif
+" }

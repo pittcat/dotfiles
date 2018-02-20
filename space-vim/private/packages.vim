@@ -1,4 +1,5 @@
 if g:spacevim_nvim  " nvim
+
   " deoplete lang
   Plug 'wellle/tmux-complete.vim'
   Plug 'zchee/deoplete-jedi',{'for': 'python'}
@@ -23,6 +24,7 @@ else  "vim8
   " completor.vim
   Plug 'ferreum/completor-tmux'     "complete tmux
   Plug 'osyo-manga/vim-monster'     " ruby------->gem install rcodetools
+  Plug 'maralla/completor-typescript'
 
 endif 
 
@@ -196,6 +198,10 @@ Plug 'dhruvasagar/vim-table-mode',{'for':'markdown'}
 "}
 "{dietsche/vim-lastplace
 Plug 'dietsche/vim-lastplace'
+"}
+"{vim lsp
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
 "}
 "themefor
 Plug 'junegunn/seoul256.vim'

@@ -76,6 +76,7 @@ sudo $PKMG tidy #查错
 sudo npm i -g js-beautify #js 和html格式化
 # javascript 
 sudo npm i -g eslint jslint tern #查错 补全
+sudo npm install -g typescript typescript-language-server     #vim lsp for typescript and javascript
 # vue 
 sudo npm i -g eslint-plugin-vue #查错
 
