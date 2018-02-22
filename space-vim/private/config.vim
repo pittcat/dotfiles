@@ -61,6 +61,10 @@ endif
    "javascript 
   let g:javascript_plugin_jsdoc = 1       "pangloss/vim-javascript
   let g:jsx_ext_required = 0              "mxw/vim-jsx
+  "clavery/vim-chrome-repl
+  noremap <silent> <leader>rs :SendToChrome<cr>     
+  vmap <silent> <leader>rs :SendToChrome<cr>
+  noremap <silent> <leader>dc :bdelete __JSOUT__<cr>
 
   "skywind3000/asyncrun.vim
   au FileType javascript map <silent> <F5> :AsyncRun! time node %<CR>    
@@ -177,7 +181,7 @@ endif
   let g:slimux_select_from_current_window = 0
   set <F25>=c
   imap <silent> jk <esc>:SlimuxREPLSendBuffer<CR>
-  nmap <silent> <F25> <esc>:SlimuxREPLConfigure
+  nmap  <F25> :SlimuxREPLConfigure<cr>
   nmap <silent> <C-c><C-c> :SlimuxREPLSendLine<CR>
   vmap <silent> <C-c><C-c> :SlimuxREPLSendSelection<CR>
   "}
@@ -228,7 +232,7 @@ endif
   noremap <silent> <leader>fed :edit ~/.spacevim<cr>
   " }
  "  {'wsdjeg/FlyGrep.vim'
-  nnoremap <leader>ss :FlyGrep<cr>
+  nnoremap <leader>s/ :FlyGrep<cr>
  "  }
  "  {dhruvasagar/vim-table-mode
    "" Use this option to define the table corner character
@@ -268,6 +272,14 @@ endif
           \ })
   endif
 
+  if executable('clangd')
+      au User lsp_setup call lsp#register_server({
+          \ 'name': 'clangd',
+          \ 'cmd': {server_info->['clangd']},
+          \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+          \ })
+  endif
+
 " }
 " {vim qf
   autocmd BufWinEnter quickfix nnoremap <silent> <buffer>
@@ -276,3 +288,13 @@ endif
               \   bd|
               \   q | endif
 " }
+"{pelodelfuego/vim-swoop
+noremap <leader>ds :bdelete swoopBuf<cr>
+"}
+"{codi.vim
+noremap <silent> <localleader>cd :Codi!!<cr>
+"}
+"{ctrlptmux
+nnoremap <Leader>my :CtrlPTmux b<cr>
+"}
+

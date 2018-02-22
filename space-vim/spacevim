@@ -18,10 +18,11 @@ function! Layers()
   Layer 'which-key'
 
   Layer 'tmux'
+  Layer 'ctrlp'
   Layer 'file-manager',{'exclude':'danro/rename.vim'}
   Layer 'better-motion'
   Layer 'programming',{'exclude':'nathanaelkane/vim-indent-guides'}
-  Layer 'editing',{'exclude':'pelodelfuego/vim-swoop'}
+  Layer 'editing'
   Layer 'git'
   Layer 'github'
 
@@ -48,7 +49,6 @@ function! UserInit()
   " let g:spacevim_leader = "<\Space>"
   let g:spacevim_localleader = ','
   "
-
 endfunction
 
 
@@ -68,20 +68,13 @@ function! UserConfig()
   "}
   "
   "
-  " {kristijanhusak/vim-hybrid-material
-  " let g:enable_italic_font = 1
-  " set background=dark
-  " colorscheme hybrid_material
-  "}
-  "
-  "{junegunn/seoul256.vim
-  
-  colo seoul256
-
-  colo seoul256-light
-
-  " set background=dark
-  "}
+    " { sickill/vim-monokai
+  " colorscheme monokai
+  " }
+  " { mhinz/vim-janah
+  autocmd ColorScheme janah highlight Normal ctermbg=235
+  colorscheme janah
+  " }
 "
 endfunction
 

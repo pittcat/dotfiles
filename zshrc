@@ -90,8 +90,8 @@ source $ZSH/oh-my-zsh.sh
 # eval "$(pyenv virtualenv-init -)"
 export PYTHONPATH=$PYTHONPATH:/usr/lib/python3/dist-packages
 export PYTHONPATH=$PYTHONPATH:/usr/lib/python/dist-packages
-# export PATH=~/.npm-global/bin:$PATH
-# export NPM_CONFIG_PREFIX=~/.npm-global
+export PATH=~/.npm-global/bin:$PATH
+export NPM_CONFIG_PREFIX=~/.npm-global
 
 # rust
 if [ -d "$HOME/.cargo/bin" ] ; then
@@ -117,12 +117,15 @@ alias pmm="python3 manage.py migrate"
 alias pmr="python3 manage.py runserver"
 alias pmf="python3 manage.py flush"
 alias pmc="python3 manage.py createsuperuser"
+alias cnpm="npm --registry=https://registry.npm.taobao.org \
+--cache=$HOME/.npm/.cache/cnpm \
+--disturl=https://npm.taobao.org/dist \
+--userconfig=$HOME/.cnpmrc"
 alias tldr="tldr"
 alias 7zmax="7za -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on a"
 alias duch="du -h --max-depth=1"
 alias emacsT="emacs -nw"
 alias xmap="xmodmap ~/.Xmodmap"
-# alias vim='nvim'
 alias sz='source ~/.zshrc' 
 alias ipb='ipython notebook'
 alias pc='proxychains4'
@@ -130,6 +133,7 @@ alias v='vim'
 alias t='tmux'
 alias e='emacs'
 alias n='nvim'
+alias gcpt='google-chrome-stable  --remote-debugging-port=9222'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/pittcat/.fzf/bin:/home/pittcat/.vimpkg/bin

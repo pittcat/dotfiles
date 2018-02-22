@@ -52,6 +52,7 @@ Plug 'jmcomets/vim-pony'  " django jump and command
 " {
 " html
 Plug 'turbio/bracey.vim',{'do':'npm install --prefix server'}
+Plug 'clavery/vim-chrome-repl',{'for':'javascript','do':'npm rebuild'}
 Plug  'alvan/vim-closetag',{'for':'html'}  "标签补全等等
 Plug  'gregsexton/matchtag'   "标签高亮
  "javascript 
@@ -203,8 +204,12 @@ Plug 'dietsche/vim-lastplace'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 "}
+" {metakirby5/codi.vim
+Plug 'metakirby5/codi.vim'
+" }
 "themefor
-Plug 'junegunn/seoul256.vim'
 Plug 'rakr/vim-one'
-Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'sickill/vim-monokai'
+Plug 'mhinz/vim-janah'
+
 

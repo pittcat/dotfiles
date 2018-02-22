@@ -33,7 +33,7 @@ fi
 ARCH="pacman -S"
 DEBIAN="apt install"
 if [[ "$PKMG" = "$ARCH"  ]]; then
-  sudo $PKMG gvim ctags the_silver_searcher yaourt shadowsocks-qt5 
+  sudo $PKMG gvim ctags the_silver_searcher yaourt shadowsocks-qt5  clang-tools-extra
 elif [[ "$PKMG"="$DEBIAN" ]]; then
   sudo add-apt-repository ppa:hzwhuang/ss-qt5
   sudo apt-get update
@@ -80,6 +80,7 @@ sudo npm install -g typescript typescript-language-server     #vim lsp for types
 # vue 
 sudo npm i -g eslint-plugin-vue #查错
 
+sudo npm i -g crconsole
 
 # manual install 
 
