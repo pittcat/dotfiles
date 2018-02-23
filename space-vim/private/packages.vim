@@ -4,8 +4,9 @@ if g:spacevim_nvim  " nvim
   Plug 'wellle/tmux-complete.vim'
   Plug 'zchee/deoplete-jedi',{'for': 'python'}
   Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern','for':'javascript'}
-  Plug 'zchee/deoplete-clang'
-
+  Plug 'zchee/deoplete-clang',{ 'for': ['c', 'cpp']}
+  " Plug 'uplus/deoplete-solargraph',{'for':'ruby'}
+  " Plug 'sebastianmarkow/deoplete-rust',{'for':'rust'}
   " ncm
   " Plug 'roxma/nvim-completion-manager'
   " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }         " deoplete------extend for ncm
@@ -23,8 +24,8 @@ if g:spacevim_nvim  " nvim
 else  "vim8
   " completor.vim
   Plug 'ferreum/completor-tmux'     "complete tmux
-  Plug 'osyo-manga/vim-monster'     " ruby------->gem install rcodetools
-  Plug 'maralla/completor-typescript'
+  Plug 'osyo-manga/vim-monster',{'for':'ruby'}     " ruby------->gem install rcodetools
+  " Plug 'maralla/completor-typescript',{'for':'typescript'}
 
 endif 
 
@@ -52,10 +53,9 @@ Plug 'jmcomets/vim-pony'  " django jump and command
 " {
 " html
 Plug 'turbio/bracey.vim',{'do':'npm install --prefix server'}
-Plug 'clavery/vim-chrome-repl',{'for':'javascript','do':'npm rebuild'}
 Plug  'alvan/vim-closetag',{'for':'html'}  "标签补全等等
 Plug  'gregsexton/matchtag'   "标签高亮
- "javascript 
+"javascript 
 " }
 "
 "php
@@ -203,6 +203,7 @@ Plug 'dietsche/vim-lastplace'
 "{vim lsp
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
+" Plug 'felixfbecker/php-language-server', {'do': 'composer install && composer run-script parse-stubs'}          "php
 "}
 " {metakirby5/codi.vim
 Plug 'metakirby5/codi.vim'

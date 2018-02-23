@@ -22,8 +22,9 @@ else    "vim8
     let completor_node_binary='/usr/bin/node'   "javascript
     let g:completor_tsserver_binary = '/usr/bin/tsserver'
     let g:completor_python_binary = '/usr/bin/python3' "python 
+    let g:completor_css_omni_trigger = '([\w-]+|@[\w-]*|[\w-]+:\s*[\w-]*)$'
   " let g:completor_gocode_binary='/home/pittcat/go/bin/gocode' "go
-  " let g:completor_racer_binary='/home/pittcat/.cargo/bin/racer' "rust
+    let g:completor_racer_binary='~/.cargo/bin/racer' "rust
 endif 
 
 
@@ -61,13 +62,11 @@ endif
    "javascript 
   let g:javascript_plugin_jsdoc = 1       "pangloss/vim-javascript
   let g:jsx_ext_required = 0              "mxw/vim-jsx
-  "clavery/vim-chrome-repl
-  noremap <silent> <leader>rs :SendToChrome<cr>     
-  vmap <silent> <leader>rs :SendToChrome<cr>
-  noremap <silent> <leader>dc :bdelete __JSOUT__<cr>
 
   "skywind3000/asyncrun.vim
   au FileType javascript map <silent> <F5> :AsyncRun! time node %<CR>    
+  " css
+  " autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
    " }
 
   " md
@@ -185,9 +184,6 @@ endif
   nmap <silent> <C-c><C-c> :SlimuxREPLSendLine<CR>
   vmap <silent> <C-c><C-c> :SlimuxREPLSendSelection<CR>
   "}
-  "{othree/csscomplete.vim
-  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS noci
-  "}
   "
   "{briandoll/change-inside-surroundings.vim
   noremap <silent> <localleader>ci :ChangeInsideSurrounding<cr>
@@ -247,6 +243,7 @@ endif
   noremap <silent> <leader>sr :SLoad<cr>
   " }
   " {vim lsp
+  let g:lsp_preview_keep_focus = get(g:, 'lsp_preview_keep_focus', 0)
   noremap <silent> gd :LspDefinition<cr> 
   noremap <silent> <leader>sh :LspHover<cr> 
   noremap <silent> <leader>cn :LspRename<cr>
@@ -267,11 +264,12 @@ endif
       au User lsp_setup call lsp#register_server({
           \ 'name': 'typescript-language-server',
           \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
-          \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
+          \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), '.tsconfig.json'))},
           \ 'whitelist': ['typescript','javascript','javascript.jsx'],
           \ })
   endif
 
+  " cpp
   if executable('clangd')
       au User lsp_setup call lsp#register_server({
           \ 'name': 'clangd',
@@ -280,6 +278,39 @@ endif
           \ })
   endif
 
+  " golang
+  if executable('go-langserver')
+      au User lsp_setup call lsp#register_server({
+          \ 'name': 'go-langserver',
+          \ 'cmd': {server_info->['go-langserver', '-mode', 'stdio']},
+          \ 'whitelist': ['go'],
+          \ })
+  endif
+
+  " rust
+  if executable('rls')
+      au User lsp_setup call lsp#register_server({
+          \ 'name': 'rls',
+          \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
+          \ 'whitelist': ['rust'],
+          \ })
+  endif
+
+  " css scss
+  if executable('css-languageserver')
+      au User lsp_setup call lsp#register_server({
+          \ 'name': 'css-languageserver',
+          \ 'cmd': {server_info->[&shell, &shellcmdflag, 'css-languageserver --stdio']},
+          \ 'whitelist': ['css', 'less', 'sass'],
+          \ })
+  endif
+
+  " php
+  au User lsp_setup call lsp#register_server({                                    
+       \ 'name': 'php-language-server',                                            
+       \ 'cmd': {server_info->['php', expand('~/.vim/plugged/php-language-server/bin/php-language-server.php')]},
+       \ 'whitelist': ['php'],                                                     
+       \ })
 " }
 " {vim qf
   autocmd BufWinEnter quickfix nnoremap <silent> <buffer>

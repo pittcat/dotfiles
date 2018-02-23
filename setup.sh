@@ -77,11 +77,23 @@ sudo npm i -g js-beautify #js 和html格式化
 # javascript 
 sudo npm i -g eslint jslint tern #查错 补全
 sudo npm install -g typescript typescript-language-server     #vim lsp for typescript and javascript
+sudo npm install -g vscode-css-languageserver-bin         #vim lsp css scss
 # vue 
 sudo npm i -g eslint-plugin-vue #查错
 
-sudo npm i -g crconsole
-
+# rust
+# install rust
+# curl -sf -L https://static.rust-lang.org/rustup.sh | sh
+curl https://sh.rustup.rs -sSf | sh
+# rust china mirrors
+mkdir -p $HOME/.cargo
+echo "[source.crates-io]
+registry = 'https://github.com/rust-lang/crates.io-index'
+replace-with = 'ustc'
+[source.ustc]
+registry = 'git://mirrors.ustc.edu.cn/crates.io-index'" >>$HOME/.cargo/config
+cargo install rustfmt racer
+rustup component add rls-preview rust-analysis rust-src
 # manual install 
 
 # cd ~/.space-vim
