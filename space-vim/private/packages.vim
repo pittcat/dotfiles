@@ -5,6 +5,7 @@ if g:spacevim_nvim  " nvim
   Plug 'zchee/deoplete-jedi',{'for': 'python'}
   Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern','for':'javascript'}
   Plug 'zchee/deoplete-clang',{ 'for': ['c', 'cpp']}
+  Plug 'mhartington/nvim-typescript',{'for':'typescript'}
   " Plug 'uplus/deoplete-solargraph',{'for':'ruby'}
   " Plug 'sebastianmarkow/deoplete-rust',{'for':'rust'}
   " ncm
@@ -24,8 +25,8 @@ if g:spacevim_nvim  " nvim
 else  "vim8
   " completor.vim
   Plug 'ferreum/completor-tmux'     "complete tmux
-  Plug 'osyo-manga/vim-monster',{'for':'ruby'}     " ruby------->gem install rcodetools
-  " Plug 'maralla/completor-typescript',{'for':'typescript'}
+  " Plug 'osyo-manga/vim-monster',{'for':'ruby'}     " ruby------->gem install rcodetools
+  Plug 'maralla/completor-typescript',{'for':'typescript'}
 
 endif 
 
