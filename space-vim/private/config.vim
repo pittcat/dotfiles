@@ -365,7 +365,6 @@ let g:spacevim#plug#ale#linters = {
     " open split windows on the topleft
     belowright split
     " resize the height of terminal windows to 30
-    resize 30
     :terminal
     startinsert
     endf
@@ -374,11 +373,11 @@ let g:spacevim#plug#ale#linters = {
     " open split windows on the topleft
     belowright split
     " resize the height of terminal windows to 30
-    resize 30
     :call term_start('bash', {'curwin' : 1, 'term_finish' : 'close'})
     endf
   endif
   nnoremap <leader>' :call OpenTerminal()<cr>
+
   if spacevim_nvim
     autocmd! FileType fzf tnoremap  <Esc> <Esc>
     tnoremap <expr> <Esc> "<C-\><C-n><CR>"
@@ -386,4 +385,14 @@ let g:spacevim#plug#ale#linters = {
   else
     tnoremap <expr> <Esc> "<C-\><C-n>"
   endif
+
+  " window resize
+  set <F26>==
+  set <F27>=-
+  set <F28>=)
+  set <F29>=(
+  nnoremap <silent> <F26> :res +6<cr>
+  nnoremap <silent> <F27> :res -6<cr>
+  nnoremap <silent> <F28> :vertical res +6<cr>
+  nnoremap <silent> <F29> :vertical res -6<cr>
   " }
