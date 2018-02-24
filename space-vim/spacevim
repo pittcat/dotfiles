@@ -28,6 +28,7 @@ function! Layers()
 
   Layer 'autocomplete'
   Layer 'codesnippets'
+  Layer 'formatting'
   " Layer 'deoplete'
   Layer 'syntax-checking'
 
@@ -36,7 +37,8 @@ function! Layers()
   Layer 'ruby'
   Layer 'python'
   Layer 'c-c++'
-  " Layer 'rust'
+  Layer 'rust'
+  Layer 'typescript'
   Layer 'markdown',{'exclude':'iamcco/markdown-preview.vim'}
 
 endfunction
@@ -76,5 +78,6 @@ function! UserConfig()
   colorscheme janah
   " }
 "
+
 endfunction
 

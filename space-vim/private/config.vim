@@ -9,6 +9,9 @@ if g:spacevim_nvim
   let g:deoplete#sources#ternjs#tern_bin = '/usr/bin/tern'    "carlitux/deoplete-ternjs
   let g:deoplete#sources#clang#libclang_path='/usr/lib/libclang.so'   "zchee/deoplete-clang
   let  g:deoplete#sources#clang#clang_header='/usr/lib/clang'
+  let g:deoplete#sources#rust#racer_binary='/home/pittcat/.cargo/bin/racer'          "sebastianmarkow/deoplete-rust
+  let g:deoplete#sources#rust#rust_source_path='/home/pittcat/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'                "echo `rustc --print sysroot`/lib/rustlib/src/rust/src
+  let g:deoplete#sources#rust#documentation_max_height=30
 
   " deoplete-common
   let g:deoplete#auto_complete_delay=70
@@ -20,11 +23,15 @@ if g:spacevim_nvim
 else    "vim8
     let g:completor_clang_binary='/usr/bin/clang' "c++
     let completor_node_binary='/usr/bin/node'   "javascript
-    let g:completor_tsserver_binary = '/usr/bin/tsserver'
+    " let g:completor_tsserver_binary = '/usr/bin/tsserver'
+    " let g:completor_tsserver_binary = '/usr/bin/tsserver'
     let g:completor_python_binary = '/usr/bin/python3' "python 
     let g:completor_css_omni_trigger = '([\w-]+|@[\w-]*|[\w-]+:\s*[\w-]*)$'
   " let g:completor_gocode_binary='/home/pittcat/go/bin/gocode' "go
     let g:completor_racer_binary='~/.cargo/bin/racer' "rust
+    au FileType rust map <silent> gd :call completor#do('definition') <CR>    
+    " au FileType rust map <silent> gd :call completor#do('definition') <CR>    
+    " noremap <s-k> :call completor#do('doc')<CR>
 endif 
 
 
@@ -38,10 +45,12 @@ endif
     let g:pymode_python = 'python3'       
     let g:pymode_doc = 0     "启用python-mode内置的python文档，使用K进行查找
     let g:pymode_doc_bind = 'K'
+    let g:pymode_rope = 0
     let g:c_no_curly_error=0
     " fisadev/vim-isort
     let g:vim_isort_map = '<C-i>'
     let g:vim_isort_python_version = 'python3'
+    autocmd BufLeave *.py Isort
     " skywind3000/asyncrun.vim <F5> 快捷键运行
     let g:spacevim_python_run = 'python3'
   " }
@@ -62,6 +71,9 @@ endif
    "javascript 
   let g:javascript_plugin_jsdoc = 1       "pangloss/vim-javascript
   let g:jsx_ext_required = 0              "mxw/vim-jsx
+  
+  " typescript
+  let g:tsuquyomi_disable_quickfix=1
 
   "skywind3000/asyncrun.vim
   au FileType javascript map <silent> <F5> :AsyncRun! time node %<CR>    
@@ -242,6 +254,42 @@ endif
   noremap <silent> <leader>sv :SSave<cr>
   noremap <silent> <leader>sr :SLoad<cr>
   " }
+" {vim qf
+  autocmd BufWinEnter quickfix nnoremap <silent> <buffer>
+              \   q :cclose<cr>:lclose<cr>
+  autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) |
+              \   bd|
+              \   q | endif
+" }
+"{pelodelfuego/vim-swoop
+noremap <leader>ds :bdelete swoopBuf<cr>
+"}
+"{codi.vim
+noremap <silent> <localleader>cd :Codi!!<cr>
+"}
+"{ctrlptmux
+nnoremap <Leader>my :CtrlPTmux b<cr>
+"}
+
+"{airblade/vim-rooter
+let g:rooter_change_directory_for_non_project_files = 'current'
+"}
+"{scrooloose/nerdtree
+noremap <silent> <leader>nc :NERDTreeCWD<cr>
+"}
+"
+"ale{
+let g:spacevim#plug#ale#linters = {
+            \ 'sh' : ['shellcheck'],
+            \ 'vim' : ['vint'],
+            \ 'html' : ['tidy'],
+            \ 'python' : ['flake8'],
+            \ 'markdown' : ['mdl'],
+            \ 'javascript' : ['eslint'],
+            \ 'rust' : ['rustfmt'],
+            \ 'typescript' : ['tsserver'],
+            \}
+"}
   " {vim lsp
   let g:lsp_preview_keep_focus = get(g:, 'lsp_preview_keep_focus', 0)
   noremap <silent> gd :LspDefinition<cr> 
@@ -274,7 +322,7 @@ endif
       au User lsp_setup call lsp#register_server({
           \ 'name': 'clangd',
           \ 'cmd': {server_info->['clangd']},
-          \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+          \ 'whitelist': ['c','cpp','objc','objcpp'],
           \ })
   endif
 
@@ -311,21 +359,31 @@ endif
        \ 'cmd': {server_info->['php', expand('~/.vim/plugged/php-language-server/bin/php-language-server.php')]},
        \ 'whitelist': ['php'],                                                     
        \ })
-" }
-" {vim qf
-  autocmd BufWinEnter quickfix nnoremap <silent> <buffer>
-              \   q :cclose<cr>:lclose<cr>
-  autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) |
-              \   bd|
-              \   q | endif
-" }
-"{pelodelfuego/vim-swoop
-noremap <leader>ds :bdelete swoopBuf<cr>
-"}
-"{codi.vim
-noremap <silent> <localleader>cd :Codi!!<cr>
-"}
-"{ctrlptmux
-nnoremap <Leader>my :CtrlPTmux b<cr>
-"}
-
+  " {terminal
+  if has('nvim')
+    fu! OpenTerminal()
+    " open split windows on the topleft
+    belowright split
+    " resize the height of terminal windows to 30
+    resize 30
+    :terminal
+    startinsert
+    endf
+  else
+    fu! OpenTerminal()
+    " open split windows on the topleft
+    belowright split
+    " resize the height of terminal windows to 30
+    resize 30
+    :call term_start('bash', {'curwin' : 1, 'term_finish' : 'close'})
+    endf
+  endif
+  nnoremap <leader>' :call OpenTerminal()<cr>
+  if spacevim_nvim
+    autocmd! FileType fzf tnoremap  <Esc> <Esc>
+    tnoremap <expr> <Esc> "<C-\><C-n><CR>"
+    tnoremap <expr> <C-d> "<C-\><C-n>:bd!<cr>"
+  else
+    tnoremap <expr> <Esc> "<C-\><C-n>"
+  endif
+  " }

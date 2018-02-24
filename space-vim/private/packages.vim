@@ -7,7 +7,7 @@ if g:spacevim_nvim  " nvim
   Plug 'zchee/deoplete-clang',{ 'for': ['c', 'cpp']}
   Plug 'mhartington/nvim-typescript',{'for':'typescript'}
   " Plug 'uplus/deoplete-solargraph',{'for':'ruby'}
-  " Plug 'sebastianmarkow/deoplete-rust',{'for':'rust'}
+  Plug 'sebastianmarkow/deoplete-rust',{'for':'rust'}
   " ncm
   " Plug 'roxma/nvim-completion-manager'
   " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }         " deoplete------extend for ncm
@@ -26,7 +26,7 @@ else  "vim8
   " completor.vim
   Plug 'ferreum/completor-tmux'     "complete tmux
   " Plug 'osyo-manga/vim-monster',{'for':'ruby'}     " ruby------->gem install rcodetools
-  Plug 'maralla/completor-typescript',{'for':'typescript'}
+  " Plug 'maralla/completor-typescript'
 
 endif 
 
@@ -45,7 +45,7 @@ Plug 'isRuslan/vim-es6'                     "es6
 
 " python
 " {
-Plug 'fisadev/vim-isort'  " import 排序
+Plug 'fisadev/vim-isort',{'for':'python'}  " import 排序
 Plug 'jmcomets/vim-pony'  " django jump and command
 " }
 
@@ -53,7 +53,7 @@ Plug 'jmcomets/vim-pony'  " django jump and command
 " web
 " {
 " html
-Plug 'turbio/bracey.vim',{'do':'npm install --prefix server'}
+Plug 'turbio/bracey.vim',{'do':'npm install --prefix server','for':'html'}
 Plug  'alvan/vim-closetag',{'for':'html'}  "标签补全等等
 Plug  'gregsexton/matchtag'   "标签高亮
 "javascript 
@@ -74,7 +74,7 @@ Plug  'gregsexton/matchtag'   "标签高亮
 "
 "markdownd
 " {
-  Plug 'shime/vim-livedown',{'do':'npm install -g livedown'}
+  Plug 'shime/vim-livedown',{'do':'npm install -g livedown','for':'markdown'}
   " Plug 'suan/vim-instant-markdown',{'do':'npm install -g instant-markdown-d'}
 " }
 
@@ -213,5 +213,4 @@ Plug 'metakirby5/codi.vim'
 Plug 'rakr/vim-one'
 Plug 'sickill/vim-monokai'
 Plug 'mhinz/vim-janah'
-
 
