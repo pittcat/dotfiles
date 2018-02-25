@@ -70,17 +70,19 @@ cp $PWD/space-vim/autocomplete $HOME/.space-vim/layers/+completion -r
 sudo pip3 install -r $PWD/config/requirements.txt
 
 # web vim
+sudo npm i -g tern
+# ale
+sudo $PKMG tidy #html
+sudo npm i -g eslint jshint #javascript
+sudo npm i -g prettier #css
 
-# html 
-sudo $PKMG tidy #查错
-sudo npm i -g js-beautify #js 和html格式化
-# javascript 
-sudo npm i -g eslint jslint tern #查错 补全
+# lsp
 sudo npm install -g typescript typescript-language-server     #vim lsp for typescript and javascript
 sudo npm install -g vscode-css-languageserver-bin         #vim lsp css scss
-sudo npm install -g typescript-formatter         #typescript format
-# vue 
-sudo npm i -g eslint-plugin-vue #查错
+
+#web 格式化
+sudo npm i -g html-beautify js-beautify #html格式化
+sudo npm i -g prettier   #前端格式化
 
 # rust
 # install rust

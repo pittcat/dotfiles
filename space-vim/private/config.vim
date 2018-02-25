@@ -90,15 +90,6 @@ endif
 
   
 
-"vim-format 设置
-  "{
-  noremap <F3> :Autoformat<CR>
-  let g:autoformat_autoindent = 0
-  let g:autoformat_retab = 0
-  let g:autoformat_remove_trailing_spaces = 0
-  autocmd FileType html,css,js autocmd BufWritePre <buffer> :%s/\s\+$//e
-  let g:formatter_yapf_style = 'pep8'
-  "}
   "消除空白
   "{
   fun! DelBlank()
@@ -278,18 +269,7 @@ let g:rooter_change_directory_for_non_project_files = 'current'
 noremap <silent> <leader>nc :NERDTreeCWD<cr>
 "}
 "
-"ale{
-let g:spacevim#plug#ale#linters = {
-            \ 'sh' : ['shellcheck'],
-            \ 'vim' : ['vint'],
-            \ 'html' : ['tidy'],
-            \ 'python' : ['flake8'],
-            \ 'markdown' : ['mdl'],
-            \ 'javascript' : ['eslint'],
-            \ 'rust' : ['rustfmt'],
-            \ 'typescript' : ['tsserver'],
-            \}
-"}
+
   " {vim lsp
   let g:lsp_preview_keep_focus = get(g:, 'lsp_preview_keep_focus', 0)
   noremap <silent> gd :LspDefinition<cr> 
@@ -396,3 +376,26 @@ let g:spacevim#plug#ale#linters = {
   nnoremap <silent> <F28> :vertical res +6<cr>
   nnoremap <silent> <F29> :vertical res -6<cr>
   " }
+  " {
+  " ale
+  nnoremap <silent> <leader>ed :ALEDetail<cr>
+  nnoremap <silent> <leader>ef :ALEFix<cr>
+  let g:ale_linters = {
+            \ 'sh' : ['shellcheck'],
+            \ 'vim' : ['vint'],
+            \ 'html' : ['tidy'],
+            \ 'python' : ['flake8'],
+            \ 'markdown' : ['mdl'],
+            \ 'javascript.jsx' : ['jshint'],
+            \ 'javascript' : ['jshint'],
+            \}
+  let g:ale_fixers = {
+  \  'python': ['yapf'],
+  \  'ruby': ['rubocop'],
+  \  'javascript': ['eslint', 'prettier'],
+  \  'json': ['prettier'],
+  \  'css': ['prettier'],
+  \  'markdown': ['prettier'],
+  \}
+  " }
+let g:neoformat_only_msg_on_error = 0
