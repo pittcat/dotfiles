@@ -136,6 +136,7 @@ alias n='nvim'
 alias gcpt='google-chrome-stable  --remote-debugging-port=9222'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+
 # export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/pittcat/.fzf/bin:/home/pittcat/.vimpkg/bin
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.

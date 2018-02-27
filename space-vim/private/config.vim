@@ -386,16 +386,17 @@ noremap <silent> <leader>nc :NERDTreeCWD<cr>
             \ 'html' : ['tidy'],
             \ 'python' : ['flake8'],
             \ 'markdown' : ['mdl'],
-            \ 'javascript.jsx' : ['jshint'],
-            \ 'javascript' : ['jshint'],
+            \ 'javascript.jsx' : ['eslint'],
+            \ 'javascript' : ['eslint'],
             \}
   let g:ale_fixers = {
   \  'python': ['yapf'],
   \  'ruby': ['rubocop'],
-  \  'javascript': ['eslint', 'prettier'],
+  \  'javascript': ['prettier'],
   \  'json': ['prettier'],
   \  'css': ['prettier'],
   \  'markdown': ['prettier'],
   \}
   " }
 let g:neoformat_only_msg_on_error = 0
+let g:neoformat_try_formatprg = 1
