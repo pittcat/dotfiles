@@ -353,7 +353,7 @@ noremap <silent> <leader>nc :NERDTreeCWD<cr>
     " open split windows on the topleft
     belowright split
     " resize the height of terminal windows to 30
-    :call term_start('bash', {'curwin' : 1, 'term_finish' : 'close'})
+    :call term_start('zsh', {'curwin' : 1, 'term_finish' : 'close'})
     endf
   endif
   nnoremap <leader>' :call OpenTerminal()<cr>
