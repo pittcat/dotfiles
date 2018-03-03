@@ -11,8 +11,8 @@ if g:spacevim_nvim || g:spacevim_vim8
   let g:UltiSnipsExpandTrigger = "<nop>"
   let g:ulti_expand_or_jump_res = 0
   function ExpandSnippetOrCarriageReturn()
-      let snippet = UltiSnips#ExpandSnippetOrJump()
-      if g:ulti_expand_or_jump_res > 0
+      let snippet = UltiSnips#ExpandSnippet()
+      if g:ulti_expand_res > 0
           return snippet
         else
           return "\<C-y>"
