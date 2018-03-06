@@ -268,10 +268,6 @@ let g:rooter_change_directory_for_non_project_files = 'current'
 "{scrooloose/nerdtree
 noremap <silent> <leader>nc :NERDTreeCWD<cr>
 "}
-" {vim-scripts/copypath.vim
-noremap <silent> <leader>cp :CopyPath<cr>
-noremap <silent>cpn  :CopyFileName<cr>
-" }
 "
 
   " {vim lsp
