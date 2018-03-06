@@ -209,6 +209,10 @@ Plug 'prabirshrestha/vim-lsp'
 " {metakirby5/codi.vim
 Plug 'metakirby5/codi.vim'
 " }
+"{vim-scripts/copypath.vim
+Plug 'vim-scripts/copypath.vim'
+"}
+
 "themefor
 Plug 'rakr/vim-one'
 Plug 'sickill/vim-monokai'
