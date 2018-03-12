@@ -54,11 +54,13 @@ sudo sh -c 'echo "xmodmap ~/.Xmodmap" >> /etc/rc.local'
 
 #配置vim vim8 并且须支持python3 javascript
 git clone https://github.com/liuchengxu/space-vim.git ~/.space-vim
-cp ./space-vim/spacevim $HOME/.spacevim
-cp ./space-vim/private $HOME/.space-vim/ -r
-cp ./space-vim/UltiSnips/ $HOME/.vim/ -r
-cp $PWD/space-vim/codesnippets $HOME/.space-vim/layers/+programming -r
-cp $PWD/space-vim/autocomplete $HOME/.space-vim/layers/+completion -r
+ln -s $PWD/space-vim/spacevim $HOME/.spacevim
+sudo rm $HOME/.space-vim/private/* -r
+ln -s $PWD/space-vim/private/* $HOME/.space-vim/private/
+ln -s $PWD/space-vim/UltiSnips/* $HOME/.vim/UltiSnips/
+ln -s $PWD/space-vim/codesnippets $HOME/.space-vim/layers/+programming
+ln -s $PWD/space-vim/codeformat $HOME/.space-vim/layers/+programming
+ln -s $PWD/space-vim/autocomplete $HOME/.space-vim/layers/+completion
 
 # config ycmd
 # sudo git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/plugged/YouCompleteMe
@@ -88,6 +90,7 @@ sudo npm i -g prettier   #前端格式化
 # install rust
 # curl -sf -L https://static.rust-lang.org/rustup.sh | sh
 curl https://sh.rustup.rs -sSf | sh
+source $HOME/.bashrc
 # rust china mirrors
 mkdir -p $HOME/.cargo
 echo "[source.crates-io]
@@ -106,8 +109,9 @@ rustup component add rls-preview rust-analysis rust-src
 
 # config emacs
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-cp $PWD/pittcat-spacemacs/spacemacs ~/.spacemacs
-cp $PWD/pittcat-spacemacs/private ~/.emacs.d/ -r
+ln -s $PWD/pittcat-spacemacs/spacemacs ~/.spacemacs
+sudo rm ~/.emacs.d/private/* -r
+ln -s $PWD/pittcat-spacemacs/private/* ~/.emacs.d/private
 
 # --------------------------------------------zsh -------------------------------------------- #
 
@@ -130,7 +134,7 @@ else
   sudo rm autojump -r
 fi
 
-cp ./zshrc ~/.zshrc
+ln -s $PWD/zshrc ~/.zshrc
 
 # --------------------------------------------tmux -------------------------------------------- #
 
@@ -146,7 +150,7 @@ cd ..
 sudo rm tmux-mem-cpu-load -r
 
 
-cp $PWD/tmux.conf ~/.tmux.conf
+ln -s $PWD/tmux.conf ~/.tmux.conf
 
 # --------------------------------------------manual operation -------------------------------------------- #
 

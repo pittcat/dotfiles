@@ -1,10 +1,11 @@
+import filecmp
+import fileinput
 import os
 import readline
-import subprocess
-import filecmp
 import shutil
-import fileinput
+import subprocess
 from os import walk
+
 
 def Choose_package_manager():
     f = []
@@ -32,8 +33,9 @@ def Setup():
 
 
 def Sysnc():
-    snippets_list = ['/.vim/UltiSnips/',
-                     '/.space-vim/private/', '/.emacs.d/private/']
+    snippets_list = [
+        '/.vim/UltiSnips/', '/.space-vim/private/', '/.emacs.d/private/'
+    ]
     for i in snippets_list:
         local_path = os.getenv('HOME') + i
         if 'vim' in i:
@@ -46,22 +48,29 @@ def Sysnc():
         cmd = 'rsync -avrz ' + local_path + ' ' + dotfiles_path
         subprocess.call(cmd, shell=True)
     file_list = [['/.spacevim', './space-vim/spacevim'],
-                 ['/.zshrc', './zshrc'],
-                 ['/.tmux.conf', './tmux.conf'],
+                 ['/.zshrc', './zshrc'], ['/.tmux.conf', './tmux.conf'],
                  ['/.spacemacs', './pittcat-spacemacs/spacemacs']]
     for i in range(len(file_list)):
-        if filecmp.cmp(os.getenv('HOME') + file_list[i][0], file_list[i][1]) != True:
+        if filecmp.cmp(os.getenv('HOME') + file_list[i][0],
+                       file_list[i][1]) != True:
             shutil.copy(os.getenv('HOME') + file_list[i][0], file_list[i][1])
 
 
 def main():
-    verify_file_list=[os.path.exists(os.getenv('HOME')+i) for i in
-                      ['/.spacevim','/.zshrc','/.tmux.conf','/.spacemacs', ]]
+    verify_file_list = [
+        os.path.exists(os.getenv('HOME') + i) for i in [
+            '/.spacevim',
+            '/.zshrc',
+            '/.tmux.conf',
+            '/.spacemacs',
+        ]
+    ]
     if all(verify_file_list):
         Sysnc()
     else:
         print("local files are partial.")
     Setup()
+
 
 if __name__ == '__main__':
     main()
