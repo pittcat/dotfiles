@@ -12,6 +12,17 @@ sudo npm config set disturl https://npm.taobao.org/dist --global
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
+# install direnv
+if hash direnv 2> /dev/null; then
+  echo direnv is installed!
+else
+  git clone https://github.com/direnv/direnv
+  cd direnv
+  make install
+  cd ..
+  sudo rm direnv -r
+fi
+
 # install proxychains-ng 
 if hash proxychains4 2> /dev/null; then
   echo proxychains is installed!
@@ -69,7 +80,9 @@ ln -s $PWD/space-vim/autocomplete $HOME/.space-vim/layers/+completion
 # sudo python3 ./install.py --clang-completer
 
 # python vim  config and include following config
-sudo pip3 install -r $PWD/config/requirements.txt
+sudo touch /etc/pip.conf
+echo "[global]\nindex-url = https://pypi.tuna.tsinghua.edu.cn/simple" | sudo tee /etc/pip.conf
+sudo pip3 install -r $PWD/config/python/requirements.txt
 
 # web vim
 sudo npm i -g tern

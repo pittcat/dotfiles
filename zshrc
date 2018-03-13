@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/pittcat/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -84,12 +84,17 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
-# export PATH="/home/pittcat/.pyenv/bin:$PATH"
-# export PYENV_ROOT=~/.pyenv
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
-export PYTHONPATH=$PYTHONPATH:/usr/lib/python3/dist-packages
-export PYTHONPATH=$PYTHONPATH:/usr/lib/python/dist-packages
+
+# direnv 
+# Add direnv hook
+eval "$(direnv hook zsh)"
+# remove direnv log loading
+export DIRENV_LOG_FORMAT=
+
+# python
+export PATH="$HOME/.local/bin:$PATH"     #pipenv
+
+# nodejs
 export PATH=~/.npm-global/bin:$PATH
 export NPM_CONFIG_PREFIX=~/.npm-global
 
@@ -107,12 +112,12 @@ if hash ruby 2> /dev/null; then
     fi
 fi
 
-zmodload zsh/zpty
 
 eval "$(thefuck --alias fk)"
-alias jz="j /home/pittcat/Desktop"
+alias jz="j $HOME/Desktop"
 alias so="sudo openvpn --config /bin/42.ovpn"
 alias pmms="python3 manage.py makemigrations"
+alias scdp='sed -i s/pypi.python.org/pypi.doubanio.com/g Pipfile'
 alias pmm="python3 manage.py migrate"
 alias pmr="python3 manage.py runserver"
 alias pmf="python3 manage.py flush"
@@ -129,6 +134,9 @@ alias xmap="xmodmap ~/.Xmodmap"
 alias sz='source ~/.zshrc' 
 alias ipb='ipython notebook'
 alias pc='proxychains4'
+alias setproxy="export ALL_PROXY=socks5://127.0.0.1:1080"
+alias unsetproxy="unset ALL_PROXY"
+alias dral='direnv allow .'
 alias v='vim'
 alias t='tmux'
 alias e='emacs'
@@ -136,8 +144,3 @@ alias n='nvim'
 alias gcpt='google-chrome-stable  --remote-debugging-port=9222'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
-# export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/pittcat/.fzf/bin:/home/pittcat/.vimpkg/bin
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-# export PATH="$PATH:$HOME/.rvm/bin"
