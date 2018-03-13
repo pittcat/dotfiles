@@ -1,0 +1,14 @@
+yapf 
+flake8 
+jedi 
+ipython 
+ptpython
+neovim 
+## vim 
+iSearch
+thefuck
+isort
+mistune
+psutil 
+setproctitle
+python-language-server

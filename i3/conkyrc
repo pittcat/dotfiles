@@ -1,0 +1,30 @@
+# 不输出到X
+out_to_x no
+out_to_console yes
+background no
+double_buffer no
+
+# 刷新时间
+update_interval 1
+# 运行时间，0为一直运行
+total_run_times 0
+# 强制uft8编码，需xft支持
+override_utf8_locale no
+# 缩写单位字符 比如kib->k Gib->G 默认为off
+short_units yes
+# 监视端口
+if_up_strictness address
+# cpu数据监测模式，一般选2
+cpu_avg_samples 2
+
+# wlan0
+
+TEXT
+IP:${exec curl -s www.icanhazip.com} | \
+U1:${upspeed enp8s0}/s  D1:${downspeed enp8s0}/s | \
+CPU:${cpu cpu0}% | \
+MEM:${mem} |\
+FU:${fs_used /} |\
+POWER:${battery_percent}% |\
+${execi 1 amixer | grep -A10 'Master' | sed -rn 's/.*\[([0-9]+%)\].*\[(on|off)\]/\2 \1/p' | sed -n '1p' | sed 's/off.*/ /' | sed -r 's/on( [01234]?[0-9]%)/\1/' | sed -r 's/(on|) 0%/ 0%/' | sed -r 's/on//'} \
+TIME:${time %H:%M}
