@@ -148,7 +148,7 @@ endif
   "{FZF
   nnoremap <Leader>f? :Files ~<CR>
   " nnoremap <Leader>ff :Files<CR>
-  nnoremap <Leader>fp :Files ~/.space-vim/private<CR>
+  nnoremap <Leader>fp :Files ~/MEGA/code/dotfiles<CR>
   "}
   "
   "{use Yggdroot/indentLine
