@@ -117,7 +117,7 @@ eval "$(thefuck --alias fk)"
 alias jz="j $HOME/Desktop"
 alias so="sudo openvpn --config /bin/42.ovpn"
 alias pmms="python3 manage.py makemigrations"
-alias scdp='sed -i s/pypi.python.org/pypi.doubanio.com/g Pipfile'
+alias scdp='sed -i s/pypi.python.org/pypi.tuna.tsinghua.edu.cn/g Pipfile'
 alias pmm="python3 manage.py migrate"
 alias pmr="python3 manage.py runserver"
 alias pmf="python3 manage.py flush"
