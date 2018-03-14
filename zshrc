@@ -51,7 +51,7 @@ ZSH_THEME="zhann"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup
-plugins=(git autojump extract sudo zsh-syntax-highlighting zsh-autosuggestions pip tmux gem)
+plugins=(git autojump extract sudo zsh-syntax-highlighting zsh-autosuggestions pip tmux gem k)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -142,5 +142,17 @@ alias t='tmux'
 alias e='emacs'
 alias n='nvim'
 alias gcpt='google-chrome-stable  --remote-debugging-port=9222'
+alias ccpath='pwd | xsel -b'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+
+# up
+if [ -d "$HOME/.config/up/up.sh" ] ; then
+    source ~/.config/up/up.sh
+fi
+
+# zsh-bd
+. $HOME/.zsh/plugins/bd/bd.zsh
+
+# qfc
+[[ -s "$HOME/.qfc/bin/qfc.sh" ]] && source "$HOME/.qfc/bin/qfc.sh"
