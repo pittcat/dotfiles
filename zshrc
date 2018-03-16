@@ -112,6 +112,9 @@ if hash ruby 2> /dev/null; then
     fi
 fi
 
+# golang
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 eval "$(thefuck --alias fk)"
 alias jz="j $HOME/Desktop"
@@ -134,8 +137,10 @@ alias xmap="xmodmap ~/.Xmodmap"
 alias sz='source ~/.zshrc' 
 alias ipb='ipython notebook'
 alias pc='proxychains4'
-alias setproxy="export ALL_PROXY=socks5://127.0.0.1:1080"
-alias unsetproxy="unset ALL_PROXY"
+alias setssproxy="export ALL_PROXY=socks5://127.0.0.1:1080"
+alias unsetssproxy="unset ALL_PROXY"
+alias sethtproxy="export http_proxy=http://127.0.0.1:8118 && export https_proxy=http://127.0.0.1:8118"
+alias unsethtproxy="unset http_proxy && unset https_proxy"
 alias dral='direnv allow .'
 alias v='vim'
 alias t='tmux'

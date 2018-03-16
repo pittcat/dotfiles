@@ -38,6 +38,7 @@ function! Layers()
   Layer 'ruby'
   Layer 'python'
   Layer 'c-c++'
+  Layer 'go'
   Layer 'rust'
   " Layer 'typescript'
   Layer 'markdown',{'exclude':'iamcco/markdown-preview.vim'}
