@@ -1,0 +1,31 @@
+# direnv 
+# Add direnv hook
+eval "$(direnv hook zsh)"
+# remove direnv log loading
+export DIRENV_LOG_FORMAT=
+
+# python
+export PATH="$HOME/.local/bin:$PATH"     #pipenv
+
+# nodejs
+export PATH=~/.npm-global/bin:$PATH
+export NPM_CONFIG_PREFIX=~/.npm-global
+
+# rust
+if [ -d "$HOME/.cargo/bin" ] ; then
+	PATH="$HOME/.cargo/bin:$PATH"
+fi
+
+# ruby
+if hash ruby 2> /dev/null; then
+    GEM_HOME=$(ls -t -U | ruby -e 'puts Gem.user_dir')
+    if [[ -d "$GEM_HOME/bin" ]]; then
+    PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
+    PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
+    fi
+fi
+
+# golang
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+

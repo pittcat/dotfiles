@@ -1,16 +1,7 @@
 #!/usr/bin/env bash
 
-# zsh
-git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/supercrabtree/k $HOME/.oh-my-zsh/custom/plugins/k
-
-# bd
-mkdir -p $HOME/.zsh/plugins/bd
-curl https://raw.githubusercontent.com/Tarrasch/zsh-bd/master/bd.zsh > $HOME/.zsh/plugins/bd/bd.zsh
-
-# up
-curl --create-dirs -o ~/.config/up/up.sh https://raw.githubusercontent.com/shannonmoeller/up/master/up.sh
+# zsh-interactive-cd
+git clone https://github.com/changyuheng/zsh-interactive-cd  $HOME/.zsh-interactive-cd
 
 # qfc
 git clone https://github.com/pindexis/qfc $HOME/.qfc

@@ -11,6 +11,7 @@
 nnoremap <F3> :Neoformat<cr>
 nnoremap <localleader>= :Neoformat<cr>
 let g:neoformat_enabled_python = ['yapf']
+let g:neoformat_enabled_html = ['js-beautify']
 let g:neoformat_enabled_javascript = ['prettier']
 let g:neoformat_enabled_css = ['prettier']
 let g:neoformat_enabled_less= ['prettier']

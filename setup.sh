@@ -78,6 +78,8 @@ sudo touch /etc/pip.conf
 echo "[global]\nindex-url = https://pypi.tuna.tsinghua.edu.cn/simple" | sudo tee /etc/pip.conf
 sudo pip3 install -r $PWD/config/python/requirements.txt
 
+# web tools
+sudo npm install -g browser-sync
 # web vim
 sudo npm i -g tern
 # ale
@@ -122,9 +124,8 @@ ln -s $PWD/pittcat-spacemacs/private/* ~/.emacs.d/private
 
 # --------------------------------------------zsh -------------------------------------------- #
 
+curl -L git.io/antigen > $HOME/.antigen.zsh
 
-# config zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # install thefuck
 # pip install -r ./config/requirements.txt
@@ -141,7 +142,10 @@ else
   sudo rm autojump -r
 fi
 
-ln -s $PWD/zshrc ~/.zshrc
+ln -s $PWD/zsh/zshrc ~/.zshrc
+ln -s $PWD/zsh/zshaliases ~/.zshaliases
+ln -s $PWD/zsh/zshenv ~/.zshenv
+
 
 # --------------------------------------------tmux -------------------------------------------- #
 

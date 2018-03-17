@@ -1,0 +1,47 @@
+source $HOME/.antigen.zsh
+
+# oh-my-zsh
+antigen use oh-my-zsh
+antigen bundle git
+antigen bundle autojump
+antigen bundle extract
+antigen bundle pip
+antigen bundle tmux
+antigen bundle sudo
+antigen bundle gem
+antigen bundle copydir
+antigen bundle copyfile
+antigen bundle sudo
+
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle supercrabtree/k
+antigen bundle peterhurford/up.zsh
+antigen bundle hlissner/zsh-autopair
+antigen bundle desyncr/auto-ls
+antigen bundle Tarrasch/zsh-bd
+antigen bundle sbodiu-pivotal/fly-zsh-autocomplete-plugin
+
+# Load the theme.
+antigen theme robwierzbowski/charged-zsh-theme
+
+# # Tell Antigen that you're done.
+antigen apply
+
+
+# alias
+. $HOME/.zshaliases
+
+# fzf
+export FZF_DEFAULT_OPTS='
+  --color=bg+:#073642,bg:#002b36,spinner:#719e07,hl:#586e75
+  --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108
+  --color info:108,prompt:109,spinner:108,pointer:168,marker:168
+'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# zsh-interactive-cd
+[[ -s "$HOME/.zsh-interactive-cd/zsh-interactive-cd.plugin.zsh" ]] && source "$HOME/.zsh-interactive-cd/zsh-interactive-cd.plugin.zsh"
+
+# qfc
+[[ -s "$HOME/.qfc/bin/qfc.sh" ]] && source "$HOME/.qfc/bin/qfc.sh"
