@@ -17,13 +17,20 @@ if [ -d "$HOME/.cargo/bin" ] ; then
 fi
 
 # ruby
-if hash ruby 2> /dev/null; then
-    GEM_HOME=$(ls -t -U | ruby -e 'puts Gem.user_dir')
-    if [[ -d "$GEM_HOME/bin" ]]; then
-    PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
-    PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
-    fi
+if [[ -d "$HOME/.rbenv/bin" ]]; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
 fi
+
+# if hash ruby 2> /dev/null; then
+    # GEM_HOME=$(ls -t -U | ruby -e 'puts Gem.user_dir')
+    # if [[ -d "$GEM_HOME/bin" ]]; then
+    # PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
+    # PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
+    # fi
+# fi
+
+
 
 # golang
 export GOPATH=$HOME/.go

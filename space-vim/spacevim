@@ -35,11 +35,11 @@ function! Layers()
 
   Layer 'html',{'exclude':'othree/html5.vim'}
   Layer 'javascript'
-  Layer 'ruby'
+  " Layer 'ruby'
   Layer 'python'
   Layer 'c-c++'
-  Layer 'go'
-  Layer 'rust'
+  " Layer 'go'
+  " Layer 'rust'
   " Layer 'typescript'
   Layer 'markdown',{'exclude':'iamcco/markdown-preview.vim'}
 

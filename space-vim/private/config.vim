@@ -27,7 +27,9 @@ else    "vim8
     " let g:completor_tsserver_binary = '/usr/bin/tsserver'
     let g:completor_python_binary = '/usr/bin/python3' "python 
     let g:completor_css_omni_trigger = '([\w-]+|@[\w-]*|[\w-]+:\s*[\w-]*)$'
-  " let g:completor_gocode_binary='/home/pittcat/go/bin/gocode' "go
+    let g:monster#completion#backend = 'solargraph'
+    let g:completor_ruby_omni_trigger = "\\w+$|[\\w\\)\\]\\}\'\"]+\\.\\w*$"
+    let g:completor_gocode_binary='~/.go/bin/gocode' "go
     let g:completor_racer_binary='~/.cargo/bin/racer' "rust
     au FileType rust map <silent> gd :call completor#do('definition') <CR>    
     " au FileType rust map <silent> gd :call completor#do('definition') <CR>    
