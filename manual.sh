@@ -32,3 +32,16 @@ else
   sudo rm direnv -r
 fi
 
+
+# install powerline/font
+# clone
+git clone https://github.com/powerline/fonts.git --depth=1
+# install
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts
+# common font
+curl -L https://github.com/hbin/top-programming-fonts/raw/master/install.sh | bash
+# Noto Mono for Powerline Bold ---terminal

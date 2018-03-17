@@ -47,12 +47,11 @@ fi
 
 # --------------------------------------------common config -------------------------------------------- #
 
-# set up top font
-curl -L https://github.com/hbin/top-programming-fonts/raw/master/install.sh | bash
-
 # remap caps esc
-cp ./config/Xmodmap ~/.Xmodmap
-sudo sh -c 'echo "xmodmap ~/.Xmodmap" >> /etc/rc.local'
+# cp ./config/Xmodmap ~/.Xmodmap
+# sudo sh -c 'echo "xmodmap ~/.Xmodmap" >> /etc/rc.local'
+
+echo "xcape -e 'Caps_Lock=Escape;'" >> $HOME/.profile
 
 # --------------------------------------------vim -------------------------------------------- #
 
@@ -124,7 +123,8 @@ ln -s $PWD/pittcat-spacemacs/private/* ~/.emacs.d/private
 
 # --------------------------------------------zsh -------------------------------------------- #
 
-curl -L git.io/antigen > $HOME/.antigen.zsh
+mkdir -p $HOME/.antigen/
+curl -L git.io/antigen > $HOME/.antigen/.antigen.zsh
 
 
 # install thefuck

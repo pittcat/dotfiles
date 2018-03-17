@@ -1,4 +1,4 @@
-source $HOME/.antigen.zsh
+source $HOME/.antigen/antigen.zsh
 
 # oh-my-zsh
 antigen use oh-my-zsh
@@ -33,11 +33,11 @@ antigen apply
 . $HOME/.zshaliases
 
 # fzf
-export FZF_DEFAULT_OPTS='
-  --color=bg+:#073642,bg:#002b36,spinner:#719e07,hl:#586e75
-  --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108
-  --color info:108,prompt:109,spinner:108,pointer:168,marker:168
-'
+# export FZF_DEFAULT_OPTS='
+  # --color=bg+:#073642,bg:#002b36,spinner:#719e07,hl:#586e75
+  # --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108
+  # --color info:108,prompt:109,spinner:108,pointer:168,marker:168
+# '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # zsh-interactive-cd
