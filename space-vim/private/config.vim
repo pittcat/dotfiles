@@ -182,12 +182,12 @@ endif
   " noremap <silent> <localleader>cd :Codi!!<cr>
   "}
   "{epeli/slimux
-  let g:slimux_select_from_current_window = 0
-  set <F25>=c
-  imap <silent> jk <esc>:SlimuxREPLSendBuffer<CR>
-  nmap  <F25> :SlimuxREPLConfigure<cr>
-  nmap <silent> <C-c><C-c> :SlimuxREPLSendLine<CR>
-  vmap <silent> <C-c><C-c> :SlimuxREPLSendSelection<CR>
+  " let g:slimux_select_from_current_window = 0
+  " set <F25>=c
+  " imap <silent> jk <esc>:SlimuxREPLSendBuffer<CR>
+  " nmap  <F25> :SlimuxREPLConfigure<cr>
+  " nmap <silent> <C-c><C-c> :SlimuxREPLSendLine<CR>
+  " vmap <silent> <C-c><C-c> :SlimuxREPLSendSelection<CR>
   "}
   "
   "{briandoll/change-inside-surroundings.vim

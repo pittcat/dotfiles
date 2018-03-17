@@ -157,7 +157,7 @@ Plug 'terryma/vim-smooth-scroll'
 "}
 "
 "{epeli/slimux
-Plug 'epeli/slimux'
+" Plug 'epeli/slimux'
 "}
 "
 "{papanikge/vim-voogle
