@@ -4,7 +4,7 @@ PKMG="package_manager"
 
 ## --------------------------------------------must install -------------------------------------------- ##
 # common must install 
-sudo $PKMG zsh tmux git curl emacs rsync nodejs npm tig cmake ctags xsel privoxy
+sudo $PKMG zsh tmux git curl emacs rsync nodejs npm tig cmake ctags xsel privoxy ranger httpie
 
 # privoxy autostart
 sudo sed -i "s/127.0.0.1:9050/127.0.0.1:1080/g;/127.0.0.1:1080/s/^#//g" /etc/privoxy/config

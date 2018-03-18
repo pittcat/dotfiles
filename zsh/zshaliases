@@ -32,4 +32,3 @@ alias n='nvim'
 export LOCAL_IP=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'`
 alias serve="browser-sync start -s -f . --no-notify --host $LOCAL_IP --port 9000"
 alias gcpt='google-chrome-stable  --remote-debugging-port=9222'
-

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# --------------------------------------------zsh -------------------------------------------- #
+
 # install powerline/font
 # clone
 git clone https://github.com/powerline/fonts.git --depth=1
@@ -28,6 +30,12 @@ cd .. && sudo rm has -r
 git clone https://github.com/andreafrancia/trash-cli.git $HOME/.trash-cli.git
 cd $HOME/.trash-cli.git
 sudo python setup.py install
+
+# tldr
+npm install -g tldr
+
+# --------------------------------------------lang -------------------------------------------- #
+
 
 
 # golang config

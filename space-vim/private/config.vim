@@ -205,10 +205,10 @@ endif
   noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
   " }
   " {iamcco/dict.vim
-  " let g:api_key = "1932136763"
-  " let g:keyfrom = "aioiyuuko"
-  " nmap <silent> <localleader>yd <Plug>DictWSearch
-  " vmap <silent> <localleader>yd <Plug>DictWVSearch
+  let g:api_key = "1932136763"
+  let g:keyfrom = "aioiyuuko"
+  nmap <silent> <localleader>yd <Plug>DictWSearch
+  vmap <silent> <localleader>yd <Plug>DictWVSearch
     "}
     "{dyng/ctrlsf.vim
   vmap <silent> <localleader>cf <Plug>CtrlSFVwordExec

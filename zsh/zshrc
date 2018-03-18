@@ -2,30 +2,48 @@ source $HOME/.antigen/antigen.zsh
 
 # oh-my-zsh
 antigen use oh-my-zsh
+
+antigen bundle systemd
+antigen bundle archlniux
+antigen bundle debian
 antigen bundle git
 antigen bundle autojump
 antigen bundle extract
-antigen bundle pip
 antigen bundle tmux
 antigen bundle sudo
 antigen bundle copydir
+antigen bundle tig
+antigen bundle pj
+antigen bundle web-search
+antigen bundle command-not-found
 antigen bundle copyfile
+antigen bundle httpie
+# py
 antigen bundle python
-antigen bundle lukechilds/zsh-better-npm-completion
-antigen bundle akoenig/npm-run.plugin.zsh
+antigen bundle pip
+# js
+antigen bundle npm
+# rb
 antigen bundle ruby
 antigen bundle rbenv
 antigen bundle gem
 
+# --------------------------------------------other -------------------------------------------- #
+
+antigen bundle unixorn/autoupdate-antigen.zshplugin
 antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle supercrabtree/k
 antigen bundle peterhurford/up.zsh
 antigen bundle hlissner/zsh-autopair
-antigen bundle desyncr/auto-ls
 antigen bundle Tarrasch/zsh-bd
-antigen bundle sbodiu-pivotal/fly-zsh-autocomplete-plugin
 antigen bundle djui/alias-tips
+antigen bundle gujiaxi/ranger-cd
+antigen bundle Valiev/almostontop
+# js
+antigen bundle lukechilds/zsh-better-npm-completion
+antigen bundle akoenig/npm-run.plugin.zsh
 
 # Load the theme.
 antigen theme robwierzbowski/charged-zsh-theme

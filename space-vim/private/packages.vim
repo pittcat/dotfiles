@@ -176,7 +176,7 @@ Plug 'justinmk/vim-gtfo'
 "}
 "
 "{iamcco/dict.vim
-" Plug 'iamcco/dict.vim'
+Plug 'iamcco/dict.vim'
 "}
 "{dyng/ctrlsf.vim
 Plug 'dyng/ctrlsf.vim'

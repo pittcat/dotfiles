@@ -1,3 +1,10 @@
+# set default editor
+export EDITOR='/usr/bin/vim'
+export VISUAL='/usr/bin/vim'
+
+# zsh pj setting
+export PROJECT_PATHS=(~/MEGA/code)
+
 # direnv 
 # Add direnv hook
 eval "$(direnv hook zsh)"
