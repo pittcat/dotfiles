@@ -46,7 +46,8 @@ antigen bundle lukechilds/zsh-better-npm-completion
 antigen bundle akoenig/npm-run.plugin.zsh
 
 # Load the theme.
-antigen theme robwierzbowski/charged-zsh-theme
+# antigen theme robwierzbowski/charged-zsh-theme
+antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
 
 # # Tell Antigen that you're done.
 antigen apply
