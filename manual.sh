@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# --------------------------------------------zsh -------------------------------------------- #
+# --------------------------------------------zsh and cli-------------------------------------------- #
 
 # install powerline/font
 # clone
@@ -34,16 +34,63 @@ sudo python setup.py install
 # tldr
 npm install -g tldr
 
+# --------------------------------------------dev tools -------------------------------------------- #
+
+# web tools
+sudo npm install -g browser-sync live-server
+
 # --------------------------------------------lang -------------------------------------------- #
 
 
 
-# golang config
+# python vim  config and include following config
+sudo touch /etc/pip.conf
+echo "[global]\nindex-url = https://pypi.tuna.tsinghua.edu.cn/simple" | sudo tee /etc/pip.conf
+sudo pip3 install -r $PWD/config/python/requirements.txt
+
+# web
+#  vim setting
+# autocomplete
+sudo npm i -g tern
+# ale
+sudo $PKMG tidy #html
+sudo npm i -g eslint jshint #javascript
+sudo npm i -g prettier #css
+#web 格式化
+sudo npm i -g html-beautify js-beautify #html格式化
+sudo npm i -g prettier   #前端格式化
+
+# lsp
+sudo npm install -g typescript typescript-language-server     #vim lsp for typescript and javascript
+sudo npm install -g vscode-css-languageserver-bin         #vim lsp css scss
+
+# rust
+# install rust
+# curl -sf -L https://static.rust-lang.org/rustup.sh | sh
+curl https://sh.rustup.rs -sSf | sh
+source $HOME/.bashrc
+# rust china mirrors
+mkdir -p $HOME/.cargo
+echo "[source.crates-io]
+registry = 'https://github.com/rust-lang/crates.io-index'
+replace-with = 'ustc'
+[source.ustc]
+registry = 'git://mirrors.ustc.edu.cn/crates.io-index'" >>$HOME/.cargo/config
+
+# vim setting
+# complete  format check
+cargo install rustfmt racer  
+# lsp
+rustup component add rls-preview rust-analysis rust-src 
+
+
+# golang 
 git clone https://github.com/udhos/update-golang
 cd update-golang
 sudo ./update-golang.sh
 
-# install direnv
+
+# install direnv  for zsh and cli
 if hash direnv 2> /dev/null; then
   echo direnv is installed!
 else
@@ -53,6 +100,7 @@ else
   cd ..
   sudo rm direnv -r
 fi
+
 
 # rbenv and ruby
 
@@ -68,5 +116,13 @@ git clone git://github.com/AndorChen/rbenv-china-mirror.git ~/.rbenv/plugins/rbe
 # change mirrors to tuna
 gem update --system
 gem sources --add https://mirrors.tuna.tsinghua.edu.cn/rubygems/ --remove https://rubygems.org/
+
 # vim setting
-gem install rubocop     # ale and neoformat
+# autocomplete
+gem install solargraph
+pip install solargraph-utils.py --user
+yard gems 
+yard config --gem-install-yri
+# ale and neoformat
+gem install rubocop     
+

@@ -34,6 +34,18 @@ else
   sudo sed -i "s/.*socks4[[:space:]]*127.0.0.1.*/socks5  127.0.0.1 1080/g" /etc/proxychains.conf
 fi
 
+# install autojump
+if hash autojump 2> /dev/null; then
+  echo autojump is installed!
+else
+  sudo $PKMG autojump
+  git clone git://github.com/joelthelion/autojump.git
+  cd autojump
+  ./install.py
+  cd ..
+  sudo rm autojump -r
+fi
+
 # choose install
 ARCH="pacman -S"
 DEBIAN="apt install"
@@ -71,43 +83,6 @@ ln -s $PWD/space-vim/autocomplete $HOME/.space-vim/layers/+completion
 # cd ~/.vim/plugged/YouCompleteMe
 # git submodule update --init --recursive
 # sudo python3 ./install.py --clang-completer
-
-# python vim  config and include following config
-sudo touch /etc/pip.conf
-echo "[global]\nindex-url = https://pypi.tuna.tsinghua.edu.cn/simple" | sudo tee /etc/pip.conf
-sudo pip3 install -r $PWD/config/python/requirements.txt
-
-# web tools
-sudo npm install -g browser-sync
-# web vim
-sudo npm i -g tern
-# ale
-sudo $PKMG tidy #html
-sudo npm i -g eslint jshint #javascript
-sudo npm i -g prettier #css
-
-# lsp
-sudo npm install -g typescript typescript-language-server     #vim lsp for typescript and javascript
-sudo npm install -g vscode-css-languageserver-bin         #vim lsp css scss
-
-#web 格式化
-sudo npm i -g html-beautify js-beautify #html格式化
-sudo npm i -g prettier   #前端格式化
-
-# rust
-# install rust
-# curl -sf -L https://static.rust-lang.org/rustup.sh | sh
-curl https://sh.rustup.rs -sSf | sh
-source $HOME/.bashrc
-# rust china mirrors
-mkdir -p $HOME/.cargo
-echo "[source.crates-io]
-registry = 'https://github.com/rust-lang/crates.io-index'
-replace-with = 'ustc'
-[source.ustc]
-registry = 'git://mirrors.ustc.edu.cn/crates.io-index'" >>$HOME/.cargo/config
-cargo install rustfmt racer
-rustup component add rls-preview rust-analysis rust-src
 # manual install 
 
 # cd ~/.space-vim
@@ -129,18 +104,6 @@ curl -L git.io/antigen > $HOME/.antigen/.antigen.zsh
 
 # install thefuck
 # pip install -r ./config/requirements.txt
-
-# install autojump
-if hash autojump 2> /dev/null; then
-  echo autojump is installed!
-else
-  sudo $PKMG autojump
-  git clone git://github.com/joelthelion/autojump.git
-  cd autojump
-  ./install.py
-  cd ..
-  sudo rm autojump -r
-fi
 
 ln -s $PWD/zsh/zshrc ~/.zshrc
 ln -s $PWD/zsh/zshaliases ~/.zshaliases
