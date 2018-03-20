@@ -4,7 +4,7 @@ PKMG="package_manager"
 
 ## --------------------------------------------must install -------------------------------------------- ##
 # common must install 
-sudo $PKMG zsh tmux git curl emacs rsync nodejs npm tig cmake ctags xsel privoxy ranger httpie
+sudo $PKMG zsh tmux git curl emacs rsync nodejs npm tig cmake ctags xsel privoxy ranger httpie 
 
 # privoxy autostart
 sudo sed -i "s/127.0.0.1:9050/127.0.0.1:1080/g;/127.0.0.1:1080/s/^#//g" /etc/privoxy/config
@@ -13,9 +13,7 @@ sudo systemctl enable privoxy.service
 # npm setting
 sudo npm config set registry https://registry.npm.taobao.org --global
 sudo npm config set disturl https://npm.taobao.org/dist --global
-# install fzf
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+
 
 # install proxychains-ng 
 if hash proxychains4 2> /dev/null; then
@@ -34,27 +32,17 @@ else
   sudo sed -i "s/.*socks4[[:space:]]*127.0.0.1.*/socks5  127.0.0.1 1080/g" /etc/proxychains.conf
 fi
 
-# install autojump
-if hash autojump 2> /dev/null; then
-  echo autojump is installed!
-else
-  sudo $PKMG autojump
-  git clone git://github.com/joelthelion/autojump.git
-  cd autojump
-  ./install.py
-  cd ..
-  sudo rm autojump -r
-fi
-
 # choose install
 ARCH="pacman -S"
 DEBIAN="apt install"
 if [[ "$PKMG" = "$ARCH"  ]]; then
-  sudo $PKMG gvim ctags the_silver_searcher yaourt shadowsocks-qt5  clang-tools-extra
+  sudo $PKMG gvim ctags the_silver_searcher yaourt clang-tools-extra
+  source $HOME/.zshrc
+  yaourt -S shadowsocks-qt5 direnv
 elif [[ "$PKMG"="$DEBIAN" ]]; then
   sudo add-apt-repository ppa:hzwhuang/ss-qt5
   sudo apt-get update
-  sudo $PKMG vim-gtk exuberant-ctags silversearcher-ag shadowsocks-qt5 python3-pip python-pip
+  sudo $PKMG vim-gtk exuberant-ctags silversearcher-ag shadowsocks-qt5 python3-pip python-pip direnv
 fi
 
 # --------------------------------------------common config -------------------------------------------- #
@@ -65,41 +53,10 @@ fi
 
 echo "xcape -e 'Caps_Lock=Escape;'" >> $HOME/.profile
 
-# --------------------------------------------vim -------------------------------------------- #
-
-
-#配置vim vim8 并且须支持python3 javascript
-git clone https://github.com/liuchengxu/space-vim.git ~/.space-vim
-ln -s $PWD/space-vim/spacevim $HOME/.spacevim
-sudo rm $HOME/.space-vim/private/* -r
-ln -s $PWD/space-vim/private/* $HOME/.space-vim/private/
-ln -s $PWD/space-vim/UltiSnips/* $HOME/.vim/UltiSnips/
-ln -s $PWD/space-vim/codesnippets $HOME/.space-vim/layers/+programming
-ln -s $PWD/space-vim/codeformat $HOME/.space-vim/layers/+programming
-ln -s $PWD/space-vim/autocomplete $HOME/.space-vim/layers/+completion
-
-# config ycmd
-# sudo git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/plugged/YouCompleteMe
-# cd ~/.vim/plugged/YouCompleteMe
-# git submodule update --init --recursive
-# sudo python3 ./install.py --clang-completer
-# manual install 
-
-# cd ~/.space-vim
-# make vim 
-
-# --------------------------------------------emacs -------------------------------------------- #
-
-# config emacs
-git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-ln -s $PWD/pittcat-spacemacs/spacemacs ~/.spacemacs
-sudo rm ~/.emacs.d/private/* -r
-ln -s $PWD/pittcat-spacemacs/private/* ~/.emacs.d/private
-
 # --------------------------------------------zsh -------------------------------------------- #
 
 mkdir -p $HOME/.antigen/
-curl -L git.io/antigen > $HOME/.antigen/.antigen.zsh
+curl -L git.io/antigen > $HOME/.antigen/antigen.zsh
 
 
 # install thefuck
@@ -108,29 +65,5 @@ curl -L git.io/antigen > $HOME/.antigen/.antigen.zsh
 ln -s $PWD/zsh/zshrc ~/.zshrc
 ln -s $PWD/zsh/zshaliases ~/.zshaliases
 ln -s $PWD/zsh/zshenv ~/.zshenv
-
-
-# --------------------------------------------tmux -------------------------------------------- #
-
-
-# config tmux
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-git clone https://github.com/thewtex/tmux-mem-cpu-load
-cd tmux-mem-cpu-load
-cmake .
-make
-sudo make install 
-cd ..
-sudo rm tmux-mem-cpu-load -r
-
-
-ln -s $PWD/tmux.conf ~/.tmux.conf
-
-# --------------------------------------------manual operation -------------------------------------------- #
-
-# manual operation
-
-# tmux
-# prefix + I install
 
 

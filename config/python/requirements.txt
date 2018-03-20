@@ -13,3 +13,4 @@ psutil
 setproctitle
 python-language-server
 pipenv
+youtube-dl
