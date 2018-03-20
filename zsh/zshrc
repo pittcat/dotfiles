@@ -34,6 +34,7 @@ antigen bundle unixorn/autoupdate-antigen.zshplugin
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle changyuheng/zsh-interactive-cd
 antigen bundle supercrabtree/k
 antigen bundle peterhurford/up.zsh
 antigen bundle hlissner/zsh-autopair
@@ -44,6 +45,8 @@ antigen bundle Valiev/almostontop
 # js
 antigen bundle lukechilds/zsh-better-npm-completion
 antigen bundle akoenig/npm-run.plugin.zsh
+# py
+antigen bundle gangleri/pipenv
 
 # Load the theme.
 antigen theme robwierzbowski/charged-zsh-theme
@@ -63,8 +66,6 @@ antigen apply
 # '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# zsh-interactive-cd
-[[ -s "$HOME/.zsh-interactive-cd/zsh-interactive-cd.plugin.zsh" ]] && source "$HOME/.zsh-interactive-cd/zsh-interactive-cd.plugin.zsh"
 
 # qfc
 [[ -s "$HOME/.qfc/bin/qfc.sh" ]] && source "$HOME/.qfc/bin/qfc.sh"

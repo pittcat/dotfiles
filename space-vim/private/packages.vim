@@ -208,6 +208,9 @@ Plug 'prabirshrestha/vim-lsp'
 " {metakirby5/codi.vim
 Plug 'metakirby5/codi.vim'
 " }
+" {lilydjwg/fcitx.vim
+Plug 'lilydjwg/fcitx.vim'
+" }
 
 "themefor
 Plug 'rakr/vim-one'

@@ -16,8 +16,6 @@ curl -L https://github.com/hbin/top-programming-fonts/raw/master/install.sh | ba
 # Noto Mono for Powerline Bold ---terminal
 
 
-# zsh-interactive-cd
-git clone https://github.com/changyuheng/zsh-interactive-cd  $HOME/.zsh-interactive-cd
 
 # qfc
 git clone https://github.com/pindexis/qfc $HOME/.qfc
@@ -32,7 +30,11 @@ cd $HOME/.trash-cli.git
 sudo python setup.py install
 
 # tldr
-npm install -g tldr
+npm install -g tldr fkill-cli
+
+# youtube-dl
+sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+sudo chmod a+rx /usr/local/bin/youtube-dl
 
 # --------------------------------------------dev tools -------------------------------------------- #
 
