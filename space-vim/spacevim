@@ -82,6 +82,20 @@ function! UserConfig()
   autocmd ColorScheme janah highlight Normal ctermbg=235
   colorscheme janah
   " }
+  let g:ycm_filetype_blacklist = {
+        \ 'tagbar' : 1,
+        \ 'qf' : 1,
+        \ 'notes' : 1,
+        \ 'markdown' : 1,
+        \ 'unite' : 1,
+        \ 'text' : 1,
+        \ 'vimwiki' : 1,
+        \ 'pandoc' : 1,
+        \ 'infolog' : 1,
+        \ 'mail' : 1,
+        \ 'startify' : 1,
+        \}
+  let g:startifycomplete#trigger = 'omnifunc'
 "
 endfunction
 

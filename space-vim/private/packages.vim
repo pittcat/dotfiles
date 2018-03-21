@@ -16,7 +16,6 @@ if g:spacevim_nvim  " nvim
 
 else  "vim8
   " completor.vim
-  Plug 'ferreum/completor-tmux'     "complete tmux
   " Plug 'osyo-manga/vim-monster',{'for':'ruby','do':'gem install solargraph'}     " ruby------->gem install solargraph
   " Plug 'maralla/completor-typescript'
 

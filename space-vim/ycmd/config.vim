@@ -49,3 +49,6 @@ scriptencoding utf-8
                 \   nnoremap <LocalLeader>gp :YcmCompleter GetParent<CR>
   augroup END
 " }
+" tmux
+  let g:tmuxcomplete#trigger = ''
+
