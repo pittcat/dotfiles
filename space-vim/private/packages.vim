@@ -211,6 +211,10 @@ Plug 'metakirby5/codi.vim'
 " {lilydjwg/fcitx.vim
 Plug 'lilydjwg/fcitx.vim'
 " }
+" {roxma/vim-paste-easy
+Plug 'roxma/vim-paste-easy'
+" }
+
 
 "themefor
 Plug 'rakr/vim-one'
