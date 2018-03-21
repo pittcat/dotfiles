@@ -9,18 +9,23 @@ if g:spacevim_nvim || g:spacevim_vim8
   let g:UltiSnipsJumpForwardTrigger = '<C-j>'
   let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
   let g:UltiSnipsExpandTrigger = "<nop>"
-  let g:ulti_expand_or_jump_res = 0
+  let g:ulti_expand_res = 0
   function ExpandSnippetOrCarriageReturn()
       let snippet = UltiSnips#ExpandSnippet()
       if g:ulti_expand_res > 0
           return snippet
-        else
+      else
           return "\<C-y>"
       endif
   endfunction
-  " inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
   inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
 
+  if !empty(glob("$HOME/.vim/plugged/YouCompleteMe"))
+    let g:UltiSnipsJumpForwardTrigger = '<tab>'
+    let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+    let g:UltiSnipsExpandTrigger = "<tab>"
+  endif
   
   " inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 

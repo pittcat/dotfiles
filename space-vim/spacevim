@@ -27,7 +27,8 @@ function! Layers()
   Layer 'git'
   Layer 'github'
 
-  Layer 'autocomplete'
+  " Layer 'autocomplete'
+  Layer 'ycmd'
   Layer 'lsp'
   Layer 'codesnippets'
   " Layer 'formatting'
