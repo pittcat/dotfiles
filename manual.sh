@@ -66,6 +66,7 @@ mkdir -p $HOME/.vim/UltiSnips/
 ln -s $PWD/space-vim/UltiSnips/* $HOME/.vim/UltiSnips/
 ln -s $PWD/space-vim/codesnippets $HOME/.space-vim/layers/+programming
 ln -s $PWD/space-vim/codeformat $HOME/.space-vim/layers/+programming
+ln -s $PWD/space-vim/lsp $HOME/.space-vim/layers/+programming
 ln -s $PWD/space-vim/autocomplete $HOME/.space-vim/layers/+completion
 
 # config ycmd

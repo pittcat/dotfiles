@@ -8,14 +8,6 @@ if g:spacevim_nvim  " nvim
   " Plug 'mhartington/nvim-typescript',{'for':'typescript'}
   " Plug 'uplus/deoplete-solargraph',{'for':'ruby','do':'gem install solargraph && pip install solargraph-utils.py --user'}
   " Plug 'sebastianmarkow/deoplete-rust',{'for':'rust'}
-  " ncm
-  " Plug 'roxma/nvim-completion-manager'
-  " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }         " deoplete------extend for ncm
-  " Plug 'fgrsnau/ncm-otherbuf'       "other buffers
-
-  " ncm lang 
-  " Plug 'roxma/nvim-cm-tern',  {'do': 'npm install','for':'javascript'}     " javascript
-  " Plug 'roxma/ncm-rct-complete'     " ruby-----gem install rcodetools
 
 
   " common 
@@ -199,11 +191,6 @@ Plug 'dhruvasagar/vim-table-mode',{'for':'markdown'}
 "}
 "{dietsche/vim-lastplace
 Plug 'dietsche/vim-lastplace'
-"}
-"{vim lsp
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-" Plug 'felixfbecker/php-language-server', {'do': 'composer install && composer run-script parse-stubs'}          "php
 "}
 " {metakirby5/codi.vim
 Plug 'metakirby5/codi.vim'

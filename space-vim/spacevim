@@ -28,6 +28,7 @@ function! Layers()
   Layer 'github'
 
   Layer 'autocomplete'
+  Layer 'lsp'
   Layer 'codesnippets'
   " Layer 'formatting'
   Layer 'codeformat'
