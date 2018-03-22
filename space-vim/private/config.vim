@@ -317,10 +317,12 @@ noremap <silent> <leader>nc :NERDTreeCWD<cr>
             \ 'sh' : ['shellcheck'],
             \ 'vim' : ['vint'],
             \ 'html' : ['tidy'],
+            \ 'css' : ['prettier'],
             \ 'python' : ['flake8'],
             \ 'markdown' : ['mdl'],
             \ 'javascript.jsx' : ['eslint'],
             \ 'javascript' : ['eslint'],
+            \ 'ruby' : ['rubocop'],
             \}
   let g:ale_fixers = {
   \  'python': ['yapf'],

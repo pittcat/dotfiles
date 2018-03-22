@@ -44,15 +44,10 @@ git clone https://github.com/andreafrancia/trash-cli.git $HOME/.trash-cli.git
 cd $HOME/.trash-cli.git
 sudo python setup.py install
 
-# tldr
-sudo npm install -g tldr fkill-cli
-
+# terminmal daily use ------npm
+sudo npm install -g $(cat npmdaily | egrep -v "^\s*(#|$)")
 
 # --------------------------------------------dev tools -------------------------------------------- #
-
-# web tools
-sudo npm install -g browser-sync live-server
-
 
 # --------------------------------------------vim -------------------------------------------- #
 
