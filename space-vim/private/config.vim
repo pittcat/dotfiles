@@ -179,17 +179,8 @@ endif
   nnoremap <silent> <leader>gn :Loremipsum<cr>
   "}
   "{codi.vim
-  " noremap <silent> <localleader>cd :Codi!!<cr>
+  noremap <silent> <localleader>cd :Codi!!<cr>
   "}
-  "{epeli/slimux
-  " let g:slimux_select_from_current_window = 0
-  " set <F25>=c
-  " imap <silent> jk <esc>:SlimuxREPLSendBuffer<CR>
-  " nmap  <F25> :SlimuxREPLConfigure<cr>
-  " nmap <silent> <C-c><C-c> :SlimuxREPLSendLine<CR>
-  " vmap <silent> <C-c><C-c> :SlimuxREPLSendSelection<CR>
-  "}
-  "
   "{briandoll/change-inside-surroundings.vim
   noremap <silent> <localleader>ci :ChangeInsideSurrounding<cr>
   noremap <silent> <localleader>cas :ChangeAroundSurrounding<cr>
@@ -225,9 +216,6 @@ endif
   nmap <leader>nb :edit 
     "}
     "
-  " {map filename complete
-  set <F23>=.
-  inoremap <F23> <C-X><C-F>
   " }
   " {open .spacevim
   noremap <silent> <leader>fed :edit ~/.spacevim<cr>
@@ -253,24 +241,27 @@ endif
   autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) |
               \   bd|
               \   q | endif
-" }
-"{pelodelfuego/vim-swoop
-noremap <leader>ds :bdelete swoopBuf<cr>
-"}
-"{codi.vim
-noremap <silent> <localleader>cd :Codi!!<cr>
-"}
-"{ctrlptmux
-nnoremap <Leader>my :CtrlPTmux b<cr>
-"}
+  " }
+  "{pelodelfuego/vim-swoop
+  noremap <leader>ds :bdelete swoopBuf<cr>
+  "}
+  "{codi.vim
+  noremap <silent> <localleader>cd :Codi!!<cr>
+  "}
+  "{ctrlptmux
+  nnoremap <Leader>my :CtrlPTmux b<cr>
+  "}
 
-"{airblade/vim-rooter
-let g:rooter_change_directory_for_non_project_files = 'current'
-"}
-"{scrooloose/nerdtree
-noremap <silent> <leader>nc :NERDTreeCWD<cr>
-"}
-"
+  "{airblade/vim-rooter
+  let g:rooter_change_directory_for_non_project_files = 'current'
+  "}
+  "{scrooloose/nerdtree
+  noremap <silent> <leader>nc :NERDTreeCWD<cr>
+  "}
+  "
+  " {roxma/vim-paste-easy
+  let g:paste_easy_message=0
+  " }
 
   " {terminal
   if has('nvim')
@@ -332,6 +323,8 @@ noremap <silent> <leader>nc :NERDTreeCWD<cr>
   \  'css': ['prettier'],
   \  'markdown': ['prettier'],
   \}
-  " }
-let g:neoformat_only_msg_on_error = 0
-let g:neoformat_try_formatprg = 1
+  
+  " file and filename copy
+  nmap <localleader>cp :call system("xclip -i -selection clipboard", expand("%:t"))<CR>
+  nmap <localleader>ap :call system("xclip -i -selection clipboard", expand("%:p"))<CR>
+  nmap <localleader>rp :call system("xclip -i -selection clipboard", expand("%"))<CR>

@@ -2,7 +2,6 @@
 # install rust
 # curl -sf -L https://static.rust-lang.org/rustup.sh | sh
 curl https://sh.rustup.rs -sSf | sh
-source $HOME/.bashrc
 # rust china mirrors
 mkdir -p $HOME/.cargo
 echo "[source.crates-io]
