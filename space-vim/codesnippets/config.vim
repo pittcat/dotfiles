@@ -8,14 +8,16 @@ if g:spacevim_nvim || g:spacevim_vim8
 
   let g:UltiSnipsJumpForwardTrigger = '<C-j>'
   let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
-  let g:UltiSnipsExpandTrigger = "<nop>"
+  let g:UltiSnipsExpandTrigger = "<C-e>"
   let g:ulti_expand_res = 0
   function ExpandSnippetOrCarriageReturn()
       let snippet = UltiSnips#ExpandSnippet()
       if g:ulti_expand_res > 0
           return snippet
-      else
+      elseif g:spacevim_vim8
           return "\<C-y>"
+      else 
+        return deoplete#close_popup()
       endif
   endfunction
 
