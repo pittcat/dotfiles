@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 # set package manager
-PKMG="package_manager"
-
+if [ -d /etc/apt ];then
+  PKMG="apt install"
+elif [ -d /etc/pacman.d ];then
+  PKMG="pacman -S"
+fi
 ## --------------------------------------------must install -------------------------------------------- ##
 # common must install 
 sudo $PKMG zsh tmux git curl emacs rsync nodejs npm tig cmake ctags xsel xclip privoxy ranger httpie 
@@ -78,6 +81,7 @@ curl -L git.io/antigen > $HOME/.antigen/antigen.zsh
 
 ln -s $PWD/zsh/zshrc ~/.zshrc
 ln -s $PWD/zsh/zshaliases ~/.zshaliases
+ln -s $PWD/zsh/zshfunction ~/.zshfunction
 ln -s $PWD/zsh/zshenv ~/.zshenv
 
 

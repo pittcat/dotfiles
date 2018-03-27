@@ -3,50 +3,59 @@ source $HOME/.antigen/antigen.zsh
 # oh-my-zsh
 antigen use oh-my-zsh
 
-antigen bundle systemd
-antigen bundle archlniux
-antigen bundle debian
-antigen bundle git
-antigen bundle autojump
-antigen bundle extract
-antigen bundle tmux
-antigen bundle sudo
-antigen bundle copydir
-antigen bundle tig
-antigen bundle pj
-antigen bundle web-search
-antigen bundle command-not-found
-antigen bundle copyfile
-antigen bundle httpie
+if [ -d /etc/apt ];then
+  antigen bundle debian
+elif [ -d /etc/pacman.d ];then
+  antigen bundle archlinux
+fi
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  antigen bundle osx
+  antigen bundle brew
+fi
+antigen bundles <<EOB
+systemd
+git
+autojump
+extract
+tmux
+sudo
+copydir
+tig
+pj
+web-search
+command-not-found
+copyfile
+httpie
 # py
-antigen bundle python
-antigen bundle pip
+python
+pip
 # js
-antigen bundle npm
+npm
 # rb
-antigen bundle ruby
-antigen bundle rbenv
-antigen bundle gem
-
+ruby
+rbenv
+gem
+EOB
 # --------------------------------------------other -------------------------------------------- #
-
-antigen bundle unixorn/autoupdate-antigen.zshplugin
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle changyuheng/zsh-interactive-cd
-antigen bundle supercrabtree/k
-antigen bundle peterhurford/up.zsh
-antigen bundle hlissner/zsh-autopair
-antigen bundle Tarrasch/zsh-bd
-antigen bundle djui/alias-tips
-antigen bundle gujiaxi/ranger-cd
-antigen bundle Valiev/almostontop
+antigen bundles <<EOB
+unixorn/autoupdate-antigen.zshplugin
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-completions
+zsh-users/zsh-syntax-highlighting
+changyuheng/zsh-interactive-cd
+supercrabtree/k
+peterhurford/up.zsh
+hlissner/zsh-autopair
+Tarrasch/zsh-bd
+djui/alias-tips
+gujiaxi/ranger-cd
+Valiev/almostontop
 # js
-antigen bundle lukechilds/zsh-better-npm-completion
-antigen bundle akoenig/npm-run.plugin.zsh
+lukechilds/zsh-better-npm-completion
+akoenig/npm-run.plugin.zsh
 # py
-antigen bundle gangleri/pipenv
+gangleri/pipenv
+EOB
 
 # Load the theme.
 antigen theme robwierzbowski/charged-zsh-theme
@@ -54,9 +63,10 @@ antigen theme robwierzbowski/charged-zsh-theme
 # # Tell Antigen that you're done.
 antigen apply
 
-
 # alias
 . $HOME/.zshaliases
+# function
+. $HOME/.zshfunction
 
 # fzf
 # export FZF_DEFAULT_OPTS='

@@ -95,7 +95,8 @@ sudo make install
 cd ..
 sudo rm tmux-mem-cpu-load -r
 
-
+netcard=$( cat tmux.conf| grep 'set -g @net_speed_interfaces')
+sed -i "s/^set -g @net_speed_interfaces.*/${netcard}/g" tmux.conf
 ln -s $PWD/tmux.conf ~/.tmux.conf
 
 # --------------------------------------------manual operation -------------------------------------------- #
