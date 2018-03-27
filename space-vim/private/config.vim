@@ -270,6 +270,9 @@ endif
   " {roxma/vim-paste-easy
   let g:paste_easy_message=0
   " }
+  " {'ggVGc/vim-fuzzysearch'
+  nnoremap z/ :FuzzySearch<cr>
+  " }
 
   " {terminal
   if has('nvim')

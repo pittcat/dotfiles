@@ -200,6 +200,9 @@ Plug 'lilydjwg/fcitx.vim'
 " {roxma/vim-paste-easy
 Plug 'roxma/vim-paste-easy'
 " }
+" {'ggVGc/vim-fuzzysearch'
+Plug 'ggVGc/vim-fuzzysearch'
+" }
 
 
 "themefor
