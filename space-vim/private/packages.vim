@@ -209,4 +209,5 @@ Plug 'ggVGc/vim-fuzzysearch'
 Plug 'rakr/vim-one'
 Plug 'sickill/vim-monokai'
 Plug 'mhinz/vim-janah'
+Plug 'junegunn/seoul256.vim'
 

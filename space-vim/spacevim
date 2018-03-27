@@ -68,20 +68,24 @@ function! UserConfig()
   let g:airline_powerline_fonts=1
   color desert
   syntax on
-  "{one
-  " colorscheme one
-  " set background=light
-  " let g:one_allow_italics = 1
-  " let g:airline_theme='one'
-  "}
-  "
-  "
+ "
     " { sickill/vim-monokai
   " colorscheme monokai
   " }
   " { mhinz/vim-janah
-  autocmd ColorScheme janah highlight Normal ctermbg=235
-  colorscheme janah
+  " autocmd ColorScheme janah highlight Normal ctermbg=235
+  " colorscheme janah
+
+  " }
+  " {seoul256
+   colo seoul256
+
+  " Light color scheme
+  " Switch
+  set background=dark
+  let g:solarized_term_italics=1
+  let g:solarized_old_cursor_style=1
+
   " }
 endfunction
 
