@@ -193,8 +193,9 @@ endif
   nmap <localleader>ls :LinediffShow<cr>
   "}
   " {terryma/vim-smooth-scroll
-  noremap <silent> <c-up> :call smooth_scroll#up(&scroll, 0, 2)<CR>
-  noremap <silent> <c-down> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+
+  noremap <silent> <PageUp> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+  noremap <silent> <PageDown> :call smooth_scroll#down(&scroll, 0, 2)<CR>
   noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
   noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
   " }
