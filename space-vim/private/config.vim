@@ -31,7 +31,8 @@ else    "vim8
     let g:completor_ruby_omni_trigger = "\\w+$|[\\w\\)\\]\\}\'\"]+\\.\\w*$"
     let g:completor_gocode_binary='~/.go/bin/gocode' "go
     let g:completor_racer_binary='~/.cargo/bin/racer' "rust
-    au FileType rust map <silent> gd :call completor#do('definition') <CR>    
+    let g:completor_tsserver_binary = '/usr/bin/tsserver'
+    " au FileType rust map <silent> gd :call completor#do('definition') <CR>    
     " au FileType rust map <silent> gd :call completor#do('definition') <CR>    
     " noremap <s-k> :call completor#do('doc')<CR>
 endif 
@@ -150,7 +151,7 @@ endif
   "{FZF
   nnoremap <Leader>f? :Files ~<CR>
   " nnoremap <Leader>ff :Files<CR>
-  nnoremap <Leader>fp :Files ~/MEGA/code/dotfiles<CR>
+  nnoremap <Leader>fep :Files ~/MEGA/code/dotfiles<CR>
   "}
   "
   "{use Yggdroot/indentLine
