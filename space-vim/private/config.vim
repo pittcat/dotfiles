@@ -194,8 +194,8 @@ endif
   "}
   " {terryma/vim-smooth-scroll
 
-  noremap <silent> <PageUp> :call smooth_scroll#up(&scroll, 0, 2)<CR>
-  noremap <silent> <PageDown> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+  noremap <silent> <C-up> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+  noremap <silent> <C-down> :call smooth_scroll#down(&scroll, 0, 2)<CR>
   noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
   noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
   " }
@@ -332,3 +332,12 @@ endif
   nmap <localleader>cp :call system("xclip -i -selection clipboard", expand("%:t"))<CR>
   nmap <localleader>ap :call system("xclip -i -selection clipboard", expand("%:p"))<CR>
   nmap <localleader>rp :call system("xclip -i -selection clipboard", expand("%"))<CR>
+
+  " fix tmux and vim
+  if &term =~ '^screen'
+      " tmux will send xterm-style keys when its xterm-keys option is on
+      execute "set <xUp>=\e[1;*A"
+      execute "set <xDown>=\e[1;*B"
+      execute "set <xRight>=\e[1;*C"
+      execute "set <xLeft>=\e[1;*D"
+  endif
