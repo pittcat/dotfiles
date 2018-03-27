@@ -173,8 +173,8 @@ endif
   nnoremap <leader>bD :BufOnly<cr>
   "}
   "{quick indent visual with tab
-  vnoremap  <tab> >gv
-  vnoremap  <S-tab> <gv
+  vnoremap  <C-End> >gv
+  vnoremap  <C-Home> <gv
   "}
   "{vim-scripts/loremipsum
   nnoremap <silent> <leader>gn :Loremipsum<cr>
@@ -340,4 +340,6 @@ endif
       execute "set <xDown>=\e[1;*B"
       execute "set <xRight>=\e[1;*C"
       execute "set <xLeft>=\e[1;*D"
+      execute "set <xHome>=\e[1;*H"
+      execute "set <xEnd>=\e[1;*F"
   endif
