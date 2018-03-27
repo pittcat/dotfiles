@@ -121,6 +121,10 @@ endif
     noremap <silent> <localleader>q :cclose<cr>
     noremap <silent> <localleader>o :copen<cr>
   "}
+  "{justinmk/vim-sneak
+    map f <Plug>Sneak_s
+    map F <Plug>Sneak_S
+  "}
   "{Limelight and goyo
   autocmd User GoyoEnter Limelight
   autocmd User GoyoLeave Limelight!
