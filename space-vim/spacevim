@@ -86,6 +86,8 @@ function! UserConfig()
   let g:solarized_term_italics=1
   let g:solarized_old_cursor_style=1
 
+
   " }
+  "
 endfunction
 

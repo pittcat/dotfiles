@@ -182,9 +182,6 @@ Plug 'tweekmonster/fzf-filemru'
 "{
 Plug 'chr4/nginx.vim'                 "nginx高亮
 "}
-"{project index grep
-Plug 'wsdjeg/FlyGrep.vim'
-"}
 "{dhruvasagar/vim-table-mode
 Plug 'dhruvasagar/vim-table-mode',{'for':'markdown'}
 "}

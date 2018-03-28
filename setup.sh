@@ -59,7 +59,7 @@ if [[ "$PKMG" = "$ARCH"  ]]; then
 elif [[ "$PKMG"="$DEBIAN" ]]; then
   sudo add-apt-repository ppa:hzwhuang/ss-qt5
   sudo apt-get update
-  sudo $PKMG vim-gtk exuberant-ctags silversearcher-ag shadowsocks-qt5 python3-pip python-pip direnv
+  sudo $PKMG vim-gtk exuberant-ctags silversearcher-ag shadowsocks-qt5 python3-pip python-pip direnv silversearcher-ag
 fi
 
 # --------------------------------------------common config -------------------------------------------- #

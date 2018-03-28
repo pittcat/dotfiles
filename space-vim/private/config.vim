@@ -154,7 +154,7 @@ endif
   "}
   "{FZF
   nnoremap <Leader>f? :Files ~<CR>
-  " nnoremap <Leader>ff :Files<CR>
+  nnoremap <Leader>ff :Files ./<CR>
   nnoremap <Leader>fep :Files ~/MEGA/code/dotfiles<CR>
   "}
   "
@@ -218,7 +218,7 @@ endif
   nnoremap <silent> <leader>fy :FZFNeoyank<cr>
     "} 
    "{tweekmonster/fzf-filemru
-  noremap <silent> <leader>ff :FilesMru<cr>
+  noremap <silent> <leader>fr :FilesMru<cr>
    "}
     "{create new tab 
   nmap <leader>nb :edit 
@@ -228,9 +228,6 @@ endif
   " {open .spacevim
   noremap <silent> <leader>fed :edit ~/.spacevim<cr>
   " }
- "  {'wsdjeg/FlyGrep.vim'
-  nnoremap <leader>s/ :FlyGrep<cr>
- "  }
  "  {dhruvasagar/vim-table-mode
    "" Use this option to define the table corner character
   let g:table_mode_corner = '|'
@@ -350,3 +347,28 @@ endif
       execute "set <xHome>=\e[1;*H"
       execute "set <xEnd>=\e[1;*F"
   endif
+
+  " fzf
+  let g:fzf_colors =
+  \ { 'fg':      ['fg', 'Normal'],
+    \ 'bg':      ['bg', 'Normal'],
+    \ 'hl':      ['fg', 'Comment'],
+    \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+    \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+    \ 'hl+':     ['fg', 'Statement'],
+    \ 'info':    ['fg', 'PreProc'],
+    \ 'border':  ['fg', 'Ignore'],
+    \ 'prompt':  ['fg', 'Conditional'],
+    \ 'pointer': ['fg', 'Exception'],
+    \ 'marker':  ['fg', 'Keyword'],
+    \ 'spinner': ['fg', 'Label'],
+    \ 'header':  ['fg', 'Comment'] }
+  autocmd VimEnter * command! -bang -nargs=* Ag
+              \ call fzf#vim#ag(<q-args>,
+              \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+              \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+              \                 <bang>0)
+  nnoremap <leader>ap :Ag!<cr>
+  " Likewise, Files command with preview window
+  command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
