@@ -372,3 +372,35 @@ endif
   " Likewise, Files command with preview window
   command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
+  " { hlissner/vim-multiedit
+  let g:multiedit_mark_character = '|'
+  let g:multiedit_no_mappings = 1
+
+  " Insert a disposable marker after the cursor
+  nmap <leader>ma :MultieditAddMark a<CR>
+
+  " Insert a disposable marker before the cursor
+  nmap <leader>mi :MultieditAddMark i<CR>
+
+  " Make a new line and insert a marker
+  nmap <leader>mo o<Esc>:MultieditAddMark i<CR>
+  nmap <leader>mO O<Esc>:MultieditAddMark i<CR>
+
+  " Insert a marker at the end/start of a line
+  nmap <leader>mA $:MultieditAddMark a<CR>
+  nmap <leader>mI ^:MultieditAddMark i<CR>
+
+  " Move cursor between regions n times
+  map ]m :MultieditHop 1<CR>
+  map [m :MultieditHop -1<CR>
+
+  " Start editing!
+  nmap <leader>M :Multiedit<CR>
+
+  " Clear the word and start editing
+  nmap <leader>C :Multiedit!<CR>
+
+  " Unset the region under the cursor
+  nmap <silent> <leader>mx :MultieditClear<CR>x
+  " }

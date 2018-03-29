@@ -200,7 +200,9 @@ Plug 'roxma/vim-paste-easy'
 " {'ggVGc/vim-fuzzysearch'
 Plug 'ggVGc/vim-fuzzysearch'
 " }
-
+" {hlissner/vim-multiedit
+Plug 'hlissner/vim-multiedit'
+" }
 
 "themefor
 Plug 'rakr/vim-one'
