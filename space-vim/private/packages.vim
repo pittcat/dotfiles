@@ -206,7 +206,6 @@ Plug 'hlissner/vim-multiedit'
 
 "themefor
 Plug 'rakr/vim-one'
-Plug 'sickill/vim-monokai'
 Plug 'mhinz/vim-janah'
 Plug 'junegunn/seoul256.vim'
 

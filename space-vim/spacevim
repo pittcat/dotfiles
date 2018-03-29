@@ -70,9 +70,11 @@ function! UserConfig()
   syntax on
 
  "
-    " { sickill/vim-monokai
-  " colorscheme monokai
-  " }
+ "{one theme
+    " set background=light        " for the light version
+    " let g:one_allow_italics = 1 " I love italic for comments
+    " colorscheme one
+ "}
   " { mhinz/vim-janah
   " autocmd ColorScheme janah highlight Normal ctermbg=235
   " colorscheme janah
