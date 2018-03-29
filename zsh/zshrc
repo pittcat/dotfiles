@@ -20,7 +20,6 @@ extract
 tmux
 sudo
 copydir
-tig
 pj
 web-search
 command-not-found
@@ -44,12 +43,10 @@ zsh-users/zsh-completions
 zsh-users/zsh-syntax-highlighting
 changyuheng/zsh-interactive-cd
 supercrabtree/k
-peterhurford/up.zsh
 hlissner/zsh-autopair
 Tarrasch/zsh-bd
 djui/alias-tips
 gujiaxi/ranger-cd
-Valiev/almostontop
 # js
 lukechilds/zsh-better-npm-completion
 akoenig/npm-run.plugin.zsh
@@ -77,6 +74,4 @@ antigen apply
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
-# qfc
-[[ -s "$HOME/.qfc/bin/qfc.sh" ]] && source "$HOME/.qfc/bin/qfc.sh"
 
