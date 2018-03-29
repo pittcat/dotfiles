@@ -404,3 +404,9 @@ endif
   " Unset the region under the cursor
   nmap <silent> <leader>mx :MultieditClear<CR>x
   " }
+  "{unimpaired-like-map
+  nnoremap <silent> [<space> :pu! _<cr>:']+1<cr>
+  nnoremap <silent> ]<space> :pu _<cr>:'[-1<cr>
+  nnoremap <silent> ]p o<esc>pk
+  nnoremap <silent> [p O<esc>pj
+  "}

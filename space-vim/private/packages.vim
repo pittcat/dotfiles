@@ -128,9 +128,6 @@ nnoremap <silent> <F7> :TMToggle<cr>
  Plug 'vim-scripts/BufOnly.vim'
 "}
 "
-"{unimpaired
-Plug 'tpope/vim-unimpaired'
-"}
 "{vim-scripts/loremipsum
 Plug 'vim-scripts/loremipsum'
 "}
