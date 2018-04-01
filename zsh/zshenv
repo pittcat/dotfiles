@@ -23,6 +23,8 @@ export PATH="$HOME/.local/bin:$PATH"     #pipenv
 # nodejs
 export PATH=~/.npm-global/bin:$PATH
 export NPM_CONFIG_PREFIX=~/.npm-global
+# vim--deoplete tern 
+ulimit -n 2048
 
 # rust
 if [ -d "$HOME/.cargo/bin" ] ; then

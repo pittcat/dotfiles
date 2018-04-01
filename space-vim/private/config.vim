@@ -6,6 +6,8 @@ if g:spacevim_nvim
   " deoplete-------lang extend
   let g:tmuxcomplete#trigger = ''     "  'wellle/tmux-complete.vim'
   let g:deoplete#sources#jedi#python_path='/usr/bin/python3'  "zchee/deoplete-jedi
+  let g:deoplete#sources#jedi#server_timeout=50
+  let g:deoplete#sources#jedi#debug_server=1
   let g:deoplete#sources#ternjs#tern_bin = '/usr/bin/tern'    "carlitux/deoplete-ternjs
   let g:deoplete#sources#clang#libclang_path='/usr/lib/libclang.so'   "zchee/deoplete-clang
   let  g:deoplete#sources#clang#clang_header='/usr/lib/clang'
