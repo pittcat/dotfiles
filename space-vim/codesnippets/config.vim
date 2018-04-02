@@ -3,7 +3,12 @@ scriptencoding utf-8
 if g:spacevim_nvim || g:spacevim_vim8
   let g:UltiSnipsSnippetDirectories=['UltiSnips']
   exe 'set rtp+=' . expand(g:spacevim_dir . '/private/UltiSnips')
-  let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
+  if g:spacevim_vim8
+    let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
+  endif
+  if g:spacevim_nvim
+    let g:UltiSnipsSnippetsDir =  '~/.config/nvim/UltiSnips'
+  endif
   let g:UltiSnipsRemoveSelectModeMappings = 0
 
   let g:UltiSnipsJumpForwardTrigger = '<C-j>'
@@ -29,7 +34,6 @@ if g:spacevim_nvim || g:spacevim_vim8
     let g:UltiSnipsExpandTrigger = "<tab>"
   endif
   
-  " inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
   inoremap <expr> <down> pumvisible() ? "\<C-n>" : "\<down>"
   inoremap <expr> <up> pumvisible() ? "\<C-p>" : "\<up>"

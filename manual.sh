@@ -58,6 +58,8 @@ ln -s $PWD/space-vim/spacevim $HOME/.spacevim
 sudo rm $HOME/.space-vim/private/* -r
 ln -s $PWD/space-vim/private/* $HOME/.space-vim/private/
 mkdir -p $HOME/.vim/UltiSnips/
+mkdir -p $HOME/.config/nvim/UltiSnips/
+ln -s $PWD/space-vim/UltiSnips/* $HOME/.config/nvim/UltiSnips/
 ln -s $PWD/space-vim/UltiSnips/* $HOME/.vim/UltiSnips/
 ln -s $PWD/space-vim/codesnippets $HOME/.space-vim/layers/+programming
 ln -s $PWD/space-vim/codeformat $HOME/.space-vim/layers/+programming
