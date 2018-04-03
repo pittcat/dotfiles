@@ -23,7 +23,7 @@ function! Layers()
   Layer 'file-manager',{'exclude':'danro/rename.vim'}
   Layer 'better-motion'
   Layer 'programming',{'exclude':'nathanaelkane/vim-indent-guides'}
-  Layer 'editing'
+  Layer 'editing',{'exclude':'pelodelfuego/vim-swoop'}
   Layer 'git'
   Layer 'github'
 

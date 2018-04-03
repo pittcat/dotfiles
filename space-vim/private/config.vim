@@ -345,6 +345,40 @@ endif
   endif
 
     " fzf
+  function! s:sessions()
+    call fzf#run({
+    \ 'source':  'ls -1 ~/.vim/session',
+    \ 'sink':    'SLoad',
+    \ 'options': '+m --prompt="Sessions> "',
+    \ 'down':    '40%'
+    \})
+  endfunction
+  command! Sessions call s:sessions()
+  nnoremap <silent> <leader>sf :Sessions<cr>
+
+  function! s:line_handler(l)
+    let keys = split(a:l, ':\t')
+    exec 'buf' keys[0]
+    exec keys[1]
+    normal! ^zz
+  endfunction
+
+  function! s:buffer_lines()
+    let res = []
+    for b in filter(range(1, bufnr('$')), 'buflisted(v:val)')
+      call extend(res, map(getbufline(b,0,"$"), 'b . ":\t" . (v:key + 1) . ":\t" . v:val '))
+    endfor
+    return res
+  endfunction
+
+  command! FZFLines call fzf#run({
+  \   'source':  <sid>buffer_lines(),
+  \   'sink':    function('<sid>line_handler'),
+  \   'options': '--extended --nth=3..',
+  \   'down':    '60%'
+  \})
+
+  nnoremap <silent> <leader>fl :FZFLines<cr>
   let g:fzf_colors =
   \ { 'fg':      ['fg', 'Normal'],
     \ 'bg':      ['bg', 'Normal'],
@@ -377,10 +411,17 @@ endif
   " Likewise, Files command with preview window
   command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+  " }
 
   "{unimpaired-like-map
   nnoremap <silent> [<space> :pu! _<cr>:']+1<cr>
   nnoremap <silent> ]<space> :pu _<cr>:'[-1<cr>
   nnoremap <silent> ]p :pu<cr>
   nnoremap <silent> [p :pu!<cr>
+  "}
+  "unbind-key
+  "{
+  vmap <Leader>s <nop>
+  nnoremap <Leader>ss <nop>
+  nnoremap <Leader>sm <nop>
   "}
