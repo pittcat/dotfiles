@@ -31,9 +31,15 @@ else
   sudo rm autojump -r
 fi
 
+# ripgrep
+if [ -d /etc/apt ];then
+  curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.8.1/ripgrep_0.8.1_amd64.deb
+  sudo dpkg -i ripgrep_0.8.1_amd64.deb
+  rm ripgrep_0.8._amd64.deb
+elif [ -d /etc/pacman.d ];then
+  sudo pacman -S ripgrep
+fi
 
-# qfc
-git clone https://github.com/pindexis/qfc $HOME/.qfc
 
 # has
 git clone https://github.com/kdabir/has.git && cd has && sudo make install

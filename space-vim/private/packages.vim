@@ -163,9 +163,6 @@ Plug 'justinmk/vim-gtfo'
 " gof--------->file manager
 "}
 "
-"{iamcco/dict.vim
-Plug 'iamcco/dict.vim'
-"}
 "{dyng/ctrlsf.vim
 Plug 'dyng/ctrlsf.vim'
 "}
@@ -198,10 +195,6 @@ Plug 'roxma/vim-paste-easy'
 " {'ggVGc/vim-fuzzysearch'
 Plug 'ggVGc/vim-fuzzysearch'
 " }
-" {hlissner/vim-multiedit
-Plug 'hlissner/vim-multiedit'
-" }
-
 "themefor
 Plug 'rakr/vim-one'
 Plug 'mhinz/vim-janah'

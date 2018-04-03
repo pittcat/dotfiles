@@ -205,12 +205,6 @@ endif
   noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
   noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
   " }
-  " {iamcco/dict.vim
-  let g:api_key = "1932136763"
-  let g:keyfrom = "aioiyuuko"
-  nmap <silent> <localleader>yd <Plug>DictWSearch
-  vmap <silent> <localleader>yd <Plug>DictWVSearch
-    "}
     "{dyng/ctrlsf.vim
   vmap <silent> <localleader>cf <Plug>CtrlSFVwordExec
   nmap <silent> <localleader>cf <Plug>CtrlSFCwordPath<cr>
@@ -350,7 +344,7 @@ endif
       execute "set <xEnd>=\e[1;*F"
   endif
 
-  " fzf
+    " fzf
   let g:fzf_colors =
   \ { 'fg':      ['fg', 'Normal'],
     \ 'bg':      ['bg', 'Normal'],
@@ -365,50 +359,28 @@ endif
     \ 'marker':  ['fg', 'Keyword'],
     \ 'spinner': ['fg', 'Label'],
     \ 'header':  ['fg', 'Comment'] }
-  autocmd VimEnter * command! -bang -nargs=* Ag
-              \ call fzf#vim#ag(<q-args>,
-              \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-              \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-              \                 <bang>0)
-  nnoremap <leader>ap :Ag!<cr>
+
+  " autocmd VimEnter * command! -bang -nargs=* Ag
+              " \ call fzf#vim#ag(<q-args>,
+              " \                 <bang>0 ? fzf#vim#with_preview('up:80%')
+              " \                         : fzf#vim#with_preview('right:80%:hidden', '?'),
+              " \                 <bang>0)
+
+  command! -bang -nargs=* Rg
+    \ call fzf#vim#grep(
+    \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+    \   <bang>0 ? fzf#vim#with_preview('up:70%')
+    \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+    \   <bang>0)
+
+  nnoremap <leader>rg :Rg!<cr>
   " Likewise, Files command with preview window
   command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
-  " { hlissner/vim-multiedit
-  let g:multiedit_mark_character = '|'
-  let g:multiedit_no_mappings = 1
-
-  " Insert a disposable marker after the cursor
-  nmap <leader>ma :MultieditAddMark a<CR>
-
-  " Insert a disposable marker before the cursor
-  nmap <leader>mi :MultieditAddMark i<CR>
-
-  " Make a new line and insert a marker
-  nmap <leader>mo o<Esc>:MultieditAddMark i<CR>
-  nmap <leader>mO O<Esc>:MultieditAddMark i<CR>
-
-  " Insert a marker at the end/start of a line
-  nmap <leader>mA $:MultieditAddMark a<CR>
-  nmap <leader>mI ^:MultieditAddMark i<CR>
-
-  " Move cursor between regions n times
-  map ]m :MultieditHop 1<CR>
-  map [m :MultieditHop -1<CR>
-
-  " Start editing!
-  nmap <leader>M :Multiedit<CR>
-
-  " Clear the word and start editing
-  nmap <leader>C :Multiedit!<CR>
-
-  " Unset the region under the cursor
-  nmap <silent> <leader>mx :MultieditClear<CR>x
-  " }
   "{unimpaired-like-map
   nnoremap <silent> [<space> :pu! _<cr>:']+1<cr>
   nnoremap <silent> ]<space> :pu _<cr>:'[-1<cr>
-  nnoremap <silent> ]p o<esc>pk
-  nnoremap <silent> [p O<esc>pj
+  nnoremap <silent> ]p :pu<cr>
+  nnoremap <silent> [p :pu!<cr>
   "}
