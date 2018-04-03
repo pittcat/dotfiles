@@ -11,11 +11,8 @@ if g:spacevim_vim8
     
     " completor.vim
     set completeopt-=preview  "close show_docstring
-    set <F26>=n
-    noremap <silent> <F26> :call completor#do('definition')<cr>
-    noremap <silent> <s-k> :call completor#do('doc')<cr>
-
     let g:completor_ruby_omni_trigger = "\\w+$|[\\w\\)\\]\\}\'\"]+\\.\\w*$"
+    let g:completor_css_omni_trigger = '([\w-]+|@[\w-]*|[\w-]+:\s*[\w-]*)$'
     let g:completor_php_omni_trigger = '([$\w]+|use\s*|->[$\w]*|::[$\w]*|implements\s*|extends\s*|class\s+[$\w]+|new\s*)$'
 
 
@@ -159,36 +156,4 @@ if  g:spacevim_nvim
   " }
 
 
-  elseif !empty(glob("$HOME/.local/share/nvim/plugged/nvim-completion-manager"))
-    " ncm-----common
-     
-    set shortmess+=c
-    let g:cm_smart_enable=1
-    let g:cm_matcher = {'module': 'cm_matchers.substr_matcher', 'case': 'smartcase'}
-    let g:cm_refresh_default_min_word_len=2
-    let g:cm_complete_popup_delay=90
-    " let g:cm_completeopt = 'menu,menuone,noinsert,noselect'
-
-    " augroup ncm_preview
-        " autocmd! InsertLeave <buffer> if pumvisible() == 0|pclose|endif
-    " augroup END
-
-
-    " deoplete-----extend for ncm sources setting
-
-    call deoplete#enable()          " force init deoplete then hack deoplete's mapping
-    au User CmSetup call cm#register_source({'name' : 'deoplete',
-            \ 'priority': 7,  
-            \ 'abbreviation': '', 
-            \ })                      " register as ncm source
-
-    " hack deoplete's mapping
-    inoremap <silent> <Plug>_ <C-r>=g:Deoplete_ncm()<CR>
-
-    func! g:Deoplete_ncm()            " forward to ncm
-      call cm#complete('deoplete', cm#context(), g:deoplete#_context.complete_position + 1, g:deoplete#_context.candidates)
-      return ''
-    endfunc
-
-  endif
 endif
