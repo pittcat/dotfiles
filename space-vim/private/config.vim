@@ -134,6 +134,10 @@ endif
   "{
   set foldmethod=manual
   "}
+  "{szw/vim-g
+  nnoremap <silent> <localleader>gs :Google<cr>
+  vnoremap <silent> <localleader>gs :Google<cr>
+  "}
   "{gv.vim
   noremap <silent> <leader>cg :GV<cr>
   "}

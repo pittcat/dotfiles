@@ -149,8 +149,8 @@ Plug 'terryma/vim-smooth-scroll'
 " Plug 'epeli/slimux'
 "}
 "
-"{papanikge/vim-voogle
-Plug 'papanikge/vim-voogle'
+"{szw/vim-g
+Plug 'szw/vim-g'
 "}
 "{briandoll/change-inside-surroundings.vim
 Plug 'briandoll/change-inside-surroundings.vim'

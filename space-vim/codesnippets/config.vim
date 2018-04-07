@@ -32,7 +32,7 @@ if g:spacevim_nvim || g:spacevim_vim8
    let snippet=UltiSnips#JumpForwards()
    if pumvisible()==0
      if g:ulti_jump_forwards_res==1
-       return 
+       return snippet
      else
        return "\<tab>"
      endif
@@ -44,7 +44,7 @@ if g:spacevim_nvim || g:spacevim_vim8
    let snippet=UltiSnips#JumpBackwards()
    if pumvisible()==0
      if g:ulti_jump_backwards_res==1
-       return 
+       return snippet
      else
        return "\<s-tab>"
      endif
