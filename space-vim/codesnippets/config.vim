@@ -40,7 +40,7 @@ if g:spacevim_nvim || g:spacevim_vim8
   endfunction
   inoremap <expr> <tab> pumvisible() ? "<C-n>" : "<C-R>=TabJumpNext()<CR>"
 
-  function STabJumpNext()
+  function STabJumpBack()
    let snippet=UltiSnips#JumpBackwards()
    if pumvisible()==0
      if g:ulti_jump_backwards_res==1
