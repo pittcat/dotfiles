@@ -1,8 +1,10 @@
 scriptencoding utf-8
 
 if g:spacevim_vim8 || g:spacevim_nvim
-  inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+  inoremap <expr> <down> pumvisible() ? "\<C-n>" : "\<down>"
+  inoremap <expr> <up> pumvisible() ? "\<C-p>" : "\<up>"
+  " inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+  " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 else
 endif
 

@@ -1,6 +1,7 @@
 scriptencoding utf-8
 
 if g:spacevim_nvim || g:spacevim_vim8
+  let g:UltiSnipsUsePythonVersion = 3
   let g:UltiSnipsSnippetDirectories=['UltiSnips']
   exe 'set rtp+=' . expand(g:spacevim_dir . '/private/UltiSnips')
   if g:spacevim_vim8
@@ -27,6 +28,33 @@ if g:spacevim_nvim || g:spacevim_vim8
   endfunction
 
   inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
+  function TabJumpNext()
+   let snippet=UltiSnips#JumpForwards()
+   if pumvisible()==0
+     if g:ulti_jump_forwards_res==1
+       return 
+     else
+       return "\<tab>"
+     endif
+   endif
+  endfunction
+  inoremap <expr> <tab> pumvisible() ? "<C-n>" : "<C-R>=TabJumpNext()<CR>"
+
+  function STabJumpNext()
+   let snippet=UltiSnips#JumpBackwards()
+   if pumvisible()==0
+     if g:ulti_jump_backwards_res==1
+       return 
+     else
+       return "\<s-tab>"
+     endif
+   endif
+  endfunction
+
+  inoremap <expr> <s-tab> pumvisible() ? "<C-n>" : "<C-R>=TabJumpNext()<CR>"
+
+  smap <TAB>   <Esc>:call UltiSnips#JumpForwards()<CR>
+  smap <S-TAB> <Esc>:call UltiSnips#JumpBackwards()<CR>
 
   if !empty(glob("$HOME/.vim/plugged/YouCompleteMe"))
     let g:UltiSnipsJumpForwardTrigger = '<tab>'
@@ -35,27 +63,6 @@ if g:spacevim_nvim || g:spacevim_vim8
   endif
   
 
-  inoremap <expr> <down> pumvisible() ? "\<C-n>" : "\<down>"
-  inoremap <expr> <up> pumvisible() ? "\<C-p>" : "\<up>"
-
-
-  if g:spacevim_nvim
-    if !empty(glob("$HOME/.local/share/nvim/plugged/nvim-completion-manager"))
-      let g:UltiSnipsRemoveSelectModeMappings = 0
-      inoremap <silent> <c-l> <c-r>=cm#sources#ultisnips#trigger_or_popup("\<Plug>(ultisnips_expand)")<cr>
-      xmap <c-l> <Plug>(ultisnips_expand)
-      smap <c-l> <Plug>(ultisnips_expand)
-      
-      inoremap <expr> <down> pumvisible() ? "\<C-e>\<down>" : "\<down>"
-      inoremap <expr> <up>  pumvisible() ?  "\<C-e>\<up>" : "\<up>"
-      inoremap <expr> <left> pumvisible() ? "\<C-e>\<left>" : "\<left>"
-      inoremap <expr> <right> pumvisible() ? "\<C-e>\<right>" : "\<right>"
-
-      " if strlen(expand('<cword>'))>=1
-      " if matchstr(getline('.'), '\%' . col('.') . 'c.') !=''
-    endif
-
-  endif
 
 endif
 
