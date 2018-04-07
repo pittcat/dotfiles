@@ -68,7 +68,8 @@ endif
 
 
   let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx"       "auto-closetag添加对jsx等的支持
-   "javascript 
+   "javascript
+  autocmd BufEnter *.js setfiletype javascript
   let g:javascript_plugin_jsdoc = 1       "pangloss/vim-javascript
   let g:jsx_ext_required = 0              "mxw/vim-jsx
   
@@ -267,6 +268,15 @@ endif
   " {'ggVGc/vim-fuzzysearch'
   nnoremap z/ :FuzzySearch<cr>
   " }
+  "{KabbAmine/zeavim.vim
+  nmap <silent> <leader>gz <Plug>Zeavim
+  vmap <leader>gz <Plug>ZVVisSelection
+  let g:zv_file_types = {
+              \    'css'                : 'css',
+              \   'javascript'          : 'javascript,nodejs',
+              \   'python'              : 'python3,django',
+              \ }
+  "}
 
   " {terminal
   if has('nvim')
@@ -334,28 +344,8 @@ endif
   nmap <localleader>ap :call system("xclip -i -selection clipboard", expand("%:p"))<CR>
   nmap <localleader>rp :call system("xclip -i -selection clipboard", expand("%"))<CR>
 
-  " fix tmux and vim
-  if &term =~ '^screen'
-      " tmux will send xterm-style keys when its xterm-keys option is on
-      execute "set <xUp>=\e[1;*A"
-      execute "set <xDown>=\e[1;*B"
-      execute "set <xRight>=\e[1;*C"
-      execute "set <xLeft>=\e[1;*D"
-      execute "set <xHome>=\e[1;*H"
-      execute "set <xEnd>=\e[1;*F"
-  endif
-
-    " fzf
-  function! s:sessions()
-    call fzf#run({
-    \ 'source':  'ls -1 ~/.vim/session',
-    \ 'sink':    'SLoad',
-    \ 'options': '+m --prompt="Sessions> "',
-    \ 'down':    '40%'
-    \})
-  endfunction
-  command! Sessions call s:sessions()
-  nnoremap <silent> <leader>sf :Sessions<cr>
+  " fzf
+  " {
 
   function! s:line_handler(l)
     let keys = split(a:l, ':\t')
@@ -395,23 +385,6 @@ endif
     \ 'spinner': ['fg', 'Label'],
     \ 'header':  ['fg', 'Comment'] }
 
-  " autocmd VimEnter * command! -bang -nargs=* Ag
-              " \ call fzf#vim#ag(<q-args>,
-              " \                 <bang>0 ? fzf#vim#with_preview('up:80%')
-              " \                         : fzf#vim#with_preview('right:80%:hidden', '?'),
-              " \                 <bang>0)
-
-  command! -bang -nargs=* Rg
-    \ call fzf#vim#grep(
-    \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
-    \   <bang>0 ? fzf#vim#with_preview('up:70%')
-    \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-    \   <bang>0)
-
-  nnoremap <leader>rg :Rg!<cr>
-  " Likewise, Files command with preview window
-  command! -bang -nargs=? -complete=dir Files
-    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
   " }
 
   "{unimpaired-like-map

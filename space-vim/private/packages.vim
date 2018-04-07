@@ -196,6 +196,9 @@ Plug 'roxma/vim-paste-easy'
 " {'ggVGc/vim-fuzzysearch'
 Plug 'ggVGc/vim-fuzzysearch'
 " }
+"{KabbAmine/zeavim.vim
+Plug 'KabbAmine/zeavim.vim'
+"}
 "themefor
 Plug 'rakr/vim-one'
 Plug 'mhinz/vim-janah'
