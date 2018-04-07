@@ -201,6 +201,8 @@ endif
   noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
   " }
     "{dyng/ctrlsf.vim
+  let g:ctrlsf_position = 'bottom'
+  let g:ctrlsf_winsize = '30%'
   vmap <silent> <localleader>cf <Plug>CtrlSFVwordExec
   nmap <silent> <localleader>cf <Plug>CtrlSFCwordPath<cr>
     "}
