@@ -279,6 +279,7 @@ endif
 	nmap <leader>go <Plug>(openbrowser-smart-search)
 	vmap <leader>go <Plug>(openbrowser-smart-search)
   "}
+
   "{tpope/vim-fugitive
   nnoremap <leader>ga :Git! add .<cr>
   "}
