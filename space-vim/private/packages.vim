@@ -196,6 +196,9 @@ Plug 'ggVGc/vim-fuzzysearch'
 "{KabbAmine/zeavim.vim
 Plug 'KabbAmine/zeavim.vim'
 "}
+"{tyru/open-browser.vim
+Plug 'tyru/open-browser.vim'
+"}
 "themefor
 Plug 'rakr/vim-one'
 Plug 'mhinz/vim-janah'
