@@ -152,7 +152,7 @@ endif
   "}
   "{FZF
   nnoremap <Leader>f? :Files ~<CR>
-  nnoremap <Leader>ff :Files ./<CR>
+  nnoremap <Leader>ff :Files $PWD/<CR>
   nnoremap <Leader>fep :Files ~/MEGA/code/dotfiles<CR>
   "}
   "
@@ -255,6 +255,7 @@ endif
   let g:rooter_change_directory_for_non_project_files = 'current'
   "}
   "{scrooloose/nerdtree
+  let NERDTreeChDirMode=1
   noremap <silent> <leader>nc :NERDTreeCWD<cr>
   "}
   "
@@ -347,9 +348,12 @@ endif
   \}
   
   " file and filename copy
-  nmap <localleader>cp :call system("xclip -i -selection clipboard", expand("%:t"))<CR>
-  nmap <localleader>ap :call system("xclip -i -selection clipboard", expand("%:p"))<CR>
-  nmap <localleader>rp :call system("xclip -i -selection clipboard", expand("%"))<CR>
+  " {
+  nmap <leader>cp :call system("xclip -i -selection clipboard", expand("%:t"))<CR>
+  nmap <leader>ap :call system("xclip -i -selection clipboard", expand("%:p"))<CR>
+  nmap <leader>rp :call system("xclip -i -selection clipboard", expand("%"))<CR>
+  nmap <leader>pc :call system("xclip -i -selection clipboard", expand("%:p:h"))<CR>
+  " }
 
   " fzf
   " {
@@ -406,3 +410,15 @@ endif
   nnoremap <Leader>ss <nop>
   nnoremap <Leader>sm <nop>
   "}
+  "{mouse
+  set mouse=a
+  "}
+  "{save all buffers
+  nnoremap <silent> <leader>fS :wa!<cr>
+  "
+  "}
+  "{vim move
+  vmap <C-Down> <Plug>MoveBlockDown
+  vmap <C-Up> <Plug>MoveBlockUp
+  "}
+  "
