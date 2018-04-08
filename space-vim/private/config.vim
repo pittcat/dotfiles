@@ -275,8 +275,8 @@ endif
   "}
   "{tyru/open-browser.vim
   let g:netrw_nogx = 1 " disable netrw's gx mapping.
-	nmap <leader>gx <Plug>(openbrowser-smart-search)
-	vmap <leader>gx <Plug>(openbrowser-smart-search)
+	nmap <leader>go <Plug>(openbrowser-smart-search)
+	vmap <leader>go <Plug>(openbrowser-smart-search)
   "}
 	
   " {terminal
