@@ -264,6 +264,7 @@ endif
   " {'ggVGc/vim-fuzzysearch'
   nnoremap z/ :FuzzySearch<cr>
   " }
+
   "{KabbAmine/zeavim.vim
   nmap <silent> <leader>gz <Plug>Zeavim
   vmap <leader>gz <Plug>ZVVisSelection
