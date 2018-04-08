@@ -273,6 +273,7 @@ endif
               \   'python'              : 'python3,django',
               \ }
   "}
+
   "{tyru/open-browser.vim
   let g:netrw_nogx = 1 " disable netrw's gx mapping.
 	nmap <leader>go <Plug>(openbrowser-smart-search)
