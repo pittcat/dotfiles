@@ -49,6 +49,7 @@ cd .. && sudo rm has -r
 git clone https://github.com/andreafrancia/trash-cli.git $HOME/.trash-cli.git
 cd $HOME/.trash-cli.git
 sudo python setup.py install
+cd -
 
 # terminmal daily use ------npm
 sudo npm install -g $(cat npmdaily | egrep -v "^\s*(#|$)")
@@ -104,9 +105,6 @@ sudo make install
 cd ..
 sudo rm tmux-mem-cpu-load -r
 
-netcard=$( cat tmux.conf| grep 'set -g @net_speed_interfaces')
-sed -i "s/^set -g @net_speed_interfaces.*/${netcard}/g" tmux.conf
-ln -s $PWD/tmux.conf ~/.tmux.conf
 
 # --------------------------------------------manual operation -------------------------------------------- #
 
@@ -122,7 +120,7 @@ ln -s $PWD/tmux.conf ~/.tmux.conf
 # python vim  config and include following config
 sudo touch /etc/pip.conf
 echo "[global]\nindex-url = https://pypi.tuna.tsinghua.edu.cn/simple" | sudo tee /etc/pip.conf
-source $HOME/.zshrc
+
 sudo pip3 install -r $PWD/config/python/requirements.txt
 
 

@@ -111,7 +111,7 @@ endif
   " }
   "tpope/vim-eunuch
   "{rename and mkdir 
-    noremap <leader>rn :Move 
+    noremap <leader>mn :Move 
     noremap <leader>cd :Mkdir 
   "}
   "quickfix
@@ -266,7 +266,7 @@ endif
   nnoremap z/ :FuzzySearch<cr>
   " }
 
-  "{KabbAmine/zeavim.vim
+  "{KabbAmine/zealvim.vim
   nmap <silent> <leader>gz <Plug>Zeavim
   vmap <leader>gz <Plug>ZVVisSelection
   let g:zv_file_types = {
