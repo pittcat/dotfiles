@@ -16,6 +16,7 @@ if g:spacevim_nvim
   let g:deoplete#sources#rust#documentation_max_height=30
 
   " deoplete-common
+  let g:require_same_filetype='False'
   let g:deoplete#auto_complete_delay=70
   let g:python3_host_prog ='/usr/bin/python3'   "nvim path 
   let g:python_host_prog ='/usr/bin/python'   "nvim path 

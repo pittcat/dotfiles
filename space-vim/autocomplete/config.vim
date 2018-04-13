@@ -106,7 +106,7 @@ if  g:spacevim_nvim
     set completeopt-=preview  "close show_docstring
     let g:deoplete#enable_at_startup = 1
     " Set minimum syntax keyword length.
-    let g:deoplete#sources#syntax#min_keyword_length = 3
+    let g:deoplete#sources#syntax#min_keyword_length = 2
 
    " Define dictionary.
     let g:deoplete#sources#dictionary#dictionaries = {
@@ -125,14 +125,6 @@ if  g:spacevim_nvim
     inoremap <expr><C-g>     deoplete#undo_completion()
     inoremap <expr><C-l>     deoplete#complete_common_string()
 
-    " Recommended key-mappings.
-    " <CR>: close popup and save indent.
-    inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-    function! s:my_cr_function()
-      return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-      " For no inserting <CR> key.
-      "return pumvisible() ? "\<C-y>" : "\<CR>"
-    endfunction
     " <C-h>, <BS>: close popup and delete backword char.
     inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
     inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
