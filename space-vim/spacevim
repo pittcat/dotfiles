@@ -29,8 +29,8 @@ function! Layers()
 
   Layer 'autocomplete'
   " Layer 'ycmd'
-  Layer 'lsp'
-  " Layer 'lspc'
+  " Layer 'lsp'
+  Layer 'lspc'
   Layer 'codesnippets'
   " Layer 'formatting'
   Layer 'codeformat'

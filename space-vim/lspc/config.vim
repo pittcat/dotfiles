@@ -22,4 +22,10 @@ let g:LanguageClient_diagnosticsEnable=0
 nnoremap <silent> <leader>sh :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <leader>cn :call LanguageClient_textDocument_rename()<CR>
-nnoremap <silent> <leader>zz :pc<CR>
+nnoremap <silent> <leader><leader>z :pc<CR>
+
+augroup LanguageClient_config
+  autocmd!
+  autocmd User LanguageClientStarted setlocal signcolumn=yes
+  autocmd User LanguageClientStopped setlocal signcolumn=auto
+augroup END
