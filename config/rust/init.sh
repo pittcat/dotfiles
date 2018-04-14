@@ -10,8 +10,9 @@ replace-with = 'ustc'
 [source.ustc]
 registry = 'git://mirrors.ustc.edu.cn/crates.io-index'" > $HOME/.cargo/config
 
+source ~/.zshrc >> /dev/null && zsh
 # vim setting
 # complete  format check
-cargo install rustfmt racer  
+cargo install rustfmt racer
 # lsp
 rustup component add rls-preview rust-analysis rust-src 

@@ -2,6 +2,8 @@
 # https://github.com/rbenv/ruby-build/wiki
 # rbenv and ruby
 
+#install ruby
+
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 # 用来编译安装 ruby
 git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
@@ -14,7 +16,8 @@ git clone git://github.com/AndorChen/rbenv-china-mirror.git ~/.rbenv/plugins/rbe
 # change mirrors to tuna
 sudo gem update --system
 sudo gem sources --add https://mirrors.tuna.tsinghua.edu.cn/rubygems/ --remove https://rubygems.org/
-source $HOME/.zshrc
+
+source ~/.zshrc >> /dev/null && zsh
 
 # manual
 
