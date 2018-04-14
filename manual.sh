@@ -104,7 +104,7 @@ make
 sudo make install 
 cd ..
 sudo rm tmux-mem-cpu-load -r
-
+ln -s $PWD/tmux/tmux.conf ~/.tmux.conf
 
 # --------------------------------------------manual operation -------------------------------------------- #
 
