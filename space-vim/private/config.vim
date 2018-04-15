@@ -16,8 +16,6 @@ if g:spacevim_nvim
   let g:deoplete#sources#rust#documentation_max_height=30
 
   " deoplete-common
-  let g:require_same_filetype='False'
-  let g:deoplete#auto_complete_delay=70
   let g:python3_host_prog ='/usr/bin/python3'   "nvim path 
   let g:python_host_prog ='/usr/bin/python'   "nvim path 
 
@@ -105,6 +103,7 @@ endif
     map <special> <leader>dw :keepjumps call DelBlank()<cr>
   " }
   " {
+    let g:multi_cursor_use_default_mapping=0
     let g:multi_cursor_next_key='<C-d>'
     let g:multi_cursor_prev_key='<C-u>'
     let g:multi_cursor_skip_key='<C-x>'
@@ -112,7 +111,7 @@ endif
   " }
   "tpope/vim-eunuch
   "{rename and mkdir 
-    noremap <leader>mn :Move 
+    noremap <leader>rn :Move 
     noremap <leader>cd :Mkdir 
   "}
   "quickfix
@@ -270,10 +269,12 @@ endif
   "{KabbAmine/zealvim.vim
   nmap <silent> <leader>gz <Plug>Zeavim
   vmap <leader>gz <Plug>ZVVisSelection
+  let g:zv_disable_mapping = 1
+  let g:zv_get_docset_by = ['ft']
   let g:zv_file_types = {
-              \    'css'                : 'css',
+              \   'css'                 : 'css',
               \   'javascript'          : 'javascript,nodejs',
-              \   'python'              : 'python3,django',
+              \   'python'              : 'python,django',
               \ }
   "}
 

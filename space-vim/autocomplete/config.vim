@@ -99,27 +99,27 @@ endif
 
 
 
-
 if  g:spacevim_nvim
 
   if !empty(glob("$HOME/.local/share/nvim/plugged/deoplete.nvim"))
     set completeopt-=preview  "close show_docstring
     let g:deoplete#enable_at_startup = 1
     " Set minimum syntax keyword length.
-    let g:deoplete#sources#syntax#min_keyword_length = 2
+    let g:min_pattern_length=2
+    
+    " buffer improve
+    let g:require_same_filetype='False'
 
-   " Define dictionary.
-    let g:deoplete#sources#dictionary#dictionaries = {
-                \ 'default' : '',
-                \ 'vimshell' : $HOME.'/.vimshell_hist',
-                \ 'scheme' : $HOME.'/.gosh_completions'
-                \ }
+    " delay
+    let g:deoplete#auto_complete_delay=20
+    " auto_refresh
+    let g:auto_refresh_delay=10
+    
+    let refresh_always=true
+    
+    " customs
+    call deoplete#custom#source('buffer', 'mark', 'ℬ')
 
-    " Define keyword.
-    if !exists('g:deoplete#keyword_patterns')
-      let g:deoplete#keyword_patterns = {}
-    endif
-    let g:deoplete#keyword_patterns['default'] = '\h\w*'
 
     " Plugin key-mappings.
     inoremap <expr><C-g>     deoplete#undo_completion()
@@ -128,25 +128,26 @@ if  g:spacevim_nvim
     " <C-h>, <BS>: close popup and delete backword char.
     inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
     inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
-    " Close popup by <Space>.
-    "inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
-    " Enable omni completion.
-    autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-    autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-    autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-    autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+   
+    " change snippets rank
+    call deoplete#custom#source('ultisnips', 'rank', 1000)
 
-    " Enable heavy omni completion.
-    if !exists('g:deoplete#omni#input_patterns')
-      let g:deoplete#omni#input_patterns = {}
-    endif
-    "let g:deoplete#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-    "let g:deoplete#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-    "let g:deoplete#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-    let g:deoplete#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-    let g:deoplete#omni#input_patterns.erlang = '[^. *\t]:\w*'
+    " register omni
+    call deoplete#custom#source('omni', 'input_patterns', {
+    \ 'css' : 'csscomplete#CompleteCSS',
+    \ 'html': 'htmlcomplete#CompleteTags',
+    \ 'xml' : 'xmlcomplete#CompleteTags',
+    \ 'perl': '\h\w*->\h\w*\|\h\w*::',      " https://github.com/c9s/perlomni.vim
+    \ })
+
+    function g:Multiple_cursors_before()
+
+      call deoplete#custom#buffer_option('auto_complete', v:false)
+    endfunction
+    function g:Multiple_cursors_after()
+      call deoplete#custom#buffer_option('auto_complete', v:true)
+    endfunction
   " }
 
 
