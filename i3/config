@@ -49,7 +49,7 @@ client.unfocused        $black    $black    #FFFFFF   #000000
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec ~/.i3/xfce4-terminal-pwd.sh
 
 # kill focused window
 bindsym $mod+c kill
@@ -58,8 +58,15 @@ bindsym $mod+c kill
 bindsym $mod+p exec $scriptdir/launcher "$black" "$lightgray" "$darkgray" "$lightgray" "$black"
 bindsym $mod+Shift+p exec rofi -show window "$black" "$lightgray" "$darkgray" "$lightgray" "$black"
 
+# websearch
+bindsym $mod+Shift+s exec echo "" | rofi -dmenu -p "Search:" | xargs -I{} xdg-open https://www.google.de/search?q={}
+
+# clipboard
+bindsym $mod+a exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+
 # screenshot
 bindsym Print exec xfce4-screenshooter
+
 
 # change focus
 bindsym $mod+h focus left
@@ -208,3 +215,4 @@ bar {
 exec fcitx
 # vmvare copy and paste
 exec vmware-user-suid-wrapper --no-startup-id
+exec greenclip daemon
