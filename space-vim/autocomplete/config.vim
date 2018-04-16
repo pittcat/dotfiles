@@ -111,9 +111,9 @@ if  g:spacevim_nvim
     let g:require_same_filetype='False'
 
     " delay
-    let g:deoplete#auto_complete_delay=20
+    let g:deoplete#auto_complete_delay=0
     " auto_refresh
-    let g:auto_refresh_delay=10
+    let g:auto_refresh_delay=0
     
     let refresh_always=true
     
@@ -123,23 +123,26 @@ if  g:spacevim_nvim
 
     " Plugin key-mappings.
     inoremap <expr><C-g>     deoplete#undo_completion()
-    inoremap <expr><C-l>     deoplete#complete_common_string()
+    inoremap <expr><C-l>     deoplete#refresh()
 
-    " <C-h>, <BS>: close popup and delete backword char.
+    " <C-h>: close popup and delete backword char.
     inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
-    inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
 
    
     " change snippets rank
     call deoplete#custom#source('ultisnips', 'rank', 1000)
 
     " register omni
-    call deoplete#custom#source('omni', 'input_patterns', {
+    call deoplete#custom#source('omni', 'functions', {
     \ 'css' : 'csscomplete#CompleteCSS',
     \ 'html': 'htmlcomplete#CompleteTags',
     \ 'xml' : 'xmlcomplete#CompleteTags',
-    \ 'perl': '\h\w*->\h\w*\|\h\w*::',      " https://github.com/c9s/perlomni.vim
     \ })
+
+    call deoplete#custom#source('omni', 'input_patterns', {
+       " https://github.com/c9s/perlomni.vim
+        \ 'perl': '\h\w*->\h\w*\|\h\w*::',     
+        \})
 
     function g:Multiple_cursors_before()
 
