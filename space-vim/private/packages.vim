@@ -2,7 +2,7 @@ if g:spacevim_nvim  " nvim
 
   " deoplete lang
   Plug 'wellle/tmux-complete.vim'
-  Plug 'zchee/deoplete-jedi',{'for': 'python'}
+  " Plug 'zchee/deoplete-jedi',{'for': 'python'}
   Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern','for':'javascript'}
   Plug 'zchee/deoplete-clang',{ 'for': ['c', 'cpp']}
   " Plug 'mhartington/nvim-typescript',{'for':'typescript'}
@@ -66,7 +66,7 @@ Plug  'gregsexton/matchtag'   "标签高亮
 "
 "markdownd
 " {
-  Plug 'shime/vim-livedown',{'do':'npm install -g livedown','for':'markdown'}
+  Plug 'shime/vim-livedown',{'for':'markdown'}
   " Plug 'suan/vim-instant-markdown',{'do':'npm install -g instant-markdown-d'}
 " }
 

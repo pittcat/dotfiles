@@ -18,6 +18,8 @@ if g:spacevim_nvim
   " deoplete-common
   let g:python3_host_prog ='/usr/bin/python3'   "nvim path 
   let g:python_host_prog ='/usr/bin/python'   "nvim path 
+  call deoplete#custom#source('ultisnips', 'rank', 1000)    " change the snippet ranking
+  call deoplete#custom#option('ignore_sources', {'_': ['LanguageClient']})    " disable LC
 
 
 

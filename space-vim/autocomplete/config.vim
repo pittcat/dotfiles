@@ -128,10 +128,6 @@ if  g:spacevim_nvim
     " <C-h>: close popup and delete backword char.
     inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 
-   
-    " change snippets rank
-    call deoplete#custom#source('ultisnips', 'rank', 1000)
-
     " register omni
     call deoplete#custom#source('omni', 'functions', {
     \ 'css' : 'csscomplete#CompleteCSS',
