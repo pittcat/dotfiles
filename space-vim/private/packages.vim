@@ -2,9 +2,9 @@ if g:spacevim_nvim  " nvim
 
   " deoplete lang
   Plug 'wellle/tmux-complete.vim'
-  " Plug 'zchee/deoplete-jedi',{'for': 'python'}
+  Plug 'zchee/deoplete-jedi',{'for': 'python'}
   Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern','for':'javascript'}
-  Plug 'zchee/deoplete-clang',{ 'for': ['c', 'cpp']}
+  " Plug 'zchee/deoplete-clang',{ 'for': ['c', 'cpp']}
   " Plug 'mhartington/nvim-typescript',{'for':'typescript'}
   " Plug 'uplus/deoplete-solargraph',{'for':'ruby','do':'gem install solargraph && pip install solargraph-utils.py --user'}
   " Plug 'sebastianmarkow/deoplete-rust',{'for':'rust'}

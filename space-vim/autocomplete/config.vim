@@ -117,8 +117,6 @@ if  g:spacevim_nvim
     
     let refresh_always=true
     
-    " customs
-    call deoplete#custom#source('buffer', 'mark', 'ℬ')
 
 
     " Plugin key-mappings.
@@ -130,14 +128,18 @@ if  g:spacevim_nvim
 
     " register omni
     call deoplete#custom#source('omni', 'functions', {
-    \ 'css' : 'csscomplete#CompleteCSS',
     \ 'html': 'htmlcomplete#CompleteTags',
+    \ 'css' : 'csscomplete#CompleteCSS',
     \ 'xml' : 'xmlcomplete#CompleteTags',
+    \ 'markdown' : 'htmlcomplete#CompleteTags',
     \ })
 
     call deoplete#custom#source('omni', 'input_patterns', {
-       " https://github.com/c9s/perlomni.vim
-        \ 'perl': '\h\w*->\h\w*\|\h\w*::',     
+        \ 'html' : '<[^>]',
+        \ 'css'  : '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]',
+        \ 'scss' : '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]',
+        \ 'sass' : '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]',
+        \ 'md'   : '<[^>]*',
         \})
 
     function g:Multiple_cursors_before()
