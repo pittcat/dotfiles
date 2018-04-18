@@ -16,7 +16,7 @@ if g:spacevim_nvim || g:spacevim_vim8
   let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
   let g:UltiSnipsExpandTrigger = "<C-e>"
   let g:ulti_expand_res = 0
-  function ExpandSnippetOrCarriageReturn()
+  function! ExpandSnippetOrCarriageReturn()
       let snippet = UltiSnips#ExpandSnippet()
       if g:ulti_expand_res > 0
           return snippet
@@ -28,7 +28,7 @@ if g:spacevim_nvim || g:spacevim_vim8
   endfunction
 
   inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
-  function TabJumpNext()
+  function! TabJumpNext()
    let snippet=UltiSnips#JumpForwards()
    if pumvisible()==0
      if g:ulti_jump_forwards_res==1
@@ -40,7 +40,7 @@ if g:spacevim_nvim || g:spacevim_vim8
   endfunction
   inoremap <expr> <tab> pumvisible() ? "<C-n>" : "<C-R>=TabJumpNext()<CR>"
 
-  function STabJumpBack()
+  function! STabJumpBack()
    let snippet=UltiSnips#JumpBackwards()
    if pumvisible()==0
      if g:ulti_jump_backwards_res==1
@@ -51,7 +51,7 @@ if g:spacevim_nvim || g:spacevim_vim8
    endif
   endfunction
 
-  inoremap <expr> <s-tab> pumvisible() ? "<C-n>" : "<C-R>=TabJumpNext()<CR>"
+  inoremap <expr> <s-tab> pumvisible() ? "<C-p>" : "<C-R>=STabJumpBack()<CR>"
 
   smap <TAB>   <Esc>:call UltiSnips#JumpForwards()<CR>
   smap <S-TAB> <Esc>:call UltiSnips#JumpBackwards()<CR>

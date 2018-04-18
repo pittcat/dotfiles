@@ -8,13 +8,14 @@ if g:spacevim_nvim
   let g:deoplete#sources#jedi#python_path='/usr/bin/python3'  "zchee/deoplete-jedi
   let g:deoplete#sources#jedi#server_timeout=100
   let g:deoplete#sources#jedi#debug_server=1
-  let g:deoplete#sources#ternjs#tern_bin = '/usr/bin/tern'    "carlitux/deoplete-ternjs
+  let g:deoplete#sources#ternjs#tern_bin = '/usr/bin/tern'    " carlitux/deoplete-ternjs
   let g:deoplete#sources#ternjs#filetypes = [
                   \ 'javascript',
                   \ 'jsx',
                   \ 'javascript.jsx',
                   \ 'vue',
                   \ ]
+  let g:nvim_typescript#server_path='/usr/bin/tsserver'       " mhartington/nvim-typescript
   let g:deoplete#sources#clang#libclang_path='/usr/lib/libclang.so'   "zchee/deoplete-clang
   let  g:deoplete#sources#clang#clang_header='/usr/lib/clang'
   let g:deoplete#sources#rust#racer_binary='/home/pittcat/.cargo/bin/racer'          "sebastianmarkow/deoplete-rust
@@ -32,7 +33,7 @@ if g:spacevim_nvim
   call deoplete#custom#source('go',            'mark', '⌁')
   call deoplete#custom#source('jedi',          'mark', '⌁')
   call deoplete#custom#source('vim',           'mark', '⌁')
-  call deoplete#custom#source('ultisnips',    'mark', '⌘')
+  call deoplete#custom#source('ultisnips',     'mark', '⌘')
   call deoplete#custom#source('around',        'mark', '↻')
   call deoplete#custom#source('buffer',        'mark', 'ℬ')
   call deoplete#custom#source('tmux-complete', 'mark', '⊶')
