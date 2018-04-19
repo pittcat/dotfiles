@@ -18,18 +18,17 @@ function! Layers()
   Layer 'text-align'
   Layer 'which-key'
 
-  Layer 'tmux'
-  Layer 'ctrlp'
+  Layer 'tmux',{'exclude':['lucidstack/ctrlp-tmux.vim',]}
+  " Layer 'ctrlp'
   Layer 'file-manager',{'exclude':'danro/rename.vim'}
   Layer 'better-motion'
-  Layer 'programming',{'exclude':'nathanaelkane/vim-indent-guides'}
+  Layer 'programming'
   Layer 'editing',{'exclude':'pelodelfuego/vim-swoop'}
   Layer 'git'
   Layer 'github'
 
   Layer 'autocomplete'
   " Layer 'ycmd'
-  " Layer 'lsp'
   Layer 'lspc'
   Layer 'codesnippets'
   " Layer 'formatting'

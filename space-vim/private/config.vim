@@ -184,10 +184,15 @@ endif
   "
   "{use Yggdroot/indentLine
   let g:indentLine_enable=1
-  noremap <silent> <Leader>ti :IndentLinesToggle<cr>
+  noremap <silent> <Leader>ii :IndentLinesToggle<cr>
   let g:indentLine_setColors = 1
   let g:indentLine_char = '┆'
   "}
+  "
+  " vim-indent-guides {
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+  " }
   "
   "
   "{change window quickly
@@ -201,8 +206,8 @@ endif
   nnoremap <leader>bD :BufOnly<cr>
   "}
   "{quick indent visual with tab
-  vnoremap  <C-End> >gv
-  vnoremap  <C-Home> <gv
+  " vnoremap  <C-End> >gv
+  " vnoremap  <C-Home> <gv
   "}
   "{vim-scripts/loremipsum
   nnoremap <silent> <leader>gn :Loremipsum<cr>
@@ -267,9 +272,6 @@ endif
               \   bd|
               \   q | endif
   " }
-  "{pelodelfuego/vim-swoop
-  noremap <leader>ds :bdelete swoopBuf<cr>
-  "}
   "{codi.vim
   noremap <silent> <localleader>cd :Codi!!<cr>
   "}
@@ -283,6 +285,7 @@ endif
   "{scrooloose/nerdtree
   let NERDTreeChDirMode=1
   noremap <silent> <leader>nc :NERDTreeCWD<cr>
+  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
   "}
   "
   " {roxma/vim-paste-easy
@@ -434,10 +437,22 @@ endif
   "}
   "unbind-key
   "{
+  "vim swoop
   vmap <Leader>s <nop>
-  nnoremap <Leader>ss <nop>
-  nnoremap <Leader>sm <nop>
-  "}
+  nunmap <Leader>ss
+  nunmap <Leader>sm
+
+  " lucidstack/ctrlp-tmux.vim
+if g:spacevim_tmux
+  if spacevim#load('unite')
+    nunmap <Leader>mw
+    nunmap <Leader>mf
+    nunmap <Leader>mm
+    nunmap <Leader>md
+    nunmap <Leader>mi
+  endif
+endif
+"}
   "{mouse
   set mouse=a
   "}
