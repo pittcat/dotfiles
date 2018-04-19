@@ -28,3 +28,4 @@ source ~/.zshrc >> /dev/null && zsh
 # yard gems 
 # yard config --gem-install-yri
 # gem install rubocop   # ale and neoformat
+# gem install ripper-tags # tagbar

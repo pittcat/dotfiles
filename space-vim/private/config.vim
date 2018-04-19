@@ -254,6 +254,7 @@ endif
   noremap <silent> <leader>fed :edit ~/.spacevim<cr>
   " }
  "  {dhruvasagar/vim-table-mode
+  let g:loaded_table_mode = 1
    "" Use this option to define the table corner character
   let g:table_mode_corner = '|'
   " Use this option to define the delimiter which used by
@@ -389,29 +390,10 @@ endif
   " fzf
   " {
 
-  function! s:line_handler(l)
-    let keys = split(a:l, ':\t')
-    exec 'buf' keys[0]
-    exec keys[1]
-    normal! ^zz
-  endfunction
-
-  function! s:buffer_lines()
-    let res = []
-    for b in filter(range(1, bufnr('$')), 'buflisted(v:val)')
-      call extend(res, map(getbufline(b,0,"$"), 'b . ":\t" . (v:key + 1) . ":\t" . v:val '))
-    endfor
-    return res
-  endfunction
-
-  command! FZFLines call fzf#run({
-  \   'source':  <sid>buffer_lines(),
-  \   'sink':    function('<sid>line_handler'),
-  \   'options': '--extended --nth=3..',
-  \   'down':    '60%'
-  \})
-
-  nnoremap <silent> <leader>fl :FZFLines<cr>
+  nnoremap <silent> <leader>ct :Tags<cr>
+  nnoremap <silent> <leader>fb :BTags<cr>
+  nnoremap <silent> <leader>ls :Lines<cr>
+  nnoremap <silent> <leader>fl :BLines<cr>
   let g:fzf_colors =
   \ { 'fg':      ['fg', 'Normal'],
     \ 'bg':      ['bg', 'Normal'],
@@ -465,3 +447,42 @@ endif
   vmap <C-Up> <Plug>MoveBlockUp
   "}
   "
+  "{majutsushi/tagbar
+  if executable('ripper-tags')
+    let g:tagbar_type_ruby = {
+        \ 'kinds'      : ['m:modules',
+                        \ 'c:classes',
+                        \ 'C:constants',
+                        \ 'F:singleton methods',
+                        \ 'f:methods',
+                        \ 'a:aliases'],
+        \ 'kind2scope' : { 'c' : 'class',
+                         \ 'm' : 'class' },
+        \ 'scope2kind' : { 'class' : 'c' },
+        \ 'ctagsbin'   : 'ripper-tags',
+        \ 'ctagsargs'  : ['-f', '-']
+        \ }
+  endif
+  let g:tagbar_type_css = {
+  \ 'ctagstype' : 'Css',
+      \ 'kinds'     : [
+          \ 'c:classes',
+          \ 's:selectors',
+          \ 'i:identities'
+      \ ]
+  \ }
+  let g:tagbar_type_typescript = {
+    \ 'ctagstype': 'typescript',
+    \ 'kinds': [
+      \ 'c:classes',
+      \ 'n:modules',
+      \ 'f:functions',
+      \ 'v:variables',
+      \ 'v:varlambdas',
+      \ 'm:members',
+      \ 'i:interfaces',
+      \ 'e:enums',
+    \ ]
+  \ }
+   
+  "}

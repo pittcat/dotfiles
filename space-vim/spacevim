@@ -21,7 +21,7 @@ function! Layers()
   Layer 'tmux',{'exclude':['lucidstack/ctrlp-tmux.vim',]}
   " Layer 'ctrlp'
   Layer 'file-manager',{'exclude':'danro/rename.vim'}
-  Layer 'better-motion'
+  Layer 'better-motion',{'exclude':'haya14busa/incsearch-easymotion.vim'}
   Layer 'programming'
   Layer 'editing',{'exclude':'pelodelfuego/vim-swoop'}
   Layer 'git'
