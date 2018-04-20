@@ -1,0 +1,18 @@
+# ale
+#javascript
+eslint 
+#css
+prettier
+#web 格式化
+# html
+prettydiff
+#前端格式化
+prettier
+# lsp
+#vim lsp for typescript and javascript
+typescript typescript-language-server javascript-typescript-langserver
+#vim lsp css scss
+vscode-css-languageserver-bin
+# web tools
+browser-sync live-server
+

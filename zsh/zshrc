@@ -1,0 +1,77 @@
+source $HOME/.antigen/antigen.zsh
+
+# oh-my-zsh
+antigen use oh-my-zsh
+
+if [ -d /etc/apt ];then
+  antigen bundle debian
+elif [ -d /etc/pacman.d ];then
+  antigen bundle archlinux
+fi
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  antigen bundle osx
+  antigen bundle brew
+fi
+antigen bundles <<EOB
+systemd
+git
+autojump
+extract
+tmux
+sudo
+copydir
+pj
+web-search
+command-not-found
+copyfile
+httpie
+# py
+python
+pip
+# js
+npm
+# rb
+ruby
+rbenv
+gem
+EOB
+# --------------------------------------------other -------------------------------------------- #
+antigen bundles <<EOB
+unixorn/autoupdate-antigen.zshplugin
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-completions
+zsh-users/zsh-syntax-highlighting
+changyuheng/zsh-interactive-cd
+supercrabtree/k
+hlissner/zsh-autopair
+Tarrasch/zsh-bd
+djui/alias-tips
+gujiaxi/ranger-cd
+# js
+lukechilds/zsh-better-npm-completion
+akoenig/npm-run.plugin.zsh
+# py
+gangleri/pipenv
+EOB
+
+# Load the theme.
+antigen theme robwierzbowski/charged-zsh-theme
+
+# # Tell Antigen that you're done.
+antigen apply
+
+# alias
+. $HOME/.zshaliases
+# function
+. $HOME/.zshfunction
+
+# fzf
+# export FZF_DEFAULT_OPTS='
+  # --color=bg+:#073642,bg:#002b36,spinner:#719e07,hl:#586e75
+  # --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108
+  # --color info:108,prompt:109,spinner:108,pointer:168,marker:168
+# '
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+

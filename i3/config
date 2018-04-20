@@ -1,0 +1,228 @@
+# Note: to find the name of a key, use xev
+# Note: to find the a window's parameters, use xprop
+
+# mod key = Windows key
+set $mod Mod4
+
+# directory containing personal scripts
+set $scriptdir $HOME/.i3
+
+#font xft:Cousine bold 7.2
+font pango:Noto Mono 10
+
+new_window pixel 3
+
+# Window focus follows your mouse movements
+focus_follows_mouse  no
+# When switching focus to a window on a different output, warp the cursor to
+# the center of that window
+mouse_warping none
+
+# Hide edge borders
+hide_edge_borders both
+
+# do not move to neighbouring screen with hjkl
+force_focus_wrapping yes
+
+# switch back to the previously focused workspace
+# by retyping the same keys
+workspace_auto_back_and_forth yes
+
+# Delaying urgency hint reset on workspace change
+force_display_urgency_hint 500 ms
+
+# border
+for_window [class="^.*"] border pixel 8
+
+
+# Colors
+set $lightgray #AAAAAA
+set $gray      #484848
+set $gray2     #757575
+set $darkgray  #333333
+set $black     #000000
+set $white     #FFFFFF
+set $red       #FF0000
+set $blue      #005588
+
+client.focused          $darkgray $darkgray #FFFFFF   #333333
+client.focused_inactive $darkgray $darkgray #FFFFFF   #000000
+client.unfocused        $black    $black    #FFFFFF   #000000
+
+# use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec ~/.i3/xfce4-terminal-pwd.sh
+
+# kill focused window
+bindsym $mod+c kill
+
+# start program launcher
+bindsym $mod+p exec $scriptdir/launcher "$black" "$lightgray" "$darkgray" "$lightgray" "$black"
+bindsym $mod+Shift+p exec rofi -show window "$black" "$lightgray" "$darkgray" "$lightgray" "$black"
+
+# websearch
+bindsym $mod+Shift+s exec echo "" | rofi -dmenu -p "Search:" | xargs -I{} xdg-open https://www.google.de/search?q={}
+
+# clipboard
+bindsym $mod+a exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+
+# screenshot
+bindsym Print exec xfce4-screenshooter
+
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Left  focus left
+bindsym $mod+Down  focus down
+bindsym $mod+Up    focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# split in horizontal orientation
+bindsym $mod+Shift+v split h
+
+# split in vertical orientation
+bindsym $mod+Shift+g split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (tabbed, toggle split)
+bindsym $mod+n layout tabbed
+bindsym $mod+m layout toggle split
+
+# container navigation
+bindsym $mod+d focus parent
+bindsym $mod+b focus child
+
+# move container between displays
+bindsym $mod+semicolon move workspace to output right
+
+# toggle tiling / floating
+bindsym $mod+Shift+f floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# switch to last workspace
+bindsym $mod+6 workspace back_and_forth
+
+# switch to next workspace
+bindsym $mod+Shift+Right workspace next
+
+# switch to previous workspace
+bindsym $mod+Shift+Left workspace prev
+
+# define workspace aliases
+set $WS1 : q
+set $WS2 : w
+set $WS3 : e
+set $WS4 : r
+set $WS5 : t
+set $WS6 : y
+set $WS7 : u
+set $WS8 : i
+set $WS9 : o
+
+set $WSWEB   : w
+set $WSVIDEO : y
+set $WSCHAT  : u
+set $WSSTEAM : i
+set $WSGAME  : o
+
+# switch to workspace
+bindsym $mod+q workspace $WS1
+bindsym $mod+w workspace $WS2
+bindsym $mod+e workspace $WS3
+bindsym $mod+r workspace $WS4
+bindsym $mod+t workspace $WS5
+bindsym $mod+y workspace $WS6
+bindsym $mod+u workspace $WS7
+
+# move focused container to workspace
+bindsym $mod+Shift+q move container to workspace $WS1
+bindsym $mod+Shift+w move container to workspace $WS2
+bindsym $mod+Shift+e move container to workspace $WS3
+bindsym $mod+Shift+r move container to workspace $WS4
+bindsym $mod+Shift+t move container to workspace $WS5
+bindsym $mod+Shift+y move container to workspace $WS6
+bindsym $mod+Shift+u move container to workspace $WS7
+
+bindsym $mod+x       reload
+bindsym $mod+Shift+x restart
+bindsym $mod+Shift+c exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
+mode "resize" {
+  bindsym h resize shrink width  10 px or 10 ppt
+  bindsym j resize grow   height 10 px or 10 ppt
+  bindsym k resize shrink height 10 px or 10 ppt
+  bindsym l resize grow   width  10 px or 10 ppt
+
+
+  bindsym Left resize shrink width  10 px or 10 ppt
+  bindsym Up resize grow   height 10 px or 10 ppt
+  bindsym Down resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow   width  10 px or 10 ppt
+
+
+  # back to normal: Enter or Escape or q or ^[
+  bindsym  Return     mode "default"
+  bindsym  q          mode "default"
+  bindsym  Escape     mode "default"
+  bindcode Control+34 mode "default"
+}
+
+bindsym $mod+s mode "resize"
+
+bindsym $mod+z exec zeal
+bindsym $mod+o exec google-chrome-stable
+bindsym $mod+i exec nautilus
+
+bar {
+  # Conky bar
+  status_command ~/.i3/conky
+
+  position top
+
+  # Default font, fallback font (icons)
+  font pango:Noto Mono 10
+
+  colors {
+    # Status line:
+    statusline $lightgray
+    background $black
+
+    # Workspaces: border, background and text colors
+    focused_workspace  $gray2    $darkgray $white
+    active_workspace   $darkgray $darkgray $white
+    inactive_workspace $black    $black    $lightgray
+    urgent_workspace   $red      $red      $white
+
+    # We do not use this since custom separators are not
+    # well supported
+    #separator $gray
+  }
+}
+
+# fcitx
+exec fcitx
+# vmvare copy and paste
+exec vmware-user-suid-wrapper --no-startup-id
+exec greenclip daemon

@@ -1,0 +1,95 @@
+" You can enable the existing layers in space-vim and
+" exclude the partial plugins in a certain layer.
+" The command Layer is vaild in the function Layers().
+" Use exclude option if you don't want the full Layer,
+" e.g., Layer 'better-defaults', { 'exclude': 'itchyny/vim-cursorword' }
+function! Layers()
+
+  " Default layers, recommended!
+  Layer 'chinese'
+  Layer 'goyo'
+  Layer 'airline'
+  " Layer 'lightline'
+
+  Layer 'fzf'
+  Layer 'unite'
+  Layer 'spacevim',{'exclude':'liuchengxu/space-vim-dark'}
+  Layer 'better-defaults',{'exclude':'haya14busa/incsearch-fuzzy.vim'}
+  Layer 'text-align'
+  Layer 'which-key'
+
+  Layer 'tmux',{'exclude':['lucidstack/ctrlp-tmux.vim',]}
+  " Layer 'ctrlp'
+  Layer 'file-manager',{'exclude':'danro/rename.vim'}
+  Layer 'better-motion',{'exclude':'haya14busa/incsearch-easymotion.vim'}
+  Layer 'programming'
+  Layer 'editing',{'exclude':'pelodelfuego/vim-swoop'}
+  Layer 'git'
+  Layer 'github'
+
+  Layer 'autocomplete'
+  " Layer 'ycmd'
+  Layer 'lspc'
+  Layer 'codesnippets'
+  " Layer 'formatting'
+  Layer 'codeformat'
+  " Layer 'deoplete'
+  Layer 'syntax-checking'
+
+  Layer 'html'
+  Layer 'javascript'
+  " Layer 'ruby'
+  Layer 'python'
+  Layer 'c-c++'
+  " Layer 'go'
+  " Layer 'rust'
+  Layer 'typescript',{'exclude':['Quramy/tsuquyomi','Shougo/vimproc.vim']}
+  Layer 'markdown',{'exclude':'iamcco/markdown-preview.vim'}
+
+endfunction
+
+" Put your private plugins here.
+function! UserInit()
+
+  " Space has been set as the default leader key,
+  " if you want to change it, uncomment and set it here.
+  " let g:spacevim_leader = "<\Space>"
+  let g:spacevim_localleader = ','
+  "
+endfunction
+
+
+
+" Put your costom configurations here, e.g., change the colorscheme.
+function! UserConfig()
+
+  " If you enable airline layer and have installed the powerline fonts, set it here.
+  let g:airline_powerline_fonts=1
+  color desert
+  syntax on
+
+ "
+ "{one theme
+    " set background=light        " for the light version
+    " let g:one_allow_italics = 1 " I love italic for comments
+    " colorscheme one
+ "}
+  " { mhinz/vim-janah
+  " autocmd ColorScheme janah highlight Normal ctermbg=235
+  " colorscheme janah
+
+  " }
+  " {seoul256
+   colo seoul256
+
+  " Light color scheme
+  " Switch
+  set background=dark
+  let g:solarized_term_italics=1
+  let g:solarized_old_cursor_style=1
+
+
+  " }
+  "
+endfunction
+
