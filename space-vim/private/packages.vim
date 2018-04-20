@@ -86,7 +86,7 @@ endif
 " {autosave
 Plug '907th/vim-auto-save'
 let g:auto_save = 1
-let g:auto_save_events=["InsertLeave","TextChanged"]
+let g:auto_save_events=["InsertLeave","TextChanged","QuitPre"]
 let g:auto_save_write_all_buffers=1
 let g:autosave_timer=5000
 "}
@@ -189,9 +189,6 @@ Plug 'lilydjwg/fcitx.vim'
 " }
 " {roxma/vim-paste-easy
 Plug 'roxma/vim-paste-easy'
-" }
-" {'ggVGc/vim-fuzzysearch'
-Plug 'ggVGc/vim-fuzzysearch'
 " }
 "{KabbAmine/zeavim.vim
 Plug 'KabbAmine/zeavim.vim'

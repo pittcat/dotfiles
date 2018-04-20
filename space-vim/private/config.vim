@@ -142,8 +142,25 @@ endif
   "}
   "quickfix
   "{
-    noremap <silent> <localleader>q :cclose<cr>
-    noremap <silent> <localleader>o :copen<cr>
+    function! Map_Qf_Behavior()
+      function! QFwinnr() 
+         let i=1 
+         while i <= winnr('$') 
+             if getbufvar(winbufnr(i), '&buftype') == 'quickfix' 
+                 return i 
+             endif 
+             let i += 1 
+         endwhile 
+         return 0 
+      endfunction 
+
+      if QFwinnr()
+        exec 'cclose'
+      else
+        exec 'copen 16'
+      endif
+    endfun
+    nnoremap <silent> <F8> :call Map_Qf_Behavior()<cr>
   "}
   "{justinmk/vim-sneak
     map f <Plug>Sneak_s
@@ -291,9 +308,6 @@ endif
   "
   " {roxma/vim-paste-easy
   let g:paste_easy_message=0
-  " }
-  " {'ggVGc/vim-fuzzysearch'
-  nnoremap z/ :FuzzySearch<cr>
   " }
 
   "{KabbAmine/zealvim.vim
