@@ -37,7 +37,7 @@ function! Layers()
   Layer 'syntax-checking'
 
   Layer 'html'
-  Layer 'javascript'
+  Layer 'javascript',{'exclude':'neoclide/vim-jsx-improve'}
   " Layer 'ruby'
   Layer 'python'
   Layer 'c-c++'

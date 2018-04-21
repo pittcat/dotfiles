@@ -50,13 +50,11 @@ if g:spacevim_nvim
 else    "vim8
     let g:completor_clang_binary='/usr/bin/clang' "c++
     let completor_node_binary='/usr/bin/node'   "javascript
-    " let g:completor_tsserver_binary = '/usr/bin/tsserver'
-    " let g:completor_tsserver_binary = '/usr/bin/tsserver'
     let g:completor_python_binary = '/usr/bin/python3' "python 
     let g:monster#completion#backend = 'solargraph'    "ruby
     let g:completor_gocode_binary='~/.go/bin/gocode' "go
     let g:completor_racer_binary='~/.cargo/bin/racer' "rust
-    let g:completor_tsserver_binary = '/usr/bin/tsserver'
+    let g:completor_tsserver_binary = '/usr/bin/tsserver' " typescript
 endif 
 
 
@@ -67,13 +65,15 @@ endif
  " python
   " {
   " pymode 设置
-    let g:pymode_python = 'python3'       
+  " { python-mode
+    let g:pymode_motion = 0               " motion
+    let g:pymode_run = 0                  " quick run 
+    let g:pymode_python = 'python3'       " version
     let g:pymode_doc = 0     "启用python-mode内置的python文档，使用K进行查找
-    let g:pymode_doc_bind = 'K'
     let g:pymode_rope = 0
-    let g:c_no_curly_error=0
+  " }
     " fisadev/vim-isort
-    let g:vim_isort_map = '<C-i>'
+    let g:vim_isort_map = ''
     let g:vim_isort_python_version = 'python3'
     autocmd BufLeave *.py Isort
     " skywind3000/asyncrun.vim <F5> 快捷键运行
@@ -94,9 +94,9 @@ endif
 
   let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx"       "auto-closetag添加对jsx等的支持
    "javascript
-  autocmd BufEnter *.js setfiletype javascript
+  " autocmd BufEnter *.js setfiletype javascript
+  let g:jsx_ext_required = 1
   let g:javascript_plugin_jsdoc = 1       "pangloss/vim-javascript
-  let g:jsx_ext_required = 0              "mxw/vim-jsx
   
   " typescript
   let g:tsuquyomi_disable_quickfix=1
@@ -223,8 +223,8 @@ endif
   nnoremap <leader>bD :BufOnly<cr>
   "}
   "{quick indent visual with tab
-  " vnoremap  <C-End> >gv
-  " vnoremap  <C-Home> <gv
+  vnoremap <tab> >gv
+  vnoremap <s-tab> <gv
   "}
   "{vim-scripts/loremipsum
   nnoremap <silent> <leader>gn :Loremipsum<cr>

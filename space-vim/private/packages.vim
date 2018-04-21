@@ -8,7 +8,7 @@ if g:spacevim_nvim  " nvim
   " Plug 'mhartington/nvim-typescript',{'for':'typescript'}
   " Plug 'uplus/deoplete-solargraph',{'for':'ruby','do':'gem install solargraph && pip install solargraph-utils.py --user'}
   " Plug 'sebastianmarkow/deoplete-rust',{'for':'rust'}
-  Plug 'zchee/deoplete-zsh'
+  Plug 'zchee/deoplete-zsh',{'for':'zsh'}
 
 
   " common 
@@ -143,10 +143,6 @@ Plug 'AndrewRadev/splitjoin.vim'
 "{terryma/vim-smooth-scroll
 Plug 'terryma/vim-smooth-scroll'
 
-"}
-"
-"{epeli/slimux
-" Plug 'epeli/slimux'
 "}
 "
 "{briandoll/change-inside-surroundings.vim
