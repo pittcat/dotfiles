@@ -25,7 +25,7 @@ function! Layers()
   Layer 'programming'
   Layer 'editing',{'exclude':'pelodelfuego/vim-swoop'}
   Layer 'git'
-  Layer 'github'
+  " Layer 'github'
 
   Layer 'autocomplete'
   " Layer 'ycmd'
