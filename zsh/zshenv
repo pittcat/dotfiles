@@ -3,8 +3,8 @@ if hash ifconfig 2>/dev/null; then
 fi
 export LOCAL_IP=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'`
 # set default editor
-export EDITOR='/usr/bin/vim'
-export VISUAL='/usr/bin/vim'
+export EDITOR='/usr/bin/nvim'
+export VISUAL='/usr/bin/nvim'
 
 # zsh pj setting
 export PROJECT_PATHS=(~/MEGA/code)
@@ -53,3 +53,4 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 # deoplete zsh
 zmodload zsh/zpty
+export fpath=($HOME/.fpath $fpath)

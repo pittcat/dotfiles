@@ -106,9 +106,6 @@ if  g:spacevim_nvim
     let g:deoplete#enable_at_startup = 1
     " Set minimum syntax keyword length.
     let g:min_pattern_length=2
-    
-    " buffer improve
-    let g:require_same_filetype='False'
 
     " delay
     let g:deoplete#auto_complete_delay=0
