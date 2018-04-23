@@ -26,6 +26,6 @@ nnoremap <silent> <leader><leader>z :pc<CR>
 
 augroup LanguageClient_config
   autocmd!
-  autocmd User LanguageClientStarted setlocal signcolumn=yes
-  autocmd User LanguageClientStopped setlocal signcolumn=auto
+  autocmd silent! User LanguageClientStarted setlocal signcolumn=yes
+  autocmd silent! User LanguageClientStopped setlocal signcolumn=auto
 augroup END

@@ -73,6 +73,8 @@ ln -s $PWD/space-vim/codeformat $HOME/.space-vim/layers/+programming
 ln -s $PWD/space-vim/lsp $HOME/.space-vim/layers/+programming
 ln -s $PWD/space-vim/lspc $HOME/.space-vim/layers/+programming
 ln -s $PWD/space-vim/autocomplete $HOME/.space-vim/layers/+completion
+ln -s $PWD/space-vim/self-map $HOME/.space-vim/layers/+programming
+ln -s $PWD/space-vim/default-change $HOME/.space-vim/layers/+programming
 
 # config ycmd
 # sudo git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/plugged/YouCompleteMe

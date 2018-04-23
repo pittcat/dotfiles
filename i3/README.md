@@ -6,6 +6,7 @@
 * google-chrome-stable
 * greenclip
 * xorg-xprop
+* okular
 
 ## Config
 * ln -s $PWD/i3 $HOME/.i3

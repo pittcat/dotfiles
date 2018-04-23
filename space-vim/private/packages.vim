@@ -192,6 +192,9 @@ Plug 'KabbAmine/zeavim.vim'
 "{tyru/open-browser.vim
 Plug 'tyru/open-browser.vim'
 "}
+"{ludovicchabant/vim-gutentags
+Plug 'ludovicchabant/vim-gutentags'
+"}
 "themefor
 Plug 'rakr/vim-one'
 Plug 'mhinz/vim-janah'

@@ -19,19 +19,17 @@ function! Layers()
   Layer 'which-key'
 
   Layer 'tmux',{'exclude':['lucidstack/ctrlp-tmux.vim',]}
-  " Layer 'ctrlp'
   Layer 'file-manager',{'exclude':'danro/rename.vim'}
   Layer 'better-motion',{'exclude':'haya14busa/incsearch-easymotion.vim'}
   Layer 'programming'
   Layer 'editing',{'exclude':'pelodelfuego/vim-swoop'}
   Layer 'git'
-  " Layer 'github'
 
   Layer 'autocomplete'
-  " Layer 'ycmd'
+  Layer 'self-map'
+  Layer 'default-change'
   Layer 'lspc'
   Layer 'codesnippets'
-  " Layer 'formatting'
   Layer 'codeformat'
   " Layer 'deoplete'
   Layer 'syntax-checking'

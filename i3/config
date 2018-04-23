@@ -130,10 +130,10 @@ set $WS2 : w
 set $WS3 : e
 set $WS4 : r
 set $WS5 : t
-set $WS6 : y
-set $WS7 : u
-set $WS8 : i
-set $WS9 : o
+# set $WS6 : y
+# set $WS7 : u
+# set $WS8 : i
+# set $WS9 : o
 
 set $WSWEB   : w
 set $WSVIDEO : y
@@ -147,8 +147,8 @@ bindsym $mod+w workspace $WS2
 bindsym $mod+e workspace $WS3
 bindsym $mod+r workspace $WS4
 bindsym $mod+t workspace $WS5
-bindsym $mod+y workspace $WS6
-bindsym $mod+u workspace $WS7
+# bindsym $mod+y workspace $WS6
+# bindsym $mod+u workspace $WS7
 
 # move focused container to workspace
 bindsym $mod+Shift+q move container to workspace $WS1
@@ -156,8 +156,8 @@ bindsym $mod+Shift+w move container to workspace $WS2
 bindsym $mod+Shift+e move container to workspace $WS3
 bindsym $mod+Shift+r move container to workspace $WS4
 bindsym $mod+Shift+t move container to workspace $WS5
-bindsym $mod+Shift+y move container to workspace $WS6
-bindsym $mod+Shift+u move container to workspace $WS7
+# bindsym $mod+Shift+y move container to workspace $WS6
+# bindsym $mod+Shift+u move container to workspace $WS7
 
 bindsym $mod+x       reload
 bindsym $mod+Shift+x restart
@@ -194,6 +194,7 @@ bindsym $mod+s mode "resize"
 bindsym $mod+z exec zeal
 bindsym $mod+o exec google-chrome-stable
 bindsym $mod+i exec nautilus
+bindsym $mod+u exec okular
 
 bar {
   # Conky bar
