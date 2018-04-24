@@ -103,7 +103,7 @@ if  g:spacevim_nvim
 
   if !empty(glob("$HOME/.local/share/nvim/plugged/deoplete.nvim"))
     set completeopt-=preview  "close show_docstring
-    let g:deoplete#enable_at_startup = 1
+    let g:deoplete#enable_at_startup = 0
     " Set minimum syntax keyword length.
     let g:min_pattern_length=2
 

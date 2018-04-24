@@ -9,10 +9,8 @@ function! Layers()
   Layer 'chinese'
   Layer 'goyo'
   Layer 'airline'
-  " Layer 'lightline'
 
   Layer 'fzf'
-  Layer 'unite'
   Layer 'spacevim',{'exclude':'liuchengxu/space-vim-dark'}
   Layer 'better-defaults',{'exclude':'haya14busa/incsearch-fuzzy.vim'}
   Layer 'text-align'
@@ -26,8 +24,6 @@ function! Layers()
   Layer 'git'
 
   Layer 'autocomplete'
-  Layer 'self-map'
-  Layer 'default-change'
   Layer 'lspc'
   Layer 'codesnippets'
   Layer 'codeformat'
@@ -43,6 +39,10 @@ function! Layers()
   " Layer 'rust'
   Layer 'typescript',{'exclude':['Quramy/tsuquyomi','Shougo/vimproc.vim']}
   Layer 'markdown',{'exclude':'iamcco/markdown-preview.vim'}
+
+  Layer 'self-map'
+  Layer 'default-change'
+  Layer 'tools-better'
 
 endfunction
 
