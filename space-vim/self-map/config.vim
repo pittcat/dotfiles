@@ -36,7 +36,7 @@ nnoremap <silent> <F28> :vertical res +6<cr>
 nnoremap <silent> <F29> :vertical res -6<cr>
 " }
 "quickfix
-{
+" {
   function! s:Map_Qf_Behavior()
     function! QFwinnr() 
        let i=1 
@@ -79,7 +79,6 @@ nmap <leader>rp :call system("xclip -i -selection clipboard", expand("%"))<CR>
 nmap <leader>pc :call system("xclip -i -selection clipboard", expand("%:p:h"))<CR>
 " }
 
-" }
 
 "{unimpaired-like-map
 nnoremap <silent> [<space> :pu! _<cr>:']+1<cr>
@@ -87,7 +86,7 @@ nnoremap <silent> ]<space> :pu _<cr>:'[-1<cr>
 nnoremap <silent> ]p :pu<cr>
 nnoremap <silent> [p :pu!<cr>
 "}
- "{ buffer and file 
+"{ buffer and file 
 function! DeleteFileAndCloseBuffer()
   call delete(expand('%')) | bdelete!
 endfun

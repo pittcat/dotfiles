@@ -22,6 +22,7 @@ function! Layers()
   Layer 'programming'
   Layer 'editing',{'exclude':'pelodelfuego/vim-swoop'}
   Layer 'git'
+  Layer 'self-map'
 
   Layer 'autocomplete'
   Layer 'lspc'
@@ -40,7 +41,6 @@ function! Layers()
   Layer 'typescript',{'exclude':['Quramy/tsuquyomi','Shougo/vimproc.vim']}
   Layer 'markdown',{'exclude':'iamcco/markdown-preview.vim'}
 
-  Layer 'self-map'
   Layer 'default-change'
   Layer 'tools-better'
 

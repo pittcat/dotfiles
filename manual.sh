@@ -75,7 +75,7 @@ ln -s $PWD/space-vim/lspc $HOME/.space-vim/layers/+programming
 ln -s $PWD/space-vim/autocomplete $HOME/.space-vim/layers/+completion
 ln -s $PWD/space-vim/self-map $HOME/.space-vim/layers/+programming
 ln -s $PWD/space-vim/default-change $HOME/.space-vim/layers/+programming
-ln -s $PWD/space-vim/tools-betters $HOME/.space-vim/layers/+programming
+ln -s $PWD/space-vim/tools-better $HOME/.space-vim/layers/+programming
 ln -s $PWD/space-vim/lang-config $HOME/.space-vim/layers/+lang
 
 # config ycmd

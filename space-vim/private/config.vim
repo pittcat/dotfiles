@@ -58,5 +58,3 @@ else    "vim8
     let g:completor_tsserver_binary = '/usr/bin/tsserver' " typescript
 endif 
 
-
-
