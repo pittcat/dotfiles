@@ -22,7 +22,6 @@ function! Layers()
   Layer 'programming'
   Layer 'editing',{'exclude':'pelodelfuego/vim-swoop'}
   Layer 'git'
-  Layer 'self-map'
 
   Layer 'autocomplete'
   Layer 'lspc'
@@ -43,6 +42,8 @@ function! Layers()
 
   Layer 'default-change'
   Layer 'tools-better'
+  Layer 'self-map'
+  Layer 'lang-config'
 
 endfunction
 
