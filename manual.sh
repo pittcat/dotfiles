@@ -68,15 +68,15 @@ mkdir -p $HOME/.vim/UltiSnips/
 mkdir -p $HOME/.config/nvim/UltiSnips/
 ln -s $PWD/space-vim/UltiSnips/* $HOME/.config/nvim/UltiSnips/
 ln -s $PWD/space-vim/UltiSnips/* $HOME/.vim/UltiSnips/
-ln -s $PWD/space-vim/codesnippets $HOME/.space-vim/layers/+programming
-ln -s $PWD/space-vim/codeformat $HOME/.space-vim/layers/+programming
-ln -s $PWD/space-vim/lsp $HOME/.space-vim/layers/+programming
-ln -s $PWD/space-vim/lspc $HOME/.space-vim/layers/+programming
-ln -s $PWD/space-vim/autocomplete $HOME/.space-vim/layers/+completion
-ln -s $PWD/space-vim/self-map $HOME/.space-vim/layers/+programming
-ln -s $PWD/space-vim/default-change $HOME/.space-vim/layers/+programming
-ln -s $PWD/space-vim/tools-better $HOME/.space-vim/layers/+programming
-ln -s $PWD/space-vim/lang-config $HOME/.space-vim/layers/+lang
+# ln -s $PWD/space-vim/codesnippets $HOME/.space-vim/layers/+programming
+# ln -s $PWD/space-vim/codeformat $HOME/.space-vim/layers/+programming
+# ln -s $PWD/space-vim/lsp $HOME/.space-vim/layers/+programming
+# ln -s $PWD/space-vim/lspc $HOME/.space-vim/layers/+programming
+# ln -s $PWD/space-vim/autocomplete $HOME/.space-vim/layers/+completion
+# ln -s $PWD/space-vim/self-map $HOME/.space-vim/layers/+programming
+# ln -s $PWD/space-vim/default-change $HOME/.space-vim/layers/+programming
+# ln -s $PWD/space-vim/tools-better $HOME/.space-vim/layers/+programming
+# ln -s $PWD/space-vim/lang-config $HOME/.space-vim/layers/+lang
 
 # config ycmd
 # sudo git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/plugged/YouCompleteMe

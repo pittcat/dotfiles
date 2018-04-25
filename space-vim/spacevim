@@ -27,7 +27,6 @@ function! Layers()
   Layer 'lspc'
   Layer 'codesnippets'
   Layer 'codeformat'
-  " Layer 'deoplete'
   Layer 'syntax-checking'
 
   Layer 'html'
@@ -40,10 +39,8 @@ function! Layers()
   Layer 'typescript',{'exclude':['Quramy/tsuquyomi','Shougo/vimproc.vim']}
   Layer 'markdown',{'exclude':'iamcco/markdown-preview.vim'}
 
-  Layer 'default-change'
   Layer 'tools-better'
   Layer 'self-map'
-  Layer 'lang-config'
 
 endfunction
 
@@ -88,6 +85,7 @@ function! UserConfig()
   let g:solarized_old_cursor_style=1
 
 
+autocmd BufEnter spacevim setfiletype vim
   " }
   "
 endfunction
