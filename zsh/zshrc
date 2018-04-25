@@ -21,10 +21,8 @@ tmux
 sudo
 copydir
 pj
-web-search
 command-not-found
 copyfile
-httpie
 # py
 python
 pip
@@ -42,7 +40,6 @@ zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
 zsh-users/zsh-syntax-highlighting
 changyuheng/zsh-interactive-cd
-supercrabtree/k
 hlissner/zsh-autopair
 Tarrasch/zsh-bd
 djui/alias-tips
