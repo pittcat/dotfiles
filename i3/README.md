@@ -1,4 +1,4 @@
-** Requirements
+## Requirements
    * conky
    * rofi -->switcher
    * nautilus --> file manager
@@ -8,9 +8,10 @@
    * xorg-xprop
    * okular
    * polybar
-** Config
-   ln -s $PWD/i3 $HOME/.i3
-   ln -s $PWD/polybar $HOME/.config/polybar  
+## Config
+  
+   * ln -s $PWD/i3 $HOME/.i3
+   *  ln -s $PWD/polybar $HOME/.config/polybar  
    Notice for polybar:
    change the interface
    ip route | grep '^default' | awk '{print $5}'
