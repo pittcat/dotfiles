@@ -196,31 +196,8 @@ bindsym $mod+o exec google-chrome-stable
 bindsym $mod+i exec nautilus
 bindsym $mod+u exec okular
 
-bar {
-  # Conky bar
-  status_command ~/.i3/conky
-
-  position top
-
-  # Default font, fallback font (icons)
-  font pango:Noto Mono 10
-
-  colors {
-    # Status line:
-    statusline $lightgray
-    background $black
-
-    # Workspaces: border, background and text colors
-    focused_workspace  $gray2    $darkgray $white
-    active_workspace   $darkgray $darkgray $white
-    inactive_workspace $black    $black    $lightgray
-    urgent_workspace   $red      $red      $white
-
-    # We do not use this since custom separators are not
-    # well supported
-    #separator $gray
-  }
-}
+# bar
+exec_always $HOME/.config/polybar/launch.sh
 
 # fcitx
 exec fcitx
