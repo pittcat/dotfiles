@@ -37,3 +37,6 @@ Plug 'isRuslan/vim-es6'                     "es6
 
 "themefor
 Plug 'junegunn/seoul256.vim'
+if g:spacevim_gui
+  Plug 'equalsraf/neovim-gui-shim'
+endif

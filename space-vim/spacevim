@@ -51,6 +51,7 @@ function! UserInit()
   " if you want to change it, uncomment and set it here.
   " let g:spacevim_leader = "<\Space>"
   let g:spacevim_localleader = ','
+  Plug 'jceb/vim-orgmode',{'for':'org'}
   "
 endfunction
 
@@ -85,7 +86,6 @@ function! UserConfig()
   let g:solarized_old_cursor_style=1
 
 
-autocmd BufEnter spacevim setfiletype vim
   " }
   "
 endfunction
