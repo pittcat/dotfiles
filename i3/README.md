@@ -8,12 +8,14 @@
    * xorg-xprop
    * okular
    * polybar
+   * dunst
 ## Config
   
    * ln -s $PWD/i3 $HOME/.i3
-   * ln -s $PWD/polybar $HOME/.config/polybar<br/>
+   * ln -s $PWD/polybar $HOME/.config/<br/>
    * Notice for polybar:
    change the interface<br/>
    ip route | grep '^default' | awk '{print $5}'<br/>
    [module/networkspeeddown]<br/>
    interface = ens33 <br/>
+   * ln -s $PWD/i3/dunst $HOME/.config/
