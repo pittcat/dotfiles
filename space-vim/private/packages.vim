@@ -3,7 +3,7 @@ if g:spacevim_nvim  " nvim
   " deoplete lang
   Plug 'wellle/tmux-complete.vim'
   Plug 'zchee/deoplete-jedi',{'for': 'python'}
-  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern','for':['javascript','vue','javascript.jsx']}
+  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern','for':['javascript','vue','javascript.jsx',]}
   " Plug 'zchee/deoplete-clang',{ 'for': ['c', 'cpp']}
   " Plug 'mhartington/nvim-typescript',{'for':'typescript'}
   " Plug 'uplus/deoplete-solargraph',{'for':'ruby','do':'gem install solargraph && pip install solargraph-utils.py --user'}
@@ -13,7 +13,7 @@ if g:spacevim_nvim  " nvim
 
   " common 
   Plug 'Shougo/neoinclude.vim'      "include completion
-  Plug 'Shougo/neco-syntax'         "syntax completion
+  Plug 'Shougo/neco-vim'         "syntax completion
 
 else  "vim8
   " completor.vim
@@ -40,3 +40,4 @@ Plug 'junegunn/seoul256.vim'
 if g:spacevim_gui
   Plug 'equalsraf/neovim-gui-shim'
 endif
+

@@ -15,12 +15,16 @@ if g:spacevim_nvim
                   \ 'javascript.jsx',
                   \ 'vue',
                   \ ]
+
+
+
   let g:nvim_typescript#server_path='/usr/bin/tsserver'       " mhartington/nvim-typescript
   let g:deoplete#sources#clang#libclang_path='/usr/lib/libclang.so'   "zchee/deoplete-clang
   let  g:deoplete#sources#clang#clang_header='/usr/lib/clang'
   let g:deoplete#sources#rust#racer_binary='/home/pittcat/.cargo/bin/racer'          "sebastianmarkow/deoplete-rust
   let g:deoplete#sources#rust#rust_source_path='/home/pittcat/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'                "echo `rustc --print sysroot`/lib/rustlib/src/rust/src
   let g:deoplete#sources#rust#documentation_max_height=30
+  call deoplete#custom#option('ignore_sources', {'css': ['csscomplete#CompleteCSS']})    
 
   " deoplete-common
   let g:python3_host_prog ='/usr/bin/python3'   "nvim path 
