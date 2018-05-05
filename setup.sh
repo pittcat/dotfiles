@@ -13,16 +13,16 @@ sudo $PKMG zsh tmux git curl emacs rsync nodejs npm tig cmake ctags xsel xclip p
 sudo sed -i "s/127.0.0.1:9050/127.0.0.1:1080/g;/127.0.0.1:1080/s/^#//g" /etc/privoxy/config
 
 ### 获取 gfwlist2privoxy 脚本
-curl -skL https://raw.github.com/zfl9/gfwlist2privoxy/master/gfwlist2privoxy -o gfwlist2privoxy
+# curl -skL https://raw.github.com/zfl9/gfwlist2privoxy/master/gfwlist2privoxy -o gfwlist2privoxy
 
 ### 生成 gfwlist.action 文件
-bash gfwlist2privoxy '127.0.0.1:1080'
+# bash gfwlist2privoxy '127.0.0.1:1080'
 
 ### 拷贝至 privoxy 配置目录
-sudo mv gfwlist.action /etc/privoxy/
+# sudo mv gfwlist.action /etc/privoxy/
 
 ### 加载 gfwlist.action 文件
-sudo bash -c "echo 'actionsfile whitelist.action' >> /etc/privoxy/config"
+# sudo bash -c "echo 'actionsfile whitelist.action' >> /etc/privoxy/config"
 
 ### 启动 privoxy.service 服务
 sudo systemctl enable privoxy.service 
