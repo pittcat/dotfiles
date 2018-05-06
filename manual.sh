@@ -60,7 +60,7 @@ sudo npm install -g $(cat npmdaily | egrep -v "^\s*(#|$)")
 
 
 #配置vim vim8 并且须支持python3 javascript
-git clone https://github.com/liuchengxu/space-vim.git ~/.space-vim
+git clone https://github.com/pittcat/space-vim.git ~/.space-vim
 ln -s $PWD/space-vim/spacevim $HOME/.spacevim
 sudo rm $HOME/.space-vim/private/* -r
 ln -s $PWD/space-vim/private/* $HOME/.space-vim/private/
@@ -123,6 +123,7 @@ ln -s $PWD/tmux/tmux.conf ~/.tmux.conf
 
 # python vim  config and include following config
 sudo touch /etc/pip.conf
+
 echo "[global]\nindex-url = https://pypi.tuna.tsinghua.edu.cn/simple" | sudo tee /etc/pip.conf
 
 sudo pip3 install -r $PWD/config/python/requirements.txt
