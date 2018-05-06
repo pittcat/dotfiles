@@ -12,15 +12,15 @@ function! Layers()
 
   Layer 'fzf'
   Layer 'spacevim',{'exclude':'liuchengxu/space-vim-dark'}
-  Layer 'better-defaults',{'exclude':'haya14busa/incsearch-fuzzy.vim'}
+  Layer 'better-defaults'
   Layer 'text-align'
   Layer 'which-key'
 
-  Layer 'tmux',{'exclude':['lucidstack/ctrlp-tmux.vim',]}
-  Layer 'file-manager',{'exclude':'danro/rename.vim'}
-  Layer 'better-motion',{'exclude':'haya14busa/incsearch-easymotion.vim'}
+  Layer 'tmux'
+  Layer 'file-manager'
+  Layer 'better-motion'
   Layer 'programming'
-  Layer 'editing',{'exclude':'pelodelfuego/vim-swoop'}
+  Layer 'editing'
   Layer 'git'
 
   Layer 'autocomplete'
@@ -37,7 +37,7 @@ function! Layers()
   " Layer 'go'
   " Layer 'rust'
   Layer 'typescript',{'exclude':['Quramy/tsuquyomi','Shougo/vimproc.vim']}
-  Layer 'markdown',{'exclude':'iamcco/markdown-preview.vim'}
+  Layer 'markdown'
 
   Layer 'tools-better'
   Layer 'self-map'
