@@ -128,4 +128,5 @@ echo "[global]\nindex-url = https://pypi.tuna.tsinghua.edu.cn/simple" | sudo tee
 
 sudo pip3 install -r $PWD/config/python/requirements.txt
 
-
+# rust
+bash $PWD/config/rust/init.sh
