@@ -31,6 +31,13 @@ else
   sudo rm autojump -r
 fi
 
+# tags
+
+if [ -d /etc/apt ];then
+  sudo apt install exuberant-ctags
+else
+  yaourt -S universal-ctags
+fi
 # ripgrep
 if [ -d /etc/apt ];then
   curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.8.1/ripgrep_0.8.1_amd64.deb
@@ -60,7 +67,7 @@ sudo npm install -g $(cat npmdaily | egrep -v "^\s*(#|$)")
 
 
 #配置vim vim8 并且须支持python3 javascript
-git clone https://github.com/pittcat/space-vim.git ~/.space-vim
+git clone -b dotfiles https://github.com/pittcat/space-vim.git ~/.space-vim
 ln -s $PWD/space-vim/spacevim $HOME/.spacevim
 sudo rm $HOME/.space-vim/private/* -r
 ln -s $PWD/space-vim/private/* $HOME/.space-vim/private/
@@ -68,23 +75,6 @@ mkdir -p $HOME/.vim/UltiSnips/
 mkdir -p $HOME/.config/nvim/UltiSnips/
 ln -s $PWD/space-vim/UltiSnips/* $HOME/.config/nvim/UltiSnips/
 ln -s $PWD/space-vim/UltiSnips/* $HOME/.vim/UltiSnips/
-# ln -s $PWD/space-vim/codesnippets $HOME/.space-vim/layers/+programming
-# ln -s $PWD/space-vim/codeformat $HOME/.space-vim/layers/+programming
-# ln -s $PWD/space-vim/lsp $HOME/.space-vim/layers/+programming
-# ln -s $PWD/space-vim/lspc $HOME/.space-vim/layers/+programming
-# ln -s $PWD/space-vim/autocomplete $HOME/.space-vim/layers/+completion
-# ln -s $PWD/space-vim/self-map $HOME/.space-vim/layers/+programming
-# ln -s $PWD/space-vim/default-change $HOME/.space-vim/layers/+programming
-# ln -s $PWD/space-vim/tools-better $HOME/.space-vim/layers/+programming
-# ln -s $PWD/space-vim/lang-config $HOME/.space-vim/layers/+lang
-
-# config ycmd
-# sudo git clone https://github.com/Valloric/YouCompleteMe.git ~/.vim/plugged/YouCompleteMe
-# cd ~/.vim/plugged/YouCompleteMe
-# git submodule update --init --recursive
-# sudo python3 ./install.py --clang-completer
-# manual install 
-
 # cd ~/.space-vim
 # make vim 
 

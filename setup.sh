@@ -7,22 +7,10 @@ elif [ -d /etc/pacman.d ];then
 fi
 ## --------------------------------------------must install -------------------------------------------- ##
 # common must install 
-sudo $PKMG zsh tmux git curl emacs rsync nodejs npm tig cmake ctags xsel xclip privoxy ranger httpie zeal
+sudo $PKMG zsh tmux git curl emacs rsync nodejs npm tig cmake xsel xclip privoxy ranger httpie zeal neovim net-tools
 
 # privoxy autostart
 sudo sed -i "s/127.0.0.1:9050/127.0.0.1:1080/g;/127.0.0.1:1080/s/^#//g" /etc/privoxy/config
-
-### 获取 gfwlist2privoxy 脚本
-# curl -skL https://raw.github.com/zfl9/gfwlist2privoxy/master/gfwlist2privoxy -o gfwlist2privoxy
-
-### 生成 gfwlist.action 文件
-# bash gfwlist2privoxy '127.0.0.1:1080'
-
-### 拷贝至 privoxy 配置目录
-# sudo mv gfwlist.action /etc/privoxy/
-
-### 加载 gfwlist.action 文件
-# sudo bash -c "echo 'actionsfile whitelist.action' >> /etc/privoxy/config"
 
 ### 启动 privoxy.service 服务
 sudo systemctl enable privoxy.service 
@@ -53,13 +41,12 @@ fi
 ARCH="pacman -S"
 DEBIAN="apt install"
 if [[ "$PKMG" = "$ARCH"  ]]; then
-  sudo $PKMG gvim ctags the_silver_searcher yaourt clang-tools-extra
+  sudo $PKMG gvim the_silver_searcher yaourt clang-tools-extra
   source $HOME/.zshrc
   yaourt -S shadowsocks-qt5 direnv
 elif [[ "$PKMG"="$DEBIAN" ]]; then
-  sudo add-apt-repository ppa:hzwhuang/ss-qt5
   sudo apt-get update
-  sudo $PKMG vim-gtk exuberant-ctags silversearcher-ag shadowsocks-qt5 python3-pip python-pip direnv silversearcher-ag
+  sudo $PKMG vim-gtk silversearcher-ag python3-pip python-pip direnv
 fi
 
 # --------------------------------------------common config -------------------------------------------- #
