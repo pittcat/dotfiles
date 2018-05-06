@@ -126,6 +126,8 @@ sudo touch /etc/pip.conf
 
 echo "[global]\nindex-url = https://pypi.tuna.tsinghua.edu.cn/simple" | sudo tee /etc/pip.conf
 
+source ~/.zshrc >> /dev/null && zsh
+
 sudo pip3 install -r $PWD/config/python/requirements.txt
 
 # rust
