@@ -7,7 +7,7 @@ function! Layers()
 
   " Default layers, recommended!
   Layer 'chinese'
-  Layer 'goyo'
+  " Layer 'goyo'
   Layer 'airline'
 
   Layer 'fzf'
@@ -21,6 +21,7 @@ function! Layers()
   Layer 'better-motion'
   Layer 'programming'
   Layer 'editing'
+  Layer 'tagbar-improve'
   Layer 'git'
 
   Layer 'autocomplete'

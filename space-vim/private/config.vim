@@ -30,7 +30,7 @@ if g:spacevim_nvim
   let g:python3_host_prog ='/usr/bin/python3'   "nvim path 
   let g:python_host_prog ='/usr/bin/python'   "nvim path 
 
-
+  call deoplete#custom#var('buffer', 'require_same_filetype', v:false)    " otherbuffer complete
   call deoplete#custom#source('LanguageClient','mark', 'ℰ')
   call deoplete#custom#source('omni',          'mark', '⌾')
   call deoplete#custom#source('flow',          'mark', '⌁')
