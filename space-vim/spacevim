@@ -37,7 +37,7 @@ function! Layers()
   Layer 'c-c++'
   " Layer 'go'
   " Layer 'rust'
-  Layer 'typescript',{'exclude':['Quramy/tsuquyomi','Shougo/vimproc.vim']}
+  " Layer 'typescript'
   Layer 'markdown'
 
   Layer 'tools-better'
@@ -64,13 +64,12 @@ function! UserConfig()
   let g:airline_powerline_fonts=1
   color desert
   syntax on
-
-  "{seoul256
-  colo seoul256
-  set background=dark
-  let g:solarized_term_italics=1
-  let g:solarized_old_cursor_style=1
-  "}
+  
+  " theme setting
+  " {
+  autocmd ColorScheme janah highlight Normal ctermbg=235
+  colorscheme janah
+  " }
   "
 endfunction
 
