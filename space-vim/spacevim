@@ -11,7 +11,7 @@ function! Layers()
   Layer 'airline'
 
   Layer 'fzf'
-  Layer 'spacevim',{'exclude':'liuchengxu/space-vim-dark'}
+  Layer 'spacevim'
   Layer 'better-defaults'
   Layer 'text-align'
   Layer 'which-key'
@@ -65,32 +65,12 @@ function! UserConfig()
   color desert
   syntax on
 
- "
- "{one theme
-    " set background=light        " for the light version
-    " let g:one_allow_italics = 1 " I love italic for comments
-    " colorscheme one
- "}
-  " { mhinz/vim-janah
-  " autocmd ColorScheme janah highlight Normal ctermbg=235
-  " colorscheme janah
-
-  " }
-  " {seoul256
-   colo seoul256
-
-  " Light color scheme
-  " Switch
+  "{seoul256
+  colo seoul256
   set background=dark
   let g:solarized_term_italics=1
   let g:solarized_old_cursor_style=1
-  " let g:ale_set_loclist = 1
-  " let g:ale_open_list = 1
-  " Set this if you want to.
-  " This can be useful if you are combining ALE with
-  " some other plugin which sets quickfix errors, etc.
-  " let g:ale_keep_list_window_open = 1
-  " }
+  "}
   "
 endfunction
 
