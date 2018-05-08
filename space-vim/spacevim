@@ -7,7 +7,7 @@ function! Layers()
 
   " Default layers, recommended!
   Layer 'chinese'
-  " Layer 'goyo'
+  Layer 'goyo'
   Layer 'airline'
 
   Layer 'fzf'
@@ -84,6 +84,12 @@ function! UserConfig()
   set background=dark
   let g:solarized_term_italics=1
   let g:solarized_old_cursor_style=1
+  " let g:ale_set_loclist = 1
+  " let g:ale_open_list = 1
+  " Set this if you want to.
+  " This can be useful if you are combining ALE with
+  " some other plugin which sets quickfix errors, etc.
+  " let g:ale_keep_list_window_open = 1
   " }
   "
 endfunction

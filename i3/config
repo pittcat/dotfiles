@@ -191,6 +191,9 @@ mode "resize" {
 
 bindsym $mod+s mode "resize"
 
+# printscreen--scrot(Print=PrtSc/PrintScreen)
+bindsym $mod+Print exec scrot ~/screenshot.png
+
 bindsym $mod+z exec zeal
 bindsym $mod+o exec google-chrome-stable
 bindsym $mod+i exec nautilus

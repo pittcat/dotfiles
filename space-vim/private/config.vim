@@ -24,7 +24,6 @@ if g:spacevim_nvim
   let g:deoplete#sources#rust#racer_binary='/home/pittcat/.cargo/bin/racer'          "sebastianmarkow/deoplete-rust
   let g:deoplete#sources#rust#rust_source_path='/home/pittcat/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'                "echo `rustc --print sysroot`/lib/rustlib/src/rust/src
   let g:deoplete#sources#rust#documentation_max_height=30
-  call deoplete#custom#option('ignore_sources', {'css': ['csscomplete#CompleteCSS']})    
 
   " deoplete-common
   let g:python3_host_prog ='/usr/bin/python3'   "nvim path 
