@@ -67,7 +67,7 @@ function! UserConfig()
   
   " theme setting
   " {
-  autocmd ColorScheme janah highlight Normal ctermbg=235
+  autocmd ColorScheme janah highlight Normal ctermbg=236
   colorscheme janah
   " }
   "
