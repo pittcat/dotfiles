@@ -23,6 +23,8 @@ function! Layers()
   Layer 'editing'
   Layer 'tagbar-improve'
   Layer 'git'
+  Layer 'tools-better'
+  Layer 'self-map'
 
   Layer 'autocomplete'
   Layer 'lspc'
@@ -35,13 +37,11 @@ function! Layers()
   " Layer 'ruby'
   Layer 'python'
   Layer 'c-c++'
+  Layer 'zsh'
   " Layer 'go'
   " Layer 'rust'
   " Layer 'typescript'
   Layer 'markdown'
-
-  Layer 'tools-better'
-  Layer 'self-map'
 
 endfunction
 
@@ -72,4 +72,3 @@ function! UserConfig()
   " }
   "
 endfunction
-
