@@ -15,4 +15,5 @@ source ~/.zshrc >> /dev/null && zsh
 # complete  format check
 cargo install rustfmt racer
 # lsp
+rustup update nightly
 rustup component add rls-preview rust-analysis rust-src 
