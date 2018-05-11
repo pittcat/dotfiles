@@ -24,8 +24,13 @@ if g:spacevim_nvim
   let g:deoplete#sources#rust#racer_binary='/home/pittcat/.cargo/bin/racer'          "sebastianmarkow/deoplete-rust
   let g:deoplete#sources#rust#rust_source_path='/home/pittcat/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'                "echo `rustc --print sysroot`/lib/rustlib/src/rust/src
   let g:deoplete#sources#rust#documentation_max_height=30
+  let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'         " zchee/deoplete-go
+  let g:deoplete#sources#go#package_dot = 1
+  let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+  let g:deoplete#sources#go#cgo#libclang_path ='/usr/lib/libclang.so'
 
   " deoplete-common
+  let g:python3_host_skip_check = 1
   let g:python3_host_prog ='/usr/bin/python3'   "nvim path 
   let g:python_host_prog ='/usr/bin/python'   "nvim path 
 

@@ -9,6 +9,7 @@ if g:spacevim_nvim  " nvim
   " Plug 'uplus/deoplete-solargraph',{'for':'ruby','do':'gem install solargraph && pip install solargraph-utils.py --user'}
   " Plug 'sebastianmarkow/deoplete-rust',{'for':'rust'}
   Plug 'zchee/deoplete-zsh',{'for':'zsh'}
+  " Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 
   " common 
