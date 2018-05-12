@@ -207,3 +207,4 @@ exec fcitx
 # vmvare copy and paste
 exec vmware-user-suid-wrapper --no-startup-id
 exec greenclip daemon
+exec megasync
