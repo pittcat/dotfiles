@@ -13,14 +13,13 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   antigen bundle brew
 fi
 antigen bundles <<EOB
-systemd
+# systemd
 git
 autojump
 extract
 tmux
 sudo
 copydir
-pj
 command-not-found
 copyfile
 # py
