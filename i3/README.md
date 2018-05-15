@@ -9,6 +9,7 @@
    * okular
    * polybar
    * dunst
+   * feh
 ## Config
   
    * ln -s $PWD/i3 $HOME/.i3

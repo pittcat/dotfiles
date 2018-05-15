@@ -192,7 +192,7 @@ mode "resize" {
 bindsym $mod+s mode "resize"
 
 # printscreen--scrot(Print=PrtSc/PrintScreen)
-bindsym $mod+Print exec scrot ~/screenshot.png
+bindsym $mod+Print exec scrot ~/Image/screenshot.png
 
 bindsym $mod+z exec zeal
 bindsym $mod+o exec google-chrome-stable
@@ -206,5 +206,6 @@ exec_always $HOME/.config/polybar/launch.sh
 exec fcitx
 # vmvare copy and paste
 exec vmware-user-suid-wrapper --no-startup-id
+exec_always --no-startup-id ~/.i3/bing-wallpaper.sh
 exec greenclip daemon
 exec megasync
