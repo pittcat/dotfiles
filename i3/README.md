@@ -10,6 +10,7 @@
    * polybar
    * dunst
    * feh
+   * betterlockscreen
 ## Config
   
    * ln -s $PWD/i3 $HOME/.i3

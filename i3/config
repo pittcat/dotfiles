@@ -193,7 +193,8 @@ bindsym $mod+s mode "resize"
 
 # printscreen--scrot(Print=PrtSc/PrintScreen)
 bindsym $mod+Print exec scrot ~/Image/screenshot.png
-
+exec --no-startup-id betterlockscreen -u $HOME/Image/bing-wallpaper.jpg
+bindsym $mod+Shift+a exec betterlockscreen --lock
 bindsym $mod+z exec zeal
 bindsym $mod+o exec google-chrome-stable
 bindsym $mod+i exec nautilus
