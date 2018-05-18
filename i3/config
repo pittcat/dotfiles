@@ -191,6 +191,11 @@ mode "resize" {
 
 bindsym $mod+s mode "resize"
 
+# for sound control  
+bindsym XF86AudioRaiseVolume exec amixer set Master playback 5000+  
+bindsym XF86AudioLowerVolume exec amixer set Master playback 5000-  
+bindsym XF86AudioMute exec amixer set Master toggle
+
 # printscreen--scrot(Print=PrtSc/PrintScreen)
 bindsym $mod+Print exec scrot ~/Image/screenshot.png
 exec --no-startup-id betterlockscreen -u $HOME/Image/bing-wallpaper.jpg
@@ -210,3 +215,4 @@ exec vmware-user-suid-wrapper --no-startup-id
 exec_always --no-startup-id ~/.i3/bing-wallpaper.sh
 exec greenclip daemon
 exec megasync
+
