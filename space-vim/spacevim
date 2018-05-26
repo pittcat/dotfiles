@@ -52,6 +52,7 @@ function! UserInit()
   " if you want to change it, uncomment and set it here.
   " let g:spacevim_leader = "<\Space>"
   let g:spacevim_localleader = ','
+  Plug 'tweekmonster/startuptime.vim'
   "
 endfunction
 

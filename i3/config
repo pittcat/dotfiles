@@ -215,4 +215,3 @@ exec vmware-user-suid-wrapper --no-startup-id
 exec_always --no-startup-id ~/.i3/bing-wallpaper.sh
 exec greenclip daemon
 exec megasync
-
