@@ -34,7 +34,7 @@ gem
 EOB
 # --------------------------------------------other -------------------------------------------- #
 antigen bundles <<EOB
-unixorn/autoupdate-antigen.zshplugin
+# unixorn/autoupdate-antigen.zshplugin
 RobSis/zsh-completion-generator
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions

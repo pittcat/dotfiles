@@ -54,3 +54,5 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 # deoplete zsh
 zmodload zsh/zpty
 export fpath=($HOME/.fpath $fpath)
+# cask
+export PATH="$HOME/.cask/bin:$PATH"
