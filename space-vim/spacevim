@@ -8,7 +8,8 @@ function! Layers()
   " Default layers, recommended!
   Layer 'chinese'
   Layer 'goyo'
-  Layer 'airline'
+  " Layer 'airline'
+  " Layer 'lightline'
 
   Layer 'fzf'
   Layer 'spacevim'
@@ -66,6 +67,8 @@ function! UserConfig()
   color desert
   syntax on
   
+  nnoremap <silent> <localleader>tt :StartupTime<cr>
+  nnoremap <silent> <localleader>pu :UpdateRemotePlugins<cr>
   " theme setting
   " {
   autocmd ColorScheme janah highlight Normal ctermbg=236

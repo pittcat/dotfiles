@@ -30,9 +30,10 @@ if g:spacevim_nvim
   let g:deoplete#sources#go#cgo#libclang_path ='/usr/lib/libclang.so'
 
   " deoplete-common
-  let g:python3_host_skip_check = 1
-  let g:python3_host_prog ='/usr/bin/python3'   "nvim path 
-  " let g:python_host_prog ='/usr/bin/python'   "nvim path 
+  let g:python_host_skip_check=1
+  let g:python_host_prog = '/usr/bin/python'
+  let g:python3_host_skip_check=1
+  let g:python3_host_prog = '/usr/bin/python3'
 
   call deoplete#custom#var('buffer', 'require_same_filetype', v:false)    " otherbuffer complete
   call deoplete#custom#source('LanguageClient','mark', 'ℰ')
