@@ -31,8 +31,9 @@ alias dral='direnv allow .'
 alias rm='trash-put'
 # alias v='vim'
 alias t='tmux'
-alias e='emacs'
+alias e='emacs &'
 alias n='nvim'
 alias server="browser-sync start -s -f . --no-notify --host $LOCAL_IP --port 9000"
 alias gcpt='google-chrome-stable  --remote-debugging-port=9222'
 alias gdiff='git diff --color | sed -r "s/^([^-+ ]*)[-+ ]/\\1/" | less -r'
+

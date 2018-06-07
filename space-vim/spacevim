@@ -8,7 +8,7 @@ function! Layers()
   " Default layers, recommended!
   Layer 'chinese'
   Layer 'goyo'
-  " Layer 'airline'
+  Layer 'airline'
   " Layer 'lightline'
 
   Layer 'fzf'
@@ -54,6 +54,8 @@ function! UserInit()
   " let g:spacevim_leader = "<\Space>"
   let g:spacevim_localleader = ','
   Plug 'tweekmonster/startuptime.vim'
+  Plug 'machakann/vim-highlightedyank'
+  Plug 'tenfyzhong/tagbar-markdown.vim'
   "
 endfunction
 
@@ -66,9 +68,21 @@ function! UserConfig()
   let g:airline_powerline_fonts=1
   color desert
   syntax on
-  
+
+  let g:tagbar_type_markdown = {
+    \ 'ctagstype' : 'markdown',
+    \ 'kinds' : [
+        \ 'h:Heading_L1',
+        \ 'i:Heading_L2',
+        \ 'k:Heading_L3'
+    \ ]
+  \ }
   nnoremap <silent> <localleader>tt :StartupTime<cr>
   nnoremap <silent> <localleader>pu :UpdateRemotePlugins<cr>
+  if !exists('##TextYankPost')
+    map y <Plug>(highlightedyank)
+  endif
+  let g:highlightedyank_highlight_duration = 1000
   " theme setting
   " {
   autocmd ColorScheme janah highlight Normal ctermbg=236
