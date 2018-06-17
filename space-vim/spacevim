@@ -55,8 +55,8 @@ function! UserInit()
   let g:spacevim_localleader = ','
   Plug 'tweekmonster/startuptime.vim'
   Plug 'machakann/vim-highlightedyank'
-  Plug 'tenfyzhong/tagbar-markdown.vim'
-  "
+  Plug 'tpope/vim-scriptease'
+  
 endfunction
 
 
@@ -69,24 +69,20 @@ function! UserConfig()
   color desert
   syntax on
 
-  let g:tagbar_type_markdown = {
-    \ 'ctagstype' : 'markdown',
-    \ 'kinds' : [
-        \ 'h:Heading_L1',
-        \ 'i:Heading_L2',
-        \ 'k:Heading_L3'
-    \ ]
-  \ }
   nnoremap <silent> <localleader>tt :StartupTime<cr>
   nnoremap <silent> <localleader>pu :UpdateRemotePlugins<cr>
   if !exists('##TextYankPost')
     map y <Plug>(highlightedyank)
   endif
   let g:highlightedyank_highlight_duration = 1000
+  " maps
   " theme setting
   " {
   autocmd ColorScheme janah highlight Normal ctermbg=236
   colorscheme janah
   " }
   "
+  autocmd FileType vim nnoremap <F5> :source %<cr>
+  "
+  
 endfunction
