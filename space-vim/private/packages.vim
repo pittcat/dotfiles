@@ -4,7 +4,7 @@ if g:spacevim_nvim  " nvim
   Plug 'wellle/tmux-complete.vim'
   Plug 'zchee/deoplete-jedi',{'for': 'python'}
   Plug 'carlitux/deoplete-ternjs', {'for':['javascript','vue','javascript.jsx',]}
-  Plug 'zchee/deoplete-clang',{ 'for': ['c', 'cpp']}
+  Plug 'zchee/deoplete-clang',{'for': ['c', 'cpp']}
   " Plug 'mhartington/nvim-typescript',{'for':'typescript'}
   " Plug 'uplus/deoplete-solargraph',{'for':'ruby','do':'gem install solargraph && pip install solargraph-utils.py --user'}
   " Plug 'sebastianmarkow/deoplete-rust',{'for':'rust'}
@@ -37,7 +37,6 @@ Plug 'isRuslan/vim-es6'                     "es6
 " }
 
 "themefor
-Plug 'mhinz/vim-janah'
 if g:spacevim_gui
   Plug 'equalsraf/neovim-gui-shim'
 endif

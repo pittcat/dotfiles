@@ -6,15 +6,15 @@
 function! Layers()
 
   " Default layers, recommended!
-  Layer 'chinese'
-  Layer 'goyo'
-  Layer 'airline'
+  " Layer 'chinese'
+  " Layer 'goyo'
+  " Layer 'airline'
   " Layer 'lightline'
 
   Layer 'fzf'
   Layer 'spacevim'
   Layer 'better-defaults'
-  Layer 'text-align'
+  " Layer 'text-align'
   Layer 'which-key'
 
   Layer 'tmux'
@@ -54,8 +54,11 @@ function! UserInit()
   " let g:spacevim_leader = "<\Space>"
   let g:spacevim_localleader = ','
   Plug 'tweekmonster/startuptime.vim'
+  Plug 'KeitaNakamura/neodark.vim'
   Plug 'machakann/vim-highlightedyank'
   Plug 'tpope/vim-scriptease'
+  Plug 'Shougo/echodoc.vim'
+  Plug 'ferrine/md-img-paste.vim',{'for':'markdown'}
   
 endfunction
 
@@ -65,7 +68,7 @@ endfunction
 function! UserConfig()
 
   " If you enable airline layer and have installed the powerline fonts, set it here.
-  let g:airline_powerline_fonts=1
+  " let g:airline_powerline_fonts=1
   color desert
   syntax on
 
@@ -77,12 +80,23 @@ function! UserConfig()
   let g:highlightedyank_highlight_duration = 1000
   " maps
   " theme setting
-  " {
-  autocmd ColorScheme janah highlight Normal ctermbg=236
-  colorscheme janah
+  " {onedark
+  colorscheme neodark
+  let g:neodark#background = '#202020'
+  let g:neodark#solid_vertsplit = 1
   " }
   "
   autocmd FileType vim nnoremap <F5> :source %<cr>
+
+  set cmdheight=2
+	let g:echodoc_enable_at_startup = 1
   "
-  
+	nmap <silent> <leader>gx <Plug>(openbrowser-open)
+	vmap <silent> <leader>gx <Plug>(openbrowser-open)
+
+  autocmd FileType markdown nnoremap <silent> <leader>mmp :call mdip#MarkdownClipboardImage()<CR>
+  " there are some defaults for image directory and image name, you can change them
+  let g:mdip_imgdir = 'img'
+  let g:mdip_imgname = 'image'
+    
 endfunction
