@@ -43,7 +43,7 @@ DEBIAN="apt install"
 if [[ "$PKMG" = "$ARCH"  ]]; then
   sudo $PKMG gvim the_silver_searcher yaourt clang-tools-extra
   source $HOME/.zshrc
-  yaourt -S shadowsocks-qt5 direnv
+  yaourt -S shadowsocks-qt5  shadowsocks-libev
 elif [[ "$PKMG"="$DEBIAN" ]]; then
   sudo apt-get update
   sudo $PKMG vim-gtk silversearcher-ag python3-pip python-pip direnv

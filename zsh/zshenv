@@ -13,8 +13,8 @@ export PROJECT_PATHS=(~/MEGA/code)
 if hash direnv 2>/dev/null; then
     eval "$(direnv hook zsh)"
 fi
-# remove direnv log loading
-export DIRENV_LOG_FORMAT=
+export DIRENV_LOG_FORMAT=   # remove direnv log loading
+
 
 # python
 export PATH="$HOME/.local/bin:$PATH"     #pipenv

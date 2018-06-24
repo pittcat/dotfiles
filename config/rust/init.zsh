@@ -18,3 +18,4 @@ cargo install rustfmt racer
 
 # lsp
 rustup component add rls-preview rust-analysis rust-src --toolchain nightly
+

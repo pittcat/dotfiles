@@ -59,10 +59,6 @@ git clone https://github.com/andreafrancia/trash-cli.git $HOME/.trash-cli.git
 cd $HOME/.trash-cli.git
 sudo python setup.py install
 cd -
-
-# terminmal daily use ------npm
-sudo npm install -g $(cat npmdaily | egrep -v "^\s*(#|$)")
-
 # --------------------------------------------dev tools -------------------------------------------- #
 
 # --------------------------------------------vim -------------------------------------------- #
@@ -83,10 +79,10 @@ ln -s $PWD/space-vim/UltiSnips/* $HOME/.vim/UltiSnips/
 # --------------------------------------------emacs -------------------------------------------- #
 
 # config emacs
-git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-ln -s $PWD/pittcat-spacemacs/spacemacs ~/.spacemacs
-sudo rm ~/.emacs.d/private/* -r
-ln -s $PWD/pittcat-spacemacs/private/* ~/.emacs.d/private
+# git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+# ln -s $PWD/pittcat-spacemacs/spacemacs ~/.spacemacs
+# sudo rm ~/.emacs.d/private/* -r
+# ln -s $PWD/pittcat-spacemacs/private/* ~/.emacs.d/private
 
 # --------------------------------------------tmux -------------------------------------------- #
 
@@ -111,17 +107,9 @@ ln -s $PWD/tmux/tmux.conf ~/.tmux.conf
 
 # --------------------------------------------lang -------------------------------------------- #
 
-
-
-# python vim  config and include following config
-sudo touch /etc/pip.conf
-mkdir -p ~/.ptpython
-ln -s $PWD/config/python/config.py ~/.ptpython/config.py
-echo "[global]\nindex-url = https://pypi.tuna.tsinghua.edu.cn/simple" | sudo tee /etc/pip.conf
-
-source ~/.zshrc >> /dev/null && zsh
-
-sudo pip3 install -r $PWD/config/python/requirements.txt
-
+# python
 # rust
-zsh $PWD/config/rust/init.sh
+
+# terminmal daily use ------npm
+# sudo npm install -g $(cat npmdaily | egrep -v "^\s*(#|$)")
+
