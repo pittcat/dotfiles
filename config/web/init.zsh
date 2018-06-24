@@ -1,3 +1,8 @@
+if [ -d /etc/apt ];then
+  PKMG="apt install"
+elif [ -d /etc/pacman.d ];then
+  PKMG="pacman -S"
+fi
 # web
 #  vim setting
 # autocomplete
