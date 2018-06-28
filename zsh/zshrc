@@ -45,14 +45,13 @@ Tarrasch/zsh-bd
 djui/alias-tips
 gujiaxi/ranger-cd
 # js
-lukechilds/zsh-better-npm-completion
 # py
 gangleri/pipenv
 EOB
 
 # RobSis/zsh-completion-generator
 GENCOMPL_FPATH=$HOME/.zsh/complete
-zstyle :plugin:zsh-completion-generator clang
+zstyle :plugin:zsh-completion-generator clang 
 
 # Load the theme.
 antigen theme robwierzbowski/charged-zsh-theme
