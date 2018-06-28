@@ -23,9 +23,9 @@ source ~/.zshrc >> /dev/null && zsh
 
 # vim setting
 # autocomplete
-# gem install solargraph
-# pip install solargraph-utils.py --user
-# yard gems 
-# yard config --gem-install-yri
-# gem install rubocop   # ale and neoformat
-# gem install ripper-tags # tagbar
+gem install solargraph
+pip install solargraph-utils.py --user
+yard gems 
+yard config --gem-install-yri
+gem install rubocop   # ale and neoformat
+gem install ripper-tags # tagbar

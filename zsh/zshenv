@@ -55,3 +55,4 @@ zmodload zsh/zpty
 export fpath=($HOME/.fpath $fpath)
 # cask
 export PATH="$HOME/.cask/bin:$PATH"
+
