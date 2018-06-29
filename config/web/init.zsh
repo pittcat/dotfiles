@@ -11,3 +11,5 @@ sudo npm i -g tern
 sudo $PKMG tidy #html
 
 sudo npm install -g $(cat npmpack | egrep -v "^\s*(#|$)")
+
+ln -s $PWD/tern-project ~/.tern-project

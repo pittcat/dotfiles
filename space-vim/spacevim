@@ -1,50 +1,18 @@
-" You can enable the existing layers in space-vim and
-" exclude the partial plugins in a certain layer.
-" The command Layer is vaild in the function Layers().
-" Use exclude option if you don't want the full Layer,
-" e.g., Layer 'better-defaults', { 'exclude': 'itchyny/vim-cursorword' }
-function! Layers()
-
-  " Default layers, recommended!
-  " Layer 'chinese'
-  " Layer 'goyo'
-  " Layer 'airline'
-  " Layer 'lightline'
-
-  Layer 'fzf'
-  Layer 'spacevim'
-  Layer 'better-defaults'
-  " Layer 'text-align'
-  Layer 'which-key'
-
-  Layer 'tmux'
-  Layer 'file-manager'
-  Layer 'better-motion'
-  Layer 'programming'
-  Layer 'editing'
-  Layer 'tagbar-improve'
-  Layer 'git'
-  Layer 'tools-better'
-  Layer 'self-map'
-
-  Layer 'autocomplete'
-  Layer 'lspc'
-  Layer 'codesnippets'
-  Layer 'codeformat'
-  Layer 'moe-check'
-
-  Layer 'html'
-  Layer 'javascript'
-  " Layer 'ruby'
-  Layer 'python'
-  Layer 'c-c++'
-  Layer 'zsh'
-  " Layer 'go'
-  " Layer 'rust'
-  " Layer 'typescript'
-  Layer 'markdown'
-
-endfunction
+let g:spacevim_layers = [
+      \ 'fzf', 'spacevim', 'better-defaults',
+      \ 'which-key','programming',
+      \ 'tmux','file-manager','better-motion',
+      \ 'editing','tagbar-improve','git',
+      \ 'tools-better','self-map',
+      \ 'autocomplete','lspc','codesnippets',
+      \ 'moe-check',
+      \ 'html',
+      \ 'javascript',
+      \ 'c-c++',
+      \ 'markdown',
+      \ 'zsh',
+      \ 'python',
+      \ ]
 
 " Put your private plugins here.
 function! UserInit()
@@ -55,10 +23,7 @@ function! UserInit()
   let g:spacevim_localleader = ','
   Plug 'tweekmonster/startuptime.vim'
   Plug 'KeitaNakamura/neodark.vim'
-  Plug 'machakann/vim-highlightedyank'
   Plug 'tpope/vim-scriptease'
-  Plug 'Shougo/echodoc.vim'
-  Plug 'ferrine/md-img-paste.vim',{'for':'markdown'}
   
 endfunction
 
@@ -74,10 +39,6 @@ function! UserConfig()
 
   nnoremap <silent> <localleader>tt :StartupTime<cr>
   nnoremap <silent> <localleader>pu :UpdateRemotePlugins<cr>
-  if !exists('##TextYankPost')
-    map y <Plug>(highlightedyank)
-  endif
-  let g:highlightedyank_highlight_duration = 1000
   " maps
   " theme setting
   " {onedark
@@ -88,15 +49,5 @@ function! UserConfig()
   "
   autocmd FileType vim nnoremap <F5> :source %<cr>
 
-  set cmdheight=2
-	let g:echodoc_enable_at_startup = 1
   "
-	nmap <silent> <leader>gx <Plug>(openbrowser-open)
-	vmap <silent> <leader>gx <Plug>(openbrowser-open)
-
-  autocmd FileType markdown nnoremap <silent> <leader>mmp :call mdip#MarkdownClipboardImage()<CR>
-  " there are some defaults for image directory and image name, you can change them
-  let g:mdip_imgdir = 'img'
-  let g:mdip_imgname = 'image'
-
 endfunction
