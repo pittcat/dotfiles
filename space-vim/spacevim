@@ -4,7 +4,7 @@ let g:spacevim_layers = [
       \ 'tmux','file-manager','better-motion',
       \ 'editing','tagbar-improve','git',
       \ 'tools-better','self-map',
-      \ 'autocomplete','lspc','codesnippets',
+      \ 'autocomplete','lspc','codesnippets','codeformat',
       \ 'moe-check',
       \ 'html',
       \ 'javascript',

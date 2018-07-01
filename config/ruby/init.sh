@@ -17,15 +17,15 @@ git clone git://github.com/AndorChen/rbenv-china-mirror.git ~/.rbenv/plugins/rbe
 sudo gem update --system
 sudo gem sources --add https://mirrors.tuna.tsinghua.edu.cn/rubygems/ --remove https://rubygems.org/
 
-source ~/.zshrc >> /dev/null && zsh
+# source ~/.zshrc >> /dev/null && zsh
 
 # manual
 
 # vim setting
 # autocomplete
-gem install solargraph
-pip install solargraph-utils.py --user
-yard gems 
-yard config --gem-install-yri
-gem install rubocop   # ale and neoformat
-gem install ripper-tags # tagbar
+# gem install solargraph
+# pip install solargraph-utils.py --user
+# yard gems 
+# yard config --gem-install-yri
+# gem install rubocop   # ale and neoformat
+# gem install ripper-tags # tagbar
