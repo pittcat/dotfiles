@@ -200,7 +200,7 @@ bindsym XF86AudioMute exec amixer set Master toggle
 bindsym $mod+Print exec scrot ~/Image/screenshot.png
 exec --no-startup-id betterlockscreen -u $HOME/Image/bing-wallpaper.jpg
 bindsym $mod+Shift+a exec betterlockscreen --lock
-bindsym $mod+z exec zeal
+
 bindsym $mod+o exec google-chrome-stable
 bindsym $mod+i exec nautilus
 bindsym $mod+u exec okular
@@ -216,3 +216,7 @@ exec_always --no-startup-id ~/.i3/bing-wallpaper.sh
 exec greenclip daemon
 exec megasync
 exec --no-startup-id dunst -config ~/.i3/dunst/dunstrc
+
+# Launch a terminal and move it to scratchpad; dropdown-terminal
+exec --no-startup-id zeal -name scratchzeal
+for_window [instance="scratchzeal"] move scratchpad
