@@ -10,7 +10,6 @@ let g:spacevim_layers = [
       \ 'javascript',
       \ 'c-c++',
       \ 'markdown',
-      \ 'zsh',
       \ 'python',
       \ ]
 
