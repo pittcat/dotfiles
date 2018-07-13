@@ -11,7 +11,6 @@ let g:spacevim_layers = [
       \ 'c-c++',
       \ 'markdown',
       \ 'python',
-      \ 'clojure',
       \ ]
 
 " Put your private plugins here.
