@@ -37,3 +37,4 @@ alias server="browser-sync start -s -f . --no-notify --host $LOCAL_IP --port 900
 alias gcpt='google-chrome-stable  --remote-debugging-port=9222'
 alias gdiff='git diff --color | sed -r "s/^([^-+ ]*)[-+ ]/\\1/" | less -r'
 alias md2pdf='pandoc --pdf-engine=xelatex -V CJKmainfont="Droid Sans Fallback"'
+alias jpnt='nohup jupyter notebook  >/dev/null 2>&1 &'

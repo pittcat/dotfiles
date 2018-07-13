@@ -31,6 +31,8 @@ npm
 ruby
 rbenv
 gem
+# clojure
+lein
 EOB
 # --------------------------------------------other -------------------------------------------- #
 antigen bundles <<EOB
