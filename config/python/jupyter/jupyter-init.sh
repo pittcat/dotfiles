@@ -1,4 +1,7 @@
-sudo pip install jupyter pyecharts
+# chmod a+x jupyter-init.sh
+
+
+pip install jupyter pyecharts
 # sudo jupyter labextension install jupyterlab_vim jupyterlab-drawio @oriolmirosa/jupyterlab_materialdarker
 
 # vim-bind
@@ -11,11 +14,17 @@ git clone https://github.com/lambdalisue/jupyter-vim-binding vim_binding
 jupyter nbextension enable vim_binding/vim_binding
 
 # theme
-sudo pip install jupyterthemes
+pip install jupyterthemes
+jt -t solarizedd -vim
 
-sudo pip install jupyter_contrib_nbextensions
+pip install jupyter_contrib_nbextensions
 jupyter contrib nbextension install --user
 jupyter nbextension enable codefolding/main
 
+# jupyter board
+pip install jupyter_dashboards
+jupyter dashboards quick-setup --sys-prefix
+jupyter nbextension install --py jupyter_dashboards --sys-prefix
+jupyter nbextension enable --py jupyter_dashboards --sys-prefix
 
 ln -s $pwd/custom.js  ~/.jupyter/custom/custom.js
