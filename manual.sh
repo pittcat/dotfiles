@@ -1,19 +1,27 @@
 #!/usr/bin/env bash
 
+if [ -d /etc/pacman.d ];then
+  git clone https://aur.archlinux.org/trizen.git
+  cd trizen
+  makepkg -si
+fi
 # --------------------------------------------zsh and cli-------------------------------------------- #
 
 # install powerline/font
 # clone
-git clone https://github.com/powerline/fonts.git --depth=1
-# install
-cd fonts
-./install.sh
-# clean-up a bit
-cd ..
-rm -rf fonts
-# common font
-curl -L https://github.com/hbin/top-programming-fonts/raw/master/install.sh | bash
+# git clone https://github.com/powerline/fonts.git --depth=1
+# cd fonts
+# ./install.sh ## install
+# cd ..
+# rm -rf fonts  ## # clean-up a bit
+# curl -L https://github.com/hbin/top-programming-fonts/raw/master/install.sh | bash    ## common font
 # Noto Mono for Powerline Bold ---terminal
+
+if [ -d /etc/apt ];then
+  sudo apt install fonts-firacode
+else
+  yaourt -S  otf-fira-code-git
+fi
 
 # install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf

@@ -8,7 +8,7 @@ set $mod Mod4
 set $scriptdir $HOME/.i3
 
 #font xft:Cousine bold 7.2
-font pango:Noto Mono 10
+font pango:Fira Code 10
 
 new_window pixel 3
 
@@ -53,7 +53,7 @@ client.unfocused        $black    $black    #FFFFFF   #000000
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec ~/.i3/xfce4-terminal-pwd.sh
+bindsym $mod+Return exec xfce4-terminal --working-directory="`xcwd`"
 
 # kill focused window
 bindsym $mod+c kill
