@@ -1,7 +1,8 @@
 let g:spacevim_layers = [
-      \ 'fzf', 'spacevim', 'better-defaults',
+      \ 'spacevim', 'better-defaults',
       \ 'which-key','programming',
-      \ 'tmux','file-manager','better-motion',
+      \ 'tmux',
+      \ 'better-motion',
       \ 'editing','tagbar-improve','git',
       \ 'tools-better','self-map',
       \ 'autocomplete','lspc','codesnippets','codeformat',
@@ -11,8 +12,11 @@ let g:spacevim_layers = [
       \ 'c-c++',
       \ 'markdown',
       \ 'python',
+      \ 'fzf',
+      \ 'ranger'
       \ ]
 
+      " \ 'file-manager',
 " Put your private plugins here.
 function! UserInit()
 
@@ -47,6 +51,7 @@ function! UserConfig()
   " }
   "
   autocmd FileType vim nnoremap <F5> :source %<cr>
+
 
   "
 endfunction
