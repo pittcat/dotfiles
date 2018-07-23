@@ -4,7 +4,7 @@ let g:spacevim_layers = [
       \ 'tmux',
       \ 'better-motion',
       \ 'editing',
-      \ 'tagbar-improve',
+      \ 'moe-tagbar',
       \ 'git',
       \ 'tools-better',
       \ 'self-map',
