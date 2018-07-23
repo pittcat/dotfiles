@@ -1,4 +1,3 @@
-" if g:spacevim.nvim  " nvim
 
   " deoplete lang
   Plug 'wellle/tmux-complete.vim'
@@ -14,22 +13,13 @@
   Plug 'Shougo/neoinclude.vim'      "include completion
   Plug 'Shougo/neco-vim'         "syntax completion
 
-" else  "vim8
-  " completor.vim
-  " Plug 'xaizek/vim-inccomplete',{'for':['c','cpp']}
-  " Plug 'osyo-manga/vim-monster',{'for':'ruby','do':'gem install solargraph'}     " ruby------->gem install solargraph
-  " Plug 'maralla/completor-typescript'
+  " snippets
+  " {
+  " web 
+  "
+  " Plug 'jvanja/vim-bootstrap4-snippets'       "html
+  Plug 'epilande/vim-react-snippets'          "react
+  Plug 'isRuslan/vim-es6'                     "es6
+  " cpp
+  " }
 
-" endif 
-
-" snippets
-" {
-" web 
-"
-" Plug 'jvanja/vim-bootstrap4-snippets'       "html
-Plug 'epilande/vim-react-snippets'          "react
-Plug 'isRuslan/vim-es6'                     "es6
-" cpp
-" }
-
-"themefor
