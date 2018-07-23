@@ -1,4 +1,3 @@
-if g:spacevim_nvim
 
   autocmd InsertEnter * call deoplete#enable()
   
@@ -60,18 +59,6 @@ if g:spacevim_nvim
 
 
   
-
-else    "vim8
-    let g:completor_clang_binary='/usr/bin/clang' "c++
-    let completor_node_binary='/usr/bin/node'   "javascript
-    let g:completor_python_binary = '/usr/bin/python3' "python 
-    let g:monster#completion#backend = 'solargraph'    "ruby
-    let g:completor_gocode_binary='~/.go/bin/gocode' "go
-    let g:completor_racer_binary='~/.cargo/bin/racer' "rust
-    let g:completor_tsserver_binary = '/usr/bin/tsserver' " typescript
-endif 
-
-
 
 autocmd BufEnter spacevim setfiletype vim
 

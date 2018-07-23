@@ -1,4 +1,4 @@
-if g:spacevim_nvim  " nvim
+" if g:spacevim.nvim  " nvim
 
   " deoplete lang
   Plug 'wellle/tmux-complete.vim'
@@ -10,23 +10,20 @@ if g:spacevim_nvim  " nvim
   " Plug 'sebastianmarkow/deoplete-rust',{'for':'rust'}
   " Plug 'zchee/deoplete-go', { 'do': 'make'}
 
-
   " common 
   Plug 'Shougo/neoinclude.vim'      "include completion
   Plug 'Shougo/neco-vim'         "syntax completion
 
-else  "vim8
+" else  "vim8
   " completor.vim
-  Plug 'xaizek/vim-inccomplete',{'for':['c','cpp']}
+  " Plug 'xaizek/vim-inccomplete',{'for':['c','cpp']}
   " Plug 'osyo-manga/vim-monster',{'for':'ruby','do':'gem install solargraph'}     " ruby------->gem install solargraph
   " Plug 'maralla/completor-typescript'
 
-endif 
-
+" endif 
 
 " snippets
 " {
-
 " web 
 "
 " Plug 'jvanja/vim-bootstrap4-snippets'       "html
