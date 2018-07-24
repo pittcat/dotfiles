@@ -1,3 +1,5 @@
+let g:spacevim_plug_home = '~/.vim/plugged'
+
 let g:spacevim_layers = [
       \ 'spacevim', 'better-defaults',
       \ 'which-key','programming',
