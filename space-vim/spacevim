@@ -1,3 +1,6 @@
+if g:spacevim.vim8
+  call spacevim#autocmd#escalt#Init()
+endif
 let g:spacevim_plug_home = '~/.vim/plugged'
 
 let g:spacevim_layers = [
@@ -57,6 +60,7 @@ function! UserConfig()
   "
   autocmd FileType vim nnoremap <F5> :source %<cr>
 
+  
 
   "
 endfunction
