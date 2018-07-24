@@ -5,7 +5,6 @@
   Plug 'carlitux/deoplete-ternjs', {'for':['javascript','vue','javascript.jsx',]}
   Plug 'zchee/deoplete-clang',{'for': ['c', 'cpp']}
   " Plug 'mhartington/nvim-typescript',{'for':'typescript'}
-  " Plug 'uplus/deoplete-solargraph',{'for':'ruby'}
   " Plug 'sebastianmarkow/deoplete-rust',{'for':'rust'}
   " Plug 'zchee/deoplete-go', { 'do': 'make'}
 
