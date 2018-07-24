@@ -34,8 +34,6 @@ gem
 EOB
 # --------------------------------------------other -------------------------------------------- #
 antigen bundles <<EOB
-# unixorn/autoupdate-antigen.zshplugin
-RobSis/zsh-completion-generator
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
 zsh-users/zsh-syntax-highlighting
@@ -43,7 +41,6 @@ changyuheng/zsh-interactive-cd
 hlissner/zsh-autopair
 Tarrasch/zsh-bd
 djui/alias-tips
-gujiaxi/ranger-cd
 # js
 # py
 gangleri/pipenv
@@ -63,8 +60,7 @@ antigen apply
 . $HOME/.zshaliases
 # function
 . $HOME/.zshfunction
+# keybind
+. $HOME/.zshkeybind
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-
-

@@ -70,5 +70,4 @@ ln -s $PWD/zsh/zshrc ~/.zshrc
 ln -s $PWD/zsh/zshaliases ~/.zshaliases
 ln -s $PWD/zsh/zshfunction ~/.zshfunction
 ln -s $PWD/zsh/zshenv ~/.zshenv
-
-
+ln -s $PWD/zsh/zshkeybind ~/.zshkeybind

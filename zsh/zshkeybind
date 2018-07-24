@@ -1,0 +1,6 @@
+openRanger() {
+  ranger <$TTY; zle redisplay;
+}
+
+zle     -N   openRanger
+bindkey '^O' openRanger
