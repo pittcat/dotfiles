@@ -55,7 +55,8 @@ call deoplete#custom#source('LanguageClient',
 call deoplete#custom#source('ultisnips', 'rank', 1000)    " change the snippet ranking
 call deoplete#custom#option('ignore_sources', {'python': ['LanguageClient'],
       \'javascript':['LanguageClient'],'javascript.jsx':['LanguageClient'],'typescript':['LanguageClient'],
-      \'cpp':['LanguageClient'],'c':['LanguageClient']})    " disable LC
+      \'cpp':['LanguageClient'],'c':['LanguageClient']
+      \ })    " disable LC
 
 
   
