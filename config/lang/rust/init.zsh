@@ -1,6 +1,5 @@
 # rust
 # install rust
-# curl -sf -L https://static.rust-lang.org/rustup.sh | sh
 curl https://sh.rustup.rs -sSf | sh
 # rust china mirrors
 mkdir -p $HOME/.cargo
@@ -10,14 +9,15 @@ replace-with = 'ustc'
 [source.ustc]
 registry = 'git://mirrors.ustc.edu.cn/crates.io-index'" > $HOME/.cargo/config
 
-source ~/.zshrc >> /dev/null && zsh
+
+source $HOME/.cargo/env
 # vim setting
 # complete  format check
 
 rustup toolchain add nightly
-rustup component add rustfmt-preview --toolchain nightly
-cargo +nightly install rustfmt racer
+cargo +nightly install racer
+rustup component add rustfmt-preview
 
 # lsp
-rustup component add rls-preview rust-analysis rust-src --toolchain nightly
-
+rustup update
+rustup component add rls-preview rust-analysis rust-src
