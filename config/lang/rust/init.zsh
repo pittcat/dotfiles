@@ -14,7 +14,9 @@ source ~/.zshrc >> /dev/null && zsh
 # vim setting
 # complete  format check
 
-cargo install rustfmt racer
+rustup toolchain add nightly
+rustup component add rustfmt-preview --toolchain nightly
+cargo +nightly install rustfmt racer
 
 # lsp
 rustup component add rls-preview rust-analysis rust-src --toolchain nightly
