@@ -55,4 +55,7 @@ zmodload zsh/zpty
 export fpath=($HOME/.fpath $fpath)
 # cask
 export PATH="$HOME/.cask/bin:$PATH"
+# conda
+# https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/
+export PATH="$HOME/.miniconda/bin:$PATH"
 
