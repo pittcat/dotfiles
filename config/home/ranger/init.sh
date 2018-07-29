@@ -9,4 +9,4 @@ else
 fi
 
 ln -s $PWD/rc.conf $HOME/.config/ranger/
-
+ln -s $PWD/commands.py  $HOME/.config/ranger
