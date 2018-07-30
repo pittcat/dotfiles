@@ -1,9 +1,8 @@
 # Note: to find the name of a key, use xev
 # Note: to find the a window's parameters, use xprop
 
-# mod key = Windows key
+set $alt Mod1
 set $mod Mod4
-
 # directory containing personal scripts
 set $scriptdir $HOME/.i3
 
@@ -205,6 +204,9 @@ bindsym $mod+o exec google-chrome-stable
 bindsym $mod+i exec nautilus
 bindsym $mod+u exec okular
 
+# alt key binding
+bindsym $alt+t exec tdrop -ma -w -4 -y "15"  xfce4-terminal
+
 # bar
 exec_always $HOME/.config/polybar/launch.sh
 
@@ -220,3 +222,4 @@ exec --no-startup-id dunst -config ~/.i3/dunst/dunstrc
 # Launch a terminal and move it to scratchpad; dropdown-terminal
 exec --no-startup-id zeal -name scratchzeal
 for_window [instance="scratchzeal"] move scratchpad
+

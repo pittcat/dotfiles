@@ -12,6 +12,7 @@
    * feh
    * betterlockscreen
    * zeal
+   * tdrop-git
 ## Config
     chmod a+x ./init.sh
   ./init.sh

@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-sudo trizen -S conky rofi nautilus fcitx google-chrome rofi-greenclip xorg-xprop okular polybar dunst feh betterlockscreen  zeal
+sudo trizen -S conky rofi nautilus fcitx google-chrome rofi-greenclip xorg-xprop okular polybar dunst feh betterlockscreen  zeal tdrop-git
 
 ln -s $PWD/i3 $HOME/.i3
 ln -s $PWD/polybar $HOME/.config/    
