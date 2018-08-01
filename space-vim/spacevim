@@ -13,7 +13,7 @@ let g:spacevim_layers = [
       \ 'git',
       \ 'tools-better',
       \ 'self-map',
-      \ 'autocomplete','lspc','codesnippets','codeformat',
+      \ 'autocomplete','lspc','codesnippets',
       \ 'moe-ale',
       \ 'html',
       \ 'javascript',
@@ -24,6 +24,7 @@ let g:spacevim_layers = [
       \ 'ranger'
       \ ]
 
+      " \ 'codeformat',
       " \ 'file-manager',
 " Put your private plugins here.
 function! UserInit()
