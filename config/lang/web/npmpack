@@ -3,10 +3,10 @@
 eslint 
 #css
 prettier
-#web 格式化
+#web format
 # html
 prettydiff
-#前端格式化
+#web format
 prettier
 # lsp
 #vim lsp for typescript and javascript

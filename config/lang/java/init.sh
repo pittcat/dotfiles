@@ -2,7 +2,7 @@
 #!/usr/bin/env sh
 
 if hash trizen 2>/dev/null; then
-  trizen -S uncrustify jdtls
+  trizen -S uncrustify jdtls google-java-format-git
 elseif
   echo "Please install trizen"
 fi
