@@ -14,7 +14,7 @@ let g:spacevim_layers = [
       \ 'tools-better',
       \ 'self-map',
       \ 'autocomplete','lspc','codesnippets','codeformat',
-      \ 'moe-check',
+      \ 'moe-ale',
       \ 'html',
       \ 'javascript',
       \ 'c-c++',
