@@ -10,3 +10,4 @@ Guifont Fira Code:h14
   " call rpcnotify(1, 'Gui', 'Option', 'Tabline', 0)
   " call rpcnotify(1, 'Gui', 'Option', 'Cmdline', 1)
 " endif
+set mouse=a
