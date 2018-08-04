@@ -20,9 +20,9 @@ let g:spacevim_layers = [
       \ 'c-c++',
       \ 'markdown',
       \ 'python',
-      \ 'fzf',
       \ 'ranger',
       \ 'moe-tags',
+      \ 'fzf',
       \ ]
 
       " \ 'codeformat',
