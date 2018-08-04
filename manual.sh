@@ -45,7 +45,8 @@ if [ -d /etc/apt ];then
   sudo apt install exuberant-ctags
   ln -s $PWD/config/ctags ~/.ctags
 else
-  yaourt -S universal-ctags
+  trizen -S universal-ctags-git cscope
+  mkdir -p ~/.ctags.d/
   ln -s $PWD/config/ctags ~/.ctags.d/.ctags
 fi
 # ripgrep
