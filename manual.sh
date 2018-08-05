@@ -45,7 +45,8 @@ if [ -d /etc/apt ];then
   sudo apt install exuberant-ctags
   ln -s $PWD/config/ctags ~/.ctags
 else
-  trizen -S universal-ctags-git cscope
+  trizen -S universal-ctags-git cscope global
+  pip install pygments --users
   mkdir -p ~/.ctags.d/
   ln -s $PWD/config/ctags ~/.ctags.d/.ctags
 fi
