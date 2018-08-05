@@ -79,10 +79,8 @@ git clone -b dotfiles https://github.com/pittcat/space-vim.git ~/.space-vim
 ln -s $PWD/space-vim/spacevim $HOME/.spacevim
 sudo rm $HOME/.space-vim/private/* -r
 ln -s $PWD/space-vim/private/* $HOME/.space-vim/private/
-mkdir -p $HOME/.vim/UltiSnips/
-mkdir -p $HOME/.config/nvim/UltiSnips/
-ln -s $PWD/space-vim/UltiSnips/* $HOME/.config/nvim/UltiSnips/
-ln -s $PWD/space-vim/UltiSnips/* $HOME/.vim/UltiSnips/
+ln -s $PWD/space-vim/UltiSnips/ $HOME/.config/nvim/
+ln -s $PWD/space-vim/UltiSnips/ $HOME/.vim/
 # cd ~/.space-vim
 # make vim 
 
