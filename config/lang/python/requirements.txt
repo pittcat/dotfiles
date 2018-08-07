@@ -4,9 +4,10 @@ flake8
 jedi 
 ipython 
 ptpython
-neovim 
+## neovim 
 ## vim 
 thefuck
+'python-language-server[all]'
 isort
 mistune
 psutil 
