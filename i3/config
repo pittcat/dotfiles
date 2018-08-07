@@ -206,8 +206,7 @@ bindsym $mod+u exec okular
 
 # alt key binding
 bindsym $alt+t exec tdrop -ma -w -4 -y "15"  xfce4-terminal
-bindsym $alt+p exec tdrop -ma auto_show
-bindsym $alt+Shift+p exec tdrop -ma auto_hide
+
 # bar
 exec_always $HOME/.config/polybar/launch.sh
 
