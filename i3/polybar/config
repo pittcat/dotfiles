@@ -188,6 +188,7 @@ label-overline = ${colors.background}
 
 [module/date]
 type = internal/date
+exec = TZ=Asia/Shanghai date +"Shanghai: %H:%M"
 interval = 2
 
 format-prefix = "  "
