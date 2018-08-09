@@ -203,6 +203,7 @@ bindsym $mod+Shift+a exec betterlockscreen --lock
 bindsym $mod+o exec google-chrome-stable
 bindsym $mod+i exec nautilus
 bindsym $mod+u exec okular
+bindsym $mod+z exec zeal
 
 # alt key binding
 bindsym $alt+t exec tdrop -ma -w -4 -y "15"  xfce4-terminal
