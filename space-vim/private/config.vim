@@ -59,8 +59,3 @@ call deoplete#custom#option('ignore_sources', {'python': ['LanguageClient'],
 
       " \'cpp':['LanguageClient'],'c':['LanguageClient']
 
-  
-
-autocmd BufEnter spacevim setfiletype vim
-
-
