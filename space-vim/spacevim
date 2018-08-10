@@ -13,7 +13,7 @@ let g:spacevim_layers = [
       \ 'git',
       \ 'tools-better',
       \ 'self-map',
-      \ 'autocomplete','lspc','codesnippets',
+      \'lspc','codesnippets',
       \ 'moe-ale',
       \ 'html',
       \ 'javascript',
@@ -23,6 +23,7 @@ let g:spacevim_layers = [
       \ 'ranger',
       \ 'moe-tags',
       \ 'fzf',
+      \ 'autocomplete'
       \ ]
 
       " \ 'codeformat',
