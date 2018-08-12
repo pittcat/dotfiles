@@ -7,7 +7,6 @@ ptpython
 ## neovim 
 ## vim 
 thefuck
-'python-language-server[all]'
 isort
 mistune
 psutil 
