@@ -116,7 +116,7 @@ ln -s $PWD/tmux/tmux.conf ~/.tmux.conf
 # --------------------------------------------lang -------------------------------------------- #
 
 # python
-pip install 'python-language-server[all]' --user
+# pip install 'python-language-server[all]' --user
 # rust
 
 # terminmal daily use ------npm
