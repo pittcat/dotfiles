@@ -23,9 +23,10 @@ let g:spacevim_layers = [
       \ 'ranger',
       \ 'moe-tags',
       \ 'fzf',
-      \ 'autocomplete'
+      \ 'moe-ncm2'
       \ ]
 
+      " \ 'autocomplete'
       " \ 'codeformat',
       " \ 'file-manager',
 " Put your private plugins here.
