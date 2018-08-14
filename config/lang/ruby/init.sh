@@ -16,6 +16,7 @@ git clone git://github.com/AndorChen/rbenv-china-mirror.git ~/.rbenv/plugins/rbe
 # change mirrors to tuna
 sudo gem update --system
 sudo gem sources --add https://mirrors.tuna.tsinghua.edu.cn/rubygems/ --remove https://rubygems.org/
+gem sources --add https://mirrors.tuna.tsinghua.edu.cn/rubygems/ --remove https://rubygems.org/
 
 # source ~/.zshrc >> /dev/null && zsh
 
