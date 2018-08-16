@@ -51,7 +51,8 @@ GENCOMPL_FPATH=$HOME/.zsh/complete
 zstyle :plugin:zsh-completion-generator clang 
 
 # Load the theme.
-antigen theme robwierzbowski/charged-zsh-theme
+# antigen theme robwierzbowski/charged-zsh-theme
+antigen theme hoffi/zsh-theme-lambda
 
 # # Tell Antigen that you're done.
 antigen apply
