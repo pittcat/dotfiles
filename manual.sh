@@ -46,7 +46,7 @@ if [ -d /etc/apt ];then
   ln -s $PWD/config/ctags ~/.ctags
 else
   trizen -S universal-ctags-git cscope global
-  pip install pygments --users
+  pip install pygments --user
   mkdir -p ~/.ctags.d/
   ln -s $PWD/config/ctags ~/.ctags.d/.ctags
 fi
