@@ -5,7 +5,8 @@ else
   npm i -g bash-language-server
 fi
 
-if hash yaourt 2>/dev/null; then
+if hash trizen 2>/dev/null; then
   # vim format
-  yaourt -S shfmt
+  trizen -S shfmt
 fi
+
