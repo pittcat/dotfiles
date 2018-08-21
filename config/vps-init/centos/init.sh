@@ -9,5 +9,3 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 mkdir -p $HOME/.antigen/
 curl -L git.io/antigen > $HOME/.antigen/antigen.zsh
 cp $PWD/zshrc ~/.zshrc
-# config tmux
-cp $PWD/tmux.conf ~/.tmux.conf
