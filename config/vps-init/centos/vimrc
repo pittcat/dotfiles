@@ -145,10 +145,6 @@ nnoremap <leader>wj <C-W>j
 nnoremap <leader>wk <C-W>k
 nnoremap <leader>wh <C-W>h
 nnoremap <leader>wl <C-W>l
-tnoremap <leader>wj <C-W>j
-tnoremap <leader>wk <C-W>k
-tnoremap <leader>wh <C-W>h
-tnoremap <leader>wl <C-W>l
 nnoremap <leader>wH <C-W>5<
 nnoremap <leader>wL <C-W>5>
 nnoremap <leader>wJ :resize +5<CR>
