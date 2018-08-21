@@ -1,7 +1,7 @@
 
 " leader
-let mapleader = '<space>'
-let g:mapleader = '<space>'
+let mapleader = "<space>"
+let g:mapleader = "<space>"
 
 " syntax
 syntax on
