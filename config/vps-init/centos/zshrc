@@ -20,7 +20,6 @@ zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
 zsh-users/zsh-syntax-highlighting
 changyuheng/zsh-interactive-cd
-hlissner/zsh-autopair
 Tarrasch/zsh-bd
 djui/alias-tips
 EOB
