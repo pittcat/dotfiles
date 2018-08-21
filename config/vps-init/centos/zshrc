@@ -35,7 +35,5 @@ antigen theme hoffi/zsh-theme-lambda
 # # Tell Antigen that you're done.
 antigen apply
 
-# alias
-. $HOME/.zshaliases
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
