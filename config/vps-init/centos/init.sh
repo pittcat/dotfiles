@@ -9,3 +9,5 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 mkdir -p $HOME/.antigen/
 curl -L git.io/antigen > $HOME/.antigen/antigen.zsh
 cp $PWD/zshrc ~/.zshrc
+# vimrc
+curl https://raw.githubusercontent.com/pittcat/dotfiles/dotfiles/config/vps-init/centos/vimrc > ~/.vimrc

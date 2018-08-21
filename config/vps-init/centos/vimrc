@@ -1,6 +1,6 @@
 
 " leader
-let mapleader = ','
+let mapleader = '<space>'
 let g:mapleader = '<space>'
 
 " syntax
@@ -137,28 +137,28 @@ set laststatus=2   " Always show the status line - use 2 lines for the status ba
 
 " ============================ key map ============================
 " Windows map
-nnoremap <Leader>ww <C-W>w
-nnoremap <Leader>wr <C-W>r
-nnoremap <Leader>wd <C-W>c
-nnoremap <Leader>wq <C-W>q
-nnoremap <Leader>wj <C-W>j
-nnoremap <Leader>wk <C-W>k
-nnoremap <Leader>wh <C-W>h
-nnoremap <Leader>wl <C-W>l
-tnoremap <Leader>wj <C-W>j
-tnoremap <Leader>wk <C-W>k
-tnoremap <Leader>wh <C-W>h
-tnoremap <Leader>wl <C-W>l
-nnoremap <Leader>wH <C-W>5<
-nnoremap <Leader>wL <C-W>5>
-nnoremap <Leader>wJ :resize +5<CR>
-nnoremap <Leader>wK :resize -5<CR>
-nnoremap <Leader>w= <C-W>=
-nnoremap <Leader>ws <C-W>s
-nnoremap <Leader>w- <C-W>s
-nnoremap <Leader>wv <C-W>v
-nnoremap <Leader>w\| <C-W>v
-nnoremap <Leader>w2 <C-W>v
+nnoremap <leader>ww <C-W>w
+nnoremap <leader>wr <C-W>r
+nnoremap <leader>wd <C-W>c
+nnoremap <leader>wq <C-W>q
+nnoremap <leader>wj <C-W>j
+nnoremap <leader>wk <C-W>k
+nnoremap <leader>wh <C-W>h
+nnoremap <leader>wl <C-W>l
+tnoremap <leader>wj <C-W>j
+tnoremap <leader>wk <C-W>k
+tnoremap <leader>wh <C-W>h
+tnoremap <leader>wl <C-W>l
+nnoremap <leader>wH <C-W>5<
+nnoremap <leader>wL <C-W>5>
+nnoremap <leader>wJ :resize +5<CR>
+nnoremap <leader>wK :resize -5<CR>
+nnoremap <leader>w= <C-W>=
+nnoremap <leader>ws <C-W>s
+nnoremap <leader>w- <C-W>s
+nnoremap <leader>wv <C-W>v
+nnoremap <leader>w\| <C-W>v
+nnoremap <leader>w2 <C-W>v
 
 nnoremap <F2> :set nu! nu?<CR>
 nnoremap <F3> :set list! list?<CR>
