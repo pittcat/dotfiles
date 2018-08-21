@@ -1,0 +1,42 @@
+source $HOME/.antigen/antigen.zsh
+
+# oh-my-zsh
+antigen use oh-my-zsh
+
+antigen bundles <<EOB
+# systemd
+git
+autojump
+extract
+tmux
+sudo
+copydir
+command-not-found
+copyfile
+EOB
+# --------------------------------------------other -------------------------------------------- #
+antigen bundles <<EOB
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-completions
+zsh-users/zsh-syntax-highlighting
+changyuheng/zsh-interactive-cd
+hlissner/zsh-autopair
+Tarrasch/zsh-bd
+djui/alias-tips
+EOB
+
+# RobSis/zsh-completion-generator
+GENCOMPL_FPATH=$HOME/.zsh/complete
+zstyle :plugin:zsh-completion-generator clang 
+
+# Load the theme.
+# antigen theme robwierzbowski/charged-zsh-theme
+antigen theme hoffi/zsh-theme-lambda
+
+# # Tell Antigen that you're done.
+antigen apply
+
+# alias
+. $HOME/.zshaliases
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
