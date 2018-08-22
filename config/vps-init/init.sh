@@ -13,8 +13,8 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 # config zsh
 mkdir -p $HOME/.antigen/
 curl -L git.io/antigen > $HOME/.antigen/antigen.zsh
-curl https://raw.githubusercontent.com/pittcat/dotfiles/dotfiles/config/vps-init/centos/zshrc > ~/.zshrc
+curl https://raw.githubusercontent.com/pittcat/dotfiles/dotfiles/config/vps-init/zshrc > ~/.zshrc
 # vimrc
-curl https://raw.githubusercontent.com/pittcat/dotfiles/dotfiles/config/vps-init/centos/vimrc > ~/.vimrc
+curl https://raw.githubusercontent.com/pittcat/dotfiles/dotfiles/config/vps-init/vimrc > ~/.vimrc
 # mosh
 sudo iptables -I INPUT 1 -p udp --dport 60000:61000 -j ACCEPT
