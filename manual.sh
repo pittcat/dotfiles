@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
-if [ -d /etc/pacman.d ];then
-  git clone https://aur.archlinux.org/trizen.git
-  cd trizen
-  makepkg -si
-fi
+git clone https://aur.archlinux.org/trizen.git
+cd trizen
+makepkg -si
 # --------------------------------------------zsh and cli-------------------------------------------- #
 
 # install powerline/font
@@ -17,11 +15,10 @@ fi
 # curl -L https://github.com/hbin/top-programming-fonts/raw/master/install.sh | bash    ## common font
 # Noto Mono for Powerline Bold ---terminal
 
-if [ -d /etc/apt ];then
-  sudo apt install fonts-firacode
-else
-  yaourt -S  otf-fira-code-git
-fi
+  
+trizen -S  otf-fira-code-git
+# bat  ripgrep
+sudo pacman -S bat ripgrep
 
 # install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -41,23 +38,10 @@ fi
 
 # tags
 
-if [ -d /etc/apt ];then
-  sudo apt install exuberant-ctags
-  ln -s $PWD/config/ctags ~/.ctags
-else
-  trizen -S universal-ctags-git cscope global
-  pip install pygments --user
-  mkdir -p ~/.ctags.d/
-  ln -s $PWD/config/ctags ~/.ctags.d/.ctags
-fi
-# ripgrep
-if [ -d /etc/apt ];then
-  curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.8.1/ripgrep_0.8.1_amd64.deb
-  sudo dpkg -i ripgrep_0.8.1_amd64.deb
-  rm ripgrep_0.8._amd64.deb
-elif [ -d /etc/pacman.d ];then
-  sudo pacman -S ripgrep
-fi
+trizen -S universal-ctags-git cscope global
+pip install pygments --user
+mkdir -p ~/.ctags.d/
+ln -s $PWD/config/ctags ~/.ctags.d/.ctags
 
 
 # has

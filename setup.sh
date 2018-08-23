@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 # set package manager
-if [ -d /etc/apt ];then
-  PKMG="apt install"
-elif [ -d /etc/pacman.d ];then
-  PKMG="pacman -S"
-fi
+PKMG="pacman -S"
 ## --------------------------------------------must install -------------------------------------------- ##
 # common must install 
 sudo $PKMG zsh tmux git curl emacs rsync nodejs npm tig cmake xsel xclip privoxy ranger httpie neovim net-tools xcape mosh
@@ -38,16 +34,9 @@ else
 fi
 
 # choose install
-ARCH="pacman -S"
-DEBIAN="apt install"
-if [[ "$PKMG" = "$ARCH"  ]]; then
-  sudo $PKMG gvim the_silver_searcher yaourt clang-tools-extra
-  source $HOME/.zshrc
-  yaourt -S shadowsocks-qt5  shadowsocks-libev
-elif [[ "$PKMG"="$DEBIAN" ]]; then
-  sudo apt-get update
-  sudo $PKMG vim-gtk silversearcher-ag python3-pip python-pip direnv
-fi
+sudo $PKMG gvim the_silver_searcher yaourt clang-tools-extra
+source $HOME/.zshrc
+yaourt -S shadowsocks-qt5  shadowsocks-libev
 
 # --------------------------------------------common config -------------------------------------------- #
 

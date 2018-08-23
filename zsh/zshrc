@@ -3,11 +3,8 @@ source $HOME/.antigen/antigen.zsh
 # oh-my-zsh
 antigen use oh-my-zsh
 
-if [ -d /etc/apt ];then
-  antigen bundle debian
-elif [ -d /etc/pacman.d ];then
-  antigen bundle archlinux
-fi
+antigen bundle archlinux
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
   antigen bundle osx
   antigen bundle brew
