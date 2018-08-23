@@ -2,7 +2,6 @@ if hash thefuck 2>/dev/null ; then
     eval "$(thefuck --alias fk)"
 fi
 alias jz="j $HOME/Desktop"
-alias so="sudo openvpn --config /bin/42.ovpn"
 alias pmms="python3 manage.py makemigrations"
 # alias scdp='sed -i s/pypi.python.org/pypi.tuna.tsinghua.edu.cn/g Pipfile'
 alias pmm="python3 manage.py migrate"
