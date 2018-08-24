@@ -23,6 +23,7 @@ nnoremap <Leader>fs :w<CR>
 nnoremap <Leader>? :action GotoAction<CR>
 nnoremap gd :action GotoDeclaration<CR>
 nnoremap gi :action GotoImplementation<CR>
+nnoremap <leader>sa :action $SelectAll<CR>
 
 " project search
 nnoremap <Leader>ps :action SearchEverywhere<CR>
