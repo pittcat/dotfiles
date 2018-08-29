@@ -17,6 +17,7 @@ let g:spacevim_layers = [
       \ 'moe-ale',
       \ 'html',
       \ 'javascript',
+      \ 'typescript',
       \ 'c-c++',
       \ 'markdown',
       \ 'python',
