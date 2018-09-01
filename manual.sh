@@ -3,6 +3,7 @@
 git clone https://aur.archlinux.org/trizen.git
 cd trizen
 makepkg -si
+cd .. && sudo rm trizen -r
 # --------------------------------------------zsh and cli-------------------------------------------- #
 
 # install powerline/font
@@ -53,6 +54,9 @@ git clone https://github.com/andreafrancia/trash-cli.git $HOME/.trash-cli.git
 cd $HOME/.trash-cli.git
 sudo python setup.py install
 cd -
+
+# prettyping
+trizen  -S  prettyping
 # --------------------------------------------dev tools -------------------------------------------- #
 
 # --------------------------------------------vim -------------------------------------------- #
