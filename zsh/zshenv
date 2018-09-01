@@ -15,24 +15,25 @@ if hash direnv 2>/dev/null; then
 fi
 export DIRENV_LOG_FORMAT=   # remove direnv log loading
 
+export PATH=$PATH:$HOME/.local/bin
 
 # python
-export PATH="$HOME/.local/bin:$PATH"     #pipenv
+export PYTHONPATH=$PYTHONPATH:$HOME/.local/lib/python3.7/site-packages:/usr/lib/python3.7/site-packages
 
 # nodejs
-export PATH=~/.npm-global/bin:$PATH
-export NPM_CONFIG_PREFIX=~/.npm-global
+export NPM_CONFIG_PREFIX=$HOME/.npm-global
+export PATH=$PATH:$HOME/.npm-global/bin
 # vim--deoplete tern 
 ulimit -n 2048
 
 # rust
 if [ -d "$HOME/.cargo/bin" ] ; then
-	PATH="$HOME/.cargo/bin:$PATH"
+    PATH=$PATH:$HOME/.cargo/bin
 fi
 
 # ruby
 if [[ -d "$HOME/.rbenv/bin" ]]; then
-    export PATH="$HOME/.rbenv/bin:$PATH"
+    export PATH=$PATH:$HOME/.rbenv/bin
     eval "$(rbenv init -)"
 fi
 
@@ -54,7 +55,7 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 zmodload zsh/zpty
 export fpath=($HOME/.fpath $fpath)
 # cask
-export PATH="$HOME/.cask/bin:$PATH"
+export PATH=$PATH:$HOME/.cask/bin
 # conda
 # https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/
 export PATH="$HOME/.miniconda/bin:$PATH"
