@@ -1,0 +1,58 @@
+(source "gnu"   "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+(source "melpa" "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+
+;; appearance
+(depends-on "doom-themes")
+(depends-on "dashboard")
+(depends-on "hlinum")
+(depends-on "moe-theme")
+
+;; evil-mode
+(depends-on "evil")
+(depends-on "evil-visualstar")
+(depends-on "evil-leader")
+(depends-on "evil-surround")
+(depends-on "evil-nerd-commenter")
+(depends-on "evil-quickscope")
+
+;; company-snippets
+(depends-on "company")
+(depends-on "yasnippet")
+(depends-on "yasnippet-snippets")
+
+
+;; helm
+(depends-on "helm")
+(depends-on "helm-ag")
+(depends-on "helm-swoop")
+(depends-on "helm-describe-modes")
+
+
+;; tools
+(depends-on "youdao-dictionary")
+(depends-on "google-this")
+
+;; better-default
+(depends-on "which-key")
+(depends-on "iedit")
+(depends-on "autopair")
+(depends-on "highlight-indentation")
+(depends-on "restart-emacs")
+(depends-on "real-auto-save")
+(depends-on "undo-tree")
+(depends-on "neotree")
+(depends-on "rainbow-delimiters")
+(depends-on "hungry-delete")
+
+;; org-mode
+(depends-on "org")
+(depends-on "org-cliplink")
+(depends-on "org-easy-img-insert")
+
+;;git 
+(depends-on "magit")
+
+(depends-on "async")
+(depends-on "dash")
+
+
