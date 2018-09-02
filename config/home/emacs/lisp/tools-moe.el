@@ -11,4 +11,7 @@
   )
 (provide 'tools-moe)
 
-
+;; fcitx
+(fcitx-aggressive-setup)
+(setq fcitx-use-dbus t)
+(setq fcitx-active-evil-states '(insert emacs hybrid))

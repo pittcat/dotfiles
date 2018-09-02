@@ -31,6 +31,7 @@
 ;; tools
 (depends-on "youdao-dictionary")
 (depends-on "google-this")
+(depends-on "fcitx")
 
 ;; better-default
 (depends-on "which-key")
