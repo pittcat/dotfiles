@@ -24,7 +24,8 @@ let g:spacevim_layers = [
       \ 'ranger',
       \ 'moe-tags',
       \ 'fzf',
-      \ 'moe-ncm2'
+      \ 'moe-ncm2',
+      \ 'yaml'
       \ ]
 
       " \ 'autocomplete'
