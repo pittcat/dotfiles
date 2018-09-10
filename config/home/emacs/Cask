@@ -55,5 +55,6 @@
 
 (depends-on "async")
 (depends-on "dash")
+(depends-on "projectile")
 
 
