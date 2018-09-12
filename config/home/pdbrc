@@ -1,2 +1,1 @@
-/* ln -s $PWD/pdbrc ~/.pdbrc */
 alias ll u;;d;;l
