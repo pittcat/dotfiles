@@ -41,7 +41,6 @@
 (depends-on "restart-emacs")
 (depends-on "real-auto-save")
 (depends-on "undo-tree")
-(depends-on "neotree")
 (depends-on "rainbow-delimiters")
 (depends-on "hungry-delete")
 
