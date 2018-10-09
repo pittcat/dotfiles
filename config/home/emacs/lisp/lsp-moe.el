@@ -1,0 +1,53 @@
+(require 'lsp-mode)
+(require 'lsp-ui)
+(require 'lsp-python)
+(require 'company-lsp)
+
+
+
+(setq lsp-message-project-root-warning t)
+
+(add-hook 'python-mode-hook #'lsp-python-enable)
+(require 'lsp-imenu)
+(add-hook 'lsp-after-open-hook 'lsp-enable-imenu)
+(setq-default lsp-ui-doc-frame-parameters
+            '((left . -1)
+              (top . -1)
+              (no-accept-focus . t)
+              (min-width . 0)
+              (width . 0)
+              (min-height . 0)
+              (height . 0)
+              (internal-border-width . 5)
+              (vertical-scroll-bars)
+              (horizontal-scroll-bars)
+              (left-fringe . 0)
+              (right-fringe . 0)
+              (menu-bar-lines . 0)
+              (tool-bar-lines . 0)
+              (line-spacing . 0.1)
+              (unsplittable . t)
+              (undecorated . t)
+              (minibuffer . nil)
+              (visibility . nil)
+              (mouse-wheel-frame . nil)
+              (no-other-frame . t)
+              (cursor-type)
+              (no-special-glyphs . t)))
+(setq lsp-ui-sideline-enable nil
+    lsp-enable-completion-at-point t
+    lsp-ui-doc-position 'at-point
+    lsp-ui-doc-header nil
+    lsp-ui-doc-enable t
+    lsp-ui-doc-include-signature t
+    )
+
+(define-key evil-normal-state-map (kbd "gd") 'xref-find-definitions)
+(global-set-key (kbd "M-?") 'xref-find-references)
+
+
+(push 'company-lsp company-backends)
+
+
+
+(provide 'lsp-moe)

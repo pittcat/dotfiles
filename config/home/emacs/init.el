@@ -11,4 +11,7 @@
 (require 'pittcat-org-moe)
 (require 'better-default-moe)
 (require 'tools-moe)
-
+(require 'lsp-moe)
+(require 'python-moe)
+(require 'flycheck-moe)
+(require 'programming-moe)

@@ -105,6 +105,22 @@
 
 
 
+(setq exec-path-from-shell-check-startup-files nil) ;
+(setq exec-path-from-shell-arguments '("-l" )) ;remove -i read form .zshenv
+(defun exec-path-from-shell-setenv (name value)
+  "Set the value of environment var NAME to VALUE.
+Additionally, if NAME is \"PATH\" then also set corresponding
+variables such as `exec-path'."
+  (setenv name value)
+  (when (string-equal "PATH" name)
+    (setq eshell-path-env value
+          exec-path (append (parse-colon-path value) (list exec-directory)))))
+;;调用exec-path-from-shell-setenv，手动传入参数，每次修改PATH都要到这里修改一下。
+(exec-path-from-shell-setenv "PATH" "/home/pittcat/.rbenv/shims:/home/pittcat/.rbenv/bin:/home/pittcat/.autojump/bin:/home/pittcat/.miniconda/bin:/home/pittcat/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/pittcat/.fzf/bin:/home/pittcat/.local/bin:/home/pittcat/.npm-global/bin:/home/pittcat/.cargo/bin:/home/pittcat/.rbenv/bin:/home/pittcat/.go/bin:/home/pittcat/.cask/bin:/home/pittcat/.antigen/bundles/robbyrussell/oh-my-zsh/lib:/home/pittcat/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/archlinux:/home/pittcat/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git:/home/pittcat/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/autojump:/home/pittcat/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/extract:/home/pittcat/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/tmux:/home/pittcat/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/sudo:/home/pittcat/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/copydir:/home/pittcat/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/command-not-found:/home/pittcat/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/copyfile:/home/pittcat/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/python:/home/pittcat/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/pip:/home/pittcat/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/npm:/home/pittcat/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/ruby:/home/pittcat/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/rbenv:/home/pittcat/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/gem:/home/pittcat/.antigen/bundles/zsh-users/zsh-autosuggestions:/home/pittcat/.antigen/bundles/zsh-users/zsh-completions:/home/pittcat/.antigen/bundles/zsh-users/zsh-syntax-highlighting:/home/pittcat/.antigen/bundles/changyuheng/zsh-interactive-cd:/home/pittcat/.antigen/bundles/hlissner/zsh-autopair:/home/pittcat/.antigen/bundles/Tarrasch/zsh-bd:/home/pittcat/.antigen/bundles/djui/alias-tips:/home/pittcat/.antigen/bundles/gangleri/pipenv:/home/pittcat/.antigen/bundles/hoffi/zsh-theme-lambda")
+
+(exec-path-from-shell-initialize)
+
+
 (provide 'better-default-moe)
 
 

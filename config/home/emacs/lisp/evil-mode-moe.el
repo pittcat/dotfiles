@@ -36,6 +36,13 @@
   "hi" 'helm-imenu
   "rn" 'rename-file-and-buffer
   "ap" 'pittcat-copy-file-path
+  ;;lsp
+  "cn" 'lsp-rename
+  ;;flycheck
+  "el" 'helm-flycheck
+  "en" 'flycheck-next-error
+  "ep" 'flycheck-previous-error
+  "ed" 'flycheck-explain-error-at-point
   )
 ;; escape
 (define-key evil-normal-state-map [escape] 'keyboard-quit)
@@ -48,7 +55,6 @@
 (define-key evil-visual-state-map (kbd "ESC ESC") (kbd "C-g"))
 (define-key evil-normal-state-map (kbd "ESC ESC") (kbd "C-g"))
 (define-key evil-normal-state-map (kbd "Q") 'delete-window)
-(define-key evil-normal-state-map (kbd "gd") 'xref-find-definitions)
 (define-key evil-visual-state-map (kbd "Q") 'delete-windows)
 (define-key evil-insert-state-map (kbd "C-v") 'x-clipboard-yank)
 ;; evil-surround

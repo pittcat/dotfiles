@@ -27,6 +27,26 @@
 (depends-on "helm-swoop")
 (depends-on "helm-describe-modes")
 
+;;lsp
+(depends-on "lsp-mode")
+(depends-on "lsp-python")
+(depends-on "lsp-ui")
+(depends-on "company-lsp")
+
+
+;;python
+(depends-on "py-yapf")
+
+;;flycheck
+(depends-on "flycheck")
+(depends-on "helm-flycheck")
+
+
+;;progamming
+(depends-on "rmsbolt")
+(depends-on "quickrun")
+
+
 
 ;; tools
 (depends-on "youdao-dictionary")
@@ -43,6 +63,7 @@
 (depends-on "undo-tree")
 (depends-on "rainbow-delimiters")
 (depends-on "hungry-delete")
+(depends-on "exec-path-from-shell")
 
 ;; org-mode
 (depends-on "org")
