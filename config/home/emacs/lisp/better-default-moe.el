@@ -15,7 +15,7 @@
 
 (require 'real-auto-save)
 (add-hook 'prog-mode-hook 'real-auto-save-mode)
-(setq real-auto-save-interval 20)
+(setq real-auto-save-interval 100)
 ;;restart
 (setq restart-emacs-restore-frames t)
 

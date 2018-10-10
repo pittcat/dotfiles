@@ -1,5 +1,7 @@
-(require 'py-yapf)
-
+;;
+;;
+;;
+(require 'python-yapf)
 (add-hook 'python-mode-hook
 	    (lambda ()
 		    (setq-default indent-tabs-mode t)

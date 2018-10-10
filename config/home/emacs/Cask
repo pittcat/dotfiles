@@ -36,7 +36,6 @@
 
 
 ;;python
-(depends-on "py-yapf")
 
 ;;flycheck
 (depends-on "flycheck")
@@ -77,11 +76,9 @@
 (depends-on "org-cliplink")
 (depends-on "org-easy-img-insert")
 
-;;git 
+;;git
 (depends-on "magit")
 
 (depends-on "async")
 (depends-on "dash")
 (depends-on "projectile")
-
-

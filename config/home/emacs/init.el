@@ -3,6 +3,7 @@
 
 (setq default-directory "~/.emacs.d/")
 (add-to-list 'load-path (expand-file-name "./lisp/" default-directory))
+(add-to-list 'load-path (expand-file-name "./lisp/elisp-moe/" default-directory))
 
 (require 'appearance-moe)
 (require 'company-snippets-moe)

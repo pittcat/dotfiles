@@ -3,6 +3,7 @@
 (require 'lsp-python)
 (require 'ccls)
 (require 'company-lsp)
+(require 'lsp-ui)
 
 
 
@@ -10,6 +11,7 @@
 
 (require 'lsp-imenu)
 (add-hook 'lsp-after-open-hook 'lsp-enable-imenu)
+(add-hook 'lsp-mode-hook 'lsp-ui-mode)
 (setq-default lsp-ui-doc-frame-parameters
             '((left . -1)
               (top . -1)
@@ -36,6 +38,7 @@
               (no-special-glyphs . t)))
 (setq lsp-ui-sideline-enable nil
     lsp-enable-completion-at-point t
+    lsp-ui-flycheck nil
     lsp-ui-doc-position 'at-point
     lsp-ui-doc-header nil
     lsp-ui-doc-enable t
