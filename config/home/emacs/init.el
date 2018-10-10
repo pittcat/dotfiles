@@ -6,12 +6,14 @@
 
 (require 'appearance-moe)
 (require 'company-snippets-moe)
-(require 'evil-mode-moe)
 (require 'helm-mode-moe)
+(require 'evil-mode-moe)
 (require 'pittcat-org-moe)
 (require 'better-default-moe)
 (require 'tools-moe)
 (require 'lsp-moe)
 (require 'python-moe)
+(require 'cc-moe)
 (require 'flycheck-moe)
 (require 'programming-moe)
+

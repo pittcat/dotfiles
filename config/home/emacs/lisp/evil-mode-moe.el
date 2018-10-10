@@ -1,7 +1,8 @@
 ;;vim
 ;;evil
+(require 'evil-leader)
 (evil-mode 1)
-
+(global-evil-leader-mode)
 ;;Evil-leader
 (global-evil-leader-mode)
 (evil-leader/set-leader "<SPC>")
@@ -47,11 +48,6 @@
 ;; escape
 (define-key evil-normal-state-map [escape] 'keyboard-quit)
 (define-key evil-visual-state-map [escape] 'keyboard-quit)
-(define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
-(define-key minibuffer-local-ns-map [escape] 'minibuffer-keyboard-quit)
-(define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
-(define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
-(define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
 (define-key evil-visual-state-map (kbd "ESC ESC") (kbd "C-g"))
 (define-key evil-normal-state-map (kbd "ESC ESC") (kbd "C-g"))
 (define-key evil-normal-state-map (kbd "Q") 'delete-window)

@@ -30,6 +30,7 @@
 ;;lsp
 (depends-on "lsp-mode")
 (depends-on "lsp-python")
+(depends-on "ccls")
 (depends-on "lsp-ui")
 (depends-on "company-lsp")
 
@@ -46,6 +47,8 @@
 (depends-on "rmsbolt")
 (depends-on "quickrun")
 
+;;c/cpp
+(depends-on "company-c-headers")
 
 
 ;; tools

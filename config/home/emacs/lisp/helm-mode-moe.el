@@ -1,4 +1,6 @@
 ;; helm and async
+(require 'helm)
+(require 'helm-config)
 (autoload 'dired-async-mode "dired-async.el" nil t)
 (dired-async-mode 1)
 (async-bytecomp-package-mode 1)
@@ -13,7 +15,13 @@
 (global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
 (global-set-key (kbd "C-x C-f") #'helm-find-files)
 
-;; helm-swoop
+(add-hook 'helm-after-initialize-hook
+          (lambda()
+            (define-key helm-map (kbd "ESC") 'helm-keyboard-quit)
+            (define-key helm-buffer-map (kbd "ESC") 'helm-keyboard-quit)
+            (define-key helm-find-files-map (kbd "ESC") 'helm-keyboard-quit)
+	    ))
+;; Helm-swoop
 ;; Change the keybinds to whatever you like :)
 (global-set-key (kbd "M-i") 'helm-swoop)
 (global-set-key (kbd "M-I") 'helm-swoop-back-to-last-point)
@@ -24,6 +32,5 @@
       (lambda () ""))
 (setq helm-swoop-use-fuzzy-match t)
 (global-set-key (kbd "M-d") #'helm-describe-modes)
-
 
 (provide 'helm-mode-moe)

@@ -8,10 +8,13 @@
 (setq company-dabbrev-ignore-buffers "\\`\\'")
 
 ;; yasnippet
-
+(require 'company)
 (require 'yasnippet)
 (yas-reload-all)
 
 (add-hook 'prog-mode-hook #'yas-minor-mode)
+
+(defvar company-mode/enable-yas t
+  "Enable yasnippet for all backends.")
 
 (provide 'company-snippets-moe)

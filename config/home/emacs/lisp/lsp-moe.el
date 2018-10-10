@@ -1,6 +1,7 @@
 (require 'lsp-mode)
 (require 'lsp-ui)
 (require 'lsp-python)
+(require 'ccls)
 (require 'company-lsp)
 
 
@@ -49,5 +50,19 @@
 (push 'company-lsp company-backends)
 
 
+
+(setq ccls-executable "/usr/bin/ccls")
+(with-eval-after-load 'projectile
+  (setq projectile-project-root-files-top-down-recurring
+        (append '("compile_commands.json"
+                  ".ccls")
+                projectile-project-root-files-top-down-recurring)))
+
+(defun ccls//enable ()
+  (condition-case nil
+      (lsp-ccls-enable)
+    (user-error nil)))
+(add-hook 'c-mode-hook #'ccls//enable)
+(add-hook 'c++-mode-hook #'ccls//enable)
 
 (provide 'lsp-moe)
