@@ -8,7 +8,6 @@
 
 (setq lsp-message-project-root-warning t)
 
-(add-hook 'python-mode-hook #'lsp-python-enable)
 (require 'lsp-imenu)
 (add-hook 'lsp-after-open-hook 'lsp-enable-imenu)
 (setq-default lsp-ui-doc-frame-parameters
@@ -49,8 +48,10 @@
 
 (push 'company-lsp company-backends)
 
+;;lsp-python
+(add-hook 'python-mode-hook #'lsp-python-enable)
 
-
+;;ccls
 (setq ccls-executable "/usr/bin/ccls")
 (with-eval-after-load 'projectile
   (setq projectile-project-root-files-top-down-recurring
@@ -62,7 +63,10 @@
   (condition-case nil
       (lsp-ccls-enable)
     (user-error nil)))
+
 (add-hook 'c-mode-hook #'ccls//enable)
 (add-hook 'c++-mode-hook #'ccls//enable)
+(setq ccls-extra-init-params '(:completion (:detailedLabel t)))
+
 
 (provide 'lsp-moe)

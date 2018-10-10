@@ -47,14 +47,16 @@
 (depends-on "rmsbolt")
 (depends-on "quickrun")
 
+
 ;;c/cpp
-(depends-on "company-c-headers")
+(depends-on "clang-format")
 
 
 ;; tools
 (depends-on "youdao-dictionary")
 (depends-on "google-this")
 (depends-on "fcitx")
+(depends-on "helpful")
 
 ;; better-default
 (depends-on "which-key")

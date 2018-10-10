@@ -1,3 +1,4 @@
+(require 'helpful)
 
 ;; youdaodict
 ;; Enable Cache
@@ -10,6 +11,13 @@
   "go" 'google-this-mode-submap
   )
 (provide 'tools-moe)
+
+
+;;helpful
+(global-set-key (kbd "C-h f") #'helpful-callable)
+
+(global-set-key (kbd "C-h v") #'helpful-variable)
+(global-set-key (kbd "C-h k") #'helpful-key)
 
 ;; fcitx
 (fcitx-aggressive-setup)
