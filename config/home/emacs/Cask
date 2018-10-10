@@ -55,6 +55,7 @@
 ;; tools
 (depends-on "youdao-dictionary")
 (depends-on "google-this")
+(depends-on "avy")
 (depends-on "fcitx")
 (depends-on "helpful")
 
@@ -68,6 +69,7 @@
 (depends-on "undo-tree")
 (depends-on "rainbow-delimiters")
 (depends-on "hungry-delete")
+(depends-on "nyan-mode")
 (depends-on "exec-path-from-shell")
 
 ;; org-mode

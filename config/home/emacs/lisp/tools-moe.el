@@ -19,6 +19,11 @@
 (global-set-key (kbd "C-h v") #'helpful-variable)
 (global-set-key (kbd "C-h k") #'helpful-key)
 
+;;avy
+(global-set-key (kbd "C-=") 'avy-goto-char)
+(global-set-key (kbd "C-'") 'avy-goto-char-2)
+(global-set-key (kbd "C-,") 'avy-goto-word-1)
+
 ;; fcitx
 (fcitx-aggressive-setup)
 (setq fcitx-use-dbus t)

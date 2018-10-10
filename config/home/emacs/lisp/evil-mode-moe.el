@@ -44,6 +44,7 @@
   "en" 'flycheck-next-error
   "ep" 'flycheck-previous-error
   "ed" 'flycheck-explain-error-at-point
+  ;;avy
   )
 ;; escape
 (define-key evil-normal-state-map [escape] 'keyboard-quit)

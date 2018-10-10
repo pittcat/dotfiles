@@ -120,6 +120,8 @@ variables such as `exec-path'."
 
 (exec-path-from-shell-initialize)
 
+;;nyan-mode
+(nyan-mode)
 
 (provide 'better-default-moe)
 
