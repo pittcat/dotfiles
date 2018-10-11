@@ -109,7 +109,7 @@ Check `python-yapf-command' for what the format action will do."
           (ido-read-directory-name "Format directory: "))
          (recurse (y-or-n-p "Search recursively for all .py files?")))
      (list directory-name recurse)))
-  (save-some-buffers (not compilation-ask-about-save) nil)
+  (save-some-buffers (not compilation-ask-about-save) t)
   (shell-command (concat python-yapf " --in-place "
                          (if recurse-p
                              "--recursive ")

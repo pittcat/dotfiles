@@ -1,6 +1,7 @@
 ;;vim
 ;;evil
 (require 'evil-leader)
+(require 'awesome-tab)
 (evil-mode 1)
 (global-evil-leader-mode)
 ;;Evil-leader
@@ -46,6 +47,13 @@
   "ed" 'flycheck-explain-error-at-point
   ;;avy
   )
+
+
+(define-key evil-normal-state-map (kbd "<tab>") 'awesome-tab-forward-tab)
+(define-key evil-visual-state-map (kbd "<tab>") 'awesome-tab-forward-tab)
+(define-key evil-visual-state-map (kbd "S-TAB") 'awesome-tab-backward-tab)
+(define-key evil-normal-state-map (kbd "S-TAB") 'awesome-tab-backward-tab)
+
 ;; escape
 (define-key evil-normal-state-map [escape] 'keyboard-quit)
 (define-key evil-visual-state-map [escape] 'keyboard-quit)
