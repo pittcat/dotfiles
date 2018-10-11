@@ -1,3 +1,4 @@
+(require 'awesome-tab)
 ;;turn down voice
 (setq visible-bell t)
 
@@ -122,6 +123,9 @@ variables such as `exec-path'."
 
 ;;nyan-mode
 (nyan-mode)
+
+;;awesome-tab
+(awesome-tab-mode t)
 
 (provide 'better-default-moe)
 

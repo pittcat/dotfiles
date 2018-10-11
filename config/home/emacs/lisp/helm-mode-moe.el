@@ -1,4 +1,5 @@
 ;; helm and async
+(require 'awesome-tab)
 (require 'helm)
 (require 'helm-config)
 (autoload 'dired-async-mode "dired-async.el" nil t)
@@ -32,5 +33,10 @@
       (lambda () ""))
 (setq helm-swoop-use-fuzzy-match t)
 (global-set-key (kbd "M-d") #'helm-describe-modes)
+
+;;awesome-tab
+(awesome-tab-build-helm-source)
+(append helm-source-awesome-tab-group '(helm-source-buffers-list))
+
 
 (provide 'helm-mode-moe)

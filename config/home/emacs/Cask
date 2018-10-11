@@ -57,6 +57,7 @@
 (depends-on "avy")
 (depends-on "fcitx")
 (depends-on "helpful")
+(depends-on "multiple-cursors")
 
 ;; better-default
 (depends-on "which-key")
