@@ -75,7 +75,7 @@
 ;; org-mode
 (depends-on "org")
 (depends-on "org-cliplink")
-(depends-on "org-easy-img-insert")
+(depends-on "org-download")
 
 ;;git
 (depends-on "magit")

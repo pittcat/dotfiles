@@ -45,7 +45,8 @@
   "en" 'flycheck-next-error
   "ep" 'flycheck-previous-error
   "ed" 'flycheck-explain-error-at-point
-  ;;avy
+  ;;org-download
+  "mmp" 'org-download-yank
   )
 
 

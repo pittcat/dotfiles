@@ -1,7 +1,11 @@
+(require 'org-download)
 ;; org-mode
 (global-set-key (kbd "C-x p i") 'org-cliplink)
 (global-set-key (kbd "C-SPC") 'nil)
 
+;;org-down
+(setq-default org-download-image-dir "./Resources/")
+(add-hook 'dired-mode-hook 'org-download-enable)
 
 ;;show-img
 ;; -- Display images in org mode
