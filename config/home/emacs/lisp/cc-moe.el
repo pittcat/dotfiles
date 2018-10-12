@@ -1,3 +1,4 @@
+(require 'company-c-headers)
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
 ; style I want to use in c++ mode
@@ -15,5 +16,12 @@
   (c-toggle-auto-hungry-state 1))
 
 (add-hook 'c++-mode-hook 'moe-c++-mode-hook)
+
+
+
+;; company-c-headers
+(add-hook 'c-mode-hook (lambda () (add-to-list 'company-backends 'company-c-headers)))
+(add-hook 'c++-mode-hook (lambda () (add-to-list 'company-backends 'company-c-headers)))
+
 
 (provide 'cc-moe)

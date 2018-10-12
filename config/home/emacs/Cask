@@ -30,7 +30,8 @@
 ;;lsp
 (depends-on "lsp-mode")
 (depends-on "lsp-python")
-(depends-on "ccls")
+;;(depends-on "ccls")
+(depends-on "lsp-clangd")
 (depends-on "lsp-ui")
 (depends-on "company-lsp")
 
@@ -49,6 +50,7 @@
 
 ;;c/cpp
 (depends-on "clang-format")
+(depends-on "company-c-headers")
 
 
 ;; tools
