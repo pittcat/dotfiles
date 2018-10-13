@@ -14,9 +14,9 @@
 (global-set-key (kbd "C-q") (lambda () (interactive) (save-some-buffers t) (kill-emacs)))
 (defun full-save-quit () (interactive) (save-some-buffers t))
 
-(require 'real-auto-save)
-(add-hook 'prog-mode-hook 'real-auto-save-mode)
-(setq real-auto-save-interval 100)
+
+(require 'super-save)
+(super-save-mode +1)
 ;;restart
 (setq restart-emacs-restore-frames t)
 

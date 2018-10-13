@@ -1,6 +1,7 @@
 ;;vim
 ;;evil
 (require 'evil-leader)
+(require 'indent-guide)
 (require 'awesome-tab)
 (evil-mode 1)
 (global-evil-leader-mode)
@@ -47,6 +48,8 @@
   "ed" 'flycheck-explain-error-at-point
   ;;org-download
   "mmp" 'org-download-yank
+  ;;indent-guide
+  "ti" 'indent-guide-mode
   )
 
 

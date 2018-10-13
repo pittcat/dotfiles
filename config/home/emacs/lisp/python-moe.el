@@ -1,7 +1,11 @@
 ;;
 ;;
 ;;
-(require 'python-yapf)
+;;yapfify
+(require 'yapfify)
+(add-hook 'python-mode-hook 'yapf-mode)
+(remove-hook 'before-save-hook 'yapfify-buffer nil)
+
 (add-hook 'python-mode-hook
 	    (lambda ()
 		    (setq-default indent-tabs-mode t)
