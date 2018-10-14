@@ -1,5 +1,23 @@
-(require 'company-c-headers)
+(require 'company-irony-c-headers)
+(require 'company-irony)
+(require 'irony)
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+
+
+
+;; irony
+(add-hook 'c++-mode-hook 'irony-mode)
+(add-hook 'c-mode-hook 'irony-mode)
+(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+
+;;company-irony
+(eval-after-load 'company
+  '(add-to-list 'company-backends 'company-irony))
+
+;; company-irony-c-headers
+(eval-after-load 'company
+  '(add-to-list
+    'company-backends '(company-irony-c-headers company-irony)))
 
 ; style I want to use in c++ mode
 (c-add-style "moe-style" 
@@ -17,11 +35,6 @@
 
 (add-hook 'c++-mode-hook 'moe-c++-mode-hook)
 
-
-
-;; company-c-headers
-(add-hook 'c-mode-hook (lambda () (add-to-list 'company-backends 'company-c-headers)))
-(add-hook 'c++-mode-hook (lambda () (add-to-list 'company-backends 'company-c-headers)))
 
 
 (provide 'cc-moe)

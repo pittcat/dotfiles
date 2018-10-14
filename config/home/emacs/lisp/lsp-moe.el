@@ -49,8 +49,13 @@
 (define-key evil-normal-state-map (kbd "gd") 'xref-find-definitions)
 (global-set-key (kbd "M-?") 'xref-find-references)
 
+;; company
+;; (push 'company-lsp company-backends)
+;; (add-hook 'c-mode-hook
+;;           (lambda ()
+;;             (add-to-list (make-local-variable 'company-backends)
+;;                          'company-lsp)))
 
-(push 'company-lsp company-backends)
 
 ;;lsp-python
 (add-hook 'python-mode-hook #'lsp-python-enable)

@@ -36,6 +36,9 @@
 
 
 ;;python
+(depends-on "anaconda-mode")
+(depends-on "company-anaconda")
+
 
 ;;flycheck
 (depends-on "flycheck")
@@ -50,7 +53,9 @@
 
 ;;c/cpp
 (depends-on "clang-format")
-(depends-on "company-c-headers")
+(depends-on "irony")
+(depends-on "company-irony")
+(depends-on "company-irony-c-headers")
 
 ;; org-mode
 (depends-on "org")
