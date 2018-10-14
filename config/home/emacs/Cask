@@ -72,7 +72,6 @@
 
 ;; better-default
 (depends-on "which-key")
-(depends-on "iedit")
 (depends-on "super-save")
 (depends-on "autopair")
 (depends-on "highlight-indentation")
