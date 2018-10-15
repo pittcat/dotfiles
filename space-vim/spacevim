@@ -25,6 +25,8 @@ let g:spacevim_layers = [
       \ 'moe-tags',
       \ 'fzf',
       \ 'moe-ncm2',
+      \ 'lightline',
+      \ 'gdb',
       \ 'yaml'
       \ ]
 
@@ -66,7 +68,6 @@ function! UserConfig()
   "
   autocmd FileType vim nnoremap <F5> :source %<cr>
 
-  
 
   "
 endfunction
