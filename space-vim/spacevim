@@ -21,6 +21,7 @@ let g:spacevim_layers = [
       \ 'c-c++',
       \ 'markdown',
       \ 'python',
+      \ 'rust',
       \ 'ranger',
       \ 'moe-tags',
       \ 'fzf',
