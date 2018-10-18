@@ -44,6 +44,7 @@ function! UserInit()
   Plug 'tweekmonster/startuptime.vim'
   Plug 'KeitaNakamura/neodark.vim'
   Plug 'tpope/vim-scriptease'
+  Plug 'embear/vim-localvimrc'
   
 endfunction
 
@@ -68,6 +69,7 @@ function! UserConfig()
   " }
   "
   autocmd FileType vim nnoremap <F5> :source %<cr>
+  let g:localvimrc_ask=0
 
 
   "

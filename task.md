@@ -1,0 +1,1 @@
+- conda LD_LIBRARY_PATH setting
