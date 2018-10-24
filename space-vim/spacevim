@@ -26,7 +26,7 @@ let g:spacevim_layers = [
       \ 'moe-tags',
       \ 'fzf',
       \ 'moe-ncm2',
-      \ 'lightline',
+      \ 'airline',
       \ 'gdb',
       \ 'yaml'
       \ ]
