@@ -42,9 +42,9 @@ function! UserInit()
   " let g:spacevim_leader = "<\Space>"
   let g:spacevim_localleader = ','
   Plug 'tweekmonster/startuptime.vim'
-  Plug 'KeitaNakamura/neodark.vim'
   Plug 'tpope/vim-scriptease'
   Plug 'embear/vim-localvimrc'
+  Plug 'romainl/Apprentice'
   
 endfunction
 
@@ -62,10 +62,8 @@ function! UserConfig()
   nnoremap <silent> <localleader>pu :UpdateRemotePlugins<cr>
   " maps
   " theme setting
-  " {onedark
-  colorscheme neodark
-  let g:neodark#background = '#202020'
-  let g:neodark#solid_vertsplit = 1
+  " {
+  colorscheme apprentice
   " }
   "
   autocmd FileType vim nnoremap <F5> :source %<cr>
