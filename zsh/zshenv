@@ -51,6 +51,12 @@ fi
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
+#php
+if hash composer 2>/dev/null; then
+    export COMPOSER_HOME=$HOME/.composer
+    export PATH="$PATH:$HOME/.composer/vendor/bin"
+fi
+
 # deoplete zsh
 zmodload zsh/zpty
 export fpath=($HOME/.fpath $fpath)

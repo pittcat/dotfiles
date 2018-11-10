@@ -28,7 +28,8 @@ let g:spacevim_layers = [
       \ 'moe-ncm2',
       \ 'airline',
       \ 'gdb',
-      \ 'yaml'
+      \ 'yaml',
+      \ 'php',
       \ ]
 
       " \ 'autocomplete'
