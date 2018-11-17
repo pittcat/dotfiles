@@ -3,7 +3,7 @@
 PKMG="pacman -S"
 ## --------------------------------------------must install -------------------------------------------- ##
 # common must install 
-sudo $PKMG zsh tmux git curl emacs rsync nodejs npm tig cmake xsel xclip privoxy ranger httpie neovim net-tools xcape mosh ncdu fd htop
+sudo $PKMG zsh tmux git curl emacs rsync nodejs npm tig cmake xsel xclip privoxy ranger httpie neovim net-tools xcape mosh ncdu fd htop highlight
 
 # privoxy autostart
 sudo sed -i "s/127.0.0.1:9050/127.0.0.1:1080/g;/127.0.0.1:1080/s/^#//g" /etc/privoxy/config
