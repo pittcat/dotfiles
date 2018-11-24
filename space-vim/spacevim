@@ -3,9 +3,11 @@ if g:spacevim.vim8
 endif
 let g:spacevim_plug_home = '~/.vim/plugged'
 
+      " \ 'which-key',
 let g:spacevim_layers = [
       \ 'spacevim', 'better-defaults',
-      \ 'which-key','programming',
+      \ 'vim-which-key',
+      \ 'programming',
       \ 'tmux',
       \ 'better-motion',
       \ 'editing',
@@ -22,7 +24,7 @@ let g:spacevim_layers = [
       \ 'markdown',
       \ 'python',
       \ 'rust',
-      \ 'ranger',
+      \ 'file-manager',
       \ 'moe-tags',
       \ 'fzf',
       \ 'moe-ncm2',
