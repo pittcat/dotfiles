@@ -29,7 +29,6 @@ let g:spacevim_layers = [
       \ 'fzf',
       \ 'moe-ncm2',
       \ 'airline',
-      \ 'gdb',
       \ 'yaml',
       \ 'php',
       \ ]
