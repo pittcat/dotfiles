@@ -1,10 +1,10 @@
 # install and config java
 #!/usr/bin/env sh
 
-if hash trizen 2>/dev/null; then
-  trizen -S uncrustify jdtls google-java-format-git java-repl
+if hash yay 2>/dev/null; then
+  yay -S uncrustify jdtls google-java-format-git java-repl
 elseif
-  echo "Please install trizen"
+  echo "Please install yay"
 fi
 
 ln -s $PWD/uncrustify.cfg /home/pittcat/.uncrustify.cfg

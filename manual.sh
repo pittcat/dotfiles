@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-git clone https://aur.archlinux.org/trizen.git
-cd trizen
+git clone https://aur.archlinux.org/yay.git
+cd yay
 makepkg -si
-cd .. && sudo rm trizen -r
+cd .. && sudo rm yay -r
 # --------------------------------------------zsh and cli-------------------------------------------- #
 
 # install powerline/font
@@ -17,7 +17,7 @@ cd .. && sudo rm trizen -r
 # Noto Mono for Powerline Bold ---terminal
 
   
-trizen -S  otf-fira-code-git
+yay -S  otf-fira-code-git
 # bat  ripgrep
 sudo pacman -S bat ripgrep
 
@@ -39,7 +39,7 @@ fi
 
 # tags
 
-trizen -S universal-ctags-git cscope global
+yay -S universal-ctags-git cscope global
 pip install pygments --user
 mkdir -p ~/.ctags.d/
 ln -s $PWD/config/ctags ~/.ctags.d/.ctags
@@ -56,7 +56,7 @@ sudo python setup.py install
 cd -
 
 # prettyping
-trizen  -S  prettyping
+yay  -S  prettyping
 # --------------------------------------------dev tools -------------------------------------------- #
 
 # --------------------------------------------vim -------------------------------------------- #

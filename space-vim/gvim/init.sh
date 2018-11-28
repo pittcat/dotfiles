@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-if hash trizen 2>/dev/null; then
-  trizen -S nvim-qt
+if hash yay 2>/dev/null; then
+  yay -S nvim-qt
 fi
 ln -s $PWD/ginit.vim $HOME/.config/nvim/
