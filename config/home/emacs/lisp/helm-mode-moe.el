@@ -1,5 +1,7 @@
 ;; helm and async
 (require 'awesome-tab)
+(require 'helm-smex)
+(require 'smex) 
 (require 'helm)
 (require 'helm-config)
 (autoload 'dired-async-mode "dired-async.el" nil t)
@@ -12,7 +14,11 @@
 (setq helm-buffers-fuzzy-matching 1)
 (setq helm-completion-in-region-fuzzy-match 1)
 (setq helm-M-x-fuzzy-match 1)
-(global-set-key (kbd "M-x") #'helm-M-x)
+
+; smex
+(smex-initialize)
+(global-set-key [remap execute-extended-command] #'helm-smex)
+(global-set-key (kbd "M-X") #'helm-smex-major-mode-commands)
 (global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
 (global-set-key (kbd "C-x C-f") #'helm-find-files)
 

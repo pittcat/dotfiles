@@ -79,8 +79,10 @@
 (depends-on "undo-tree")
 (depends-on "rainbow-delimiters")
 (depends-on "hungry-delete")
-(depends-on "nyan-mode")
 (depends-on "exec-path-from-shell")
+(depends-on "pallet")
+(depends-on "smex")
+(depends-on "helm-smex")
 
 
 ;;git

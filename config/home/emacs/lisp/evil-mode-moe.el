@@ -34,7 +34,8 @@
   "or" 'helm-org-rifle
   "fei" (lambda () (interactive) (find-file "~/.emacs.d/init.el"))
   "fec" (lambda () (interactive) (find-file "~/.emacs.d/Cask"))
-  "<SPC>" 'helm-M-x
+  "<SPC>" 'helm-smex
+  "hm"  'helm-smex-major-mode-commands
   "df" 'delete-file-and-buffer
   "hi" 'helm-imenu
   "rn" 'rename-file-and-buffer
