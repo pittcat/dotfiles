@@ -69,6 +69,9 @@
 (depends-on "fcitx")
 (depends-on "helpful")
 (depends-on "multiple-cursors")
+(depends-on "company-english"
+            :git "https://github.com/manateelazycat/company-english-helper.git"
+            :branch "master")
 
 ;; better-default
 (depends-on "which-key")
@@ -80,7 +83,6 @@
 (depends-on "rainbow-delimiters")
 (depends-on "hungry-delete")
 (depends-on "exec-path-from-shell")
-(depends-on "pallet")
 (depends-on "smex")
 (depends-on "helm-smex")
 
@@ -91,3 +93,4 @@
 (depends-on "async")
 (depends-on "dash")
 (depends-on "projectile")
+

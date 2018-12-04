@@ -1,4 +1,3 @@
-(require 'pallet)
 (require 'awesome-tab)
 ;;turn down voice
 (setq visible-bell t)
@@ -122,8 +121,6 @@ variables such as `exec-path'."
 
 (exec-path-from-shell-initialize)
 
-; pallet
-(pallet-mode t)
 
 ;;awesome-tab
 (awesome-tab-mode t)
