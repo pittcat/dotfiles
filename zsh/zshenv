@@ -69,6 +69,7 @@ export PATH="$HOME/.miniconda/bin:$PATH"
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 # gtags
 export GTAGSLABEL=native-pygments
+export GTAGSCONF=/usr/local/share/gtags/gtags.conf
 
 # conda
 export PATH=$PATH:$HOME/.miniconda3/bin

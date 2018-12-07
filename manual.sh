@@ -37,12 +37,6 @@ else
   sudo rm autojump -r
 fi
 
-# tags
-
-yay -S universal-ctags-git cscope global
-pip install pygments --user
-mkdir -p ~/.ctags.d/
-ln -s $PWD/config/ctags ~/.ctags.d/.ctags
 
 
 # has
