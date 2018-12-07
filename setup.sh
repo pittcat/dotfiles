@@ -3,18 +3,13 @@
 PKMG="pacman -S"
 ## --------------------------------------------must install -------------------------------------------- ##
 # common must install 
-sudo $PKMG zsh tmux git curl emacs rsync nodejs npm tig cmake xsel xclip privoxy ranger httpie neovim net-tools xcape mosh ncdu fd htop highlight
+sudo $PKMG zsh tmux git curl emacs rsync nodejs tig cmake xsel xclip privoxy ranger httpie neovim net-tools xcape mosh ncdu fd htop highlight
 
 # privoxy autostart
 sudo sed -i "s/127.0.0.1:9050/127.0.0.1:1080/g;/127.0.0.1:1080/s/^#//g" /etc/privoxy/config
 
 ### 启动 privoxy.service 服务
 sudo systemctl enable privoxy.service 
-
-# npm setting
-sudo npm config set registry https://registry.npm.taobao.org --global
-sudo npm config set disturl https://npm.taobao.org/dist --global
-
 
 # install proxychains-ng 
 if hash proxychains4 2> /dev/null; then
