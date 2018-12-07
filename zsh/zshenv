@@ -22,7 +22,7 @@ export PYTHONPATH=$PYTHONPATH:$HOME/.local/lib/python3.7/site-packages:/usr/lib/
 
 # nodejs
 export NPM_CONFIG_PREFIX=$HOME/.npm-global
-export PATH=$PATH:$HOME/.npm-global/bin
+export PATH=$PATH:$NPM_CONFIG_PREFIX/bin
 # vim--deoplete tern 
 ulimit -n 2048
 

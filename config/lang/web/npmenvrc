@@ -1,1 +1,5 @@
+/* which npm */
+export NPM_CONFIG_PREFIX=$HOME/.miniconda3/envs/nodejs10130
+export PATH=$PATH:$NPM_CONFIG_PREFIX/bin
+source activate nodejs10130
 export PATH=$(npm bin):$PATH
