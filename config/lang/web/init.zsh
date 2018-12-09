@@ -2,10 +2,9 @@ sudo pacman -S nodejs npm yarn
 # npm and yarn setting
 npm config set registry https://registry.npm.taobao.org --global
 npm config set disturl https://npm.taobao.org/dist --global
-yarn config set registry https://registry.npm.taobao.org --global
-yarn config set disturl https://npm.taobao.org/dist --global
-
-yarn config set prefix $(npm prefix -g)
+# yarn config set registry https://registry.npm.taobao.org --global
+# yarn config set disturl https://npm.taobao.org/dist --global
+# yarn config set prefix $HOME/.yarn
 # web
 #  vim setting
 sudo $PKMG tidy #html
