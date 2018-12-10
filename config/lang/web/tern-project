@@ -7,10 +7,9 @@
     "jquery"
   ],
   "plugins": {
-    "node": {},
-    "modules": {},
-    "complete_strings": {},
     "es_modules": {},
+    "webpack": {},
+    "complete_strings": {},
     "requirejs": {
       "baseURL": "./",
       "paths": {}
