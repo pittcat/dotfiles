@@ -23,7 +23,7 @@ export PYTHONPATH=$PYTHONPATH:$HOME/.local/lib/python3.7/site-packages:/usr/lib/
 # nodejs
 export NPM_CONFIG_PREFIX=$HOME/.npm-global
 export PATH=$PATH:$NPM_CONFIG_PREFIX/bin
-# export PATH="$(yarn global bin):$PATH"
+export PATH="$(yarn global bin):$PATH"
 # vim--deoplete tern 
 ulimit -n 2048
 
@@ -74,3 +74,4 @@ export GTAGSCONF=/usr/local/share/gtags/gtags.conf
 
 # conda
 export PATH=$PATH:$HOME/.miniconda3/bin
+export NNN_USE_EDITOR=1

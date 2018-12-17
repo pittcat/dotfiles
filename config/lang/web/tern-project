@@ -7,6 +7,8 @@
     "jquery"
   ],
   "plugins": {
+    "node": {},
+    "node_resolve": {},
     "es_modules": {},
     "webpack": {},
     "complete_strings": {},
