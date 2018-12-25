@@ -28,4 +28,5 @@ sudo jupyter dashboards quick-setup --sys-prefix
 sudo jupyter nbextension install --py jupyter_dashboards --sys-prefix
 sudo jupyter nbextension enable --py jupyter_dashboards --sys-prefix
 
-ln -s $pwd/custom.js  ~/.jupyter/custom/custom.js
+rm ~/.jupyter/custom/custom.js
+ln -s $PWD/custom.js  ~/.jupyter/custom/custom.js
