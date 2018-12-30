@@ -15,7 +15,7 @@ jupyter nbextension enable vim_binding/vim_binding
 
 # theme
 sudo pip install jupyterthemes 
-jt -t solarizedd -vim
+jt -t onedork -cellw 100%
 
 sudo pip install jupyter_contrib_nbextensions
 jupyter contrib nbextension install --user

@@ -5,6 +5,7 @@ flake8
 jedi 
 ipython 
 ptpython
+bpython
 ## neovim 
 ## vim 
 thefuck

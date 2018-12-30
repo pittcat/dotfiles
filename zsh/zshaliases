@@ -43,3 +43,4 @@ alias noderepl='node -i -e "repl.repl.ignoreUndefined=true"'
 alias nodedb='node --inspect-brk'
 alias bgdbgui='nohup gdbgui  >/dev/null 2>&1 &'
 alias gttycb='tty | xsel -ib'
+alias pual="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U --user"

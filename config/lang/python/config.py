@@ -4,7 +4,7 @@ Copy this file to ~/.ptpython/config.py
 """
 from __future__ import unicode_literals
 from prompt_toolkit.filters import ViInsertMode
-from prompt_toolkit.key_binding.input_processor import KeyPress
+from prompt_toolkit.key_binding.key_processor import KeyPress
 from prompt_toolkit.keys import Keys
 from pygments.token import Token
 
@@ -99,7 +99,7 @@ def configure(repl):
     repl.enable_input_validation = True
 
     # Use this colorscheme for the code.
-    repl.use_code_colorscheme('tango')
+    repl.use_code_colorscheme('vim')
 
     # Enable 24bit True color. (Not all terminals support this. -- maybe check
     # $TERM before changing.)
