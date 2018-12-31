@@ -65,7 +65,8 @@ bindsym $mod+Shift+p exec rofi -show window -config $scriptdir/rofi-config
 bindsym $mod+Shift+s exec echo "" | rofi -config $HOME/.i3/rofi-config -dmenu -p  "Search:" | xargs -I{} xdg-open https://www.google.de/search?q={}
 
 # clipboard
-bindsym $mod+a exec rofi -config $scriptdir/rofi-config -modi "clipboard:greenclip print" -show clipboard
+bindsym $mod+a exec rofi -config $scriptdir/rofi-config -modi "clipboard:clipster -o -n 0 -0" -show clipboard
+# bindsym $mod+a exec clipster -sp
 
 # screenshot
 bindsym Print exec xfce4-screenshooter
@@ -216,7 +217,7 @@ exec fcitx
 # vmvare copy and paste
 exec vmware-user-suid-wrapper --no-startup-id
 exec_always --no-startup-id ~/.i3/bing-wallpaper.sh
-exec greenclip daemon
+exec --no-startup-id clipster -d
 exec megasync
 exec --no-startup-id dunst -config ~/.i3/dunst/dunstrc
 

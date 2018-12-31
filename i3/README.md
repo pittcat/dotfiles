@@ -4,8 +4,8 @@
    * nautilus --> file manager
    * fcitx
    * google-chrome
-   * rofi-greenclip
-   * xorg-xprop
+   *  clipster
+   *  xorg-xprop
    * okular
    * polybar
    * dunst
