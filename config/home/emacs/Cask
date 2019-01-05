@@ -66,7 +66,6 @@
 (depends-on "youdao-dictionary")
 (depends-on "google-this")
 (depends-on "avy")
-(depends-on "fcitx")
 (depends-on "helpful")
 (depends-on "multiple-cursors")
 (depends-on "company-english"
@@ -85,7 +84,6 @@
 (depends-on "exec-path-from-shell")
 (depends-on "smex")
 (depends-on "helm-smex")
-
 
 ;;git
 (depends-on "magit")

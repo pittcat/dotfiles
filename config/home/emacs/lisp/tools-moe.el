@@ -33,6 +33,3 @@
 (global-set-key (kbd "M-<mouse-1>") 'mc/add-cursor-on-click)
 
 
-;; fcitx
-(fcitx-aggressive-setup)
-(setq fcitx-use-dbus t)
