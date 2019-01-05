@@ -1,1 +1,1 @@
-cp ./* ~/.local/share/xfce4/terminal/colorschemes
+cp $PWD/* /usr/share/xfce4/terminal/colorschemes

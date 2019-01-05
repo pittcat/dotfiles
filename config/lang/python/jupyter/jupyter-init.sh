@@ -1,7 +1,8 @@
 # chmod a+x jupyter-init.sh
 
 
-sudo pip install jupyter pyecharts --user
+sudo pip install jupyter pyecharts 
+pip install jupyter pyecharts --user
 # sudo jupyter labextension install jupyterlab_vim jupyterlab-drawio @oriolmirosa/jupyterlab_materialdarker
 
 # vim-bind

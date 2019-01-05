@@ -10,7 +10,7 @@ replace-with = 'ustc'
 registry = 'git://mirrors.ustc.edu.cn/crates.io-index'" > $HOME/.cargo/config
 
 
-source $HOME/.bashrc
+source $HOME/.cargo/env
 # vim setting
 # complete  format check
 

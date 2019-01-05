@@ -28,10 +28,15 @@ else
   sudo sed -i "s/.*socks4[[:space:]]*127.0.0.1.*/socks5  127.0.0.1 1080/g" /etc/proxychains.conf
 fi
 
+
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd .. && sudo rm yay -r
 # choose install
-sudo $PKMG gvim the_silver_searcher yaourt clang-tools-extra
+sudo $PKMG gvim the_silver_searcher clang-tools-extra
 source $HOME/.zshrc
-yaourt -S shadowsocks-qt5  shadowsocks-libev
+yay -S shadowsocks-qt5  shadowsocks-libev
 
 # --------------------------------------------common config -------------------------------------------- #
 

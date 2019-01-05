@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-cd .. && sudo rm yay -r
 # --------------------------------------------zsh and cli-------------------------------------------- #
 
 # install powerline/font
@@ -29,14 +25,8 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 if hash autojump 2> /dev/null; then
   echo autojump is installed!
 else
-  sudo $PKMG autojump
-  git clone git://github.com/joelthelion/autojump.git
-  cd autojump
-  ./install.py
-  cd ..
-  sudo rm autojump -r
+  yay -S autojump
 fi
-
 
 
 # has
@@ -60,9 +50,15 @@ yay  -S  prettyping
 git clone -b dotfiles https://github.com/pittcat/space-vim.git ~/.space-vim
 ln -s $PWD/space-vim/spacevim $HOME/.spacevim
 sudo rm $HOME/.space-vim/private/* -r
+if [ ! -d $HOME/.config/nvim ]; then
+    mkdir -p $HOME/.config/nvim
+    ln -s $PWD/space-vim/UltiSnips/ $HOME/.config/nvim/
+fi
 ln -s $PWD/space-vim/private/* $HOME/.space-vim/private/
-ln -s $PWD/space-vim/UltiSnips/ $HOME/.config/nvim/
-ln -s $PWD/space-vim/UltiSnips/ $HOME/.vim/
+if [ ! -d $HOME/.vim ]; then
+    mkdir -p $HOME/.vim
+    ln -s $PWD/space-vim/UltiSnips/ $HOME/.vim/
+fi
 # cd ~/.space-vim
 # make vim 
 
