@@ -25,9 +25,15 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 if hash autojump 2> /dev/null; then
   echo autojump is installed!
 else
-  yay -S autojump
+  yay -S direnv
 fi
 
+# direnv 
+if hash direnv 2> /dev/null; then
+  echo direnv is installed!
+else
+  yay -S autojump
+fi
 
 # has
 git clone https://github.com/kdabir/has.git && cd has && sudo make install
