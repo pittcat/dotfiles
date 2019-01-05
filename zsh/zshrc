@@ -46,9 +46,7 @@ EOB
 
 
 # Load the theme.
-# antigen theme robwierzbowski/charged-zsh-theme
-# antigen theme hoffi/zsh-theme-lambda
-antigen theme denysdovhan/spaceship-prompt
+antigen theme sobolevn/sobole-zsh-theme
 
 # # Tell Antigen that you're done.
 antigen apply
