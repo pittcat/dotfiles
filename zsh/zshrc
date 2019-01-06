@@ -46,8 +46,7 @@ EOB
 
 
 # Load the theme.
-antigen theme sobolevn/sobole-zsh-theme
-
+antigen theme yardnsm/blox-zsh-theme
 # # Tell Antigen that you're done.
 antigen apply
 
