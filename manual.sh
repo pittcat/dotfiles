@@ -58,13 +58,13 @@ ln -s $PWD/space-vim/spacevim $HOME/.spacevim
 sudo rm $HOME/.space-vim/private/* -r
 if [ ! -d $HOME/.config/nvim ]; then
     mkdir -p $HOME/.config/nvim
-    ln -s $PWD/space-vim/UltiSnips/ $HOME/.config/nvim/
 fi
-ln -s $PWD/space-vim/private/* $HOME/.space-vim/private/
+ln -s $PWD/space-vim/UltiSnips/ $HOME/.config/nvim/
 if [ ! -d $HOME/.vim ]; then
     mkdir -p $HOME/.vim
-    ln -s $PWD/space-vim/UltiSnips/ $HOME/.vim/
 fi
+ln -s $PWD/space-vim/UltiSnips/ $HOME/.vim/
+ln -s $PWD/space-vim/private/* $HOME/.space-vim/private/
 # cd ~/.space-vim
 # make vim 
 
