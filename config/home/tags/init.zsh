@@ -4,6 +4,6 @@ pip install pygments --user
 mkdir -p ~/.ctags.d/
 ln -s $PWD/tags ~/.ctags.d/.ctags
 
-
 ln -s $PWD/ctags ~/.ctags
-ln -s $PWD/gtags.conf /usr/share/gtags
+sudo rm /usr/share/gtags/gtags.conf
+sudo ln -s $PWD/gtags.conf /usr/share/gtags
