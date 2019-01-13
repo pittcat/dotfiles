@@ -1,6 +1,6 @@
 # chmod a+x jupyter-init.sh
 
-
+sudo pacman -S pandoc
 sudo pip install jupyter pyecharts 
 pip install jupyter pyecharts --user
 # sudo jupyter labextension install jupyterlab_vim jupyterlab-drawio @oriolmirosa/jupyterlab_materialdarker
