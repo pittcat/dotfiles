@@ -17,8 +17,6 @@
 
 (require 'super-save)
 (super-save-mode +1)
-;;restart
-(setq restart-emacs-restore-frames t)
 
 
 ;; which-key

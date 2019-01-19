@@ -77,7 +77,6 @@
 (depends-on "super-save")
 (depends-on "autopair")
 (depends-on "highlight-indentation")
-(depends-on "restart-emacs")
 (depends-on "undo-tree")
 (depends-on "rainbow-delimiters")
 (depends-on "hungry-delete")

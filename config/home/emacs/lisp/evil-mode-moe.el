@@ -15,7 +15,6 @@
   "bd" 'kill-this-buffer
   "bn" 'next-buffer
   "bp" 'previous-buffer
-  "qr" 'restart-emacs
   "ci" 'evilnc-comment-or-uncomment-lines
   "fs" 'full-auto-save
   "qq" 'save-buffers-kill-emacs
