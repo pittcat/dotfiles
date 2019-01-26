@@ -27,7 +27,7 @@ let g:spacevim_layers = [
       \ 'file-manager',
       \ 'moe-tags',
       \ 'fzf',
-      \ 'moe-ncm2',
+      \ 'coc',
       \ 'airline',
       \ 'yaml',
       \ ]
