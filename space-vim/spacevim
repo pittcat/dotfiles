@@ -18,6 +18,7 @@ let g:spacevim_layers = [
       \'lspc','codesnippets',
       \ 'moe-ale',
       \ 'html',
+      \ 'java',
       \ 'javascript',
       \ 'typescript',
       \ 'c-c++',
@@ -27,7 +28,7 @@ let g:spacevim_layers = [
       \ 'file-manager',
       \ 'moe-tags',
       \ 'fzf',
-      \ 'moe-ncm2',
+      \ 'coc',
       \ 'airline',
       \ 'yaml',
       \ ]
