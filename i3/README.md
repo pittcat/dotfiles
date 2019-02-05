@@ -13,6 +13,7 @@
    * betterlockscreen
    * zeal
    * tdrop-git
+   * mathpix-snipping-tool
 ## Config
     chmod a+x ./init.sh
   ./init.sh

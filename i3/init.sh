@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-yay -S conky rofi nautilus fcitx google-chrome rofi-greenclip xorg-xprop okular dunst feh betterlockscreen  zeal tdrop-git polybar-git
+yay -S conky rofi nautilus fcitx google-chrome rofi-greenclip xorg-xprop okular dunst feh betterlockscreen  zeal tdrop-git polybar-git mathpix-snipping-tool
 
 ln -s ../i3 $HOME/.i3
 ln -s $PWD/polybar $HOME/.config/    

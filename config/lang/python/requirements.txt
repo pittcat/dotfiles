@@ -17,3 +17,4 @@ python-language-server
 pipenv
 youtube-dl
 youdao-wd
+pudb
