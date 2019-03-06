@@ -25,6 +25,7 @@ let g:spacevim_layers = [
       \ 'markdown',
       \ 'python',
       \ 'rust',
+      \ 'latex',
       \ 'file-manager',
       \ 'moe-tags',
       \ 'fzf',
@@ -47,7 +48,6 @@ function! UserInit()
   Plug 'tpope/vim-scriptease'
   Plug 'embear/vim-localvimrc'
   Plug 'romainl/Apprentice'
-  
 endfunction
 
 
@@ -70,7 +70,5 @@ function! UserConfig()
   "
   autocmd FileType vim nnoremap <F5> :source %<cr>
   let g:localvimrc_ask=0
-
-
   "
 endfunction
