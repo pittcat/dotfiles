@@ -18,7 +18,6 @@ let g:spacevim_layers = [
       \'lspc','codesnippets',
       \ 'moe-ale',
       \ 'html',
-      \ 'java',
       \ 'javascript',
       \ 'typescript',
       \ 'c-c++',
@@ -26,8 +25,10 @@ let g:spacevim_layers = [
       \ 'python',
       \ 'rust',
       \ 'latex',
-      \ 'file-manager',
+      \ 'defx',
       \ 'moe-tags',
+      \ 'term',
+      \ 'repl',
       \ 'fzf',
       \ 'coc',
       \ 'airline',
@@ -48,6 +49,7 @@ function! UserInit()
   Plug 'tpope/vim-scriptease'
   Plug 'embear/vim-localvimrc'
   Plug 'romainl/Apprentice'
+  Plug 'liuchengxu/space-vim-theme'
 endfunction
 
 
@@ -60,12 +62,14 @@ function! UserConfig()
   color desert
   syntax on
 
+
   nnoremap <silent> <localleader>tt :StartupTime<cr>
   nnoremap <silent> <localleader>pu :UpdateRemotePlugins<cr>
   " maps
   " theme setting
   " {
-  colorscheme apprentice
+  " colorscheme apprentice
+  colorscheme space_vim_theme
   " }
   "
   autocmd FileType vim nnoremap <F5> :source %<cr>
