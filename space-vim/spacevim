@@ -15,7 +15,8 @@ let g:spacevim_layers = [
       \ 'git',
       \ 'tools-better',
       \ 'self-map',
-      \'lspc','codesnippets',
+      \ 'lspc',
+      \ 'codesnippets',
       \ 'moe-ale',
       \ 'html',
       \ 'javascript',
@@ -70,9 +71,9 @@ function! UserConfig()
   " theme setting
   " {
   " colorscheme apprentice
-  let g:seoul256_background = 236
-  colorscheme seoul256
-  " colorscheme space_vim_theme
+  " let g:seoul256_background = 236
+  " colorscheme seoul256
+  colorscheme space_vim_theme
   " }
   "
   autocmd FileType vim nnoremap <F5> :source %<cr>
