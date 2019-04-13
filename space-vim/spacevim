@@ -16,7 +16,6 @@ let g:spacevim_layers = [
       \ 'tools-better',
       \ 'self-map',
       \ 'lspc',
-      \ 'codesnippets',
       \ 'moe-ale',
       \ 'html',
       \ 'javascript',

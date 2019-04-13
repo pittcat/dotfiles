@@ -2,6 +2,7 @@
 # https://github.com/rbenv/ruby-build/wiki
 # rbenv and ruby
 
+sudo pacman -S ruby
 #install ruby
 
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
@@ -25,8 +26,5 @@ gem sources --add https://mirrors.tuna.tsinghua.edu.cn/rubygems/ --remove https:
 # vim setting
 # autocomplete
 # gem install solargraph
-# pip install solargraph-utils.py --user
-# yard gems 
-# yard config --gem-install-yri
 # gem install rubocop   # ale and neoformat
 # gem install ripper-tags # tagbar
