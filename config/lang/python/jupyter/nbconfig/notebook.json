@@ -13,7 +13,8 @@
     "code_prettify/code_prettify": true,
     "scratchpad/main": false,
     "hide_input_all/main": true,
-    "hinterland/hinterland": false
+    "hinterland/hinterland": false,
+    "notify/notify": true
   },
   "Notebook": {
     "Toolbar": true
