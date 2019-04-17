@@ -16,7 +16,8 @@ jupyter nbextension enable vim_binding/vim_binding
 
 # theme
 sudo pip install jupyterthemes 
-jt -t onedork -cellw 100%
+pip install pixiedust --user
+jt -t solarizedd -T -vim -nfs 13 -cellw 92%
 
 sudo pip install jupyter_contrib_nbextensions
 jupyter contrib nbextension install --user
