@@ -14,7 +14,13 @@
     "scratchpad/main": false,
     "hide_input_all/main": true,
     "hinterland/hinterland": false,
-    "notify/notify": true
+    "notify/notify": true,
+    "init_cell/main": true,
+    "code_font_size/code_font_size": false,
+    "splitcell/splitcell": false,
+    "highlighter/highlighter": false,
+    "runtools/main": true,
+    "snippets_menu/main": true
   },
   "Notebook": {
     "Toolbar": true
