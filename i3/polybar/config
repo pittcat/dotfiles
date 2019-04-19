@@ -61,7 +61,7 @@ module-margin-right = 0
 
 modules-left = i3
 modules-center =
-modules-right = pulseaudio networkspeeddown getpbip getprip memory cpu  date
+modules-right = networkspeeddown getpbip getprip memory cpu  date
 
 fixed-center = false
 
@@ -199,27 +199,6 @@ format-prefix-overline = ${colors.background}
 
 date = " %I:%M %p "
 date-alt = " %m/%d/%Y @ %I:%M %p "
-label-foreground = ${colors.dark}
-label-background = ${colors.magenta}
-label-underline = ${colors.background}
-label-overline = ${colors.background}
-
-[module/pulseaudio]
-type = internal/pulseaudio
-
-; pacmd list-sinks
-sink = alsa_output.pci-0000_02_02.0.analog-stereo
-
-use-ui-max = true
-
-interval = 5
-
-format-prefix = "  "
-format-prefix-background = ${colors.dark}
-format-prefix-foreground = ${colors.cyan}
-format-prefix-underline = ${colors.background}
-format-prefix-overline = ${colors.background}
-
 label-foreground = ${colors.dark}
 label-background = ${colors.magenta}
 label-underline = ${colors.background}
