@@ -24,5 +24,9 @@
   },
   "Notebook": {
     "Toolbar": true
+  },
+  "highlight_selected_word": {
+    "highlight_color": "#58563f",
+    "highlight_color_blurred": "#464639"
   }
 }
