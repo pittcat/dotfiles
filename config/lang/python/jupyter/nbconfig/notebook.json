@@ -26,7 +26,7 @@
     "Toolbar": true
   },
   "highlight_selected_word": {
-    "highlight_color": "#58563f",
-    "highlight_color_blurred": "#464639"
+    "highlight_color": "#3860b3",
+    "highlight_color_blurred": "#3860b3"
   }
 }
