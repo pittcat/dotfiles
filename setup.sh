@@ -36,7 +36,7 @@ cd .. && sudo rm yay -r
 # choose install
 sudo $PKMG gvim the_silver_searcher clang-tools-extra
 source $HOME/.zshrc
-yay -S shadowsocks-qt5  shadowsocks-libev
+yay -S shadowsocks-qt5  shadowsocks-libev rclone
 
 # --------------------------------------------common config -------------------------------------------- #
 
