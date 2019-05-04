@@ -223,5 +223,5 @@ exec megasync
 exec --no-startup-id dunst -config ~/.i3/dunst/dunstrc
 
 # Launch a terminal and move it to scratchpad; dropdown-terminal
-exec --no-startup-id zeal -name scratchzeal
-for_window [instance="scratchzeal"] move scratchpad
+# exec --no-startup-id zeal -name scratchzeal
+# for_window [instance="scratchzeal"] move scratchpad
