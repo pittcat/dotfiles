@@ -20,7 +20,8 @@
     "splitcell/splitcell": false,
     "highlighter/highlighter": false,
     "runtools/main": true,
-    "snippets_menu/main": true
+    "snippets_menu/main": true,
+    "jupytext/index": true
   },
   "Notebook": {
     "Toolbar": true
@@ -28,5 +29,6 @@
   "highlight_selected_word": {
     "highlight_color": "#3860b3",
     "highlight_color_blurred": "#3860b3"
-  }
+  },
+  "autosavetime_set_starting_interval": true
 }
