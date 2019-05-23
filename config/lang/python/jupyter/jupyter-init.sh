@@ -30,5 +30,18 @@ sudo jupyter dashboards quick-setup --sys-prefix
 sudo jupyter nbextension install --py jupyter_dashboards --sys-prefix
 sudo jupyter nbextension enable --py jupyter_dashboards --sys-prefix
 
+# jupytext
+pip install jupytext --upgrade
+
+# nbdime
+pip install nbdime --user
+jupyter serverextension enable --py nbdime --user
+jupyter nbextension install --py nbdime --user
+jupyter nbextension enable --py nbdime --user
+
+
+rm ~/.jupyter/jupyter_notebook_config.*
+ln -s $PWD/jupyter_notebook_config.* ~/.jupyter/
+
 rm ~/.jupyter/custom/custom.js
 ln -s $PWD/custom.js  ~/.jupyter/custom/custom.js
