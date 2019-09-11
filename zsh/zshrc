@@ -23,7 +23,6 @@ copyfile
 python
 pip
 # js
-npm
 # rb
 ruby
 rbenv
