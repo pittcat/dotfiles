@@ -11,7 +11,6 @@ let g:spacevim_layers = [
       \ 'tmux',
       \ 'better-motion',
       \ 'editing',
-      \ 'moe-tagbar',
       \ 'git',
       \ 'tools-better',
       \ 'self-map',
@@ -32,8 +31,9 @@ let g:spacevim_layers = [
       \ 'fzf',
       \ 'coc',
       \ 'latex',
-      \ 'airline',
       \ 'yaml',
+      \ 'vista',
+      \ 'codesnippets'
       \ ]
 
       " \ 'autocomplete'
@@ -79,4 +79,5 @@ function! UserConfig()
   autocmd FileType vim nnoremap <F5> :source %<cr>
   let g:localvimrc_ask=0
   "
+
 endfunction
