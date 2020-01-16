@@ -1,0 +1,76 @@
+conky.config = {
+    background = false,
+    own_window_type = 'override',
+    cpu_avg_samples = 2,
+    net_avg_samples = 2,
+    out_to_console = false,
+    use_xft = true,
+    font = 'Fira Code Medium:bold:size=10',
+    own_window_transparent = false,
+    xftalpha = 0.8,
+    update_interval = 1,
+    own_window = true,
+    own_window_transparent = true,
+    own_window_hints = 'undecorated, below, skip_taskbar',
+    double_buffer = true,
+    minimum_width = 5,
+    draw_shades = false,
+    draw_outline = false,
+    draw_borders = false,
+    border_width = 1,
+    default_color = white,
+    default_shade_color = white,
+    default_outline_color = white,
+    gap_x = 15,
+    gap_y = 70,
+    alignment = 'top_right',
+    use_spacer = no,
+    no_buffers = true,
+    uppercase = false,
+    xmms_player = bmp
+}
+
+-- The details that will be displayed in conky
+conky.text = [[
+# System name
+    ${color #FF4500} ${alignc} $sysname $kernel $machine 
+
+# Time since the device has been turned on
+    ${color #FF4500} ${alignc}Uptime:${color #FFBB00} $uptime ${color #356282}
+
+# Stats showing usage of each CPU core, uncomment if you have more/less
+    ${color #FF4500}CPU 1: ${color #FFBB00} ${cpu cpu1}% ${color #FFBB00} ${cpubar cpu1}
+    ${color #FF4500}CPU 2: ${color #FFBB00} ${cpu cpu2}% ${color #FFBB00} ${cpubar cpu2}
+#    ${color #FF4500}CPU 3: ${color #FFBB00} ${cpu cpu3}% ${color #FFBB00} ${cpubar cpu3}
+#    ${color #FF4500}CPU 4: ${color #FFBB00} ${cpu cpu4}% ${color #FFBB00} ${cpubar cpu4}
+#    ${color #FF4500}CPU 5: ${color #FFBB00} ${cpu cpu5}% ${color #FFBB00} ${cpubar cpu5}
+#    ${color #FF4500}CPU 6: ${color #FFBB00} ${cpu cpu6}% ${color #FFBB00} ${cpubar cpu6}
+#    ${color #FF4500}CPU 7: ${color #FFBB00} ${cpu cpu7}% ${color #FFBB00} ${cpubar cpu7}
+#    ${color #FF4500}CPU 8: ${color #FFBB00} ${cpu cpu8}% ${color #FFBB00} ${cpubar cpu8}
+#    ${color #FF4500}CPU 9: ${color #FFBB00} ${cpu cpu9}% ${color #FFBB00} ${cpubar cpu9}
+#    ${color #FF4500}CPU 10: ${color #FFBB00} ${cpu cpu10}% ${color #FFBB00} ${cpubar cpu10}
+#    ${color #FF4500}CPU 11: ${color #FFBB00} ${cpu cpu11}% ${color #FFBB00} ${cpubar cpu11}
+#    ${color #FF4500}CPU 12: ${color #FFBB00} ${cpu cpu12}% ${color #FFBB00} ${cpubar cpu12}
+# Number of running processes
+    ${color #FF4500}Processes:${color #FFBB00} $processes
+
+# Used RAM/Max RAM, respectively Swap used size/Swap max size, usage shown in percentage as well
+    ${color #FF4500}RAM:${color #FFBB00} $mem/$memmax - $memperc%
+    ${color #FF4500}SWP:${color #FFBB00} $swap/$swapmax - $swapperc%
+
+# Used space/Max space of root
+    ${color #FF4500}Hard Disks:
+    ${color #FF4500} / ${color #FFBB00}${fs_used /}/${fs_size /}${alignr}${color #FFBB00}${fs_bar 5,120 /}
+
+# Top 3 CPU consuming processes
+    ${color #FF4500}CPU Usage         PID     CPU%   MEM%
+    ${color #FFBB00} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
+    ${color #FF4500} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+    ${color #FF4500} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+
+# Top 3 RAM consuming processes
+    ${color #FF4500}RAM Usage
+    ${color #FFBB00} ${top_mem name 1} ${top_mem pid 1} ${top_mem cpu 1} ${top_mem mem 1}
+    ${color #FF4500} ${top_mem name 2} ${top_mem pid 2} ${top_mem cpu 2} ${top_mem mem 2}
+    ${color #FF4500} ${top_mem name 3} ${top_mem pid 3} ${top_mem cpu 3} ${top_mem mem 3}
+]]
