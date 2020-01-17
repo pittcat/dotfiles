@@ -1,6 +1,3 @@
-set arrowstyle = highlight
-set color = LightMagenta
-set hlsearch
 set ignorecase
 #set showdebugcommands
 set tabstop=2
@@ -12,22 +9,22 @@ imap ; <ESC>
 map <enter> :
 # SPC : toggle breakpoint
 # a : list args
-map a iinfo<Space>args<CR><ESC>
+# map a iinfo<Space>args<CR><ESC>
 # bt : backtrace
-map bt ibt<CR><ESC>
-map c :continue<CR>
-map d :down<CR>
-map e :set<Space>dis<CR>
-map E :set<Space>nodis<CR>
+# map bt ibt<CR><ESC>
+# map c :continue<CR>
+# map d :down<CR>
+# map e :set<Space>dis<CR>
+# map E :set<Space>nodis<CR>
 # f : finish
 map f :finish<CR>
 # n : next
-map n :next<CR>
+map <C-n> :next<CR>
 # o : open file dialog
 # r : run
 map r :run<CR>
-map s :step<CR>
+# map s :step<CR>
 # t : temp Breakpoint
-map u :up<CR>
-map U :until<CR>
-map v iinfo<Space>locals<CR><ESC>
+# map u :up<CR>
+# map U :until<CR>
+# map v iinfo<Space>locals<CR><ESC>
