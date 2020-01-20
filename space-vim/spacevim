@@ -32,7 +32,6 @@ let g:spacevim_layers = [
       \ 'coc',
       \ 'yaml',
       \ 'vista',
-      \ 'codesnippets'
       \ ]
 
       " \ 'autocomplete'
@@ -51,6 +50,7 @@ function! UserInit()
   Plug 'romainl/Apprentice'
   Plug 'liuchengxu/space-vim-theme'
   Plug 'junegunn/seoul256.vim'
+  Plug 'lifepillar/vim-gruvbox8'
 endfunction
 
 
@@ -72,7 +72,8 @@ function! UserConfig()
   " colorscheme apprentice
   " let g:seoul256_background = 236
   " colorscheme seoul256
-  colorscheme space_vim_theme
+  " colorscheme space_vim_theme
+  colorscheme gruvbox8_soft
   " }
   "
   autocmd FileType vim nnoremap <F5> :source %<cr>
