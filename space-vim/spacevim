@@ -15,9 +15,6 @@ let g:spacevim_layers = [
       \ 'tools-better',
       \ 'self-map',
       \ 'moe-ale',
-      \ 'html',
-      \ 'javascript',
-      \ 'typescript',
       \ 'c-c++',
       \ 'latex',
       \ 'markdown',
@@ -51,6 +48,7 @@ function! UserInit()
   Plug 'liuchengxu/space-vim-theme'
   Plug 'junegunn/seoul256.vim'
   Plug 'lifepillar/vim-gruvbox8'
+  Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
 endfunction
 
 
