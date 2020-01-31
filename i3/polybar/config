@@ -61,7 +61,7 @@ module-margin-right = 0
 
 modules-left = i3
 modules-center =
-modules-right =info-ssh-sessions networkspeeddown getpbip getprip memory cpu  date
+modules-right =networkspeeddown info-ssh-sessions  getpbip getprip memory cpu  date
 
 fixed-center = false
 
@@ -121,12 +121,12 @@ interval = 10
 
 format-prefix = "  "
 format-prefix-background = ${colors.dark}
-format-prefix-foreground = ${colors.cyan}
+format-prefix-foreground = ${colors.orange}
 format-prefix-underline = ${colors.background}
 format-prefix-overline = ${colors.background}
 
 label-foreground = ${colors.dark}
-label-background = ${colors.magenta}
+label-background = ${colors.orange}
 label-underline = ${colors.background}
 label-overline = ${colors.background}
 

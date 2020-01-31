@@ -22,11 +22,11 @@ let g:spacevim_layers = [
       \ 'lua',
       \ 'rust',
       \ 'defx',
+      \ 'coc',
       \ 'moe-tags',
       \ 'term',
       \ 'repl',
       \ 'fzf',
-      \ 'coc',
       \ 'yaml',
       \ 'vista',
       \ ]
@@ -48,7 +48,8 @@ function! UserInit()
   Plug 'liuchengxu/space-vim-theme'
   Plug 'junegunn/seoul256.vim'
   Plug 'lifepillar/vim-gruvbox8'
-  Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
+  Plug 'icymind/NeoSolarized'
+  Plug 'fenetikm/falcon'
 endfunction
 
 
