@@ -48,8 +48,6 @@ function! UserInit()
   Plug 'liuchengxu/space-vim-theme'
   Plug 'junegunn/seoul256.vim'
   Plug 'lifepillar/vim-gruvbox8'
-  Plug 'icymind/NeoSolarized'
-  Plug 'fenetikm/falcon'
 endfunction
 
 
@@ -65,6 +63,7 @@ function! UserConfig()
 
   nnoremap <silent> <localleader>tt :StartupTime<cr>
   nnoremap <silent> <localleader>pu :UpdateRemotePlugins<cr>
+  let g:python3_host_prog='/usr/bin/python'
   " maps
   " theme setting
   " {
