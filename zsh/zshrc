@@ -24,15 +24,15 @@ python
 pip
 # js
 # rb
-ruby
-rbenv
-gem
+# ruby
+# rbenv
+# gem
 EOB
 # --------------------------------------------other -------------------------------------------- #
 antigen bundles <<EOB
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
-zsh-users/zsh-syntax-highlighting
+zdharma/fast-syntax-highlighting
 changyuheng/zsh-interactive-cd
 hlissner/zsh-autopair
 Tarrasch/zsh-bd
