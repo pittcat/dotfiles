@@ -47,7 +47,7 @@ function! UserInit()
   Plug 'liuchengxu/space-vim-theme'
   Plug 'junegunn/seoul256.vim'
   Plug 'lifepillar/vim-gruvbox8'
-  Plug 'chriskempson/base16-vim'
+  Plug 'lambdalisue/suda.vim'
 endfunction
 
 
@@ -71,7 +71,6 @@ function! UserConfig()
   " let g:seoul256_background = 236
   " colorscheme seoul256
   colorscheme space_vim_theme
-  " colorscheme base16-default-dark
   " colorscheme gruvbox8_soft
   " hi Normal guibg=NONE ctermbg=NONE
   " }
