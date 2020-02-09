@@ -21,10 +21,10 @@ alias sz='source ~/.zshrc>> /dev/null && zsh  '
 alias ipb='ipython notebook'
 alias trp='trash-put'
 alias pc='proxychains4'
-alias ss.start='nohup ss-local -c /etc/sslocal.json < /dev/null &>> /var/log/sslocal.log &'
+alias ss.start='nohup sslocal -c /etc/sslocal.json < /dev/null &>> /var/log/sslocal.log &'
 alias setssproxy="export ALL_PROXY=socks5://127.0.0.1:1080"
 alias unsetssproxy="unset ALL_PROXY"
-alias sethtproxy="export http_proxy=http://127.0.0.1:7777 && export https_proxy=http://127.0.0.1:7777"
+alias sethtproxy="export http_proxy=http://127.0.0.1:8123 && export https_proxy=http://127.0.0.1:8123"
 alias unsethtproxy="unset http_proxy && unset https_proxy"
 alias dral='direnv allow .'
 alias rm='trash-put'

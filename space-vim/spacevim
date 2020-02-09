@@ -16,7 +16,6 @@ let g:spacevim_layers = [
       \ 'self-map',
       \ 'moe-ale',
       \ 'c-c++',
-      \ 'latex',
       \ 'markdown',
       \ 'python',
       \ 'lua',
@@ -26,7 +25,7 @@ let g:spacevim_layers = [
       \ 'moe-tags',
       \ 'term',
       \ 'repl',
-      \ 'fzf',
+      \ 'clap',
       \ 'yaml',
       \ 'vista',
       \ ]
@@ -48,6 +47,7 @@ function! UserInit()
   Plug 'liuchengxu/space-vim-theme'
   Plug 'junegunn/seoul256.vim'
   Plug 'lifepillar/vim-gruvbox8'
+  Plug 'chriskempson/base16-vim'
 endfunction
 
 
@@ -70,8 +70,10 @@ function! UserConfig()
   " colorscheme apprentice
   " let g:seoul256_background = 236
   " colorscheme seoul256
-  " colorscheme space_vim_theme
-  colorscheme gruvbox8_soft
+  colorscheme space_vim_theme
+  " colorscheme base16-default-dark
+  " colorscheme gruvbox8_soft
+  " hi Normal guibg=NONE ctermbg=NONE
   " }
   "
   autocmd FileType vim nnoremap <F5> :source %<cr>

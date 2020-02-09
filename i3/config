@@ -216,11 +216,13 @@ exec_always $HOME/.config/polybar/launch.sh
 exec fcitx
 # vmvare copy and paste
 exec vmware-user-suid-wrapper --no-startup-id
-exec_always --no-startup-id ~/.i3/bing-wallpaper.sh
+# exec_always --no-startup-id ~/.i3/bing-wallpaper.sh
+exec_always --no-startup-id feh --bg-fill /home/pittcat/Image/selfwallpaper.png
 exec_always --no-startup-id ~/.i3/rclone.sh
 exec_always --no-startup-id greenclip daemon
 exec_always --no-startup-id conky -c ~/.i3/conkyrc
 exec megasync
+exec --no-startup-id compton -b -c -f
 exec --no-startup-id dunst -config ~/.i3/dunst/dunstrc
 
 # Launch a terminal and move it to scratchpad; dropdown-terminal
