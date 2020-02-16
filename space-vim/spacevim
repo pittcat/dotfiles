@@ -47,7 +47,6 @@ function! UserInit()
   Plug 'liuchengxu/space-vim-theme'
   Plug 'junegunn/seoul256.vim'
   Plug 'lifepillar/vim-gruvbox8'
-  Plug 'lambdalisue/suda.vim'
 endfunction
 
 
