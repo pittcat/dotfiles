@@ -13,7 +13,7 @@
 # Noto Mono for Powerline Bold ---terminal
 
   
-yay -S  otf-fira-code-git ffsend
+yay -S  otf-fira-code-git ffsend cod
 # bat  ripgrep
 sudo pacman -S bat ripgrep
 

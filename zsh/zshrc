@@ -37,7 +37,6 @@ changyuheng/zsh-interactive-cd
 hlissner/zsh-autopair
 Tarrasch/zsh-bd
 djui/alias-tips
-esc/conda-zsh-completion
 # js
 # py
 gangleri/pipenv
@@ -57,3 +56,5 @@ antigen apply
 . $HOME/.zshkeybind
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source <(cod init $$ zsh)
