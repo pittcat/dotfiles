@@ -84,3 +84,5 @@ export GTAGSCONF=/usr/local/share/gtags/gtags.conf
 # conda
 export PATH=$PATH:$HOME/.miniconda3/bin
 export NNN_USE_EDITOR=1
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=180'
