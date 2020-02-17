@@ -5,6 +5,6 @@ mkdir -p ~/.ctags.d/
 
 ln -s $PWD/ctags ~/.ctags
 if [ -d "/usr/share/gtags/gtags.conf" ] ; then
-sudo rm /usr/share/gtags/gtags.conf
+sudo rm /usr/local/share/gtags/gtags.conf
 fi
-sudo ln -s $PWD/gtags.conf /usr/share/gtags
+sudo ln -s $PWD/gtags.conf /usr/local/share/gtags

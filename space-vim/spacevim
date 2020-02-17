@@ -74,7 +74,7 @@ function! UserConfig()
   " hi Normal guibg=NONE ctermbg=NONE
   " }
   "
-  autocmd FileType vim nnoremap <F5> :source %<cr>
+  autocmd FileType vim nnoremap <buffer> <F5> :source %<cr>
   let g:localvimrc_ask=0
   "
 

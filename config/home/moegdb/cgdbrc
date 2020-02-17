@@ -1,4 +1,5 @@
 set ignorecase
+set asr
 #set showdebugcommands
 set tabstop=2
 set winsplit=src_big
