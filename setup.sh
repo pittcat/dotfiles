@@ -50,13 +50,3 @@ echo "xcape -e 'Caps_Lock=Escape;'" >> $HOME/.profile
 
 mkdir -p $HOME/.antigen/
 curl -L git.io/antigen > $HOME/.antigen/antigen.zsh
-
-
-# install thefuck
-# pip install -r ./config/requirements.txt
-
-ln -s $PWD/zsh/zshrc ~/.zshrc
-ln -s $PWD/zsh/zshaliases ~/.zshaliases
-ln -s $PWD/zsh/zshfunction ~/.zshfunction
-ln -s $PWD/zsh/zshenv ~/.zshenv
-ln -s $PWD/zsh/zshkeybind ~/.zshkeybind
