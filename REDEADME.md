@@ -1,5 +1,5 @@
 ### aurlist gen
-pacman -Qqm >> aurlist
+pacman -Qqm > aurlist
 
 ### pkglist gen
 pacman -Qqet > pkglist

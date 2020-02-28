@@ -14,7 +14,6 @@ byobu
 ccls
 cgdb
 cmake
-cod
 conky
 cscope
 cups-pdf
@@ -75,7 +74,7 @@ stow
 tdrop-git
 tealdeer
 the_silver_searcher
-tidy-html5-git
+tidy
 tig
 traceroute
 trash-cli
@@ -86,6 +85,9 @@ ttf-roboto
 wget
 wqy-microhei
 xcape
+xf86-input-vmmouse
+xf86-video-intel
+xf86-video-vmware
 xfce4-appfinder
 xfce4-power-manager
 xfce4-session
@@ -98,3 +100,4 @@ yarn
 yay
 zeal
 zip
+zsh

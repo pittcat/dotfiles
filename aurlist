@@ -1,6 +1,5 @@
 autojump
 betterlockscreen
-cod
 direnv
 fcitx5-git
 global
@@ -13,7 +12,6 @@ polybar-git
 rofi-greenclip
 tdrop-git
 tealdeer
-tidy-html5-git
 universal-ctags-git
 xcb-imdkit-git
 yay
