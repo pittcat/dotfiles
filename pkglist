@@ -86,9 +86,6 @@ ttf-roboto
 wget
 wqy-microhei
 xcape
-xf86-input-vmmouse
-xf86-video-intel
-xf86-video-vmware
 xfce4-appfinder
 xfce4-power-manager
 xfce4-session
