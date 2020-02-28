@@ -62,7 +62,7 @@ function! UserConfig()
 
   nnoremap <silent> <localleader>tt :StartupTime<cr>
   nnoremap <silent> <localleader>pu :UpdateRemotePlugins<cr>
-  let g:python3_host_prog='/usr/bin/python'
+  let g:python3_host_prog='/usr/bin/python3'
   " maps
   " theme setting
   " {

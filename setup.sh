@@ -1,52 +1,11 @@
-#!/usr/bin/env bash
-# set package manager
-PKMG="pacman -S"
-## --------------------------------------------must install -------------------------------------------- ##
-# common must install 
-sudo $PKMG zsh tmux byobu git curl emacs rsync nodejs tig cmake xsel xclip privoxy ranger httpie neovim net-tools xcape mosh ncdu fd htop highlight
+# zsh
+git clone https://github.com/zsh-users/antigen.git ~/antigen
 
-# privoxy autostart
-sudo sed -i "s/127.0.0.1:9050/127.0.0.1:1080/g;/127.0.0.1:1080/s/^#//g" /etc/privoxy/config
+# gtags
+sudo mkdir -p /usr/local/share/gtags
+sudo cp $PWD/gtags.conf /usr/local/share/gtags
 
-### 启动 privoxy.service 服务
-sudo systemctl enable privoxy.service 
+# cgdb
 
-# install proxychains-ng 
-if hash proxychains4 2> /dev/null; then
-  echo proxychains is installed!
-
-else
-  git clone https://github.com/rofl0r/proxychains-ng.git
-  cd proxychains-ng
-  # configure and install 
-  ./configure --prefix=/usr --sysconfdir=/etc
-  make
-  sudo make install
-  sudo make install-config # installs /etc/proxychains.conf
-  cd ..
-  sudo rm proxychains-ng -r
-  sudo sed -i "s/.*socks4[[:space:]]*127.0.0.1.*/socks5  127.0.0.1 1080/g" /etc/proxychains.conf
-fi
-
-
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-cd .. && sudo rm yay -r
-# choose install
-sudo $PKMG gvim the_silver_searcher clang-tools-extra
-source $HOME/.zshrc
-yay -S shadowsocks-qt5  shadowsocks-libev rclone
-
-# --------------------------------------------common config -------------------------------------------- #
-
-# remap caps esc
-# cp ./config/Xmodmap ~/.Xmodmap
-# sudo sh -c 'echo "xmodmap ~/.Xmodmap" >> /etc/rc.local'
-
-echo "xcape -e 'Caps_Lock=Escape;'" >> $HOME/.profile
-
-# --------------------------------------------zsh -------------------------------------------- #
-
-mkdir -p $HOME/.antigen/
-curl -L git.io/antigen > $HOME/.antigen/antigen.zsh
+wget -O ~/.gdbinit-gef.py -q https://github.com/hugsy/gef/raw/master/gef.py
+mkdir -p ~/.cgdb

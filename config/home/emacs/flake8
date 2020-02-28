@@ -1,3 +1,0 @@
-#~/.config/flake8
-[flake8]
-ignore=W,E501,E231,E225,E741,E116,E3,E226,E121

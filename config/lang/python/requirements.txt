@@ -18,3 +18,4 @@ pipenv
 youtube-dl
 youdao-wd
 pudb
+gdbgui

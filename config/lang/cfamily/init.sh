@@ -1,1 +1,1 @@
-yay -S clang ccls
+sudo pacman -S clang ccls

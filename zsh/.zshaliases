@@ -31,6 +31,7 @@ alias rm='trash-put'
 # alias v='vim'
 alias t='tmux'
 alias gdb="gdb -q"
+alias gef="gdb -ix ~/.gdbinit-gef.py"
 alias e='emacs &'
 alias n='nvim'
 alias server="browser-sync start -s -f . --no-notify --host $LOCAL_IP --port 3000"
