@@ -9,3 +9,6 @@ sudo cp $PWD/gtags.conf /usr/local/share/gtags
 
 wget -O ~/.gdbinit-gef.py -q https://github.com/hugsy/gef/raw/master/gef.py
 mkdir -p ~/.cgdb
+
+#Image
+mkdir -p ~/Image
