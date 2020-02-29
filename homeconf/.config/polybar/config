@@ -61,7 +61,7 @@ module-margin-right = 0
 
 modules-left = i3
 modules-center =
-modules-right =network-traffic info-ssh-sessions  getpbip getprip memory cpu  date
+modules-right =network-traffic info-ssh-sessions bluetooth getpbip getprip memory cpu  date
 
 fixed-center = false
 
@@ -114,7 +114,6 @@ label-background = ${colors.blue}
 label-overline = ${colors.background}
 
 
-
 [module/info-ssh-sessions]
 type = custom/script
 exec = ~/.config/polybar/ssh.sh
@@ -146,6 +145,15 @@ label-foreground = ${colors.dark}
 label-background = ${colors.green}
 label-underline = ${colors.background}
 label-overline = ${colors.background}
+
+
+[module/bluetooth]
+type = custom/script
+exec = ~/.config/polybar/bluetooth.sh
+interval = 2
+click-left = exec blueberry
+click-right = exec ~/.config/polybar/toggle_bluetooth.sh
+
 
 
 
