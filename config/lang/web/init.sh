@@ -1,5 +1,5 @@
 # web
 #  vim setting
-sudo pacman -S tidy #html
+sudo pacman -S tidy npm #html
 
-npm install -g $(cat npmpack | egrep -v "^\s*(#|$)")
+yarn global add $(cat yarnpack | egrep -v "^\s*(#|$)")
