@@ -2,7 +2,10 @@
 
 输入ifconfig查看网口
 
-然后修改
-[module/networkspeeddown]
-type = internal/network
-interface = enp2s0
+然后修改(network-traffic.sh)
+```
+INTERVAL=3
+INTERFACES="wlp0s20f0u3 enp2s0"
+```
+
+

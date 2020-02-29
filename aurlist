@@ -4,11 +4,13 @@ direnv
 fcitx5-git
 global
 google-chrome
+has-git
 mathpix-snipping-tool
 megasync
 neovim-nightly
 nerd-fonts-fira-code
 polybar-git
+rclone-browser
 rofi-greenclip
 tdrop-git
 tealdeer
