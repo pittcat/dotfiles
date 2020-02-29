@@ -154,6 +154,14 @@ interval = 2
 click-left = exec blueberry
 click-right = exec ~/.config/polybar/toggle_bluetooth.sh
 
+format-padding = 2
+format-prefix = "BL"
+format-prefix-background = ${colors.dark}
+format-prefix-foreground = ${colors.red}
+label-foreground = ${colors.dark}
+label-background = ${colors.magenta}
+label-underline = ${colors.background}
+label-overline = ${colors.background}
 
 
 
