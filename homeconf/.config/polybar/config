@@ -61,7 +61,7 @@ module-margin-right = 0
 
 modules-left = i3
 modules-center =
-modules-right =networkspeeddown info-ssh-sessions  getpbip getprip memory cpu  date
+modules-right =network-traffic info-ssh-sessions  getpbip getprip memory cpu  date
 
 fixed-center = false
 
@@ -95,31 +95,32 @@ label-focused-background = #3f3f3f
 label-focused-underline =  ${colors.cyan}
 label-focused-padding = 4
 
-[module/networkspeeddown]
-type = internal/network
-interface = ens33
 
-label-connected = "%downspeed:7%"
-format-connected = <label-connected>
-format-connected-prefix-foreground = #5b
-format-prefix = "  "
+[module/network-traffic]
+type = custom/script
+exec = ~/.config/polybar/network-traffic.sh
+tail = true
+interval = 10
+
+format-prefix = " "
 format-prefix-background = ${colors.dark}
-format-prefix-foreground = ${colors.cyan}
+format-prefix-foreground = ${colors.orange}
 format-prefix-underline = ${colors.background}
 format-prefix-overline = ${colors.background}
 
-label-connected-foreground = ${colors.dark}
-label-connected-background = ${colors.red}
-label-connected-underline = ${colors.background}
-label-connected-overline = ${colors.background}
+label-foreground = ${colors.dark}
+label-underline = ${colors.background}
+label-background = ${colors.blue}
+label-overline = ${colors.background}
+
 
 
 [module/info-ssh-sessions]
 type = custom/script
 exec = ~/.config/polybar/ssh.sh
-interval = 10
+interval = 3
 
-format-prefix = "  "
+format-prefix = " "
 format-prefix-background = ${colors.dark}
 format-prefix-foreground = ${colors.orange}
 format-prefix-underline = ${colors.background}
@@ -135,7 +136,7 @@ type = custom/script
 exec = ~/.config/polybar/getpbip.sh
 interval = 10
 
-format-prefix = "  "
+format-prefix = " "
 format-prefix-background = ${colors.dark}
 format-prefix-foreground = ${colors.cyan}
 format-prefix-underline = ${colors.background}
@@ -153,7 +154,7 @@ type = custom/script
 exec = ~/.config/polybar/getprip.sh
 interval = 10
 
-format-prefix = "  "
+format-prefix = " "
 format-prefix-background = ${colors.dark}
 format-prefix-foreground = ${colors.cyan}
 format-prefix-underline = ${colors.background}
@@ -170,7 +171,7 @@ label-overline = ${colors.background}
 type = internal/memory
 interval = 1
 
-format-prefix = "  "
+format-prefix = " "
 format-prefix-background = ${colors.dark}
 format-prefix-foreground = ${colors.violet}
 format-prefix-underline = ${colors.background}
@@ -187,7 +188,7 @@ label-overline = ${colors.background}
 type = internal/cpu
 interval = 1
 
-format-prefix = "  "
+format-prefix = " "
 format-prefix-background = ${colors.dark}
 format-prefix-foreground = ${colors.orange}
 format-prefix-underline = ${colors.background}
@@ -206,7 +207,7 @@ type = internal/date
 exec = TZ=Asia/Shanghai date +"Shanghai: %H:%M"
 interval = 2
 
-format-prefix = "  "
+format-prefix = " "
 format-prefix-background = ${colors.dark}
 format-prefix-foreground = ${colors.magenta}
 format-prefix-underline = ${colors.background}
