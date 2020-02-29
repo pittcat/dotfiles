@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rofi -config $HOME/.i3/rofi-config -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+rofi -config $HOME/.config/i3/rofi-config -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 sleep 0.5
 
 # Capture the selection

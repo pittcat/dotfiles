@@ -198,7 +198,7 @@ bindsym XF86AudioMute exec amixer set Master toggle
 
 # printscreen--scrot(Print=PrtSc/PrintScreen)
 bindsym $mod+Print exec scrot ~/Image/screenshot.png
-exec --no-startup-id betterlockscreen -u $HOME/Image/bing-wallpaper.jpg
+exec --no-startup-id betterlockscreen -u $HOME/Image/lock.jpg
 bindsym $mod+Shift+a exec betterlockscreen --lock
 
 bindsym $mod+o exec google-chrome-stable
