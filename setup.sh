@@ -1,5 +1,5 @@
 # zsh
-git clone https://github.com/zsh-users/antigen.git ~/antigen
+# git clone https://github.com/zsh-users/antigen.git ~/antigen
 
 # gtags
 sudo mkdir -p /usr/local/share/gtags
