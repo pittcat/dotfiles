@@ -219,6 +219,7 @@ exec vmware-user-suid-wrapper --no-startup-id
 exec_always --no-startup-id $scriptdir/bing-wallpaper.sh
 exec_always --no-startup-id greenclip daemon
 exec_always --no-startup-id conky -c $scriptdir/conkyrc
+exec_always --no-startup-id xmodmap ~/.Xmodmap
 exec megasync
 exec --no-startup-id compton -b -c -f
 exec --no-startup-id dunst -config /$HOME/.config/dunst/dunstrc

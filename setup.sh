@@ -1,5 +1,5 @@
 # zsh
-git clone https://github.com/zsh-users/antigen.git ~/antigen
+git clone https://github.com/zsh-users/antigen.git ~/.antigen
 
 # gtags
 sudo mkdir -p /usr/local/share/gtags
@@ -12,3 +12,7 @@ mkdir -p ~/.cgdb
 
 #Image
 mkdir -p ~/Image
+
+# fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
