@@ -16,3 +16,17 @@ xf86-video-vmware
 
 网络:[networkmanager](https://wiki.archlinux.org/index.php/NetworkManager#Installation)
 
+### 需要初始化的lang
+
+```
+cfamily
+bash
+rust 
+python 
+web
+```
+
+
+
+
+
