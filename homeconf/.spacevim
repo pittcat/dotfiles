@@ -21,6 +21,7 @@ let g:spacevim_layers = [
       \ 'lua',
       \ 'rust',
       \ 'coc',
+      \ 'defx',
       \ 'moe-tags',
       \ 'term',
       \ 'sidebar',
