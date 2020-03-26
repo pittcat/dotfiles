@@ -25,8 +25,3 @@ rust
 python 
 web
 ```
-
-### 手动配置rime
-
-https://github.com/scomper/Rime
-
