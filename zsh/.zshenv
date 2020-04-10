@@ -34,6 +34,7 @@ if [ -d "$HOME/.cargo/bin" ] ; then
     PATH=$PATH:$HOME/.cargo/bin
     export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
     export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+    export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
 fi
 
 # ruby
@@ -52,7 +53,7 @@ fi
 
 # java
 if hash javac 2>/dev/null; then
-    export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+    export JAVA_HOME=/usr/lib/jvm/java-13-openjdk
     export PATH=$JAVA_HOME/bin:$PATH
 fi
 

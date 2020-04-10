@@ -21,7 +21,6 @@ let g:spacevim_layers = [
       \ 'lua',
       \ 'rust',
       \ 'coc',
-      \ 'defx',
       \ 'moe-tags',
       \ 'term',
       \ 'sidebar',
@@ -78,5 +77,4 @@ function! UserConfig()
   autocmd FileType vim nnoremap <buffer> <F5> :source %<cr>
   let g:localvimrc_ask=0
   "
-
 endfunction
