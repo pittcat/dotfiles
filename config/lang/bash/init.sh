@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 # bash lsp
 if hash yarn 2>/dev/null; then
   yarn global add bash-language-server
@@ -6,7 +8,7 @@ else
 fi
 
 if hash yay 2>/dev/null; then
-  # vim format
-  yay -S shfmt
+  # vim format and check
+  yay -S shfmt shellcheck
 fi
 
