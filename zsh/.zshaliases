@@ -35,6 +35,7 @@ alias gef="gdb -ix ~/.gdbinit-gef.py"
 alias gda="gdb -ix ~/.gdbdashboard"
 alias gdbfr="(cd ~/.gdb-frontend && ./gdbfrontend)"
 alias tgdb='tmux new gdb -ix ~/.tgdbinit'
+alias tlldb='tmuxp load moe-debug'
 alias e='emacs &'
 alias n='nvim'
 alias server="browser-sync start -s -f . --no-notify --host $LOCAL_IP --port 3000"

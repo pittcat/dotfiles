@@ -5,10 +5,10 @@ windows:
   options:
     automatic-rename: 'off'
   panes:
-  - lldb
+  - focus: 'true'
+    shell_command: lldb
   - voltron v c "frame variable" --lexer c
   - voltron v bp
   - voltron v bt
   - voltron v st
-  start_directory: $pwd
   window_name: lldb
