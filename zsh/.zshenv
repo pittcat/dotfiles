@@ -66,6 +66,7 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 if hash composer 2>/dev/null; then
     export COMPOSER_HOME=$HOME/.composer
     export PATH="$PATH:$HOME/.composer/vendor/bin"
+    export GOPROXY="https://goproxy.cn,direct"
 fi
 
 # deoplete zsh
