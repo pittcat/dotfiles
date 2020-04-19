@@ -58,7 +58,6 @@ function! UserConfig()
   color desert
   syntax on
 
-
   nnoremap <silent> <localleader>tt :StartupTime<cr>
   nnoremap <silent> <localleader>pu :UpdateRemotePlugins<cr>
   let g:python3_host_prog='/usr/bin/python3'
@@ -72,7 +71,6 @@ function! UserConfig()
   " colorscheme gruvbox8_soft
   " hi Normal guibg=NONE ctermbg=NONE
   " }
-  "
   autocmd FileType vim nnoremap <buffer> <F5> :source %<cr>
   let g:localvimrc_ask=0
   highlight BufTabLineCurrent cterm=NONE ctermbg=15 ctermfg=8 gui=NONE guibg=#ffffff guifg=#d70000
