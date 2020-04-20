@@ -21,10 +21,10 @@ let g:spacevim_layers = [
       \ 'rust',
       \ 'coc',
       \ 'moe-tags',
+      \ 'fzf',
       \ 'term',
       \ 'sidebar',
       \ 'repl',
-      \ 'fzf',
       \ 'yaml',
       \ 'vista',
       \ ]
@@ -65,11 +65,9 @@ function! UserConfig()
   " theme setting
   " {
   " colorscheme apprentice
-  " let g:seoul256_background = 236
-  " colorscheme seoul256
-  colorscheme space_vim_theme
+  let g:seoul256_background = 236
+  colorscheme seoul256
   " colorscheme gruvbox8_soft
-  " hi Normal guibg=NONE ctermbg=NONE
   " }
   autocmd FileType vim nnoremap <buffer> <F5> :source %<cr>
   let g:localvimrc_ask=0
