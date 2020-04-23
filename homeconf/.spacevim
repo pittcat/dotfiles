@@ -14,7 +14,7 @@ let g:spacevim_layers = [
       \ 'git',
       \ 'tools-better',
       \ 'self',
-      \ 'codeformat',
+      \ 'moe-ale',
       \ 'c-c++',
       \ 'markdown',
       \ 'python',
@@ -57,7 +57,6 @@ function! UserConfig()
   " If you enable airline layer and have installed the powerline fonts, set it here.
   " let g:airline_powerline_fonts=1
   color desert
-  syntax on
 
   nnoremap <silent> <localleader>tt :StartupTime<cr>
   nnoremap <silent> <localleader>pu :UpdateRemotePlugins<cr>
