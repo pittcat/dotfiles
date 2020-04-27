@@ -46,4 +46,4 @@ ln -s $PWD/jupyter_notebook_config.* ~/.jupyter/
 rm ~/.jupyter/custom/custom.js
 ln -s $PWD/custom.js  ~/.jupyter/custom/custom.js
 
-ln -s $PWD/jupyter_notebook_config.json ~/.jupyter/jupyter_qtconsole_config.py
+ln -s $PWD/jupyter_qtconsole_config.py ~/.jupyter/jupyter_qtconsole_config.py
