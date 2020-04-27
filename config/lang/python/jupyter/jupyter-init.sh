@@ -1,6 +1,6 @@
 # chmod a+x jupyter-init.sh
 
-sudo pacman -S pandoc
+sudo pacman -S pandoc python-qtconsole
 sudo pip install jupyter pyecharts 
 pip install jupyter pyecharts --user
 # sudo jupyter labextension install jupyterlab_vim jupyterlab-drawio @oriolmirosa/jupyterlab_materialdarker
@@ -45,3 +45,5 @@ ln -s $PWD/jupyter_notebook_config.* ~/.jupyter/
 
 rm ~/.jupyter/custom/custom.js
 ln -s $PWD/custom.js  ~/.jupyter/custom/custom.js
+
+ln -s $PWD/jupyter_notebook_config.json ~/.jupyter/jupyter_qtconsole_config.py
