@@ -44,7 +44,7 @@ EOB
 
 
 # Load the theme.
-antigen theme yardnsm/blox-zsh-theme
+antigen theme simnalamburt/shellder
 # # Tell Antigen that you're done.
 antigen apply
 
