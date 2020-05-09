@@ -208,6 +208,7 @@ bindsym $mod+z exec zeal
 
 # alt key binding
 bindsym $alt+t exec tdrop -ma -w -4 -y "15"  xfce4-terminal
+bindsym $alt+g exec wmfocus
 
 # bar
 exec_always $HOME/.config/polybar/launch.sh
@@ -222,6 +223,7 @@ exec_always --no-startup-id conky -c $scriptdir/conkyrc
 exec megasync
 exec --no-startup-id picom -b -c
 exec --no-startup-id dunst -config /$HOME/.config/dunst/dunstrc
+exec_always --no-startup-id autotiling
 
 # Launch a terminal and move it to scratchpad; dropdown-terminal
 # exec --no-startup-id zeal -name scratchzeal
