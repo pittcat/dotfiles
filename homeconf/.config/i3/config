@@ -208,7 +208,7 @@ bindsym $mod+z exec zeal
 
 # alt key binding
 bindsym $alt+t exec tdrop -ma -w -4 -y "15"  xfce4-terminal
-bindsym $alt+g exec wmfocus
+bindsym $alt+a exec wmfocus
 
 # bar
 exec_always $HOME/.config/polybar/launch.sh

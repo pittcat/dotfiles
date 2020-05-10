@@ -53,7 +53,7 @@ fi
 
 # java
 if hash javac 2>/dev/null; then
-    export JAVA_HOME=/usr/lib/jvm/java-13-openjdk
+    export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
     export PATH=$JAVA_HOME/bin:$PATH
 fi
 
@@ -89,3 +89,4 @@ export NNN_USE_EDITOR=1
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=180'
 
+export PATH="$HOME/.emacs.d/bin:$PATH"
