@@ -28,6 +28,8 @@ alias sethtproxy="export http_proxy=http://127.0.0.1:8123 && export https_proxy=
 alias unsethtproxy="unset http_proxy && unset https_proxy"
 alias dral='direnv allow .'
 alias rm='trash-put'
+alias transezs='trans en:zh --shell'
+alias transzes='trans zh:en --shell'
 # alias v='vim'
 alias t='tmux'
 alias gdb="gdb -q"
