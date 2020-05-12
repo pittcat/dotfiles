@@ -148,7 +148,8 @@ bindsym $mod+e workspace $WS3
 bindsym $mod+r workspace $WS4
 bindsym $mod+t workspace $WS5
 bindsym $mod+y workspace $WS6
-# bindsym $mod+u workspace $WS7
+bindsym $mod+u workspace $WS7
+bindsym $mod+i workspace $WS8
 
 # move focused container to workspace
 bindsym $mod+Shift+q move container to workspace $WS1
@@ -201,10 +202,6 @@ bindsym $mod+Print exec scrot ~/Image/screenshot.png
 exec --no-startup-id betterlockscreen -u $HOME/Image/lock.jpg
 bindsym $mod+Shift+a exec betterlockscreen --lock
 
-bindsym $mod+o exec google-chrome-stable
-bindsym $mod+i exec nautilus
-bindsym $mod+u exec okular
-bindsym $mod+z exec zeal
 
 # alt key binding
 bindsym $alt+t exec tdrop -ma -w -4 -y "15"  xfce4-terminal
@@ -221,6 +218,7 @@ exec_always --no-startup-id $scriptdir/bing-wallpaper.sh
 exec_always --no-startup-id greenclip daemon
 exec_always --no-startup-id conky -c $scriptdir/conkyrc
 exec megasync
+exec albert
 exec --no-startup-id picom -b -c
 exec --no-startup-id dunst -config /$HOME/.config/dunst/dunstrc
 exec_always --no-startup-id autotiling
