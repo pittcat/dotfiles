@@ -68,7 +68,7 @@
       rime-show-candidate 'posframe)
 
 
-;; 英文自动补全和翻译，激活命令toggle-company-english-helper
+;; 英文自动补全和翻译，激活命令 toggle-company-english-helper
 (use-package! company-english-helper
   :defer t
   :commands (toggle-company-english-helper)
@@ -78,14 +78,15 @@
         "M" #'toggle-company-english-helper))
 
 
-(auto-save-visited-mode +1)
 
 (use-package! real-auto-save
   :hook (prog-mode . real-auto-save-mode)
   :init (setq real-auto-save-interval 5)
   )
 
-
-
+;;;pangu-spacing
+(use-package! pangu-spacing
+  :init (setq pangu-spacing-real-insert-separtor t)
+  )
 ;;; org-babel-python
 (setq python-shell-completion-native-enable nil)

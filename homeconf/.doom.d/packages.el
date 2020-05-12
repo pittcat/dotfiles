@@ -47,5 +47,6 @@
 ;(package! builtin-package :recipe (:branch "develop"))
 (package! rime)
 (package! real-auto-save)
+(package! pangu-spacing)
 (package! company-english-helper
   :recipe (:host github :repo "manateelazycat/company-english-helper"))
