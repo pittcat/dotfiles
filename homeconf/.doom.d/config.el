@@ -87,16 +87,5 @@
 
 
 
-(defun org-babel-execute:scheme (body params)
-     (let* ((tangle (cdr (assoc :tangle params)))
-            (script-file
-             (if (string-equal tangle "no")
-                 (org-babel-temp-file "org-babel-" ".rkt")
-               tangle)))
-       (with-temp-file script-file
-         (insert body))
-       (let* ((pn (org-babel-process-file-name script-file))
-              (cmd (format "racket -u %s" pn)))
-         (message cmd)
-         (shell-command-to-string cmd)
-         )))
+;;; org-babel-python
+(setq python-shell-completion-native-enable nil)
