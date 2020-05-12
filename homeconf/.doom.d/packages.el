@@ -46,5 +46,6 @@
 ;; our package manager can't deal with; see raxod502/straight.el#279)
 ;(package! builtin-package :recipe (:branch "develop"))
 (package! rime)
+(package! real-auto-save)
 (package! company-english-helper
   :recipe (:host github :repo "manateelazycat/company-english-helper"))

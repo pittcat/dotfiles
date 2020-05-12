@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+(setq user-full-name "pittcat"
+      user-mail-address "pittcat_wenchao@163.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -24,7 +24,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-solarized-dark)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -52,9 +52,6 @@
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
 
-(after! lsp-python-ms
-  (set-lsp-priority! 'mspyls 1))
-
 
 ;;; Code:
 
@@ -79,3 +76,11 @@
   (map! :leader
         :prefix ("y" . "Translate")
         "M" #'toggle-company-english-helper))
+
+
+(auto-save-visited-mode +1)
+
+(use-package! real-auto-save
+  :hook (prog-mode . real-auto-save-mode)
+  :init (setq real-auto-save-interval 5)
+  )
