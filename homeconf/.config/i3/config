@@ -52,7 +52,8 @@ client.unfocused        $black    $black    #FFFFFF   #000000
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal --working-directory="`xcwd`"
+bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Shift+Return exec xfce4-terminal --working-directory="$(xclip -o)" 
 
 # kill focused window
 bindsym $mod+c kill
@@ -131,9 +132,9 @@ set $WS3 : e
 set $WS4 : r
 set $WS5 : t
 set $WS6 : y
-# set $WS7 : u
-# set $WS8 : i
-# set $WS9 : o
+set $WS7 : u
+set $WS8 : i
+set $WS9 : o
 
 set $WSWEB   : w
 set $WSVIDEO : y
