@@ -46,11 +46,10 @@
 ;; our package manager can't deal with; see raxod502/straight.el#279)
 ;(package! builtin-package :recipe (:branch "develop"))
 (package! rime)
-(package! real-auto-save)
 (package! pangu-spacing)
 (package! company-english-helper
   :recipe (:host github :repo "manateelazycat/company-english-helper"))
-
-
 (package! eaf
   :recipe (:host github :repo "manateelazycat/emacs-application-framework"))
+(package! auto-save-async
+  :recipe (:host github :repo "ROCKTAKEY/auto-save-async"))

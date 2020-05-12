@@ -78,10 +78,12 @@
         "M" #'toggle-company-english-helper))
 
 
+(auto-save-visited-mode +1)
 
-(use-package! real-auto-save
-  :hook (prog-mode . real-auto-save-mode)
-  :init (setq real-auto-save-interval 5)
+(use-package! auto-save-async
+  :init
+  (setq auto-save-async-mode 1)
+  (setq auto-save-async-interval 3)
   )
 
 ;;;pangu-spacing
