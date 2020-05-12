@@ -50,3 +50,7 @@
 (package! pangu-spacing)
 (package! company-english-helper
   :recipe (:host github :repo "manateelazycat/company-english-helper"))
+
+
+(package! eaf
+  :recipe (:host github :repo "manateelazycat/emacs-application-framework"))
