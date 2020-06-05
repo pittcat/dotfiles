@@ -24,7 +24,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-solarized-dark)
+(setq doom-theme 'leuven)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -99,6 +99,7 @@
   :load-path "~/.emacs.d/.local/straight/repos/emacs-application-framework"
   :custom
   (eaf-find-alternate-file-in-dired t)
+  (eaf-grip-token "35925dae83c2e21b5f721a8ccbb578e5b25afc14")
   :config
   (eaf-bind-key scroll_up "C-n" eaf-pdf-viewer-keybinding)
   (eaf-bind-key scroll_down "C-p" eaf-pdf-viewer-keybinding)
