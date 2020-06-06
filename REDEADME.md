@@ -25,3 +25,6 @@ rust
 python 
 web
 ```
+### 输入法初始化
+- 安装fcitx-rime
+- 将 https://gitlab.com/pittcat/rime-dict的文件复制到~/.config/fcitx/rime

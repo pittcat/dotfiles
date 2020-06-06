@@ -47,6 +47,7 @@ function! UserInit()
   Plug 'junegunn/seoul256.vim'
   Plug 'ayu-theme/ayu-vim'
   Plug 'lifepillar/vim-gruvbox8'
+  Plug 'brglng/vim-im-select'
 endfunction
 
 
