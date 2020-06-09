@@ -117,7 +117,7 @@ bindsym $mod+Shift+f floating toggle
 bindsym $mod+space focus mode_toggle
 
 # switch to last workspace
-bindsym $mod+6 workspace back_and_forth
+bindsym $mod+Tab workspace back_and_forth
 
 # switch to next workspace
 bindsym $mod+Shift+Right workspace next

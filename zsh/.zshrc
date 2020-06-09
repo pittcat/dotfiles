@@ -44,7 +44,7 @@ EOB
 
 
 # Load the theme.
-antigen theme simnalamburt/shellder
+antigen theme cdimascio/lambda-zsh-theme
 # # Tell Antigen that you're done.
 antigen apply
 
