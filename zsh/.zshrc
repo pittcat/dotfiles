@@ -44,7 +44,7 @@ EOB
 
 
 # Load the theme.
-antigen theme cdimascio/lambda-zsh-theme
+antigen theme halfo/lambda-mod-zsh-theme
 # # Tell Antigen that you're done.
 antigen apply
 

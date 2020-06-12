@@ -30,6 +30,7 @@ let g:spacevim_layers = [
       \ 'repl',
       \ 'yaml',
       \ 'vista',
+      \ 'lightline'
       \ ]
 
       " \ 'autocomplete'

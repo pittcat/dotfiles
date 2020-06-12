@@ -54,3 +54,6 @@
   :recipe (:host github :repo "manateelazycat/emacs-application-framework"))
 (package! auto-save-async
   :recipe (:host github :repo "ROCKTAKEY/auto-save-async"))
+
+(package! doom-snippets :ignore t)
+(package! yasnippet-snippets)
