@@ -51,7 +51,7 @@ function! UserInit()
   Plug 'junegunn/seoul256.vim'
   Plug 'ayu-theme/ayu-vim'
   Plug 'lifepillar/vim-gruvbox8'
-  Plug 'brglng/vim-im-select'
+  Plug 'lilydjwg/fcitx.vim'
 endfunction
 
 
@@ -75,7 +75,9 @@ function! UserConfig()
   " }
   autocmd FileType vim nnoremap <buffer> <F5> :source %<cr>
   let g:localvimrc_ask=0
-  highlight BufTabLineCurrent cterm=NONE ctermbg=15 ctermfg=8 gui=NONE guibg=#ffffff guifg=#d70000
-  highlight BufTabLineHidden cterm=NONE ctermbg=3 ctermfg=32 gui=NONE guibg=#ffffff guifg=#1e90ff
-  "
+  " after diabled all lightline and airline
+  " {
+  " highlight BufTabLineCurrent cterm=NONE ctermbg=15 ctermfg=8 gui=NONE guibg=#ffffff guifg=#d70000
+  " highlight BufTabLineHidden cterm=NONE ctermbg=3 ctermfg=32 gui=NONE guibg=#ffffff guifg=#1e90ff
+  "}
 endfunction
