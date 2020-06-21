@@ -30,7 +30,7 @@ let g:spacevim_layers = [
       \ 'repl',
       \ 'yaml',
       \ 'vista',
-      \ 'lightline'
+      \ 'lightline',
       \ ]
 
       " \ 'autocomplete'
@@ -52,6 +52,9 @@ function! UserInit()
   Plug 'ayu-theme/ayu-vim'
   Plug 'lifepillar/vim-gruvbox8'
   Plug 'lilydjwg/fcitx.vim'
+  Plug 'sainnhe/sonokai'
+  Plug 'ajh17/Spacegray.vim'
+  Plug 'sainnhe/edge'
 endfunction
 
 
@@ -61,6 +64,7 @@ function! UserConfig()
 
   " If you enable airline layer and have installed the powerline fonts, set it here.
   " let g:airline_powerline_fonts=1
+  set termguicolors
   color desert
 
   nnoremap <silent> <localleader>tt :StartupTime<cr>
@@ -69,15 +73,16 @@ function! UserConfig()
   " theme setting
   " {
   " colorscheme apprentice
-  let g:seoul256_background = 236
-  colorscheme seoul256
-  " colorscheme gruvbox8_soft
-  " }
-  autocmd FileType vim nnoremap <buffer> <F5> :source %<cr>
-  let g:localvimrc_ask=0
-  " after diabled all lightline and airline
+  " let g:seoul256_background = 236
+  " the configuration options should be placed before `colorscheme sonokai`
+  let g:sonokai_style = 'maia'
+  let g:sonokai_enable_italic = 0
+  let g:sonokai_disable_italic_comment = 1
+  let g:lightline = {'colorscheme' : 'sonokai'}
+  colorscheme sonokai
   " {
   " highlight BufTabLineCurrent cterm=NONE ctermbg=15 ctermfg=8 gui=NONE guibg=#ffffff guifg=#d70000
   " highlight BufTabLineHidden cterm=NONE ctermbg=3 ctermfg=32 gui=NONE guibg=#ffffff guifg=#1e90ff
   "}
+
 endfunction
