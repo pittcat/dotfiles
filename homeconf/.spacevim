@@ -31,6 +31,7 @@ let g:spacevim_layers = [
       \ 'yaml',
       \ 'vista',
       \ 'lightline',
+      \ 'treesitter'
       \ ]
 
       " \ 'autocomplete'
@@ -50,11 +51,9 @@ function! UserInit()
   Plug 'liuchengxu/space-vim-theme'
   Plug 'junegunn/seoul256.vim'
   Plug 'ayu-theme/ayu-vim'
-  Plug 'lifepillar/vim-gruvbox8'
   Plug 'lilydjwg/fcitx.vim'
   Plug 'sainnhe/sonokai'
-  Plug 'ajh17/Spacegray.vim'
-  Plug 'sainnhe/edge'
+  Plug 'HellRok/Fruidle'
 endfunction
 
 
@@ -80,9 +79,9 @@ function! UserConfig()
   let g:sonokai_disable_italic_comment = 1
   let g:lightline = {'colorscheme' : 'sonokai'}
   colorscheme sonokai
+  highlight Visual cterm=NONE ctermbg=0 ctermfg=NONE guibg=Gray40
   " {
   " highlight BufTabLineCurrent cterm=NONE ctermbg=15 ctermfg=8 gui=NONE guibg=#ffffff guifg=#d70000
   " highlight BufTabLineHidden cterm=NONE ctermbg=3 ctermfg=32 gui=NONE guibg=#ffffff guifg=#1e90ff
   "}
-
 endfunction
