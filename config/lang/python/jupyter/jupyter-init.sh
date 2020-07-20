@@ -41,7 +41,8 @@ jupyter nbextension enable --py nbdime --user
 
 
 rm ~/.jupyter/jupyter_notebook_config.*
-ln -s $PWD/jupyter_notebook_config.* ~/.jupyter/
+ln -s $PWD/jupyter_notebook_config.py ~/.jupyter/
+ln -s $PWD/jupyter_notebook_config.json ~/.jupyter/
 
 rm ~/.jupyter/custom/custom.js
 ln -s $PWD/custom.js  ~/.jupyter/custom/custom.js

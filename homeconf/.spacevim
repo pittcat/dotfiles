@@ -1,7 +1,7 @@
+let g:spacevim_plug_home = '~/.vim/plugged'
 if g:spacevim.vim8
   call spacevim#autocmd#escalt#Init()
 endif
-let g:spacevim_plug_home = '~/.vim/plugged'
 
       " \ 'which-key',
 let g:spacevim_layers = [
@@ -51,9 +51,8 @@ function! UserInit()
   Plug 'liuchengxu/space-vim-theme'
   Plug 'junegunn/seoul256.vim'
   Plug 'ayu-theme/ayu-vim'
-  Plug 'lilydjwg/fcitx.vim'
+  Plug 'lilydjwg/fcitx.vim',{'for':'markdown'}
   Plug 'sainnhe/sonokai'
-  Plug 'HellRok/Fruidle'
 endfunction
 
 

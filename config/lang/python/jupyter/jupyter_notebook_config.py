@@ -109,7 +109,7 @@
 #c.NotebookApp.config_manager_class = 'notebook.services.config.manager.ConfigManager'
 
 ## The notebook manager class to use.
-c.NotebookApp.contents_manager_class = "jupytext.TextFileContentsManager"
+#  c.NotebookApp.contents_manager_class = "jupytext.TextFileContentsManager"
 
 ## Extra keyword arguments to pass to `set_secure_cookie`. See tornado's
 #  set_secure_cookie docs for details.
