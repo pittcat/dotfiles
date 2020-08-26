@@ -90,3 +90,4 @@ export NNN_USE_EDITOR=1
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=180'
 
 export PATH="$HOME/.emacs.d/bin:$PATH"
+export LC_CTYPE=en_US.UTF-8
