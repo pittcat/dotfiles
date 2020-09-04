@@ -16,7 +16,7 @@ let g:spacevim_layers = [
       \ 'self',
       \ 'moe-ale',
       \ 'java',
-      \ 'c-c++',
+      \ 'cfamily',
       \ 'html',
       \ 'javascript',
       \ 'markdown',
@@ -83,4 +83,5 @@ function! UserConfig()
   " highlight BufTabLineCurrent cterm=NONE ctermbg=15 ctermfg=8 gui=NONE guibg=#ffffff guifg=#d70000
   " highlight BufTabLineHidden cterm=NONE ctermbg=3 ctermfg=32 gui=NONE guibg=#ffffff guifg=#1e90ff
   "}
+  
 endfunction
