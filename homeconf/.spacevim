@@ -31,7 +31,6 @@ let g:spacevim_layers = [
       \ 'yaml',
       \ 'vista',
       \ 'lightline',
-      \ 'treesitter'
       \ ]
 
       " \ 'autocomplete'
@@ -53,6 +52,7 @@ function! UserInit()
   Plug 'ayu-theme/ayu-vim'
   Plug 'lilydjwg/fcitx.vim',{'for':'markdown'}
   Plug 'sainnhe/sonokai'
+  Plug 'zchee/nvim-wakatime'
 endfunction
 
 

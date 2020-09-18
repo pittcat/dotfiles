@@ -35,7 +35,6 @@ zsh-users/zsh-completions
 zdharma/fast-syntax-highlighting
 changyuheng/zsh-interactive-cd
 hlissner/zsh-autopair
-sobolevn/wakatime-zsh-plugin
 Tarrasch/zsh-bd
 djui/alias-tips
 # js
