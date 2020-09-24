@@ -101,7 +101,7 @@ bindsym $mod+f fullscreen
 # change container layout (tabbed, toggle split)
 bindsym $mod+n layout tabbed
 bindsym $mod+m layout toggle split
-bindsym $alt+s layout stacking
+bindsym $alt+p layout stacking
 
 # container navigation
 bindsym $mod+d focus parent
@@ -219,7 +219,6 @@ exec_always --no-startup-id conky -c $scriptdir/conkyrc
 exec megasync
 exec albert
 exec flameshot
-exec --no-startup-id picom -b -c
 exec --no-startup-id dunst -config /$HOME/.config/dunst/dunstrc
 exec_always --no-startup-id autotiling
 
