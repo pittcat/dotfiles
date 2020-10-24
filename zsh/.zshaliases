@@ -30,6 +30,7 @@ alias dral='direnv allow .'
 alias rm='trash-put'
 alias transezs='trans en:zh --shell'
 alias transzes='trans zh:en --shell'
+alias npcs='nohup npc -server=119.45.59.126:8024 -vkey=6icnzctonv5exawd -type=kcp >/dev/null 2>&1 &'
 # alias v='vim'
 alias t='tmux'
 alias gdb="gdb -q"
