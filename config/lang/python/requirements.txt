@@ -19,3 +19,4 @@ youdao-wd
 pudb
 gdbgui
 jedi-language-server
+birdseye
