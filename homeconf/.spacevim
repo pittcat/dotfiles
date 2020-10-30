@@ -47,10 +47,8 @@ function! UserInit()
   Plug 'tweekmonster/startuptime.vim'
   Plug 'tpope/vim-scriptease'
   Plug 'embear/vim-localvimrc'
-  Plug 'romainl/Apprentice'
   Plug 'liuchengxu/space-vim-theme'
   Plug 'junegunn/seoul256.vim'
-  Plug 'ayu-theme/ayu-vim'
   Plug 'lilydjwg/fcitx.vim',{'for':'markdown'}
   Plug 'sainnhe/sonokai'
   Plug 'wakatime/vim-wakatime',{'on':[]}
@@ -74,7 +72,7 @@ function! UserConfig()
   " colorscheme apprentice
   " let g:seoul256_background = 236
   " the configuration options should be placed before `colorscheme sonokai`
-  let g:sonokai_style = 'maia'
+  let g:sonokai_style = 'andromeda'
   let g:sonokai_enable_italic = 0
   let g:sonokai_disable_italic_comment = 1
   let g:lightline = {'colorscheme' : 'sonokai'}
