@@ -280,7 +280,7 @@ c.ConsoleWidget.font_size = 16
 
 ## If not empty, use this Pygments style for syntax highlighting. Otherwise, the
 #  style sheet is queried for Pygments style information.
-c.JupyterWidget.syntax_style = 'solarized-dark'
+c.JupyterWidget.syntax_style = 'manni'
 
 #------------------------------------------------------------------------------
 # KernelManager(ConnectionFileMixin) configuration

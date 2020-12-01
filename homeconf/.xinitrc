@@ -1,8 +1,9 @@
-export LANG=zh_CN.UTF-8
-export LANGUAGE=zh_CN:en_US
+session=${1:-xfce}
 
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS="@im=fcitx"
-
-[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
+case $session in
+    i3|i3wm           ) exec i3;;
+    kde               ) exec startplasma-x11;;
+    xfce|xfce4        ) exec startxfce4;;
+    # No known session, try to run it as command
+    *                 ) exec $1;;
+esac

@@ -8,7 +8,6 @@ let g:spacevim_layers = [
       \ 'spacevim', 'better-defaults',
       \ 'vim-which-key',
       \ 'programming',
-      \ 'tmux',
       \ 'better-motion',
       \ 'editing',
       \ 'git',
@@ -18,20 +17,20 @@ let g:spacevim_layers = [
       \ 'java',
       \ 'cfamily',
       \ 'html',
+      \ 'latex',
       \ 'javascript',
       \ 'markdown',
       \ 'python',
-      \ 'rust',
       \ 'coc',
       \ 'moe-tags',
+      \ 'windows',
       \ 'fzf',
       \ 'term',
       \ 'sidebar',
       \ 'repl',
       \ 'yaml',
       \ 'vista',
-      \ 'lightline',
-      \ 'treesitter'
+      \ 'vem',
       \ ]
 
       " \ 'autocomplete'
@@ -48,7 +47,7 @@ function! UserInit()
   Plug 'tpope/vim-scriptease'
   Plug 'embear/vim-localvimrc'
   Plug 'liuchengxu/space-vim-theme'
-  Plug 'junegunn/seoul256.vim'
+  Plug 'KeitaNakamura/neodark.vim'
   Plug 'lilydjwg/fcitx.vim',{'for':'markdown'}
   Plug 'sainnhe/sonokai'
   Plug 'wakatime/vim-wakatime',{'on':[]}
@@ -69,14 +68,13 @@ function! UserConfig()
   let g:python3_host_prog='/usr/bin/python3'
   " theme setting
   " {
-  " colorscheme apprentice
-  " let g:seoul256_background = 236
   " the configuration options should be placed before `colorscheme sonokai`
-  let g:sonokai_style = 'andromeda'
-  let g:sonokai_enable_italic = 0
-  let g:sonokai_disable_italic_comment = 1
-  let g:lightline = {'colorscheme' : 'sonokai'}
-  colorscheme sonokai
+  " let g:sonokai_style = 'maia'
+  " let g:sonokai_enable_italic = 0
+  " let g:sonokai_disable_italic_comment = 1
+  " let g:lightline = {'colorscheme' : 'sonokai'}
+  " colorscheme sonokai
+  colorscheme neodark
   highlight Visual cterm=NONE ctermbg=0 ctermfg=NONE guibg=Gray40
   " {
   " highlight BufTabLineCurrent cterm=NONE ctermbg=15 ctermfg=8 gui=NONE guibg=#ffffff guifg=#d70000
