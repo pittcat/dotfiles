@@ -12,6 +12,7 @@ let g:spacevim_layers = [
       \ 'editing',
       \ 'git',
       \ 'tools-better',
+      \ 'search',
       \ 'self',
       \ 'moe-ale',
       \ 'java',

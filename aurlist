@@ -25,4 +25,7 @@ code-minimap
 ueberzug
 xournalpp
 dbg-macro
+tesseract
+tesseract-data-eng
+gimagereader-qt
 yay
