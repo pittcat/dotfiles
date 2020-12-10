@@ -12,9 +12,9 @@ let g:spacevim_layers = [
       \ 'editing',
       \ 'git',
       \ 'tools-better',
+      \ 'codeformat',
       \ 'search',
       \ 'self',
-      \ 'moe-ale',
       \ 'java',
       \ 'cfamily',
       \ 'html',
@@ -70,13 +70,11 @@ function! UserConfig()
   " theme setting
   " {
   " the configuration options should be placed before `colorscheme sonokai`
-  " let g:sonokai_style = 'maia'
-  " let g:sonokai_enable_italic = 0
-  " let g:sonokai_disable_italic_comment = 1
-  " let g:lightline = {'colorscheme' : 'sonokai'}
-  " colorscheme sonokai
-  colorscheme neodark
-  highlight Visual cterm=NONE ctermbg=0 ctermfg=NONE guibg=Gray40
+  let g:sonokai_style = 'maia'
+  let g:sonokai_enable_italic = 0
+  let g:sonokai_disable_italic_comment = 1
+  let g:lightline = {'colorscheme' : 'sonokai'}
+  colorscheme sonokai
   " {
   " highlight BufTabLineCurrent cterm=NONE ctermbg=15 ctermfg=8 gui=NONE guibg=#ffffff guifg=#d70000
   " highlight BufTabLineHidden cterm=NONE ctermbg=3 ctermfg=32 gui=NONE guibg=#ffffff guifg=#1e90ff
