@@ -73,15 +73,16 @@ bindsym $alt+i exec bash $scriptdir/green-clip.sh
 bindsym Print exec --no-startup-id flameshot gui
 
 # change focus
-# bindsym $mod+h focus left
-# bindsym $mod+j focus down
-# bindsym $mod+k focus up
-# bindsym $mod+l focus right
-
 bindsym $mod+Left  focus left
+bindsym $mod+k  focus left
 bindsym $mod+Down  focus down
 bindsym $mod+Up    focus up
 bindsym $mod+Right focus right
+bindsym $mod+j focus right
+
+# open sgtk-menu
+for_window [title="~sgtk-"] border none, floating enable
+bindsym $mod+F1 exec --no-startup-id sgtk-menu -f -af appendix-i3
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -166,9 +167,10 @@ bindsym $mod+Shift+x restart
 bindsym $mod+Shift+c exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Make the currently focused window a scratchpad
-bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+grave move scratchpad
 
-# Show the first scratchpad window
+# Show the currently scratchpad window
+bindsym $alt+minus [class=.*] scratchpad show
 bindsym $mod+minus scratchpad show
 
 mode "resize" {
@@ -222,6 +224,10 @@ exec flameshot
 exec --no-startup-id dunst -config /$HOME/.config/dunst/dunstrc
 exec_always --no-startup-id autotiling
 
+# Launch a app by default floating mode
+for_window [class="Zeal"] floating enable
+
 # Launch a terminal and move it to scratchpad; dropdown-terminal
 # exec --no-startup-id zeal -name scratchzeal
 # for_window [instance="scratchzeal"] move scratchpad
+

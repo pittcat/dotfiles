@@ -61,7 +61,7 @@ module-margin-right = 0
 
 modules-left = i3
 modules-center =
-modules-right =network-traffic info-ssh-sessions bluetooth getpbip getprip memory cpu  date
+modules-right =polywins network-traffic info-ssh-sessions bluetooth getpbip getprip memory cpu  date
 
 fixed-center = false
 
@@ -127,6 +127,18 @@ format-prefix-overline = ${colors.background}
 
 label-foreground = ${colors.dark}
 label-background = ${colors.orange}
+label-underline = ${colors.background}
+label-overline = ${colors.background}
+
+[module/polywins]
+type = custom/script
+exec = ~/.config/polybar/polywins.sh 2>/dev/null
+format = <label>
+label = %output%
+label-padding = 1
+tail = true
+label-foreground = ${colors.dark}
+label-background = ${colors.magenta}
 label-underline = ${colors.background}
 label-overline = ${colors.background}
 

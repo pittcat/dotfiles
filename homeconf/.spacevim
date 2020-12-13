@@ -47,10 +47,9 @@ function! UserInit()
   Plug 'tweekmonster/startuptime.vim'
   Plug 'tpope/vim-scriptease'
   Plug 'embear/vim-localvimrc'
-  Plug 'liuchengxu/space-vim-theme'
-  Plug 'KeitaNakamura/neodark.vim'
   Plug 'lilydjwg/fcitx.vim',{'for':'markdown'}
   Plug 'sainnhe/sonokai'
+  Plug 'junegunn/seoul256.vim'
   Plug 'wakatime/vim-wakatime',{'on':[]}
 endfunction
 
@@ -71,7 +70,7 @@ function! UserConfig()
   " {
   " the configuration options should be placed before `colorscheme sonokai`
   let g:sonokai_style = 'maia'
-  let g:sonokai_enable_italic = 0
+  let g:sonokai_enable_italic = 1
   let g:sonokai_disable_italic_comment = 1
   let g:lightline = {'colorscheme' : 'sonokai'}
   colorscheme sonokai
@@ -79,6 +78,7 @@ function! UserConfig()
   " highlight BufTabLineCurrent cterm=NONE ctermbg=15 ctermfg=8 gui=NONE guibg=#ffffff guifg=#d70000
   " highlight BufTabLineHidden cterm=NONE ctermbg=3 ctermfg=32 gui=NONE guibg=#ffffff guifg=#1e90ff
   "}
+  highlight Visual cterm=NONE ctermbg=0 ctermfg=NONE guibg=Grey40
   augroup load_wakatime
       autocmd!
       autocmd InsertEnter * call plug#load('vim-wakatime') | autocmd! load_wakatime
