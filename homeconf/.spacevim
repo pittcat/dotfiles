@@ -15,7 +15,6 @@ let g:spacevim_layers = [
       \ 'codeformat',
       \ 'search',
       \ 'self',
-      \ 'java',
       \ 'cfamily',
       \ 'html',
       \ 'latex',
@@ -31,6 +30,7 @@ let g:spacevim_layers = [
       \ 'repl',
       \ 'yaml',
       \ 'vista',
+      \ 'debugger',
       \ 'vem',
       \ ]
 
@@ -51,6 +51,7 @@ function! UserInit()
   Plug 'sainnhe/sonokai'
   Plug 'junegunn/seoul256.vim'
   Plug 'wakatime/vim-wakatime',{'on':[]}
+  Plug 'jacobsimpson/nvim-example-python-plugin'
 endfunction
 
 

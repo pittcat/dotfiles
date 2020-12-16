@@ -137,11 +137,6 @@ set $WS7 : u
 set $WS8 : i
 set $WS9 : o
 
-set $WSWEB   : w
-set $WSVIDEO : y
-set $WSCHAT  : u
-set $WSSTEAM : i
-set $WSGAME  : o
 
 # switch to workspace
 bindsym $mod+q workspace $WS1
@@ -160,7 +155,8 @@ bindsym $mod+Shift+e move container to workspace $WS3
 bindsym $mod+Shift+r move container to workspace $WS4
 bindsym $mod+Shift+t move container to workspace $WS5
 bindsym $mod+Shift+y move container to workspace $WS6
-# bindsym $mod+Shift+u move container to workspace $WS7
+bindsym $mod+Shift+u move container to workspace $WS7
+bindsym $mod+Shift+i move container to workspace $WS8
 
 bindsym $mod+x       reload
 bindsym $mod+Shift+x restart
