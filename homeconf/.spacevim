@@ -51,7 +51,6 @@ function! UserInit()
   Plug 'sainnhe/sonokai'
   Plug 'junegunn/seoul256.vim'
   Plug 'wakatime/vim-wakatime',{'on':[]}
-  Plug 'jacobsimpson/nvim-example-python-plugin'
 endfunction
 
 
@@ -65,6 +64,7 @@ function! UserConfig()
   color desert
 
   nnoremap <silent> <localleader>tt :StartupTime<cr>
+  autocmd FileType vim nnoremap <buffer> <F5> :source %<cr>
   nnoremap <silent> <localleader>pu :UpdateRemotePlugins<cr>
   let g:python3_host_prog='/usr/bin/python3'
   " theme setting

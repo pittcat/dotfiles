@@ -19,4 +19,5 @@ youdao-wd
 pudb
 gdbgui
 jedi-language-server
+dict-cli
 birdseye
