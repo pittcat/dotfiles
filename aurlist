@@ -2,8 +2,13 @@ autojump
 flameshot
 betterlockscreen
 direnv
-fcitx5-git
 global
+fcitx5-im 
+fcitx5-rime
+fcitx5-qt
+fcitx5-gtk
+fcitx5-pinyin-zhwiki-rime
+fcitx5-pinyin-moegirl-rime
 google-chrome
 has-git
 mathpix-snipping-tool

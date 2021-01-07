@@ -207,8 +207,8 @@ bindsym $alt+a exec wmfocus
 # bar
 exec_always $HOME/.config/polybar/launch.sh
 
-# fcitx
-exec fcitx
+# fcitx5
+exec fcitx5
 # vmvare copy and paste
 exec vmware-user-suid-wrapper --no-startup-id
 exec_always --no-startup-id $scriptdir/bing-wallpaper.sh

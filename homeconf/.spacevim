@@ -47,7 +47,7 @@ function! UserInit()
   Plug 'tweekmonster/startuptime.vim'
   Plug 'tpope/vim-scriptease'
   Plug 'embear/vim-localvimrc'
-  Plug 'lilydjwg/fcitx.vim',{'for':'markdown'}
+  Plug 'lilydjwg/fcitx.vim',{'master':'fcitx5','for':'markdown'}
   Plug 'sainnhe/sonokai'
   Plug 'junegunn/seoul256.vim'
   Plug 'wakatime/vim-wakatime',{'on':[]}
