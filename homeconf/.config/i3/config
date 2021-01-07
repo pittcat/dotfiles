@@ -68,6 +68,7 @@ bindsym $mod+Shift+s exec echo "" | rofi -config $scriptdir/rofi-config -dmenu -
 # clipboard
 bindsym $mod+a exec rofi -config $scriptdir/rofi-config -modi "clipboard:greenclip print" -show clipboard
 bindsym $alt+i exec bash $scriptdir/green-clip.sh
+bindsym $mod+Shift+1 exec bash $scriptdir/restart-fcitx.sh
 
 # screenshot
 bindsym Print exec --no-startup-id flameshot gui
@@ -208,7 +209,7 @@ bindsym $alt+a exec wmfocus
 exec_always $HOME/.config/polybar/launch.sh
 
 # fcitx5
-exec fcitx5
+exec_always --no-startup-id fcitx5
 # vmvare copy and paste
 exec vmware-user-suid-wrapper --no-startup-id
 exec_always --no-startup-id $scriptdir/bing-wallpaper.sh
