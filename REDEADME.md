@@ -32,8 +32,7 @@ xf86-video-vmware
 网络:[networkmanager](https://wiki.archlinux.org/index.php/NetworkManager#Installation)
 
 ### 输入法初始化
-- 安装fcitx-rime
-- 将 MEGA/config/rime-dict的文件复制到~/.config/fcitx/rime
+- 将 /config/rime-dict的文件复制到~/.local/share/fcitx5/rime
 
 
 ## aurlist pkglist gen
