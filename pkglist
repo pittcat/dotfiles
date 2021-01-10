@@ -7,7 +7,6 @@ autogen
 autojump
 base
 bat
-betterlockscreen
 bind-tools
 bison
 bleachbit
@@ -27,12 +26,6 @@ dmidecode
 dunst
 exfat-utils
 fakeroot
-fcitx-configtool
-fcitx-googlepinyin
-fcitx-gtk2
-fcitx-gtk3
-fcitx-rime
-fcitx5-git
 fd
 flex
 font-bh-ttf
@@ -169,8 +162,8 @@ xorg-xsetroot
 xorg-xvinfo
 xorg-xwd
 xorg-xwud
+evince
 yarn
-yay
 zeal
 zip
 zsh

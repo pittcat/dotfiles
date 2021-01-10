@@ -1,10 +1,9 @@
 #!/usr/bin/env sh
-yay -S conky rofi nautilus rofi-greenclip xorg-xprop okular dunst feh betterlockscreen  zeal tdrop-git polybar-git mathpix-snipping-tool sgtk-menu xprop wmctrl slop
+yay -S conky rofi nautilus rofi-greenclip xorg-xprop okular dunst feh betterlockscreen  zeal tdrop-git polybar-git mathpix-snipping-tool sgtk-menu xprop wmctrl slop \
+betterlockscreen sgtk-menu wmfocus
 
-ln -s ../i3 $HOME/.i3
-ln -s $PWD/polybar $HOME/.config/    
-mkdir -p $HOME/.config/dunst
-ln -s $PWD/dunst/dunstrc ~/.config/dunst/dunstrc    
+pip install autotiling
+
 # Notice for polybar:
 # change the interface   
 # ip route | grep '^default' | awk '{print $5}'    

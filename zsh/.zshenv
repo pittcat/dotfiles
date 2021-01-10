@@ -69,8 +69,6 @@ if hash composer 2>/dev/null; then
     export GOPROXY="https://goproxy.cn,direct"
 fi
 
-# deoplete zsh
-zmodload zsh/zpty
 export fpath=($HOME/.fpath $fpath)
 # cask
 export PATH=$PATH:$HOME/.cask/bin

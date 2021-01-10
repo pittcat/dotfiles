@@ -1,0 +1,14 @@
+patch:
+  schema_list:
+    - schema: luna_pinyin_simp
+  menu/page_size: 9
+  switcher/hotkeys:
+    - Control+F4
+  ascii_composer:
+    switch_key:
+      Shift_L: noop  # 提交字符串并转为英文
+      Shift_R: noop # 提交首选词并转为英文
+      Control_L: noop  # RIME的默认设置，输入字符，Shift_L不上屏，字符转为英文，Enter键英文字符上屏，之后还是中文输入。
+      Control_R: noop  # 什么也不做
+      Caps_Lock: noop
+      Eisu_toggle: noop
