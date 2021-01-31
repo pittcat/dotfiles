@@ -2,11 +2,10 @@
 window:
     decorations: "none"
     dimensions:
-      columns: 100
+      columns: 80
       lines: 10
-
 # 背景半透明，方便抄代码
-background_opacity: 0.8
+background_opacity: 0.5
 
 # 实时重载配置文件，不用重启测试配置选项
 live_config_reload: true

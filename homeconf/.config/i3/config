@@ -218,6 +218,7 @@ exec albert
 exec flameshot
 exec --no-startup-id dunst -config /$HOME/.config/dunst/dunstrc
 exec_always --no-startup-id autotiling
+exec --no-startup-id picom -b
 
 # Launch a app by default floating mode
 for_window [class="Zeal"] floating enable
