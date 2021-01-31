@@ -21,6 +21,7 @@ let g:spacevim_layers = [
       \ 'javascript',
       \ 'markdown',
       \ 'python',
+      \ 'go',
       \ 'coc',
       \ 'moe-tags',
       \ 'windows',
@@ -30,8 +31,9 @@ let g:spacevim_layers = [
       \ 'repl',
       \ 'yaml',
       \ 'vista',
-      \ 'debugger',
       \ 'vem',
+      \ 'treesitter',
+      \ 'ndap'
       \ ]
 
       " \ 'autocomplete'

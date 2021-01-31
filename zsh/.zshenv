@@ -60,7 +60,7 @@ fi
 
 # golang
 export GOPATH=$HOME/.go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin
 
 #php
 if hash composer 2>/dev/null; then

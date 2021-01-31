@@ -70,8 +70,6 @@ bindsym $mod+a exec rofi -config $scriptdir/rofi-config -modi "clipboard:greencl
 bindsym $alt+i exec bash $scriptdir/green-clip.sh
 bindsym $mod+Shift+1 exec bash $scriptdir/restart-fcitx.sh
 
-# screenshot
-bindsym Print exec --no-startup-id flameshot gui
 
 # change focus
 bindsym $mod+Left  focus left
