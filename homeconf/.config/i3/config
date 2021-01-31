@@ -221,6 +221,7 @@ exec_always --no-startup-id autotiling
 
 # Launch a app by default floating mode
 for_window [class="Zeal"] floating enable
+for_window [class="Alacritty"] floating enable
 
 # Launch a terminal and move it to scratchpad; dropdown-terminal
 # exec --no-startup-id zeal -name scratchzeal
