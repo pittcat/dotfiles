@@ -101,7 +101,7 @@ bindsym $mod+f fullscreen
 # change container layout (tabbed, toggle split)
 bindsym $mod+n layout tabbed
 bindsym $mod+m layout default
-bindsym $alt+p layout stacking
+bindsym $mod+0 layout stacking
 
 # container navigation
 bindsym $mod+d focus parent
@@ -218,7 +218,7 @@ exec albert
 exec flameshot
 exec --no-startup-id dunst -config /$HOME/.config/dunst/dunstrc
 exec_always --no-startup-id autotiling
-exec --no-startup-id picom -b
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # Launch a app by default floating mode
 for_window [class="Zeal"] floating enable

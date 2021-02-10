@@ -31,7 +31,7 @@ let g:spacevim_layers = [
       \ 'repl',
       \ 'yaml',
       \ 'vista',
-      \ 'vem',
+      \ 'barbar',
       \ 'treesitter',
       \ 'ndap'
       \ ]
