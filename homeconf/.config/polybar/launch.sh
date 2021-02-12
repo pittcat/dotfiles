@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # Terminate already running bar instances
-killall -q polybar
+killall -9 polybar
 
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do

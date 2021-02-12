@@ -44,3 +44,7 @@
 --langdef=snippets
 --langmap=snippets:.snippets
 --regex-snippets=/^snippet (.*)/\1/s,snippet/
+
+--langdef=markdown
+--langmap=markdown:.md
+--regex-markdown=/^(#+[ \t]+.*)/\1/h,heading,headings/

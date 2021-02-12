@@ -200,7 +200,7 @@ bindsym $mod+Shift+a exec betterlockscreen --lock
 
 
 # alt key binding
-bindsym $alt+t exec tdrop -ma -w -4 -y "15"  xfce4-terminal
+bindsym $mod+1 exec tdrop -ma -w -4 -y "15"  xfce4-terminal
 bindsym $alt+a exec wmfocus
 
 # bar

@@ -7,7 +7,6 @@ endif
 let g:spacevim_layers = [
       \ 'spacevim', 'better-defaults',
       \ 'vim-which-key',
-      \ 'programming',
       \ 'better-motion',
       \ 'editing',
       \ 'git',
@@ -19,7 +18,6 @@ let g:spacevim_layers = [
       \ 'html',
       \ 'latex',
       \ 'javascript',
-      \ 'markdown',
       \ 'python',
       \ 'go',
       \ 'coc',
@@ -28,18 +26,12 @@ let g:spacevim_layers = [
       \ 'fzf',
       \ 'term',
       \ 'sidebar',
+      \ 'vista',
       \ 'repl',
       \ 'yaml',
-      \ 'vista',
-      \ 'barbar',
-      \ 'treesitter',
-      \ 'ndap'
+      \ 'vem',
       \ ]
 
-      " \ 'autocomplete'
-      " \ 'codeformat',
-      " \ 'file-manager',
-" Put your private plugins here.
 function! UserInit()
 
   " Space has been set as the default leader key,

@@ -18,4 +18,4 @@ vscode-css-languageserver-bin
 # web tools
 browser-sync live-server
 # markdown ale
-write-good
+write-good markdownlint
