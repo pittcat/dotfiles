@@ -197,7 +197,8 @@ bindsym XF86AudioMute exec amixer set Master toggle
 
 exec --no-startup-id betterlockscreen -u $HOME/Image/lock.jpg
 bindsym $mod+Shift+a exec betterlockscreen --lock
-
+#screenshot
+bindsym Print exec flameshot gui
 
 # alt key binding
 bindsym $mod+1 exec tdrop -ma -w -4 -y "15"  xfce4-terminal
@@ -217,8 +218,8 @@ exec megasync
 exec albert
 exec flameshot
 exec --no-startup-id dunst -config /$HOME/.config/dunst/dunstrc
-exec_always --no-startup-id autotiling
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
+exec_always --no-startup-id autotiling
 
 # Launch a app by default floating mode
 for_window [class="Zeal"] floating enable

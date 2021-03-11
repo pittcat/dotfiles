@@ -21,12 +21,13 @@ let g:spacevim_layers = [
       \ 'javascript',
       \ 'markdown',
       \ 'python',
-      \ 'go',
       \ 'coc',
       \ 'moe-tags',
       \ 'windows',
       \ 'fzf',
       \ 'term',
+      \ 'quickfix',
+      \ 'file-manager',
       \ 'sidebar',
       \ 'vista',
       \ 'repl',
@@ -56,7 +57,6 @@ function! UserConfig()
 
   " If you enable airline layer and have installed the powerline fonts, set it here.
   " let g:airline_powerline_fonts=1
-
   set ttimeoutlen=100
   set termguicolors
   color desert
