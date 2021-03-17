@@ -43,13 +43,13 @@ if [[ -d "$HOME/.rbenv/bin" ]]; then
     eval "$(rbenv init -)"
 fi
 
-# if hash ruby 2> /dev/null; then
-    # GEM_HOME=$(ls -t -U | ruby -e 'puts Gem.user_dir')
-    # if [[ -d "$GEM_HOME/bin" ]]; then
-    # PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
-    # PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
-    # fi
-# fi
+if hash ruby 2> /dev/null; then
+    GEM_HOME=$(ls -t -U | ruby -e 'puts Gem.user_dir')
+    if [[ -d "$GEM_HOME/bin" ]]; then
+    PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
+    PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
+    fi
+fi
 
 # java
 if hash javac 2>/dev/null; then
@@ -61,6 +61,7 @@ fi
 # golang
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
+export GO111MODULE=auto
 
 #php
 if hash composer 2>/dev/null; then

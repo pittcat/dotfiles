@@ -26,7 +26,6 @@ let g:spacevim_layers = [
       \ 'windows',
       \ 'fzf',
       \ 'term',
-      \ 'quickfix',
       \ 'sidebar',
       \ 'treesitter',
       \ 'ndap',
@@ -74,6 +73,7 @@ function! UserConfig()
   let g:sonokai_disable_italic_comment = 1
   let g:lightline = {'colorscheme' : 'sonokai'}
   colorscheme sonokai
+  " }
   " {
   " highlight BufTabLineCurrent cterm=NONE ctermbg=15 ctermfg=8 gui=NONE guibg=#ffffff guifg=#d70000
   " highlight BufTabLineHidden cterm=NONE ctermbg=3 ctermfg=32 gui=NONE guibg=#ffffff guifg=#1e90ff
