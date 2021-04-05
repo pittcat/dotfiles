@@ -32,7 +32,7 @@ let g:spacevim_layers = [
       \ 'vista',
       \ 'repl',
       \ 'yaml',
-      \ 'vem',
+      \ 'vem'
       \ ]
 
 function! UserInit()

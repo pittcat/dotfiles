@@ -213,7 +213,6 @@ exec_always --no-startup-id fcitx5
 exec vmware-user-suid-wrapper --no-startup-id
 exec_always --no-startup-id $scriptdir/bing-wallpaper.sh
 exec_always --no-startup-id greenclip daemon
-exec_always --no-startup-id conky -c $scriptdir/conkyrc
 exec megasync
 exec albert
 exec flameshot
