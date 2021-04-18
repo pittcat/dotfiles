@@ -53,26 +53,22 @@ fi
 
 # java
 if hash javac 2>/dev/null; then
-    export JAVA_HOME=/usr/lib/jvm/java-14-openjdk
+    export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
     export PATH=$JAVA_HOME/bin:$PATH
 fi
 
+
+# flutter
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+export PATH="$PATH:"$HOME/.devlopment/flutter/bin
 
 # golang
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
 export GO111MODULE=auto
 
-#php
-if hash composer 2>/dev/null; then
-    export COMPOSER_HOME=$HOME/.composer
-    export PATH="$PATH:$HOME/.composer/vendor/bin"
-    export GOPROXY="https://goproxy.cn,direct"
-fi
-
 export fpath=($HOME/.fpath $fpath)
-# cask
-export PATH=$PATH:$HOME/.cask/bin
 # conda
 # https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/
 export PATH="$HOME/.miniconda/bin:$PATH"
