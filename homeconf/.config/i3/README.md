@@ -20,6 +20,10 @@ StartupNotify=true
 Type=Application
 Categories=System;Utility;Core;GTK;FileTools;FileManager;
 
-# vi:set encoding=UTF-8:
 ```
 to /home/pittcat/.local/share/applications/Thunar.desktop
+
+run 
+```
+xdg-mime default Thunar.desktop inode/directory
+```
