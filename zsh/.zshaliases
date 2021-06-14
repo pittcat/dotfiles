@@ -54,3 +54,7 @@ alias pual="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1
 alias npq="nvim +PlugUpdate +qall"
 alias cmaked="cmake -DCMAKE_BUILD_TYPE=Debug"
 alias vncnopass="x0vncserver -display :0 -SecurityTypes=none"
+alias y='yay'
+alias ys='yay -S --noconfirm'
+alias yr='yay -R --noconfirm'
+alias up='yay -Syua'
