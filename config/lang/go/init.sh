@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-sudo pacman -S go
+# sudo pacman -S go
 
-go get -u github.com/jstemmer/gotags
-go get -u github.com/motemen/gore
+# go get -u github.com/jstemmer/gotags
+# go get -u github.com/motemen/gore
+https://golang.org/doc/install

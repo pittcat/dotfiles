@@ -28,7 +28,6 @@ let g:spacevim_layers = [
       \ 'fzf',
       \ 'term',
       \ 'sidebar',
-      \ 'treesitter',
       \ 'vista',
       \ 'repl',
       \ 'yaml',

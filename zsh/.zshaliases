@@ -36,7 +36,6 @@ alias t='tmux'
 alias gdb="gdb -q"
 alias gef="gdb -ix ~/.gdbinit-gef.py"
 alias gda="gdb -ix ~/.gdbdashboard"
-alias gdbfr="(cd ~/.gdb-frontend && ./gdbfrontend)"
 alias tlldb='tmuxp load moe-debug'
 alias e='emacs &'
 alias n='nvim'

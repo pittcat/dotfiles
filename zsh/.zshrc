@@ -40,7 +40,6 @@ djui/alias-tips
 # js
 # py
 gangleri/pipenv
-sobolevn/wakatime-zsh-plugin
 EOB
 
 

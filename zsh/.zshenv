@@ -66,6 +66,7 @@ export PATH="$PATH:"$HOME/.devlopment/flutter/bin
 # golang
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin
 export GO111MODULE=auto
 
 export fpath=($HOME/.fpath $fpath)
