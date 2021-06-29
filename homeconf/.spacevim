@@ -45,7 +45,6 @@ function! UserInit()
   Plug 'tweekmonster/startuptime.vim'
   Plug 'tpope/vim-scriptease'
   Plug 'embear/vim-localvimrc'
-  Plug 'marko-cerovac/material.nvim'
   Plug 'sainnhe/sonokai'
   Plug 'wakatime/vim-wakatime',{'on':[]}
 endfunction
@@ -69,21 +68,13 @@ function! UserConfig()
   " theme setting
   " {
   " the configuration options should be placed before `colorscheme sonokai`
-  " let g:sonokai_style = 'maia'
-  " let g:sonokai_enable_italic = 1
-  " let g:sonokai_disable_italic_comment = 1
-  " colorscheme sonokai
-  " }
-  " {
-  let g:material_style = 'lighter'
-  let g:material_italic_comments = 1
-  let g:material_italic_keywords = 1
-  let g:material_italic_functions = 1
-  let g:material_contrast = 1
-  colorscheme material
+  let g:sonokai_style = 'maia'
+  let g:sonokai_enable_italic = 1
+  let g:sonokai_disable_italic_comment = 1
+  colorscheme sonokai
   " }
   " {black theme option
-  " highlight Visual cterm=NONE ctermbg=0 ctermfg=NONE guibg=Grey40
+  highlight Visual cterm=NONE ctermbg=0 ctermfg=NONE guibg=Grey40
   " }
   augroup load_wakatime
       autocmd!
