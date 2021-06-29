@@ -40,13 +40,8 @@ nnoremap <Leader>d  <C-d>
 nnoremap <Leader>u  <C-u>
 
 " Insert mode shortcut
-inoremap <C-h> <Left>
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-l> <Right>
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
-inoremap <C-d> <Delete>
 
 noremap J :action EditorJoinLines<CR>
 " Quit visual mode
@@ -65,7 +60,7 @@ nnoremap U <C-r>
 nnoremap Y y$
 
 " quit ==> close current window
-nnoremap <Leader>q <C-W>w
+nnoremap <Leader>q <C-W>c
 
 " Window operation
 nnoremap <Leader>ww <C-W>w
@@ -113,10 +108,6 @@ noremap \r :source ~/.ideavimrc<CR>
 nnoremap <Leader>fp :action ShowFilePath<CR>
 
 nnoremap <Leader>ic :action InspectCode<CR>
-
-nnoremap <Leader>mv :action ActivateMavenProjectsToolWindow<CR>
-
-nnoremap <Leader>oi :action OptimizeImports<CR>
 
 nnoremap <Leader>pm :action ShowPopupMenu<CR>
 
