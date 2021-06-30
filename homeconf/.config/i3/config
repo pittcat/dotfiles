@@ -53,14 +53,13 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec xfce4-terminal
-bindsym $mod+Shift+Return exec xfce4-terminal --working-directory="$(xclip -o)" 
 
 # kill focused window
 bindsym $mod+c kill
 
 # start program launcher
-bindsym $mod+p exec rofi -show run -config $scriptdir/rofi-config
-bindsym $mod+Shift+p exec rofi -show window -config $scriptdir/rofi-config
+# bindsym $mod+p exec rofi -show run -config $scriptdir/rofi-config
+bindsym $mod+p exec rofi -show window -config $scriptdir/rofi-config
 
 # websearch
 bindsym $mod+Shift+s exec echo "" | rofi -config $scriptdir/rofi-config -dmenu -p  "Search:" | xargs -I{} xdg-open https://www.google.de/search?q={}
@@ -79,9 +78,7 @@ bindsym $mod+Up    focus up
 bindsym $mod+Right focus right
 bindsym $mod+j focus right
 
-# open sgtk-menu
-for_window [title="~sgtk-"] border none, floating enable
-bindsym $mod+F1 exec --no-startup-id sgtk-menu -f -af appendix-i3
+# bindsym $mod+F1 
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -202,7 +199,7 @@ bindsym Print exec flameshot gui
 
 # alt key binding
 bindsym $mod+1 exec tdrop -ma -w -4 -y "15"  xfce4-terminal
-bindsym $alt+a exec wmfocus
+bindsym $alt+l exec wmfocus
 
 # bar
 exec_always $HOME/.config/polybar/launch.sh
