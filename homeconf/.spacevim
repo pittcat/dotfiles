@@ -42,7 +42,7 @@ function! UserInit()
   Plug 'tweekmonster/startuptime.vim'
   Plug 'tpope/vim-scriptease'
   Plug 'embear/vim-localvimrc'
-  Plug 'sainnhe/sonokai'
+  Plug 'folke/tokyonight.nvim'
   Plug 'wakatime/vim-wakatime',{'on':[]}
 endfunction
 
@@ -63,16 +63,13 @@ function! UserConfig()
   nnoremap <silent> <localleader>pu :UpdateRemotePlugins<cr>
   let g:python3_host_prog='/usr/bin/python3'
   " theme setting
-  " {
-  " the configuration options should be placed before `colorscheme sonokai`
-  let g:sonokai_style = 'maia'
-  let g:sonokai_enable_italic = 1
-  let g:sonokai_disable_italic_comment = 1
-  colorscheme sonokai
-  " }
-  " {black theme option
-  highlight Visual cterm=NONE ctermbg=0 ctermfg=NONE guibg=Grey40
-  " }
+  "{folke/tokyonight.nvim
+  let g:tokyonight_style = "storm"
+  let g:tokyonight_italic_functions = 1
+  let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal"]
+  colorscheme tokyonight
+  let g:lightline.colorscheme = 'tokyonight' 
+  "}
   augroup load_wakatime
       autocmd!
       autocmd InsertEnter * call plug#load('vim-wakatime') | autocmd! load_wakatime
