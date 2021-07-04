@@ -42,6 +42,7 @@ function! UserInit()
   Plug 'tweekmonster/startuptime.vim'
   Plug 'tpope/vim-scriptease'
   Plug 'embear/vim-localvimrc'
+  Plug 'glepnir/zephyr-nvim'
   Plug 'folke/tokyonight.nvim'
   Plug 'wakatime/vim-wakatime',{'on':[]}
 endfunction
@@ -63,12 +64,13 @@ function! UserConfig()
   nnoremap <silent> <localleader>pu :UpdateRemotePlugins<cr>
   let g:python3_host_prog='/usr/bin/python3'
   " theme setting
-  "{folke/tokyonight.nvim
-  let g:tokyonight_style = "day"
-  let g:tokyonight_italic_functions = 1
-  let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal"]
-  colorscheme tokyonight
-  let g:lightline.colorscheme = 'tokyonight' 
+  "{glepnir/zephyr-nvim
+  colorscheme zephyr
+  let g:lightline.colorscheme = 'deus'
+  augroup illuminate_augroup
+      autocmd!
+      autocmd VimEnter * hi illuminatedWord cterm=NONE ctermbg=0 ctermfg=NONE guibg=Gray35
+  augroup END
   "}
   augroup load_wakatime
       autocmd!
