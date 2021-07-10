@@ -58,7 +58,7 @@ bindsym $mod+Return exec xfce4-terminal
 bindsym $mod+c kill
 
 # start program launcher
-# bindsym $mod+p exec rofi -show run -config $scriptdir/rofi-config
+bindsym $mod+Shift+p exec rofi -show run -config $scriptdir/rofi-config
 bindsym $mod+p exec rofi -show window -config $scriptdir/rofi-config
 
 # websearch

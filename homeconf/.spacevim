@@ -41,10 +41,7 @@ function! UserInit()
   let g:spacevim_localleader = ','
   Plug 'tweekmonster/startuptime.vim'
   Plug 'tpope/vim-scriptease'
-  Plug 'embear/vim-localvimrc'
   Plug 'glepnir/zephyr-nvim'
-  Plug 'folke/tokyonight.nvim'
-  Plug 'wakatime/vim-wakatime',{'on':[]}
 endfunction
 
 
@@ -67,13 +64,10 @@ function! UserConfig()
   "{glepnir/zephyr-nvim
   colorscheme zephyr
   let g:lightline.colorscheme = 'deus'
+  highlight VemTablineSelected         term=bold    cterm=bold ctermfg=0   ctermbg=255 guifg=#242424 guibg=#ffffff gui=bold
   augroup illuminate_augroup
       autocmd!
       autocmd VimEnter * hi illuminatedWord cterm=NONE ctermbg=0 ctermfg=NONE guibg=Gray35
   augroup END
   "}
-  augroup load_wakatime
-      autocmd!
-      autocmd InsertEnter * call plug#load('vim-wakatime') | autocmd! load_wakatime
-  augroup END
 endfunction
