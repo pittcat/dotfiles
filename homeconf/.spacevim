@@ -25,6 +25,8 @@ let g:spacevim_layers = [
       \ 'term',
       \ 'sidebar',
       \ 'vista',
+      \ 'ndap',
+      \ 'textobj',
       \ 'repl',
       \ 'yaml',
       \ 'quickfix',
