@@ -74,6 +74,7 @@ export fpath=($HOME/.fpath $fpath)
 # https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/
 export PATH="$HOME/.miniconda/bin:$PATH"
 # fzf
+#
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 # gtags
 export GTAGSLABEL=native-pygments
