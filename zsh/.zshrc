@@ -56,3 +56,4 @@ antigen apply
 . $HOME/.zshkeybind
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

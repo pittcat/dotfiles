@@ -104,8 +104,6 @@ bindsym $mod+0 layout stacking
 bindsym $mod+d focus parent
 bindsym $mod+b focus child
 
-# move container between displays
-bindsym $mod+semicolon move workspace to output right
 
 # toggle tiling / floating
 bindsym $mod+Shift+f floating toggle
@@ -163,7 +161,7 @@ bindsym $mod+grave move scratchpad
 
 # Show the currently scratchpad window
 bindsym $alt+minus [class=.*] scratchpad show
-bindsym $mod+minus scratchpad show
+bindsym $mod+semicolon scratchpad show
 
 mode "resize" {
   bindsym h resize shrink width  10 px or 10 ppt
@@ -218,7 +216,7 @@ exec_always --no-startup-id autotiling
 
 # Launch a app by default floating mode
 for_window [class="Zeal"] floating enable
-for_window [class="Alacritty"] floating enable
+for_window [class="Alacritty"] floating enable border none move right 735px,move down 150px
 
 # Launch a terminal and move it to scratchpad; dropdown-terminal
 # exec --no-startup-id zeal -name scratchzeal

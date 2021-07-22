@@ -4,3 +4,7 @@ openRanger() {
 
 zle     -N   openRanger
 bindkey '^O' openRanger
+
+recoverFg() { fg; }
+zle     -N   recoverFg
+bindkey '^Z' recoverFg
