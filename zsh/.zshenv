@@ -26,42 +26,6 @@ export PATH=$PATH:$NPM_CONFIG_PREFIX/bin
 if hash yarn 2>/dev/null; then
     export PATH="$(yarn global bin):$PATH"
 fi
-# vim--deoplete tern 
-ulimit -n 2048
-
-# rust
-if [ -d "$HOME/.cargo/bin" ] ; then
-    PATH=$PATH:$HOME/.cargo/bin
-    export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
-    export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
-    export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
-fi
-
-# ruby
-if [[ -d "$HOME/.rbenv/bin" ]]; then
-    export PATH=$PATH:$HOME/.rbenv/bin
-    eval "$(rbenv init -)"
-fi
-
-if hash ruby 2> /dev/null; then
-    GEM_HOME=$(ls -t -U | ruby -e 'puts Gem.user_dir')
-    if [[ -d "$GEM_HOME/bin" ]]; then
-    PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
-    PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
-    fi
-fi
-
-# java
-if hash javac 2>/dev/null; then
-    export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
-    export PATH=$JAVA_HOME/bin:$PATH
-fi
-
-
-# flutter
-export PUB_HOSTED_URL=https://pub.flutter-io.cn
-export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
-export PATH="$PATH:"$HOME/.devlopment/flutter/bin
 
 # golang
 export GOPATH=$HOME/.go
@@ -70,22 +34,10 @@ export PATH=$PATH:/usr/local/go/bin
 export GO111MODULE=auto
 
 export fpath=($HOME/.fpath $fpath)
-# conda
-# https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/
-export PATH="$HOME/.miniconda/bin:$PATH"
 # fzf
-#
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 # gtags
 export GTAGSLABEL=native-pygments
 export GTAGSCONF=/usr/local/share/gtags/gtags.conf
 
-# conda
-export PATH=$PATH:$HOME/.miniconda3/bin
-export NNN_USE_EDITOR=1
-
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=180'
-
-export PATH="$HOME/.emacs.d/bin:$PATH"
-export LC_CTYPE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
