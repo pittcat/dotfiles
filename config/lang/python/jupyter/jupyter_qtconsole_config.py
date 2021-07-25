@@ -418,3 +418,4 @@ c.JupyterWidget.syntax_style = 'manni'
 
 ## Username for the Session. Default is your system username.
 #c.Session.username = 'pitt'
+c.ConsoleWidget.include_other_output = True
