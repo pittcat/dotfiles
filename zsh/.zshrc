@@ -22,6 +22,7 @@ copyfile
 # py
 python
 pip
+django
 # js
 # rb
 # ruby

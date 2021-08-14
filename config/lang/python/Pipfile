@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-yapf = "*"
+black = "*"
 "flake8" = "*"
 jedi = "*"
 ipdb = "*"
