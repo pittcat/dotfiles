@@ -218,7 +218,7 @@ exec_always --no-startup-id autotiling
 for_window [class="Zeal"] floating enable
 for_window [class="Alacritty"] floating enable border none move right 735px,move down 150px,move scratchpad
 for_window [class="matplotlib"] floating enable
-for_window [class="Figure"] floating enable
+for_window [title="^Figure " class="^ $"] floating enable border none move right 500px,move down 150px
 # for_window [class="Xfce4-terminal"] floating enable
 # Xfce4-terminal col:195 row:38
 
