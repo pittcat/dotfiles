@@ -31,6 +31,7 @@ django
 EOB
 # --------------------------------------------other -------------------------------------------- #
 antigen bundles <<EOB
+skywind3000/z.lua
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
 zdharma/fast-syntax-highlighting

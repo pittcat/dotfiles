@@ -27,12 +27,6 @@ if hash yarn 2>/dev/null; then
     export PATH="$(yarn global bin):$PATH"
 fi
 
-# golang
-export GOPATH=$HOME/.go
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:/usr/local/go/bin
-export GO111MODULE=auto
-
 export fpath=($HOME/.fpath $fpath)
 # fzf
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
