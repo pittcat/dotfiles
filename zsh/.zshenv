@@ -27,6 +27,22 @@ if hash yarn 2>/dev/null; then
     export PATH="$(yarn global bin):$PATH"
 fi
 
+# rust
+if [ -d "$HOME/.cargo/bin" ] ; then
+    PATH=$PATH:$HOME/.cargo/bin
+    export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+    export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+    export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
+fi
+
+# go
+if [ -d "$HOME/.go" ] ; then
+    export GOPATH=$HOME/.go
+    export PATH=$PATH:$GOPATH/bin
+    export PATH=$PATH:/usr/local/go/bin
+    export GO111MODULE=auto
+fi
+
 export fpath=($HOME/.fpath $fpath)
 # fzf
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
