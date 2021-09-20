@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-# wget -qO- https://ifconfig.me ;echo
-wget -qO- https://checkip.amazonaws.com;echo
+echo "$(curl -4 -sf ifconfig.co)"

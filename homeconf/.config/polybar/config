@@ -13,7 +13,7 @@ margin-bottom = 0
 
 
 [settings]
-screenchange-reload = true
+screenchange-reload = false
 
 
 [colors]
@@ -61,7 +61,7 @@ module-margin-right = 0
 
 modules-left = i3
 modules-center =
-modules-right =polywins network-traffic info-ssh-sessions bluetooth getpbip getprip memory cpu  date
+modules-right =polywins network-traffic info-ssh-sessions bluetooth memory cpu  date
 
 fixed-center = false
 
