@@ -52,7 +52,7 @@ client.unfocused        $black    $black    #FFFFFF   #000000
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+c kill
@@ -200,8 +200,6 @@ exec_always $HOME/.config/polybar/launch.sh
 
 # fcitx5
 exec_always --no-startup-id fcitx5
-# vmvare copy and paste
-exec vmware-user-suid-wrapper --no-startup-id
 exec_always --no-startup-id $scriptdir/bing-wallpaper.sh
 exec_always --no-startup-id greenclip daemon
 exec albert

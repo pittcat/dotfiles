@@ -1,5 +1,7 @@
 session=${1:-xfce}
 
+export GLFW_IM_MODULE=ibus
+
 case $session in
     i3|i3wm           ) exec i3;;
     kde               ) exec startplasma-x11;;
