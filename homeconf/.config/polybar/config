@@ -41,6 +41,7 @@ font-2 = BitstreamVeraSansMono Nerd Font Mono:pixelsize=26;6
 font-3 = xos4 Terminess Powerline:size=28;4
 
 override-redirect = false
+wm-restack = i3
 bottom = false
 width = 100%
 height = 26
@@ -68,7 +69,7 @@ fixed-center = false
 line-size = 4
 line-color = ${colors.background}
 
-tray-position = center
+tray-position = right
 tray-padding = 4
 tray-maxsize = 26
 tray-background = ${colors.medium}

@@ -193,6 +193,7 @@ bindsym Print exec flameshot gui
 
 # alt key binding
 bindsym $mod+1 exec tdrop -ma -w -4 -y "15" xfce4-terminal 
+bindsym $mod+2 exec nautilus
 bindsym $alt+l exec wmfocus
 
 # bar
@@ -211,6 +212,7 @@ exec_always --no-startup-id autotiling
 # Launch a app by default floating mode
 for_window [class="Zeal"] floating enable
 for_window [class="Alacritty"] floating enable border none move right 735px,move down 150px,move scratchpad
+for_window [class="Matplotlib"] floating enable
 for_window [class="matplotlib"] floating enable
 for_window [title="^Figure " class="^ $"] floating enable border none move right 500px,move down 150px
 # for_window [class="Xfce4-terminal"] floating enable
