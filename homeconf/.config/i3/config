@@ -52,7 +52,7 @@ client.unfocused        $black    $black    #FFFFFF   #000000
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+c kill
@@ -192,7 +192,7 @@ bindsym $mod+Shift+a exec betterlockscreen --lock
 bindsym Print exec flameshot gui
 
 # alt key binding
-bindsym $mod+1 exec tdrop -ma -w -4 -y "15" xfce4-terminal 
+bindsym $mod+1 exec tdrop -ma -w -4 -y "15" kitty
 bindsym $mod+2 exec nautilus
 bindsym $alt+l exec wmfocus
 
