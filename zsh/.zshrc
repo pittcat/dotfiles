@@ -38,6 +38,7 @@ zdharma/fast-syntax-highlighting
 changyuheng/zsh-interactive-cd
 hlissner/zsh-autopair
 Tarrasch/zsh-bd
+wfxr/forgit
 djui/alias-tips
 # js
 # py
