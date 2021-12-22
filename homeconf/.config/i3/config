@@ -155,9 +155,10 @@ bindsym $mod+Shift+c exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # Make the currently focused window a scratchpad
 bindsym $mod+grave move scratchpad
 
-# Show the currently scratchpad window
-bindsym $alt+minus [class=.*] scratchpad show
-bindsym $mod+semicolon scratchpad show
+# show last scratchpad
+bindsym $alt+minus [class=.*] scratchpad show  
+#  circularly show scratchpad
+bindsym $mod+semicolon scratchpad show 
 
 mode "resize" {
   bindsym h resize shrink width  10 px or 10 ppt
@@ -210,7 +211,9 @@ exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id autotiling
 
 # Launch a app by default floating mode
-for_window [class="Zeal"] floating enable
+for_window [class="Zeal"] floating enable,move scratchpad
+bindsym $mod+3 [class="Zeal"] scratchpad show
+
 for_window [class="Alacritty"] floating enable border none move right 735px,move down 150px,move scratchpad
 for_window [class="Matplotlib"] floating enable
 for_window [class="matplotlib"] floating enable
