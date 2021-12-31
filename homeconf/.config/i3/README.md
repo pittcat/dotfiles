@@ -7,4 +7,6 @@
 
 ### i3wm config 
 
-alt 和 win 在nvim里面等同，同时映射快捷键的话，i3wm优先级更高。
+1. alt 和 win 在nvim里面等同，同时映射快捷键的话，i3wm优先级更高。
+2. floating toggle 将会把window从scratchpad remove
+
