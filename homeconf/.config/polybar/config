@@ -70,7 +70,7 @@ line-size = 4
 line-color = ${colors.background}
 
 tray-detached = false
-tray-position = right
+tray-position = none
 tray-padding = 4
 tray-maxsize = 26
 tray-offset-x = 0
@@ -98,6 +98,7 @@ label-focused-foreground = ${colors.orange}
 label-focused-background = #3f3f3f
 label-focused-underline =  ${colors.cyan}
 label-focused-padding = 4
+
 
 
 [module/network-traffic]
