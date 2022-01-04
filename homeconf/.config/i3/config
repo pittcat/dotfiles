@@ -58,11 +58,11 @@ bindsym $mod+Return exec kitty
 bindsym $mod+c kill
 
 # start program launcher
-bindsym $mod+Shift+p exec rofi -show run -config $scriptdir/rofi-config
-bindsym $mod+p exec rofi -show window -config $scriptdir/rofi-config
+bindsym $mod+Shift+p exec rofi -show run
+bindsym $mod+p exec rofi -show window
 
 # clipboard
-bindsym $mod+a exec rofi -config $scriptdir/rofi-config -modi "clipboard:greenclip print" -show clipboard
+bindsym $mod+a exec rofi -modi "clipboard:greenclip print" -show clipboard
 bindsym $mod+Shift+1 exec bash $scriptdir/restart-fcitx.sh
 
 
@@ -150,7 +150,8 @@ bindsym $mod+Shift+i move container to workspace $WS8
 
 bindsym $mod+x       reload
 bindsym $mod+Shift+x restart
-bindsym $mod+Shift+c exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+c exec rofi -show power-menu -modi power-menu:rofi-power-menu
+
 
 # Make the currently focused window a scratchpad
 bindsym $mod+grave move scratchpad
@@ -209,6 +210,8 @@ exec flameshot
 exec --no-startup-id dunst -config /$HOME/.config/dunst/dunstrc
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id autotiling
+exec_always --no-startup-id mictray
+
 
 # Launch a app by default floating mode
 for_window [class="Zeal"] floating enable,move scratchpad

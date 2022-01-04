@@ -21,7 +21,7 @@ configuration {
     purple: 	rgba ( 189, 147, 249, 100 % );
     red: 	rgba ( 255, 85, 85, 100 % );
     yellow: 	rgba ( 241, 250, 140, 100 % );
-    font:   "Jetbrains Mono 16";
+    font:   "JetBrains Mono Nerd Font 16";
 }
 * {
     selected-normal-background:     @cyan;
