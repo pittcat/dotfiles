@@ -210,8 +210,6 @@ exec flameshot
 exec --no-startup-id dunst -config /$HOME/.config/dunst/dunstrc
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id autotiling
-exec_always --no-startup-id mictray
-
 
 # Launch a app by default floating mode
 for_window [class="Zeal"] floating enable,move scratchpad
@@ -220,6 +218,7 @@ bindsym $mod+3 [class="Zeal"] scratchpad show
 for_window [class="Alacritty"] floating enable border none move right 735px,move down 150px,move scratchpad
 for_window [class="Matplotlib"] floating enable
 for_window [class="matplotlib"] floating enable
+for_window [class="qavucontrol-qt"] floating enable
 for_window [class="bauh"] floating enable
 for_window [title="^Figure " class="^ $"] floating enable border none move right 500px,move down 150px
 # for_window [class="Xfce4-terminal"] floating enable

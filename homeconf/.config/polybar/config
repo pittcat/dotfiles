@@ -38,9 +38,9 @@ orange = #de935f
 [bar/kobra]
 monitor = ${env:MONITOR:}
 font-0 = Wuncon Siji:pixelsize=10;2
-font-1 = Iosevka Kobra:weight=medium:size=10;2
-font-2 = BitstreamVeraSansMono Nerd Font Mono:pixelsize=26;6
-font-3 = xos4 Terminess Powerline:size=28;4
+font-1 = JetBrains Mono Nerd Font:weight=medium:size=16;2
+font-2 = JetBrains Mono Nerd Font:pixelsize=26;6
+font-3 = JetBrains Mono Nerd Font:size=28;4
 
 bottom = false
 width = 100%
@@ -62,7 +62,7 @@ module-margin-right = 0
 
 modules-left = i3
 modules-center = 
-modules-right =polywins network-traffic info-ssh-sessions bluetooth memory cpu  date
+modules-right =polywins network-traffic getpbip getprip info-ssh-sessions bluetooth pulseaudio memory cpu date
 
 fixed-center = false
 
@@ -75,9 +75,29 @@ tray-padding = 4
 tray-maxsize = 26
 tray-offset-x = 0
 tray-offset-y = 0
-tray-background = ${colors.medium}
+tray-background = ${colors.background}
 
 
+
+[module/pulseaudio]
+type = internal/pulseaudio
+interval = 5
+
+
+label-volume = "VOL %percentage%%"
+label-volume-background = ${colors.background}
+label-volume-foreground = ${colors.green}
+
+
+
+label-volume-padding = 0
+
+label-muted = " Muted "
+label-muted-foreground = ${colors.red}
+label-muted-background = ${colors.background}
+label-muted-padding = 0
+
+click-right = pavucontrol-qt
 
 
 [module/i3]
@@ -173,13 +193,12 @@ interval = 1
 click-left = rofi-bluetooth &
 
 
-format-padding = 2
-format-prefix = "BL"
-format-prefix-background = ${colors.dark}
-format-prefix-foreground = ${colors.red}
+format-padding = 1
+format-prefix-background = ${colors.red}
+format-prefix-foreground = ${colors.megenta}
 label-foreground = ${colors.dark}
 label-background = ${colors.magenta}
-label-underline = ${colors.background}
+label-underline = ${colors.red}
 label-overline = ${colors.background}
 
 

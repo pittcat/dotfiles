@@ -20,3 +20,4 @@ mailspring --- email
 mictray --- sound control
 rofi-bluetooth --- switch bluetooth
 rofi-power-menu  ---  power menu
+pavucontrol-qt  --- -- sound control
