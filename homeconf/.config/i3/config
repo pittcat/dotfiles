@@ -137,6 +137,7 @@ bindsym $mod+t workspace $WS5
 bindsym $mod+y workspace $WS6
 bindsym $mod+u workspace $WS7
 bindsym $mod+i workspace $WS8
+bindsym $mod+o workspace $WS9
 
 # move focused container to workspace
 bindsym $mod+Shift+q move container to workspace $WS1
@@ -147,6 +148,7 @@ bindsym $mod+Shift+t move container to workspace $WS5
 bindsym $mod+Shift+y move container to workspace $WS6
 bindsym $mod+Shift+u move container to workspace $WS7
 bindsym $mod+Shift+i move container to workspace $WS8
+bindsym $mod+Shift+o move container to workspace $WS9
 
 bindsym $mod+x       reload
 bindsym $mod+Shift+x restart
@@ -196,7 +198,7 @@ bindsym Print exec flameshot gui
 # alt key binding
 bindsym $mod+1 exec tdrop -ma -w -4 -y "15" kitty
 bindsym $mod+2 exec nautilus
-bindsym $alt+l exec wmfocus
+bindsym $alt+semicolon exec wmfocus
 
 # bar
 exec_always $HOME/.config/polybar/launch.sh
@@ -218,6 +220,7 @@ bindsym $mod+3 [class="Zeal"] scratchpad show
 for_window [class="Alacritty"] floating enable border none move right 735px,move down 150px,move scratchpad
 for_window [class="Matplotlib"] floating enable
 for_window [class="matplotlib"] floating enable
+for_window [class="github"] floating enable
 for_window [class="qavucontrol-qt"] floating enable
 for_window [class="bauh"] floating enable
 for_window [title="^Figure " class="^ $"] floating enable border none move right 500px,move down 150px

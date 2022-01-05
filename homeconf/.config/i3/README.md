@@ -15,9 +15,10 @@ ln -s $PWD/i3/dunst $HOME/.config/
 
 nutstore --- cloud drive
 bauh --- flatpak snap aur package manager  
-CopyTranslator --- copy and translate at same time
+dialect --- copy and translate at same time
 mailspring --- email
 mictray --- sound control
 rofi-bluetooth --- switch bluetooth
 rofi-power-menu  ---  power menu
 pavucontrol-qt  --- -- sound control
+
