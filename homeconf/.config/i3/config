@@ -219,10 +219,12 @@ bindsym $mod+3 [class="Zeal"] scratchpad show
 
 for_window [class="Alacritty"] floating enable border none move right 735px,move down 150px,move scratchpad
 for_window [class="Matplotlib"] floating enable
+for_window [class="gnome"] floating enable resize set 800 800
 for_window [class="matplotlib"] floating enable
 for_window [class="github"] floating enable
 for_window [class="qavucontrol-qt"] floating enable
 for_window [class="bauh"] floating enable
+for_window [class="Mathpix"] floating enable resize set 800 800
 for_window [title="^Figure " class="^ $"] floating enable border none move right 500px,move down 150px
 # for_window [class="Xfce4-terminal"] floating enable
 # Xfce4-terminal col:195 row:38

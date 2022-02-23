@@ -62,7 +62,7 @@ module-margin-right = 0
 
 modules-left = i3
 modules-center = 
-modules-right =polywins network-traffic memory cpu getpbip getprip info-ssh-sessions bluetooth pulseaudio date
+modules-right =polywins network-traffic memory cpu wireless-network wired-network getpbip info-ssh-sessions bluetooth pulseaudio date
 
 fixed-center = false
 
@@ -168,6 +168,30 @@ label-foreground = ${colors.dark}
 label-background = ${colors.magenta}
 label-underline = ${colors.background}
 label-overline = ${colors.background}
+
+
+[module/wired-network]
+type = internal/network
+interface = eno1
+label-padding = 1
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+label-connected = "  %local_ip%"
+label-disconnected = " "
+format-connected-foreground = ${colors.cyan}
+
+ 
+
+[module/wireless-network]
+type = internal/network
+interface = wlp0s20f3
+label-padding = 1
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+label-connected =  "  %local_ip%"
+label-disconnected = " "
+format-connected-foreground = ${colors.violet}
+
 
 [module/getpbip]
 type = custom/script
