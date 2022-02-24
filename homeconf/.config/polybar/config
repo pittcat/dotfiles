@@ -176,7 +176,7 @@ interface = eno1
 label-padding = 1
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
-label-connected = "  %local_ip%"
+label-connected = "   %local_ip% "
 label-disconnected = " "
 format-connected-foreground = ${colors.cyan}
 
@@ -188,7 +188,7 @@ interface = wlp0s20f3
 label-padding = 1
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
-label-connected =  "  %local_ip%"
+label-connected =  "   %local_ip% "
 label-disconnected = " "
 format-connected-foreground = ${colors.violet}
 
