@@ -36,20 +36,18 @@ alias t='tmux'
 alias gdb="gdb -q"
 alias gef="gdb -ix ~/.gdbinit-gef.py"
 alias gda="gdb -ix ~/.gdbdashboard"
-alias tlldb='tmuxp load moe-debug'
 alias n='nvim'
+alias nn='nvim "+let g:auto_session_enabled = v:false"'
+alias npq="nvim +PlugUpdate +qall"
 alias server="browser-sync start -s -f . --no-notify --host $LOCAL_IP --port 3000"
 alias gcpt='google-chrome-stable  --remote-debugging-port=9222'
 alias gdiff='git diff --color | sed -r "s/^([^-+ ]*)[-+ ]/\\1/" | less -r'
 alias md2pdf='pandoc --pdf-engine=xelatex -V CJKmainfont="Droid Sans Fallback"'
 alias jpntb='nohup jupyter notebook --ip=127.0.0.1 >/dev/null 2>&1 &'
 alias jpntn='jupyter notebook --NotebookApp.token='
-alias noderepl='node -i -e "repl.repl.ignoreUndefined=true"'
-alias nodedb='node --inspect-brk'
 alias bgdbgui='nohup gdbgui  >/dev/null 2>&1 &'
 alias gttycb='tty | xsel -ib'
 alias pual="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U --user"
-alias npq="nvim +PlugUpdate +qall"
 alias cmaked="cmake -DCMAKE_BUILD_TYPE=Debug"
 alias vncnopass="x0vncserver -display :0 -SecurityTypes=none"
 alias y='yay'

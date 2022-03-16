@@ -16,7 +16,7 @@ autojump
 extract
 tmux
 sudo
-copydir
+copypath
 command-not-found
 copyfile
 # py

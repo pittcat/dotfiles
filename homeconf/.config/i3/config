@@ -52,7 +52,7 @@ client.unfocused        $black    $black    #FFFFFF   #000000
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec wezterm
 
 # kill focused window
 bindsym $mod+c kill
@@ -196,8 +196,7 @@ bindsym $mod+Shift+a exec betterlockscreen --lock
 bindsym Print exec flameshot gui
 
 # alt key binding
-bindsym $mod+1 exec tdrop -ma -w -4 -y "15" kitty
-bindsym $mod+2 exec nautilus
+bindsym $mod+1 exec nautilus
 bindsym $alt+semicolon exec wmfocus
 
 # bar
@@ -215,9 +214,13 @@ exec_always --no-startup-id autotiling
 
 # Launch a app by default floating mode
 for_window [class="Zeal"] floating enable,move scratchpad
-bindsym $mod+3 [class="Zeal"] scratchpad show
+bindsym $mod+2 [class="Zeal"] scratchpad show
+for_window [class="kitty"] floating enable border none move right 735px,move down 150px,resize set 800 600,move scratchpad
+bindsym $mod+3 [class="kitty"] scratchpad show
+for_window [class="Alacritty"] floating enable border none move right 735px,move down 150px
+bindsym $mod+4 [class="Alacritty"] scratchpad show
 
-for_window [class="Alacritty"] floating enable border none move right 735px,move down 150px,move scratchpad
+
 for_window [class="Matplotlib"] floating enable
 for_window [class="gnome"] floating enable resize set 800 800
 for_window [class="matplotlib"] floating enable
