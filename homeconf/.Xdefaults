@@ -12,9 +12,11 @@ URxvt.scrollBar:                false
 URxvt*loginShell:               true
 URxvt.internalBorder:           35
 URxvt.perl-ext-common:          default,clipboard
-URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
-URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
-URxvt.clipboard.autocopy:       true
+! Restore Ctrl+Shift+(c|v)
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
 
 urxvt*background: #181512
 urxvt*foreground: #bea492

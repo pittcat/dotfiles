@@ -3,6 +3,7 @@
 ### 使用其他 terminal 的时候
 
 set -g default-terminal "screen-256color"
+set -g default-terminal "tmux-256color"
 set -ga terminal-overrides ",xterm-256color\*:Tc"
 
 ### 使用 kitty
