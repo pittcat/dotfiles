@@ -1,17 +1,10 @@
+## 保证 tmux 中 nvim color 不变
 
-
-
-## 保证tmux 中nvim color 不变
-
-### 使用其他terminal的时候
+### 使用其他 terminal 的时候
 
 set -g default-terminal "screen-256color"
-set -ga terminal-overrides ",xterm-256color*:Tc"
+set -ga terminal-overrides ",xterm-256color\*:Tc"
 
+### 使用 kitty
 
-### 使用kitty 
 set -g default-terminal "${TERM}"
-
-### 使用wezterm
-
-set -g default-terminal 'tmux-256color'

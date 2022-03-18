@@ -58,7 +58,7 @@ bindsym $mod+Return exec wezterm
 bindsym $mod+c kill
 
 # start program launcher
-bindsym $mod+Shift+p exec rofi -show run
+bindsym $alt+space exec rofi -show run
 bindsym $mod+p exec rofi -show window
 
 # clipboard
@@ -206,7 +206,6 @@ exec_always $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id fcitx5
 exec_always --no-startup-id $scriptdir/bing-wallpaper.sh
 exec_always --no-startup-id greenclip daemon
-exec_always --no-startup-id albert
 exec flameshot
 exec --no-startup-id dunst -config /$HOME/.config/dunst/dunstrc
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
@@ -215,8 +214,8 @@ exec_always --no-startup-id autotiling
 # Launch a app by default floating mode
 for_window [class="Zeal"] floating enable,move scratchpad
 bindsym $mod+2 [class="Zeal"] scratchpad show
-for_window [class="kitty"] floating enable border none move right 735px,move down 150px,resize set 800 600,move scratchpad
-bindsym $mod+3 [class="kitty"] scratchpad show
+for_window [class="URxvt"] floating enable border none,resize set 800 600,move scratchpad
+bindsym $mod+3 [class="URxvt"] scratchpad show
 for_window [class="Alacritty"] floating enable border none move right 735px,move down 150px
 bindsym $mod+4 [class="Alacritty"] scratchpad show
 

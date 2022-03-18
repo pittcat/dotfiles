@@ -40,7 +40,7 @@ hlissner/zsh-autopair
 Tarrasch/zsh-bd
 wfxr/forgit
 djui/alias-tips
-felixr/docker-zsh-completion
+# felixr/docker-zsh-completion
 # js
 # py
 gangleri/pipenv
