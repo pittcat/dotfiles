@@ -19,6 +19,10 @@ export PATH=$PATH:$HOME/.local/bin
 
 # python
 export PYTHONPATH=$PYTHONPATH:$HOME/.local/lib/python3.10/site-packages:/usr/lib/python3.10/site-packages
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
 
 # nodejs
 export NPM_CONFIG_PREFIX=$HOME/.npm-global
@@ -33,6 +37,7 @@ if [ -d "$HOME/.cargo/bin" ] ; then
     export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
     export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
     export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
+    . "$HOME/.cargo/env"
 fi
 
 # go

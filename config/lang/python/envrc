@@ -1,4 +1,4 @@
-source activate py352
-export LD_LIBRARY_PATH=/home/pittcat/.miniconda3/envs/py352/lib
 unset PYTHONPATH  
-export PYTHONPATH=$PYTHONPATH:/home/pittcat/.local/lib/python3.5/site-packages:/home/pittcat/.miniconda3/envs/py352/lib/python3.5/site-packages
+
+
+export PYTHONPATH=$PYTHONPATH:python -c "import sys; print(sys.path)"

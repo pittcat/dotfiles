@@ -15,7 +15,7 @@ local keys = {
 }
 
 return {
-	font = wezterm.font_with_fallback({ "FiraCode Nerd Font", "Hack Nerd Font" }),
+	font = wezterm.font_with_fallback({ "FiraCode" }),
 	font_size = 16,
 	check_for_updates = false,
 	-- default_prog = { "tmux", "attach" },
