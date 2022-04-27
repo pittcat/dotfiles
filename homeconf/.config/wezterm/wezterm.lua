@@ -15,7 +15,10 @@ local keys = {
 }
 
 return {
-	font = wezterm.font_with_fallback({ "FiraCode" }),
+	font = wezterm.font_with_fallback({
+		"Fira Code",
+		"DengXian",
+	}),
 	font_size = 16,
 	check_for_updates = false,
 	-- default_prog = { "tmux", "attach" },
