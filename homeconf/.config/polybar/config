@@ -255,7 +255,7 @@ format-prefix-foreground = ${colors.violet}
 format-prefix-underline = ${colors.background}
 format-prefix-overline = ${colors.background}
 
-label = " %percentage_used%% "
+label = "MEM:%percentage_used%% "
 label-foreground = ${colors.dark}
 label-background = ${colors.violet}
 label-underline = ${colors.background}
@@ -272,7 +272,7 @@ format-prefix-foreground = ${colors.orange}
 format-prefix-underline = ${colors.background}
 format-prefix-overline = ${colors.background}
 
-label = " %percentage%% "
+label = "CPU: %percentage%% "
 label-foreground = ${colors.dark}
 label-background = ${colors.orange}
 label-underline = ${colors.background}

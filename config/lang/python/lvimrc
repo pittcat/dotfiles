@@ -1,0 +1,2 @@
+let g:python3_host_prog = "/home/pittcat/.pyenv/shims/python"
+silent !direnv allow

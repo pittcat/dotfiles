@@ -1,27 +1,27 @@
-
-
 ## 安装步骤
+
 ### 安装常用的软件包
+
 1. sudo pacman -S --needed $(comm -12 <(pacman -Slq | sort) <(sort pkglist))
 2. yay -S --needed $(comm -12 <(pacman -Slq | sort) <(sort aurlist))
-3. 初始化vim zsh tmux i3wm 等等
-bash setup.sh
-stow homeconf tmux zsh
+3. 初始化 vim zsh tmux i3wm 等等
+   bash setup.sh
+   stow homeconf tmux zsh
 
-4.  初始化一些语言的包
+4. 初始化一些语言的包
 
-需要初始化的lang:
+需要初始化的 lang:
 
 ```
 cfamily
 bash
-rust 
-python 
+rust
+python
 web
 ```
 
-
 ### 实体机需要删除的软件包
+
 xf86-input-vmmouse
 xf86-video-vmware
 
@@ -32,19 +32,36 @@ xf86-video-vmware
 网络:[networkmanager](https://wiki.archlinux.org/index.php/NetworkManager#Installation)
 
 ### 输入法初始化
-- 将 /config/rime-dict的文件复制到~/.local/share/fcitx5/rime
 
+- 将 /config/rime-dict 的文件复制到~/.local/share/fcitx5/rime
 
 ## aurlist pkglist gen
+
 pacman -Qqm > aurlist
 
 pacman -Qqet > pkglist
 
-## 自动同步备份连个文件夹
+### appimage flatpak snap web 如何使用
+https://github.com/vinifmor/bauh
+https://github.com/TheAssassin/AppImageLauncher
 
-lsyncd
 
-# 全局配置的参数应该很清楚，不需要解释了
+**Appimage**
+```bash
+AppImageLauncher app.AppImage(just for appimage) or bauh
+```
+快速启动：rofi -show drun
+
+## 自动同步备份多个文件夹
+
+lsyncd 使用场景：多个主机编辑文件，并且运行(比如有些项目需要到不同的主机上运行)，然后同步倒源主机，
+
+- 可以避免多次 git 操作
+- 降低本地开发机的资源消耗
+
+```lua
+
+全局配置的参数应该很清楚，不需要解释了
 settings {
     logfile    = "/tmp/lsyncd.log",
     statusFile = "/tmp/lsyncd.status",
@@ -70,3 +87,4 @@ sync {
         }
 }
 
+```

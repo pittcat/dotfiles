@@ -59,6 +59,7 @@ bindsym $mod+c kill
 
 # start program launcher
 bindsym $alt+space exec rofi -show run
+bindsym $alt+Shift+space exec rofi -show drun
 bindsym $mod+p exec rofi -show window
 
 # clipboard
@@ -229,7 +230,9 @@ for_window [class="matplotlib"] floating enable
 for_window [class="github"] floating enable
 for_window [class="qavucontrol-qt"] floating enable
 for_window [class="bauh"] floating enable
+for_window [class="dialect"] floating enable resize set 800 400
 for_window [class="Mathpix"] floating enable resize set 800 800
+for_window [class="eudic"] floating enable resize set 800 800
 for_window [title="^Figure " class="^ $"] floating enable border none move right 500px,move down 150px
 # for_window [class="Xfce4-terminal"] floating enable
 # Xfce4-terminal col:195 row:38

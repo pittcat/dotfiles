@@ -23,6 +23,8 @@ export PYTHONPATH=$PYTHONPATH:$HOME/.local/lib/python3.10/site-packages:/usr/lib
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # nodejs
 export NPM_CONFIG_PREFIX=$HOME/.npm-global
@@ -43,16 +45,13 @@ fi
 # go
 if [ -d "$HOME/.go" ] ; then
     export GOPATH=$HOME/.go
+    export GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
     export PATH=$PATH:$GOPATH/bin
-    export PATH=$PATH:/usr/local/go/bin
     export GO111MODULE=auto
 fi
 
 export fpath=($HOME/.fpath $fpath)
 # fzf
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
-# gtags
-export GTAGSLABEL=native-pygments
-export GTAGSCONF=/usr/local/share/gtags/gtags.conf
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=180'
