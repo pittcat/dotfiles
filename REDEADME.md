@@ -46,9 +46,9 @@ https://github.com/vinifmor/bauh
 https://github.com/TheAssassin/AppImageLauncher
 
 
-**Appimage**
+**Appimage**:使用AppImageLauncher
 ```bash
-AppImageLauncher app.AppImage(just for appimage) or bauh
+AppImageLauncher app.AppImage
 ```
 快速启动：rofi -show drun
 

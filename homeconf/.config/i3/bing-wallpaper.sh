@@ -12,3 +12,5 @@ imagepath="$HOME/Image/bing-wallpaper.jpg"
 # )
 # curl "https://www.bing.com$urlpath" -o $imagepath
 feh --bg-fill $imagepath
+
+

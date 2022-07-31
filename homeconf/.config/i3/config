@@ -200,20 +200,24 @@ bindsym Print exec flameshot gui
 bindsym $mod+1 exec nautilus
 bindsym $alt+l exec wmfocus
 
+
+# exec_always run command on every restart exec run only once
+
 # bar
 exec_always $HOME/.config/polybar/launch.sh
 
 # auto start
 # fcitx5
 exec_always --no-startup-id fcitx5
-exec_always --no-startup-id $scriptdir/bing-wallpaper.sh
-exec_always --no-startup-id greenclip daemon
-exec flameshot
-exec --no-startup-id dunst -config /$HOME/.config/dunst/dunstrc
-exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id autotiling
 # auto rsync for server
-exec_always --no-startup-id lsyncd /etc/lsyncd/lsyncd.conf.lua
+exec --no-startup-id lsyncd /etc/lsyncd/lsyncd.conf.lua
+exec --no-startup-id $scriptdir/bing-wallpaper.sh
+exec --no-startup-id greenclip daemon
+exec flameshot
+exec --no-startup-id urxvt
+exec --no-startup-id dunst -config /$HOME/.config/dunst/dunstrc
+exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # Launch a app by default floating mode
 for_window [class="Zeal"] floating enable,move scratchpad

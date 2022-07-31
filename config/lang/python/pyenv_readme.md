@@ -1,4 +1,4 @@
-# pyenv and pipenv
+# pyenv
 
 ## prerequisite
 
@@ -40,7 +40,7 @@ python -c "import sys; print(sys.path)"
 ```
 unset PYTHONPATH
 export PYTHONPATH=$PYTHONPATH:$HOME/.pyenv/versions/py396/lib/python3.9/site-packages
-nvim会读取环境变量，清除环境变量的话，nvim补全python会出现库和runtime不匹配
+nvim会读取环境变量，不清除环境变量的话，nvim补全python会出现库和runtime不匹配
 ```
 
 2. direnv allow .
@@ -52,3 +52,47 @@ pip freeze > requirements.txt
 
 dst import:
 pip install -r requirements.txt
+
+## 比对 conda
+
+`pyenv activate py396`之后，neovim 的 floaterm,以及 dap
+都是可以读到 python 版本和对应的环境变量的，但是使用 conda 不可以。
+如果一个环境不是针对 ML，优先选用 pyenv。
+
+conda 环境如果想要 neovim 的 floaterm 和 dap 能够读取到 python 版本以及环境变量需要如下操作
+
+1. conda 激活环境，并且用 direnv 控制环境变量
+2. 在 floaterm 中，使用
+
+```
+conda activate py-virtualenv && source .envrc
+```
+
+3. dap 的配置,思路主要是通过.lvimrc 改变 dap adapter 的配置
+
+```
+.lvimrc
+
+luafile linit.lua
+
+linit.lua
+
+local dap = require('dap')
+dap.adapters.python = {
+  type = 'executable';
+  command = '/home/kingerzee/anaconda3/envs/py396/bin/python3.9';
+  args = { '-m', 'debugpy.adapter' };
+}
+
+dap.configurations.python = {
+	{
+		type = "python",
+		request = "launch",
+		name = "Launch file in integratedTerminal",
+		program = "${fileDirname}/${fileBasename}",
+    cwd = "/home/kingerzee/pittcat/lab-project",
+		console = "integratedTerminal",
+	}
+}
+
+```
