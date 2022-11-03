@@ -226,6 +226,7 @@ for_window [class="URxvt"] floating enable border none,resize set 800 600,move s
 bindsym $mod+3 [class="URxvt"] scratchpad show
 for_window [class="Alacritty"] floating enable border none move right 735px,move down 150px
 bindsym $mod+4 [class="Alacritty"] scratchpad show
+bindsym $mod+5 [class="firefox"] scratchpad show
 
 
 for_window [class="Matplotlib"] floating enable
