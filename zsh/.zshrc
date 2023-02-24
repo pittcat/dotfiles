@@ -1,5 +1,4 @@
 source $HOME/.antigen/antigen.zsh
-
 # oh-my-zsh
 antigen use oh-my-zsh
 
@@ -43,6 +42,7 @@ felixr/docker-zsh-completion
 # js
 # py
 gangleri/pipenv
+lukechilds/zsh-nvm
 EOB
 
 
