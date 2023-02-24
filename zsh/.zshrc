@@ -22,7 +22,6 @@ copyfile
 # py
 python
 pip
-django
 # js
 # rb
 # ruby
@@ -39,9 +38,8 @@ changyuheng/zsh-interactive-cd
 hlissner/zsh-autopair
 Tarrasch/zsh-bd
 wfxr/forgit
-djui/alias-tips
 MenkeTechnologies/zsh-cargo-completion
-# felixr/docker-zsh-completion
+felixr/docker-zsh-completion
 # js
 # py
 gangleri/pipenv
@@ -64,3 +62,4 @@ antigen apply
 
 
 export QSYS_ROOTDIR="/home/pittcat/.cache/yay/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/21.1/quartus/sopc_builder/bin"
+

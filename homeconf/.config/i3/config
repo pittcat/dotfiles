@@ -197,7 +197,7 @@ bindsym $mod+Shift+a exec betterlockscreen --lock
 bindsym Print exec flameshot gui
 
 # alt key binding
-bindsym $mod+1 exec nautilus
+bindsym $mod+1 exec thunar
 bindsym $alt+l exec wmfocus
 
 
@@ -230,7 +230,9 @@ bindsym $mod+5 [class="firefox"] scratchpad show
 
 
 for_window [class="Matplotlib"] floating enable
-for_window [class="gnome"] floating enable resize set 800 800
+# nautilus
+# for_window [class="gnome"] floating enable resize set 800 800
+for_window [class="(?i)thunar"] floating enable resize set 800 800
 for_window [class="matplotlib"] floating enable
 for_window [class="github"] floating enable
 for_window [class="qavucontrol-qt"] floating enable

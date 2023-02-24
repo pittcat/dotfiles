@@ -1,5 +1,0 @@
-source activate nodejs10130
-export NPM_CONFIG_PREFIX=$HOME/.miniconda3/envs/nodejs10130
-export PATH=$PATH:$NPM_CONFIG_PREFIX/bin
-export PATH=$(npm bin):$PATH
-# export PATH=$(yarn bin):$PATH
