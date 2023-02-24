@@ -36,3 +36,4 @@ sudo pacman -U application.pkg.tar.zst
 2022-05-10 11:03
 
 2022-11-18 11:44
+2023-02-24 15:48
