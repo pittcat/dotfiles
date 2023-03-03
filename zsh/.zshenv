@@ -11,7 +11,6 @@ export VISUAL='/usr/bin/nvim'
 if hash direnv 2>/dev/null; then
     eval "$(direnv hook zsh)"
 fi
-export DIRENV_LOG_FORMAT=   # remove direnv log loading
 
 export PATH=$PATH:$HOME/.local/bin
 

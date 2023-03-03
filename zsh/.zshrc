@@ -1,3 +1,5 @@
+source ~/.autoenv/activate.sh
+
 source $HOME/.antigen/antigen.zsh
 # oh-my-zsh
 antigen use oh-my-zsh
@@ -62,4 +64,5 @@ antigen apply
 
 
 export QSYS_ROOTDIR="/home/pittcat/.cache/yay/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/21.1/quartus/sopc_builder/bin"
+
 

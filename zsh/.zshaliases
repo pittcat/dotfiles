@@ -14,7 +14,7 @@ alias unsetssproxy="unset ALL_PROXY"
 alias sethtproxy="export http_proxy=http://127.0.0.1:8123 && export https_proxy=http://127.0.0.1:8123"
 alias unsethtproxy="unset http_proxy && unset https_proxy"
 alias dral='direnv allow .'
-# alias rm='trash-put'
+alias ldv='source $PWD/.envrc'
 # alias v='vim'
 alias t='tmux'
 alias gdb="gdb -q"
@@ -27,7 +27,6 @@ alias server="browser-sync start -s -f . --no-notify --host $LOCAL_IP --port 300
 alias jpntb='nohup jupyter notebook --ip=127.0.0.1 >/dev/null 2>&1 &'
 alias rdesk='nohup rustdesk >/dev/null 2>&1 &'
 alias jpntn='jupyter notebook --NotebookApp.token='
-alias bgdbgui='nohup gdbgui  >/dev/null 2>&1 &'
 alias gttycb='tty | xsel -ib'
 alias pual="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U --user"
 alias cmaked="cmake -DCMAKE_BUILD_TYPE=Debug"
@@ -37,6 +36,7 @@ alias y='yay'
 alias ys='yay -S --noconfirm'
 alias yr='yay -R --noconfirm'
 alias up='yay -Syua'
+alias rm='trash-put '
 # alias ssh="kitty +kitten ssh"
 # alias drai="docker rm `docker ps -a -q`"
 
