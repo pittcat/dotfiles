@@ -164,6 +164,9 @@ bindsym $alt+minus [class=.*] scratchpad show
 #  circularly show scratchpad
 bindsym $mod+semicolon scratchpad show 
 
+# wmfocus
+bindsym $mod+l exec wmfocus
+
 mode "resize" {
   bindsym h resize shrink width  10 px or 10 ppt
   bindsym j resize grow   height 10 px or 10 ppt
@@ -198,7 +201,6 @@ bindsym Print exec flameshot gui
 
 # alt key binding
 bindsym $mod+1 exec thunar
-bindsym $alt+l exec wmfocus
 
 
 # exec_always run command on every restart exec run only once
@@ -217,7 +219,6 @@ exec --no-startup-id greenclip daemon
 exec flameshot
 exec --no-startup-id urxvt
 exec --no-startup-id dunst -config /$HOME/.config/dunst/dunstrc
-exec --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # Launch a app by default floating mode
 for_window [class="Zeal"] floating enable,move scratchpad
@@ -240,6 +241,7 @@ for_window [class="bauh"] floating enable
 for_window [class="dialect"] floating enable resize set 800 400
 for_window [class="Mathpix"] floating enable resize set 800 800
 for_window [class="eudic"] floating enable resize set 800 800
+for_window [class="OneDriveGUI"] floating enable resize set 600 600
 for_window [title="^Figure " class="^ $"] floating enable border none move right 500px,move down 150px
 # for_window [class="Xfce4-terminal"] floating enable
 # Xfce4-terminal col:195 row:38

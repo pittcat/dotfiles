@@ -38,7 +38,7 @@ if [ -d "$HOME/.cargo/bin" ] ; then
 fi
 
 
-export PATH=$PATH:$HOME/.local/share/neovim/bin
+export PATH=$PATH:$HOME/.local/share/bob/nvim-bin
 
 export fpath=($HOME/.fpath $fpath)
 # fzf

@@ -1,5 +1,3 @@
-source ~/.autoenv/activate.sh
-
 source $HOME/.antigen/antigen.zsh
 # oh-my-zsh
 antigen use oh-my-zsh
@@ -13,7 +11,6 @@ fi
 antigen bundles <<EOB
 # systemd
 git
-autojump
 extract
 tmux
 sudo
