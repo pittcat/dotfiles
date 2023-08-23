@@ -15,7 +15,7 @@ fi
 export PATH=$PATH:$HOME/.local/bin
 
 # python
-export PYTHONPATH=$PYTHONPATH:$HOME/.local/lib/python3.10/site-packages:/usr/lib/python3.10/site-packages
+export PYTHONPATH=$PYTHONPATH:$HOME/.local/lib/python3.11/site-packages:/usr/lib/python3.11/site-packages
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
